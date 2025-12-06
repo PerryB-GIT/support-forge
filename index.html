@@ -6,116 +6,290 @@
     <title>Support Forge | IT Support & Tech Services</title>
     <meta name="description" content="Support Forge provides expert IT support, managed services, web development, and technology consulting. Building solutions, forging success.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="grid-background"></div>
+
     <header>
         <nav>
-            <div class="logo">Support Forge</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 60 60" class="anvil-logo">
+                        <!-- Anvil base -->
+                        <path d="M10 45 L50 45 L55 50 L5 50 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <!-- Anvil body -->
+                        <path d="M15 35 L45 35 L50 45 L10 45 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <!-- Anvil top/horn -->
+                        <path d="M20 25 L40 25 L45 35 L15 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <path d="M5 28 L20 25 L20 35 L8 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <!-- Hammer -->
+                        <rect x="27" y="5" width="6" height="20" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <rect x="22" y="2" width="16" height="8" rx="1" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        <!-- Glow effects -->
+                        <defs>
+                            <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c0c0c0"/>
+                                <stop offset="50%" style="stop-color:#808080"/>
+                                <stop offset="100%" style="stop-color:#404040"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">SUPPORT<span class="accent">FORGE</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-glow"></div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <h1>Your Trusted IT Partner</h1>
-            <p>Building solutions, forging success</p>
-            <p class="hero-subtitle">Expert technology services to keep your business running smoothly</p>
-            <a href="#contact" class="cta-button">Get Free Consultation</a>
+            <div class="hero-content">
+                <div class="hero-badge">ENTERPRISE IT SOLUTIONS</div>
+                <h1>FORGING THE <span class="text-gradient">FUTURE</span> OF TECHNOLOGY</h1>
+                <p class="hero-tagline">Building solutions. Forging success.</p>
+                <p class="hero-description">Elite technology services engineered for businesses that demand excellence</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Initialize Contact</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <span>Explore Services</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="forge-animation">
+                    <svg viewBox="0 0 200 200" class="hero-logo">
+                        <!-- Anvil base -->
+                        <path d="M40 150 L160 150 L175 170 L25 170 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <!-- Anvil body -->
+                        <path d="M55 115 L145 115 L160 150 L40 150 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+                        </path>
+                        <!-- Anvil top -->
+                        <path d="M70 85 L130 85 L145 115 L55 115 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+                        </path>
+                        <!-- Anvil horn -->
+                        <path d="M20 95 L70 85 L70 115 L30 115 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+                        </path>
+                        <!-- Hammer handle -->
+                        <rect x="90" y="20" width="20" height="60" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                        </rect>
+                        <!-- Hammer head -->
+                        <rect x="75" y="5" width="50" height="25" rx="3" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
+                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+                        </rect>
+                        <!-- Sparks -->
+                        <circle cx="100" cy="85" r="3" fill="#ff0040" class="spark">
+                            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="85;60;85" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="85" cy="85" r="2" fill="#8b00ff" class="spark">
+                            <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+                            <animate attributeName="cx" values="85;60;85" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
+                        </circle>
+                        <circle cx="115" cy="85" r="2" fill="#ff0040" class="spark">
+                            <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
+                            <animate attributeName="cx" values="115;140;115" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
+                        </circle>
+                        <defs>
+                            <linearGradient id="heroMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#e0e0e0"/>
+                                <stop offset="30%" style="stop-color:#a0a0a0"/>
+                                <stop offset="70%" style="stop-color:#606060"/>
+                                <stop offset="100%" style="stop-color:#303030"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
         </section>
 
         <section id="services" class="services">
-            <h2>Our Services</h2>
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2>SERVICES</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-subtitle">Advanced solutions forged for modern enterprises</p>
+
             <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">&#128736;</div>
-                    <h3>Technical Support</h3>
-                    <p>Fast, reliable help desk and troubleshooting services. We resolve issues quickly so you can focus on what matters most - your business.</p>
-                    <ul class="service-list">
-                        <li>24/7 Help Desk Support</li>
-                        <li>Remote & On-Site Assistance</li>
-                        <li>Hardware Troubleshooting</li>
-                        <li>Software Installation & Updates</li>
+                <div class="service-card" data-service="support">
+                    <div class="card-border"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>TECHNICAL SUPPORT</h3>
+                    <p>Rapid-response troubleshooting and resolution. 24/7 monitoring with sub-hour response times.</p>
+                    <ul class="service-features">
+                        <li><span class="feature-dot"></span>24/7 Help Desk</li>
+                        <li><span class="feature-dot"></span>Remote & On-Site</li>
+                        <li><span class="feature-dot"></span>Hardware Diagnostics</li>
+                        <li><span class="feature-dot"></span>Software Solutions</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#9881;</div>
-                    <h3>Managed IT Services</h3>
-                    <p>Proactive monitoring and management of your entire IT infrastructure. Prevent problems before they impact your operations.</p>
-                    <ul class="service-list">
-                        <li>Network Monitoring</li>
-                        <li>Security Management</li>
-                        <li>Backup & Disaster Recovery</li>
-                        <li>System Maintenance</li>
+
+                <div class="service-card" data-service="managed">
+                    <div class="card-border"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v10M1 12h6m6 0h10"/>
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                    </div>
+                    <h3>MANAGED SERVICES</h3>
+                    <p>Proactive infrastructure management. Prevent failures before they impact operations.</p>
+                    <ul class="service-features">
+                        <li><span class="feature-dot"></span>Network Monitoring</li>
+                        <li><span class="feature-dot"></span>Security Operations</li>
+                        <li><span class="feature-dot"></span>Backup & Recovery</li>
+                        <li><span class="feature-dot"></span>System Optimization</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128187;</div>
-                    <h3>Web Development</h3>
-                    <p>Custom websites and web applications built to elevate your online presence and streamline your business processes.</p>
-                    <ul class="service-list">
-                        <li>Responsive Website Design</li>
-                        <li>E-Commerce Solutions</li>
-                        <li>Web Application Development</li>
-                        <li>Website Maintenance</li>
+
+                <div class="service-card" data-service="development">
+                    <div class="card-border"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                            <line x1="14" y1="4" x2="10" y2="20"/>
+                        </svg>
+                    </div>
+                    <h3>WEB DEVELOPMENT</h3>
+                    <p>Custom digital solutions engineered for performance, scalability, and impact.</p>
+                    <ul class="service-features">
+                        <li><span class="feature-dot"></span>Responsive Design</li>
+                        <li><span class="feature-dot"></span>E-Commerce Platforms</li>
+                        <li><span class="feature-dot"></span>Web Applications</li>
+                        <li><span class="feature-dot"></span>API Integration</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#128202;</div>
-                    <h3>IT Consulting</h3>
-                    <p>Strategic technology guidance to align your IT investments with your business goals and drive growth.</p>
-                    <ul class="service-list">
-                        <li>Technology Assessment</li>
-                        <li>IT Strategy Planning</li>
-                        <li>Vendor Management</li>
-                        <li>Digital Transformation</li>
+
+                <div class="service-card" data-service="consulting">
+                    <div class="card-border"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>IT CONSULTING</h3>
+                    <p>Strategic technology guidance to align systems with business objectives.</p>
+                    <ul class="service-features">
+                        <li><span class="feature-dot"></span>Technology Assessment</li>
+                        <li><span class="feature-dot"></span>Strategic Planning</li>
+                        <li><span class="feature-dot"></span>Digital Transformation</li>
+                        <li><span class="feature-dot"></span>Vendor Management</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
-            <h2>About Support Forge</h2>
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2>ABOUT</h2>
+                <div class="section-line"></div>
+            </div>
+
             <div class="about-content">
-                <p>At Support Forge, we believe technology should empower your business, not complicate it. Founded on the principles of reliability, expertise, and exceptional service, we've helped businesses of all sizes optimize their IT operations and achieve their goals.</p>
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number">99.9%</span>
-                        <span class="stat-label">Uptime Guarantee</span>
+                <div class="about-text">
+                    <p class="about-lead">We are <span class="text-gradient">Support Forge</span> — where technology is forged into solutions.</p>
+                    <p>Built on the principles of precision, reliability, and relentless innovation, we engineer IT solutions that empower businesses to dominate their industries. Our team operates at the cutting edge, combining deep technical expertise with strategic vision.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">99.9<span class="stat-unit">%</span></div>
+                        <div class="stat-label">UPTIME GUARANTEE</div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 99.9%"></div></div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">&lt;1hr</span>
-                        <span class="stat-label">Response Time</span>
+                    <div class="stat-card">
+                        <div class="stat-value">&lt;1<span class="stat-unit">HR</span></div>
+                        <div class="stat-label">RESPONSE TIME</div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support Available</span>
+                    <div class="stat-card">
+                        <div class="stat-value">24<span class="stat-unit">/7</span></div>
+                        <div class="stat-label">SUPPORT ACTIVE</div>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">Ready to optimize your technology? Contact us for a free consultation.</p>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Your Phone (optional)">
-                <select name="service">
-                    <option value="">Select a Service</option>
-                    <option value="technical-support">Technical Support</option>
-                    <option value="managed-services">Managed IT Services</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="consulting">IT Consulting</option>
-                    <option value="other">Other</option>
-                </select>
-                <textarea name="message" placeholder="Tell us about your project or issue" required></textarea>
-                <button type="submit">Send Message</button>
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2>CONTACT</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-subtitle">Initialize a connection with our team</p>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">IDENTIFIER</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">NETWORK ADDRESS</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <div class="input-border"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">COMM LINK</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone (optional)">
+                        <div class="input-border"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">SERVICE PROTOCOL</label>
+                        <select id="service" name="service">
+                            <option value="">Select Service</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="managed-services">Managed Services</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="consulting">IT Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="input-border"></div>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message">TRANSMISSION</label>
+                    <textarea id="message" name="message" placeholder="Describe your project or requirements" required></textarea>
+                    <div class="input-border"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <span>TRANSMIT MESSAGE</span>
+                    <div class="btn-glow"></div>
+                </button>
             </form>
         </section>
     </main>
@@ -123,8 +297,20 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>Support Forge</h3>
-                <p>Building solutions, forging success</p>
+                <div class="logo">
+                    <div class="logo-icon small">
+                        <svg viewBox="0 0 60 60" class="anvil-logo">
+                            <path d="M10 45 L50 45 L55 50 L5 50 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                            <path d="M15 35 L45 35 L50 45 L10 45 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                            <path d="M20 25 L40 25 L45 35 L15 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                            <path d="M5 28 L20 25 L20 35 L8 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                            <rect x="27" y="5" width="6" height="20" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                            <rect x="22" y="2" width="16" height="8" rx="1" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">SUPPORT<span class="accent">FORGE</span></span>
+                </div>
+                <p class="footer-tagline">Building solutions. Forging success.</p>
             </div>
             <div class="footer-links">
                 <a href="#services">Services</a>
@@ -132,7 +318,10 @@
                 <a href="#contact">Contact</a>
             </div>
         </div>
-        <p class="copyright">&copy; 2025 Support Forge. All rights reserved.</p>
+        <div class="footer-bottom">
+            <div class="footer-line"></div>
+            <p>&copy; 2025 Support Forge. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
