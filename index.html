@@ -3,324 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Forge | IT Support & Tech Services</title>
-    <meta name="description" content="Support Forge provides expert IT support, managed services, web development, and technology consulting. Building solutions, forging success.">
+    <title>Support Forge | AI & IT Consulting Services</title>
+    <meta name="description" content="Support Forge delivers enterprise AI solutions, IT consulting, and managed technology services. Transform your business with intelligent automation and expert support.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-background"></div>
-
     <header>
         <nav>
             <div class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 60 60" class="anvil-logo">
-                        <!-- Anvil base -->
-                        <path d="M10 45 L50 45 L55 50 L5 50 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <!-- Anvil body -->
-                        <path d="M15 35 L45 35 L50 45 L10 45 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <!-- Anvil top/horn -->
-                        <path d="M20 25 L40 25 L45 35 L15 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <path d="M5 28 L20 25 L20 35 L8 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <!-- Hammer -->
-                        <rect x="27" y="5" width="6" height="20" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <rect x="22" y="2" width="16" height="8" rx="1" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                        <!-- Glow effects -->
-                        <defs>
-                            <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#c0c0c0"/>
-                                <stop offset="50%" style="stop-color:#808080"/>
-                                <stop offset="100%" style="stop-color:#404040"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <span class="logo-text">SUPPORT<span class="accent">FORGE</span></span>
+                <svg viewBox="0 0 40 40" class="logo-icon">
+                    <!-- Anvil -->
+                    <path d="M8 28 L32 28 L35 32 L5 32 Z" fill="#c0c0c0" stroke="#dc2626" stroke-width="0.5"/>
+                    <path d="M10 22 L30 22 L32 28 L8 28 Z" fill="#a0a0a0" stroke="#dc2626" stroke-width="0.5"/>
+                    <path d="M13 17 L27 17 L30 22 L10 22 Z" fill="#888" stroke="#dc2626" stroke-width="0.5"/>
+                    <path d="M4 19 L13 17 L13 22 L6 22 Z" fill="#888" stroke="#dc2626" stroke-width="0.5"/>
+                    <!-- Hammer -->
+                    <rect x="18" y="4" width="4" height="13" fill="#a0a0a0" stroke="#dc2626" stroke-width="0.5"/>
+                    <rect x="14" y="2" width="12" height="5" rx="1" fill="#b0b0b0" stroke="#dc2626" stroke-width="0.5"/>
+                </svg>
+                <span class="logo-text">Support<span class="accent">Forge</span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
             </ul>
-            <div class="nav-glow"></div>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-badge">ENTERPRISE IT SOLUTIONS</div>
-                <h1>FORGING THE <span class="text-gradient">FUTURE</span> OF TECHNOLOGY</h1>
-                <p class="hero-tagline">Building solutions. Forging success.</p>
-                <p class="hero-description">Elite technology services engineered for businesses that demand excellence</p>
+                <div class="hero-label">AI & IT Consulting</div>
+                <h1>Intelligent Solutions for <span class="highlight">Modern Business</span></h1>
+                <p class="hero-description">We help organizations harness the power of artificial intelligence and enterprise technology to drive growth, efficiency, and competitive advantage.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Initialize Contact</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="#services" class="btn btn-secondary">
-                        <span>Explore Services</span>
-                    </a>
+                    <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-text">Projects Delivered</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-text">Client Satisfaction</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-text">Support Available</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="forge-animation">
-                    <svg viewBox="0 0 200 200" class="hero-logo">
-                        <!-- Anvil base -->
-                        <path d="M40 150 L160 150 L175 170 L25 170 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
-                        </path>
-                        <!-- Anvil body -->
-                        <path d="M55 115 L145 115 L160 150 L40 150 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.2s"/>
-                        </path>
-                        <!-- Anvil top -->
-                        <path d="M70 85 L130 85 L145 115 L55 115 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.4s"/>
-                        </path>
-                        <!-- Anvil horn -->
-                        <path d="M20 95 L70 85 L70 115 L30 115 Z" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-                        </path>
-                        <!-- Hammer handle -->
-                        <rect x="90" y="20" width="20" height="60" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
-                        </rect>
-                        <!-- Hammer head -->
-                        <rect x="75" y="5" width="50" height="25" rx="3" fill="url(#heroMetal)" stroke="#ff0040" stroke-width="2">
-                            <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.6s"/>
-                        </rect>
-                        <!-- Sparks -->
-                        <circle cx="100" cy="85" r="3" fill="#ff0040" class="spark">
-                            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
-                            <animate attributeName="cy" values="85;60;85" dur="1.5s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="85" cy="85" r="2" fill="#8b00ff" class="spark">
-                            <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
-                            <animate attributeName="cx" values="85;60;85" dur="1.8s" repeatCount="indefinite" begin="0.3s"/>
-                        </circle>
-                        <circle cx="115" cy="85" r="2" fill="#ff0040" class="spark">
-                            <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
-                            <animate attributeName="cx" values="115;140;115" dur="1.6s" repeatCount="indefinite" begin="0.6s"/>
-                        </circle>
-                        <defs>
-                            <linearGradient id="heroMetal" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#e0e0e0"/>
-                                <stop offset="30%" style="stop-color:#a0a0a0"/>
-                                <stop offset="70%" style="stop-color:#606060"/>
-                                <stop offset="100%" style="stop-color:#303030"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <span class="visual-dot"></span>
+                        <span class="visual-dot"></span>
+                        <span class="visual-dot"></span>
+                    </div>
+                    <div class="visual-content">
+                        <div class="visual-line"></div>
+                        <div class="visual-line short"></div>
+                        <div class="visual-line medium"></div>
+                        <div class="visual-chart">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 65%"></div>
+                            <div class="chart-bar" style="height: 45%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar active" style="height: 95%"></div>
+                        </div>
+                        <div class="visual-line short"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="services" class="services">
-            <div class="section-header">
-                <div class="section-line"></div>
-                <h2>SERVICES</h2>
-                <div class="section-line"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">What We Do</span>
+                    <h2>Comprehensive Technology Services</h2>
+                    <p class="section-description">From AI implementation to ongoing IT support, we provide end-to-end solutions tailored to your business needs.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card featured">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+                                <path d="M16 14H8a4 4 0 0 0-4 4v2h16v-2a4 4 0 0 0-4-4z"/>
+                                <circle cx="12" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="service-badge">Most Popular</span>
+                        <h3>AI Consulting & Implementation</h3>
+                        <p>Transform your operations with custom AI solutions. From machine learning models to intelligent automation, we design and deploy AI systems that deliver measurable results.</p>
+                        <ul class="service-list">
+                            <li>Custom AI/ML Model Development</li>
+                            <li>Process Automation & RPA</li>
+                            <li>Natural Language Processing</li>
+                            <li>Predictive Analytics</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8"/>
+                                <path d="M12 17v4"/>
+                                <path d="M7 8h2m4 0h4"/>
+                                <path d="M7 11h10"/>
+                            </svg>
+                        </div>
+                        <h3>Managed IT Services</h3>
+                        <p>Proactive monitoring, maintenance, and support for your entire IT infrastructure. Focus on your business while we handle the technology.</p>
+                        <ul class="service-list">
+                            <li>24/7 Network Monitoring</li>
+                            <li>Cloud Infrastructure Management</li>
+                            <li>Security & Compliance</li>
+                            <li>Help Desk Support</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Migrate, optimize, and manage your cloud environment. We architect scalable solutions on AWS, Azure, and Google Cloud.</p>
+                        <ul class="service-list">
+                            <li>Cloud Migration Strategy</li>
+                            <li>Multi-Cloud Architecture</li>
+                            <li>Cost Optimization</li>
+                            <li>DevOps & CI/CD</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Protect your business with comprehensive security assessments, threat monitoring, and incident response services.</p>
+                        <ul class="service-list">
+                            <li>Security Assessments & Audits</li>
+                            <li>Threat Detection & Response</li>
+                            <li>Compliance Management</li>
+                            <li>Employee Security Training</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+                    </div>
+                </div>
             </div>
-            <p class="section-subtitle">Advanced solutions forged for modern enterprises</p>
+        </section>
 
-            <div class="service-grid">
-                <div class="service-card" data-service="support">
-                    <div class="card-border"></div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>TECHNICAL SUPPORT</h3>
-                    <p>Rapid-response troubleshooting and resolution. 24/7 monitoring with sub-hour response times.</p>
-                    <ul class="service-features">
-                        <li><span class="feature-dot"></span>24/7 Help Desk</li>
-                        <li><span class="feature-dot"></span>Remote & On-Site</li>
-                        <li><span class="feature-dot"></span>Hardware Diagnostics</li>
-                        <li><span class="feature-dot"></span>Software Solutions</li>
-                    </ul>
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Industries We Serve</span>
+                    <h2>Tailored Solutions by Sector</h2>
+                    <p class="section-description">We understand that every industry has unique challenges. Our solutions are customized to meet your specific requirements.</p>
                 </div>
 
-                <div class="service-card" data-service="managed">
-                    <div class="card-border"></div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6m0 6v10M1 12h6m6 0h10"/>
-                            <circle cx="12" cy="12" r="10"/>
-                        </svg>
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 21h18"/>
+                                <path d="M5 21V7l8-4 8 4v14"/>
+                                <path d="M9 21v-4h6v4"/>
+                                <path d="M9 9h1"/>
+                                <path d="M14 9h1"/>
+                                <path d="M9 13h1"/>
+                                <path d="M14 13h1"/>
+                            </svg>
+                        </div>
+                        <h4>Financial Services</h4>
+                        <p>AI-driven risk analysis, fraud detection, and regulatory compliance solutions.</p>
                     </div>
-                    <h3>MANAGED SERVICES</h3>
-                    <p>Proactive infrastructure management. Prevent failures before they impact operations.</p>
-                    <ul class="service-features">
-                        <li><span class="feature-dot"></span>Network Monitoring</li>
-                        <li><span class="feature-dot"></span>Security Operations</li>
-                        <li><span class="feature-dot"></span>Backup & Recovery</li>
-                        <li><span class="feature-dot"></span>System Optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card" data-service="development">
-                    <div class="card-border"></div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
-                            <line x1="14" y1="4" x2="10" y2="20"/>
-                        </svg>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <h4>Healthcare</h4>
+                        <p>HIPAA-compliant systems, patient data analytics, and clinical workflow optimization.</p>
                     </div>
-                    <h3>WEB DEVELOPMENT</h3>
-                    <p>Custom digital solutions engineered for performance, scalability, and impact.</p>
-                    <ul class="service-features">
-                        <li><span class="feature-dot"></span>Responsive Design</li>
-                        <li><span class="feature-dot"></span>E-Commerce Platforms</li>
-                        <li><span class="feature-dot"></span>Web Applications</li>
-                        <li><span class="feature-dot"></span>API Integration</li>
-                    </ul>
-                </div>
-
-                <div class="service-card" data-service="consulting">
-                    <div class="card-border"></div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
-                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
-                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h4>Manufacturing</h4>
+                        <p>Predictive maintenance, supply chain optimization, and smart factory solutions.</p>
                     </div>
-                    <h3>IT CONSULTING</h3>
-                    <p>Strategic technology guidance to align systems with business objectives.</p>
-                    <ul class="service-features">
-                        <li><span class="feature-dot"></span>Technology Assessment</li>
-                        <li><span class="feature-dot"></span>Strategic Planning</li>
-                        <li><span class="feature-dot"></span>Digital Transformation</li>
-                        <li><span class="feature-dot"></span>Vendor Management</li>
-                    </ul>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <path d="M3 6h18"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                        </div>
+                        <h4>Retail & E-Commerce</h4>
+                        <p>Customer analytics, inventory management, and personalization engines.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about">
-            <div class="section-header">
-                <div class="section-line"></div>
-                <h2>ABOUT</h2>
-                <div class="section-line"></div>
-            </div>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="section-label">About Support Forge</span>
+                        <h2>Technology Partners You Can Trust</h2>
+                        <p class="about-lead">We founded Support Forge with a simple mission: make enterprise-grade technology accessible to businesses of all sizes.</p>
+                        <p>Our team combines deep technical expertise with real-world business experience. We don't just implement technology—we ensure it delivers tangible value for your organization.</p>
+                        <p>Whether you're exploring AI for the first time or optimizing existing infrastructure, we provide the guidance and support you need to succeed.</p>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-lead">We are <span class="text-gradient">Support Forge</span> — where technology is forged into solutions.</p>
-                    <p>Built on the principles of precision, reliability, and relentless innovation, we engineer IT solutions that empower businesses to dominate their industries. Our team operates at the cutting edge, combining deep technical expertise with strategic vision.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span>Certified consultants</span>
+                            </div>
+                            <div class="about-feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span>Transparent pricing</span>
+                            </div>
+                            <div class="about-feature">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                <span>Ongoing support included</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">99.9%</div>
+                            <div class="stat-label">Uptime SLA</div>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 99.9%"></div></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">&lt;2hr</div>
+                            <div class="stat-label">Avg. Response Time</div>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Enterprise Clients</div>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 75%"></div></div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">99.9<span class="stat-unit">%</span></div>
-                        <div class="stat-label">UPTIME GUARANTEE</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 99.9%"></div></div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">&lt;1<span class="stat-unit">HR</span></div>
-                        <div class="stat-label">RESPONSE TIME</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">24<span class="stat-unit">/7</span></div>
-                        <div class="stat-label">SUPPORT ACTIVE</div>
-                        <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
-                    </div>
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Schedule a free consultation to discuss how AI and modern IT solutions can drive your success.</p>
+                    <a href="#contact" class="btn btn-primary btn-large">Book Free Consultation</a>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <div class="section-header">
-                <div class="section-line"></div>
-                <h2>CONTACT</h2>
-                <div class="section-line"></div>
-            </div>
-            <p class="section-subtitle">Initialize a connection with our team</p>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-label">Get In Touch</span>
+                        <h2>Let's Discuss Your Project</h2>
+                        <p>Tell us about your challenges and goals. We'll respond within one business day with insights and recommendations.</p>
 
-            <form id="contact-form" class="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">IDENTIFIER</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <div class="input-border"></div>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>contact@support-forge.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>(555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>Mon-Fri: 8am - 6pm EST</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">NETWORK ADDRESS</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <div class="input-border"></div>
-                    </div>
+
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Work Email *</label>
+                                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interest</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="ai-consulting">AI Consulting</option>
+                                    <option value="managed-it">Managed IT Services</option>
+                                    <option value="cloud">Cloud Solutions</option>
+                                    <option value="security">Cybersecurity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we help? *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project, challenges, or questions..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <p class="form-note">We typically respond within 24 hours.</p>
+                    </form>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">COMM LINK</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone (optional)">
-                        <div class="input-border"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">SERVICE PROTOCOL</label>
-                        <select id="service" name="service">
-                            <option value="">Select Service</option>
-                            <option value="technical-support">Technical Support</option>
-                            <option value="managed-services">Managed Services</option>
-                            <option value="web-development">Web Development</option>
-                            <option value="consulting">IT Consulting</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="input-border"></div>
-                    </div>
-                </div>
-                <div class="form-group full-width">
-                    <label for="message">TRANSMISSION</label>
-                    <textarea id="message" name="message" placeholder="Describe your project or requirements" required></textarea>
-                    <div class="input-border"></div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-submit">
-                    <span>TRANSMIT MESSAGE</span>
-                    <div class="btn-glow"></div>
-                </button>
-            </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-icon small">
-                        <svg viewBox="0 0 60 60" class="anvil-logo">
-                            <path d="M10 45 L50 45 L55 50 L5 50 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                            <path d="M15 35 L45 35 L50 45 L10 45 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                            <path d="M20 25 L40 25 L45 35 L15 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                            <path d="M5 28 L20 25 L20 35 L8 35 Z" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                            <rect x="27" y="5" width="6" height="20" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
-                            <rect x="22" y="2" width="16" height="8" rx="1" fill="url(#metalGradient)" stroke="#ff0040" stroke-width="1"/>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg viewBox="0 0 40 40" class="logo-icon">
+                            <path d="M8 28 L32 28 L35 32 L5 32 Z" fill="#c0c0c0" stroke="#dc2626" stroke-width="0.5"/>
+                            <path d="M10 22 L30 22 L32 28 L8 28 Z" fill="#a0a0a0" stroke="#dc2626" stroke-width="0.5"/>
+                            <path d="M13 17 L27 17 L30 22 L10 22 Z" fill="#888" stroke="#dc2626" stroke-width="0.5"/>
+                            <path d="M4 19 L13 17 L13 22 L6 22 Z" fill="#888" stroke="#dc2626" stroke-width="0.5"/>
+                            <rect x="18" y="4" width="4" height="13" fill="#a0a0a0" stroke="#dc2626" stroke-width="0.5"/>
+                            <rect x="14" y="2" width="12" height="5" rx="1" fill="#b0b0b0" stroke="#dc2626" stroke-width="0.5"/>
                         </svg>
+                        <span class="logo-text">Support<span class="accent">Forge</span></span>
                     </div>
-                    <span class="logo-text">SUPPORT<span class="accent">FORGE</span></span>
+                    <p>Enterprise AI and IT consulting services that deliver results.</p>
                 </div>
-                <p class="footer-tagline">Building solutions. Forging success.</p>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#services">AI Consulting</a>
+                        <a href="#services">Managed IT</a>
+                        <a href="#services">Cloud Solutions</a>
+                        <a href="#services">Cybersecurity</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Support Forge. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-line"></div>
-            <p>&copy; 2025 Support Forge. All rights reserved.</p>
         </div>
     </footer>
 
