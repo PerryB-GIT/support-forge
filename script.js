@@ -241,3 +241,70 @@ document.querySelectorAll('.service-card').forEach(card => {
         this.querySelector('.service-link span')?.style.setProperty('transform', 'translateX(0)');
     });
 });
+
+// Schedule form handling
+const scheduleForm = document.getElementById('schedule-form');
+if (scheduleForm) {
+    const dateInput = document.getElementById('schedule-date');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    }
+
+    scheduleForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const date = formData.get('date');
+        const time = formData.get('time');
+
+        const dateObj = new Date(date);
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = dateObj.toLocaleDateString('en-US', options);
+
+        const timeDisplay = time.replace('09:', '9:').replace('10:', '10:').replace('11:', '11:')
+            .replace('13:', '1:').replace('14:', '2:').replace('15:', '3:').replace('16:', '4:') + ' EST';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'modal-overlay';
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(12,12,15,0.95);display:flex;justify-content:center;align-items:center;z-index:10000;opacity:0;transition:opacity 0.3s ease;';
+
+        const modal = document.createElement('div');
+        modal.style.cssText = 'background:#141419;border:1px solid #2a2a35;border-radius:12px;padding:40px;max-width:480px;text-align:center;transform:scale(0.9);transition:transform 0.3s ease;';
+
+        modal.innerHTML = '<div style="width:64px;height:64px;border-radius:50%;background:rgba(220,38,38,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg></div>' +
+            '<h3 style="font-family:Space Grotesk,sans-serif;font-size:1.5rem;font-weight:600;color:#f9fafb;margin-bottom:12px;">Consultation Scheduled!</h3>' +
+            '<p style="color:#9ca3af;font-size:1rem;margin-bottom:8px;">Thank you, ' + name + '!</p>' +
+            '<p style="color:#f9fafb;font-size:1.1rem;font-weight:500;margin-bottom:8px;">' + formattedDate + ' at ' + timeDisplay + '</p>' +
+            '<p style="color:#9ca3af;font-size:0.95rem;margin-bottom:28px;">A confirmation email has been sent to <strong style="color:#f9fafb;">' + email + '</strong></p>' +
+            '<button onclick="this.parentElement.parentElement.remove()" style="font-family:Inter,sans-serif;background:#dc2626;border:none;color:white;padding:14px 32px;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:500;">Got it</button>';
+
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        setTimeout(() => {
+            overlay.style.opacity = '1';
+            modal.style.transform = 'scale(1)';
+        }, 10);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.style.opacity = '0';
+                modal.style.transform = 'scale(0.9)';
+                setTimeout(() => overlay.remove(), 300);
+            }
+        });
+
+        this.reset();
+    });
+}
+
+// Add schedule section to fade-in animations
+document.querySelectorAll('.schedule-info, .schedule-form-container').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    fadeInObserver.observe(el);
+});

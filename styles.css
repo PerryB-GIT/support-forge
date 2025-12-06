@@ -828,6 +828,121 @@ footer {
     color: var(--text-primary);
 }
 
+
+
+/* ===== SCHEDULE SECTION ===== */
+.schedule-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.schedule-info {
+    padding-right: 20px;
+}
+
+.schedule-benefits h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.benefit-item svg {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: var(--accent);
+    padding: 8px;
+    background: rgba(220, 38, 38, 0.1);
+    border-radius: 10px;
+}
+
+.benefit-item h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.benefit-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.schedule-form-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.schedule-form .form-group {
+    margin-bottom: 20px;
+}
+
+.schedule-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.schedule-form input,
+.schedule-form select {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.schedule-form input:focus,
+.schedule-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.schedule-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.schedule-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+@media (max-width: 1024px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .hero {
