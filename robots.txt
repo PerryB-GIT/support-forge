@@ -1,0 +1,16 @@
+# Robots.txt for support-forge.com
+# https://support-forge.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://support-forge.com/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
+
+# Block common non-content directories
+Disallow: /chat/
+Disallow: /server/
+Disallow: /*.env$
