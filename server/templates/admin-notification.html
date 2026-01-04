@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Submission - Support Forge Admin</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: #f4f4f4;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 40px 20px;">
+                <table role="presentation" style="max-width: 600px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #8b5a2b 0%, #b87333 100%); padding: 25px 40px;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 300; letter-spacing: 2px;">
+                                            SUPPORT FORGE
+                                        </h1>
+                                        <p style="margin: 5px 0 0 0; color: rgba(255, 255, 255, 0.8); font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                                            Admin Notification
+                                        </p>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <div style="background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 4px; display: inline-block;">
+                                            <span style="color: #ffffff; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                                {{type}}
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Alert Banner -->
+                    <tr>
+                        <td style="background: #b87333; padding: 15px 40px; text-align: center;">
+                            <p style="margin: 0; color: #ffffff; font-size: 16px; font-weight: 500; letter-spacing: 0.5px;">
+                                {{title}}
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px; color: #e0e0e0;">
+                            <!-- Timestamp -->
+                            <div style="background: #252525; padding: 12px 20px; margin: 0 0 30px 0; border-radius: 4px; border-left: 4px solid #b87333;">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Received</td>
+                                        <td style="text-align: right; color: #e0e0e0; font-size: 14px; font-weight: 500;">{{timestamp}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Submission Details -->
+                            <div style="background: #2a2a2a; border: 1px solid #333; padding: 30px; margin: 0 0 30px 0; border-radius: 8px;">
+                                <h3 style="margin: 0 0 20px 0; color: #b87333; font-size: 18px; font-weight: 400; padding-bottom: 10px; border-bottom: 2px solid #333;">
+                                    Submission Details
+                                </h3>
+
+                                <div style="color: #e0e0e0; line-height: 1.8; font-size: 15px;">
+                                    {{details}}
+                                </div>
+                            </div>
+
+                            <!-- Action Required Notice -->
+                            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%); border: 2px solid #b87333; padding: 20px; margin: 30px 0; border-radius: 6px;">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td style="width: 40px; vertical-align: top;">
+                                            <div style="width: 30px; height: 30px; background: #b87333; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: bold; font-size: 18px;">
+                                                !
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">
+                                            <p style="margin: 0; color: #b87333; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                                Action Required
+                                            </p>
+                                            <p style="margin: 5px 0 0 0; color: #d0d0d0; font-size: 14px; line-height: 1.5;">
+                                                Please review and respond to this submission within 24 business hours.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <table style="width: 100%; margin: 30px 0;">
+                                <tr>
+                                    <td style="width: 50%; padding: 15px; background: #252525; border-radius: 4px; text-align: center;">
+                                        <p style="margin: 0; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Priority</p>
+                                        <p style="margin: 8px 0 0 0; color: #b87333; font-size: 20px; font-weight: 600;">Normal</p>
+                                    </td>
+                                    <td style="width: 20px;"></td>
+                                    <td style="width: 50%; padding: 15px; background: #252525; border-radius: 4px; text-align: center;">
+                                        <p style="margin: 0; color: #999; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Status</p>
+                                        <p style="margin: 8px 0 0 0; color: #4CAF50; font-size: 20px; font-weight: 600;">New</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Admin Actions -->
+                            <div style="background: #0d0d0d; padding: 20px; margin: 30px 0 0 0; border-radius: 4px; text-align: center;">
+                                <p style="margin: 0 0 15px 0; color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    Quick Actions
+                                </p>
+                                <table role="presentation" style="width: 100%;">
+                                    <tr>
+                                        <td style="text-align: center; padding: 5px;">
+                                            <a href="#" style="display: inline-block; background: #b87333; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">
+                                                View in Dashboard
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background: #0d0d0d; padding: 25px 40px; text-align: center; border-top: 1px solid #333;">
+                            <p style="margin: 0 0 8px 0; color: #777; font-size: 11px; line-height: 1.5;">
+                                This is an automated notification from the Support Forge admin system.
+                            </p>
+                            <p style="margin: 0; color: #666; font-size: 10px;">
+                                &copy; 2024 Support Forge Admin Panel. All rights reserved.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
