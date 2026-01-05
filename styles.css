@@ -138,6 +138,11 @@ nav {
     background: var(--accent-hover) !important;
 }
 
+.nav-highlight {
+    color: var(--accent) !important;
+    font-weight: 600;
+}
+
 .mobile-menu {
     display: none;
     flex-direction: column;
