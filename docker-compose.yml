@@ -17,6 +17,7 @@ services:
       - CLOUDFRONT_DOMAIN=${CLOUDFRONT_DOMAIN}
       - CLOUDFRONT_KEY_PAIR_ID=${CLOUDFRONT_KEY_PAIR_ID}
       - S3_BUCKET=launchpad-academy-videos
+      - VIDEO_S3_BUCKET=launchpad-academy-videos
     volumes:
       # Persist SQLite database
       - ./data:/app/server/data
