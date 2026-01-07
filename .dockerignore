@@ -1,0 +1,22 @@
+# Ignore development/build artifacts
+server/scripts/output/
+server/scripts/*.py
+
+# Ignore node_modules (will be installed fresh)
+node_modules/
+server/node_modules/
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore dev files
+*.log
+*.md
+.env*
+*.backup
+*.bak
+
+# Ignore marketing/docs
+marketing/
+docs/
