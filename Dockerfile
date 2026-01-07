@@ -19,10 +19,7 @@ COPY server/ ./server/
 # Copy static frontend files
 COPY *.html ./
 COPY *.css ./
-COPY *.js ./
 COPY academy/ ./academy/
-COPY assets/ ./assets/ 2>/dev/null || true
-COPY images/ ./images/ 2>/dev/null || true
 
 # Create data directory for SQLite
 RUN mkdir -p /app/server/data
