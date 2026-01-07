@@ -91,17 +91,12 @@ async function writeSubmissions(data) {
   }
 }
 
-// Routes
-app.get('/', (req, res) => {
+// Health check endpoint
+app.get('/api/health', (req, res) => {
   res.json({
-    message: 'Support Forge API',
-    version: '1.0.0',
-    endpoints: {
-      contact: 'POST /api/contact',
-      schedule: 'POST /api/schedule',
-      calendly: '/api/calendly/*',
-      email: '/api/email/*'
-    }
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    version: '1.0.0'
   });
 });
 
@@ -268,12 +263,19 @@ initializeAcademy(app);
 // Serve academy static files
 app.use('/academy', express.static(path.join(__dirname, '..', 'academy')));
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: 'Endpoint not found'
-  });
+// Serve static files from parent directory (root HTML, CSS, JS, images)
+app.use(express.static(path.join(__dirname, '..')));
+
+// Fallback to index.html for unmatched routes (client-side routing)
+app.get('*', (req, res) => {
+  // Don't serve index.html for API routes that don't exist
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({
+      success: false,
+      error: 'API endpoint not found'
+    });
+  }
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // Error handler

@@ -19,6 +19,10 @@ COPY server/ ./server/
 # Copy static frontend files
 COPY *.html ./
 COPY *.css ./
+COPY *.js ./
+COPY *.ico ./
+COPY *.png ./
+COPY *.json ./
 COPY academy/ ./academy/
 
 # Create data directory for SQLite
