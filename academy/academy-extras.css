@@ -1,0 +1,335 @@
+/* ===========================================
+   AI Launchpad Academy - Extra Styles
+   Additional styles for components
+   =========================================== */
+
+/* ===========================================
+   Circular Progress Component
+   =========================================== */
+.circular-progress {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================================
+   Academy App Container
+   =========================================== */
+.academy-app {
+    min-height: 100vh;
+    background: var(--academy-bg-darkest);
+}
+
+/* ===========================================
+   Empty States
+   =========================================== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--academy-bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--academy-border);
+}
+
+.empty-state svg {
+    width: 48px;
+    height: 48px;
+    color: var(--academy-text-muted);
+    margin-bottom: 16px;
+}
+
+.empty-state h3 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--academy-text-primary);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--academy-text-secondary);
+}
+
+/* ===========================================
+   Video Player Customization
+   =========================================== */
+.plyr {
+    --plyr-color-main: var(--academy-accent);
+    --plyr-video-background: #000;
+    --plyr-menu-background: var(--academy-bg-card);
+    --plyr-menu-color: var(--academy-text-primary);
+    --plyr-tooltip-background: var(--academy-bg-elevated);
+    --plyr-tooltip-color: var(--academy-text-primary);
+}
+
+.plyr__controls {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+
+.plyr__control--overlaid {
+    background: var(--academy-accent);
+}
+
+.plyr__control--overlaid:hover {
+    background: var(--academy-accent-hover);
+}
+
+/* ===========================================
+   Scrollbar Styling
+   =========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--academy-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--academy-bg-elevated);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--academy-accent-muted);
+}
+
+/* ===========================================
+   Animation Classes
+   =========================================== */
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================================
+   Disabled State for Buttons
+   =========================================== */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===========================================
+   Focus States for Accessibility
+   =========================================== */
+.btn:focus-visible,
+.form-input:focus-visible,
+.video-part-tab:focus-visible,
+.lesson-item:focus-visible,
+.module-header:focus-visible {
+    outline: 2px solid var(--academy-accent);
+    outline-offset: 2px;
+}
+
+/* ===========================================
+   Selection Color
+   =========================================== */
+::selection {
+    background: var(--academy-accent);
+    color: white;
+}
+
+/* ===========================================
+   Link Styles
+   =========================================== */
+a {
+    color: var(--academy-accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--academy-accent-hover);
+}
+
+/* ===========================================
+   Mobile Menu for Lesson View
+   =========================================== */
+@media (max-width: 1024px) {
+    .lesson-sidebar-toggle {
+        display: flex;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        background: var(--academy-accent);
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        z-index: 100;
+        border: none;
+        color: white;
+    }
+
+    .lesson-sidebar-toggle svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .lesson-sidebar-toggle {
+        display: none;
+    }
+}
+
+/* ===========================================
+   Loading States
+   =========================================== */
+.skeleton {
+    background: linear-gradient(90deg,
+        var(--academy-bg-card) 25%,
+        var(--academy-bg-elevated) 50%,
+        var(--academy-bg-card) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+    height: 1em;
+    margin-bottom: 0.5em;
+}
+
+.skeleton-title {
+    height: 1.5em;
+    width: 60%;
+    margin-bottom: 0.75em;
+}
+
+.skeleton-thumbnail {
+    aspect-ratio: 16/9;
+}
+
+/* ===========================================
+   Course Progress Ring on Cards
+   =========================================== */
+.course-progress-ring {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+/* ===========================================
+   Keyboard Shortcut Hints
+   =========================================== */
+.keyboard-shortcut {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--academy-text-muted);
+}
+
+.keyboard-key {
+    padding: 2px 6px;
+    background: var(--academy-bg-dark);
+    border: 1px solid var(--academy-border);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.7rem;
+}
+
+/* ===========================================
+   Video Speed Indicator
+   =========================================== */
+.video-speed-indicator {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.video-speed-indicator.visible {
+    opacity: 1;
+}
+
+/* ===========================================
+   Completion Celebration
+   =========================================== */
+.celebration-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 10, 26, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.celebration-card {
+    background: var(--academy-bg-card);
+    border: 2px solid var(--academy-success);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    max-width: 400px;
+    animation: slideUp 0.3s ease;
+}
+
+.celebration-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--academy-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+}
+
+.celebration-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.celebration-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    color: var(--academy-text-primary);
+    margin-bottom: 8px;
+}
+
+.celebration-text {
+    color: var(--academy-text-secondary);
+    margin-bottom: 24px;
+}

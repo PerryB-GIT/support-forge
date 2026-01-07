@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 // Route imports
 import calendlyRoutes from './routes/calendly.js';
 import emailRoutes from './routes/email.js';
+import { initializeAcademy } from './academy/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -259,6 +260,13 @@ app.post('/api/schedule', async (req, res) => {
     });
   }
 });
+
+
+// Initialize Academy module (course portal)
+initializeAcademy(app);
+
+// Serve academy static files
+app.use('/academy', express.static(path.join(__dirname, '..', 'academy')));
 
 // 404 handler
 app.use((req, res) => {
