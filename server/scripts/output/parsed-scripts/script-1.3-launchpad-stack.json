@@ -1,0 +1,545 @@
+{
+  "script_id": "script-1.3-launchpad-stack",
+  "title": "Understanding the Launchpad Stack",
+  "total_duration_seconds": 521.7,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 10.3,
+      "visual_cue": "\"The Launchpad Stack\" title with architecture diagram teaser",
+      "visual_type": "flowchart",
+      "spoken_text": "Now that you've got all your accounts created, let's step back and see the whole picture. What are we actually building here?\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 2,
+      "start_time": 10.3,
+      "end_time": 31.7,
+      "visual_cue": "Architecture diagram overview - all components",
+      "visual_type": "flowchart",
+      "spoken_text": "In this lesson, I'm going to walk you through the complete Launchpad Stack. You'll understand what each component does, how they connect, and most importantly, why we're using each one.\n\n[PAUSE]\n\nBy the end, you'll have a mental map of the entire system. Let's break it down.\n\n[PAUSE]",
+      "word_count": 46
+    },
+    {
+      "segment_id": 3,
+      "start_time": 31.7,
+      "end_time": 51.6,
+      "visual_cue": "Three-layer architecture diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Think of the stack in three layers. At the bottom, you've got your foundation layer, the core infrastructure. In the middle, you've got your intelligence layer, where AI does its work. And at the top, you've got your automation layer, where everything connects and triggers actions.\n\n[PAUSE]",
+      "word_count": 46
+    },
+    {
+      "segment_id": 4,
+      "start_time": 51.6,
+      "end_time": 64.2,
+      "visual_cue": "Foundation layer highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Foundation layer handles storage, computing, and access. Intelligence layer handles thinking and creating. Automation layer handles connecting and executing.\n\n[PAUSE]\n\nLet's walk through each component.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 5,
+      "start_time": 64.2,
+      "end_time": 92.8,
+      "visual_cue": "GitHub logo with connection lines",
+      "visual_type": "illustration",
+      "spoken_text": "First: GitHub. This is your version control and collaboration hub. Even though you might not think of yourself as a coder, every project we build will live here.\n\n[PAUSE]\n\nWhy GitHub? Because Claude Code integrates directly with it. When you're building automations, when you're creating scripts, everything gets version controlled automatically. That means you can always go back to a working version if something breaks.\n\n[PAUSE]",
+      "word_count": 64
+    },
+    {
+      "segment_id": 6,
+      "start_time": 92.8,
+      "end_time": 105.5,
+      "visual_cue": "Git workflow visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Think of it like Google Docs history, but for code and configuration. You make changes, they're tracked, you can compare versions, you can collaborate with others if needed.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 7,
+      "start_time": 105.5,
+      "end_time": 129.7,
+      "visual_cue": "AWS and Google Cloud logos side by side",
+      "visual_type": "screen_capture",
+      "spoken_text": "Next: AWS and Google Cloud. These are your cloud infrastructure providers.\n\n[PAUSE]\n\nWhy both? Because different services have different strengths. Google Cloud has excellent AI APIs (A-P-Is) and integrates seamlessly with Google Workspace if you're using Gmail, Drive, and Calendar. AWS has broader infrastructure options and is often where you'll deploy more complex applications.\n\n[PAUSE]",
+      "word_count": 53
+    },
+    {
+      "segment_id": 8,
+      "start_time": 129.7,
+      "end_time": 153.9,
+      "visual_cue": "Specific services highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "For this course, we're primarily using specific services within each. From Google Cloud, mainly their APIs (A-P-Is). From AWS, services like S3 (S-three) for storage, Lambda for serverless functions, and potentially Amplify for hosting if you build web applications.\n\n[PAUSE]\n\nYou won't need to understand everything these platforms offer. We're cherry-picking the useful parts.\n\n[PAUSE]",
+      "word_count": 53
+    },
+    {
+      "segment_id": 9,
+      "start_time": 153.9,
+      "end_time": 160.6,
+      "visual_cue": "Anthropic/Claude logo prominently displayed",
+      "visual_type": "illustration",
+      "spoken_text": "The intelligence layer is where the magic happens, and Claude is the engine.\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 10,
+      "start_time": 160.6,
+      "end_time": 178.5,
+      "visual_cue": "Claude vs Claude Code comparison",
+      "visual_type": "comparison_table",
+      "spoken_text": "Let me clear up some confusion. Claude is the AI model. Claude Code is the development tool that lets you work with Claude in your terminal, integrated with your projects. You talk to Claude through Claude Code when you're building things.\n\n[PAUSE]",
+      "word_count": 41
+    },
+    {
+      "segment_id": 11,
+      "start_time": 178.5,
+      "end_time": 197.2,
+      "visual_cue": "API visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Under the hood, Claude Code is making API calls to Anthropic's servers. When you type a prompt, it goes to Claude, Claude thinks about it, and sends back a response. This all happens through the API key you'll set up in Module 2.\n\n[PAUSE]",
+      "word_count": 43
+    },
+    {
+      "segment_id": 12,
+      "start_time": 197.2,
+      "end_time": 210.3,
+      "visual_cue": "Claude capabilities summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude can read and write code, analyze documents, understand context from your project files, make decisions, and generate content. It's not just answering questions. It's actively helping you build.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 13,
+      "start_time": 210.3,
+      "end_time": 225.8,
+      "visual_cue": "Local + Cloud hybrid",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's the important part: Claude Code runs locally on your machine, but uses Claude's intelligence in the cloud. Your files stay on your computer. Only what you explicitly share in prompts goes to the API.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 14,
+      "start_time": 225.8,
+      "end_time": 232.9,
+      "visual_cue": "n8n and Zapier logos with workflow visualization",
+      "visual_type": "illustration",
+      "spoken_text": "The automation layer is where you connect everything and make it run without you.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 15,
+      "start_time": 232.9,
+      "end_time": 250.4,
+      "visual_cue": "n8n interface preview",
+      "visual_type": "screen_capture",
+      "spoken_text": "n8n (n-eight-n) is our primary automation platform. It's open-source, which means more flexibility and a generous free tier. You can self-host it if you want full control, or use their cloud version, which is what I recommend for starting out.\n\n[PAUSE]",
+      "word_count": 40
+    },
+    {
+      "segment_id": 16,
+      "start_time": 250.4,
+      "end_time": 265.9,
+      "visual_cue": "n8n workflow example - nodes connected",
+      "visual_type": "text_overlay",
+      "spoken_text": "In n8n, you build workflows by connecting nodes. Each node is an action: receive an email, call an API (A-P-I), update a database, send a message. You connect them together and define when they trigger.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 17,
+      "start_time": 265.9,
+      "end_time": 281.0,
+      "visual_cue": "Zapier interface preview",
+      "visual_type": "screen_capture",
+      "spoken_text": "Zapier is your backup and sometimes your bridge. It has the largest library of pre-built integrations. Over five thousand apps. If something doesn't connect directly to n8n, Zapier probably has a connector for it.\n\n[PAUSE]",
+      "word_count": 34
+    },
+    {
+      "segment_id": 18,
+      "start_time": 281.0,
+      "end_time": 295.7,
+      "visual_cue": "n8n vs Zapier comparison chart",
+      "visual_type": "comparison_table",
+      "spoken_text": "When do you use which? n8n for complex workflows where you need flexibility and control. Zapier for quick connections to apps that need ready-made integrations. We'll often use both in the same solution.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 19,
+      "start_time": 295.7,
+      "end_time": 300.4,
+      "visual_cue": "Full stack diagram with connection arrows animated",
+      "visual_type": "flowchart",
+      "spoken_text": "Now let's see how these pieces work together.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 20,
+      "start_time": 300.4,
+      "end_time": 336.6,
+      "visual_cue": "Example workflow: Customer email to automated response",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let me give you a concrete example. A customer sends an email to your support address. Zapier or n8n detects the new email and triggers a workflow. The email content gets sent to Claude via API (A-P-I) for analysis. Claude determines what the customer needs, drafts a response, and maybe looks up information from a database on AWS. The response goes back through the automation platform and sends the email.\n\n[PAUSE]\n\nAll of that can happen in seconds, automatically, while you're doing something else.\n\n[PAUSE]",
+      "word_count": 83
+    },
+    {
+      "segment_id": 21,
+      "start_time": 336.6,
+      "end_time": 349.7,
+      "visual_cue": "Data flow visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Data flows through the stack. GitHub stores your configuration and code. Cloud platforms store your data and provide services. Claude provides intelligence. Automation platforms connect everything and execute actions.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 22,
+      "start_time": 349.7,
+      "end_time": 360.0,
+      "visual_cue": "You as the architect",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your job is to be the architect. You design these flows, Claude helps you build them, and the automation platforms run them.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 23,
+      "start_time": 360.0,
+      "end_time": 365.5,
+      "visual_cue": "Cost breakdown chart",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's talk money. What does running this stack actually cost?\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 24,
+      "start_time": 365.5,
+      "end_time": 387.8,
+      "visual_cue": "Development phase costs",
+      "visual_type": "text_overlay",
+      "spoken_text": "During development and learning, you're mostly in free tiers. GitHub is free. Claude has free credits initially, then maybe five to twenty dollars per month for moderate API usage. Google Cloud free credits cover everything. AWS free tier covers everything. n8n free tier is generous. Zapier free tier is limited but workable.\n\n[PAUSE]",
+      "word_count": 52
+    },
+    {
+      "segment_id": 25,
+      "start_time": 387.8,
+      "end_time": 413.3,
+      "visual_cue": "Production phase costs estimate",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you're running real automations in production, costs go up but are usually reasonable. Claude API for a moderate business use case runs twenty to fifty dollars per month. n8n cloud plans start around twenty dollars per month. Zapier plans start around twenty dollars per month. AWS and Google Cloud for small-scale operations are typically under ten dollars per month.\n\n[PAUSE]",
+      "word_count": 60
+    },
+    {
+      "segment_id": 26,
+      "start_time": 413.3,
+      "end_time": 437.2,
+      "visual_cue": "Total monthly estimate range",
+      "visual_type": "text_overlay",
+      "spoken_text": "Realistic total for a small business running meaningful automations: fifty to one hundred fifty dollars per month. Compare that to the time you're saving. If these automations save you ten hours per week, and your time is worth fifty dollars per hour, you're saving two thousand dollars per month in labor. The ROI (R-O-I) is obvious.\n\n[PAUSE]",
+      "word_count": 56
+    },
+    {
+      "segment_id": 27,
+      "start_time": 437.2,
+      "end_time": 447.5,
+      "visual_cue": "Start free, scale as needed",
+      "visual_type": "text_overlay",
+      "spoken_text": "The beauty is you start free. You prove value before spending anything. Then you scale costs proportionally to the value you're getting.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 28,
+      "start_time": 447.5,
+      "end_time": 458.6,
+      "visual_cue": "Module roadmap with Module 2 highlighted",
+      "visual_type": "animated_title",
+      "spoken_text": "You've now completed the Landscape phase. You understand where you are, what problems you're solving, what tools you have, and how they fit together.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 29,
+      "start_time": 458.6,
+      "end_time": 472.1,
+      "visual_cue": "Module 2 preview - Claude Code Mastery",
+      "visual_type": "animated_title",
+      "spoken_text": "Module 2 is where we get hands-on. Claude Code Mastery. This is the Architect phase. You'll install Claude Code, learn to work with it effectively, and start building real solutions.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 30,
+      "start_time": 472.1,
+      "end_time": 484.0,
+      "visual_cue": "Skill progression visualization",
+      "visual_type": "illustration",
+      "spoken_text": "By the end of Module 2, you'll be having productive conversations with AI that result in actual working code and automation. Not just chatting, but collaborating.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 31,
+      "start_time": 484.0,
+      "end_time": 499.5,
+      "visual_cue": "Complete stack diagram with checkmark",
+      "visual_type": "flowchart",
+      "spoken_text": "Take a moment to review the stack diagram in your resources. Understand how the pieces connect. When something makes more sense because you see how it fits into the bigger picture, the learning sticks better.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 32,
+      "start_time": 499.5,
+      "end_time": 514.2,
+      "visual_cue": "Community prompt - share your audit results",
+      "visual_type": "screen_capture",
+      "spoken_text": "If you haven't already, share your AI Readiness Audit results in the community. Seeing what others are working on can spark ideas, and you might find someone with similar challenges to learn alongside.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 33,
+      "start_time": 514.2,
+      "end_time": 521.7,
+      "visual_cue": "Fade to \"Module 2: Claude Code Mastery\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "Congratulations on completing Module 1. I'll see you in Module 2, where we start building.\n\n[PAUSE]",
+      "word_count": 15
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Module 2: Claude Code Mastery\" with Support Forge branding",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 2 preview - Claude Code Mastery",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module roadmap with Module 2 highlighted",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Claude vs Claude Code comparison",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "n8n vs Zapier comparison chart",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "\"The Launchpad Stack\" title with architecture diagram teaser",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Architecture diagram overview - all components",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Complete stack diagram with checkmark",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Full stack diagram with connection arrows animated",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Three-layer architecture diagram",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "API visualization",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Anthropic/Claude logo prominently displayed",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Data flow visualization",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Git workflow visualization",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "GitHub logo with connection lines",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Skill progression visualization",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "n8n and Zapier logos with workflow visualization",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS and Google Cloud logos side by side",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Community prompt - share your audit results",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface preview",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n interface preview",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude capabilities summary",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost breakdown chart",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Development phase costs",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example workflow: Customer email to automated response",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Foundation layer highlighted",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Local + Cloud hybrid",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Production phase costs estimate",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Specific services highlighted",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Start free, scale as needed",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Total monthly estimate range",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "You as the architect",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n workflow example - nodes connected",
+      "segment_ids": [
+        16
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "10 minutes (~1500-1700 words)",
+    "lesson": "Module 1, Lesson 3",
+    "purpose": "Full stack overview, how components connect, realistic cost expectations",
+    "stated_word_count": "1,550",
+    "stated_runtime": "9:45-10:15"
+  },
+  "parsed_at": "2026-01-06T22:53:56.051867"
+}

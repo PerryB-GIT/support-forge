@@ -1,0 +1,268 @@
+{
+  "total_scripts": 37,
+  "total_segments": 1333,
+  "total_duration_seconds": 18087.5,
+  "total_duration_minutes": 301.4583333333333,
+  "scripts": [
+    {
+      "script_id": "5.1-automation-strategy",
+      "title": "Module 5.1: Automation Strategy",
+      "segments": 30,
+      "duration_seconds": 390.3,
+      "assets": 30
+    },
+    {
+      "script_id": "5.2-n8n-installation-setup",
+      "title": "Module 5.2: n8n Installation & Setup",
+      "segments": 51,
+      "duration_seconds": 476.2,
+      "assets": 51
+    },
+    {
+      "script_id": "5.3-building-n8n-workflows",
+      "title": "Module 5.3: Building n8n Workflows",
+      "segments": 63,
+      "duration_seconds": 638.0,
+      "assets": 60
+    },
+    {
+      "script_id": "5.4-zapier-essentials",
+      "title": "Module 5.4: Zapier Essentials",
+      "segments": 65,
+      "duration_seconds": 546.0,
+      "assets": 63
+    },
+    {
+      "script_id": "5.5-connecting-automations-to-claude",
+      "title": "Module 5.5: Connecting Automations to Claude",
+      "segments": 50,
+      "duration_seconds": 484.5,
+      "assets": 50
+    },
+    {
+      "script_id": "6.1-aws-fundamentals-for-ai",
+      "title": "Module 6.1: AWS Fundamentals for AI",
+      "segments": 42,
+      "duration_seconds": 463.9,
+      "assets": 42
+    },
+    {
+      "script_id": "6.2-deploying-with-aws-amplify",
+      "title": "Module 6.2: Deploying with AWS Amplify",
+      "segments": 51,
+      "duration_seconds": 467.2,
+      "assets": 51
+    },
+    {
+      "script_id": "6.3-google-cloud-for-ai-workloads",
+      "title": "Module 6.3: Google Cloud for AI Workloads",
+      "segments": 40,
+      "duration_seconds": 428.0,
+      "assets": 40
+    },
+    {
+      "script_id": "6.4-cost-management-optimization",
+      "title": "Module 6.4: Cost Management & Optimization",
+      "segments": 31,
+      "duration_seconds": 375.1,
+      "assets": 31
+    },
+    {
+      "script_id": "7.1-credential-security",
+      "title": "Module 7.1: Credential Security",
+      "segments": 28,
+      "duration_seconds": 615.6,
+      "assets": 28
+    },
+    {
+      "script_id": "7.2-access-control-auditing",
+      "title": "Module 7.2: Access Control & Auditing",
+      "segments": 25,
+      "duration_seconds": 506.8,
+      "assets": 25
+    },
+    {
+      "script_id": "7.3-responsible-ai-principles",
+      "title": "Module 7.3: Responsible AI Principles",
+      "segments": 28,
+      "duration_seconds": 684.8,
+      "assets": 28
+    },
+    {
+      "script_id": "7.4-documentation-handoff",
+      "title": "Module 7.4: Documentation & Handoff",
+      "segments": 15,
+      "duration_seconds": 358.0,
+      "assets": 15
+    },
+    {
+      "script_id": "8.1-capstone-project-overview",
+      "title": "Module 8.1: Capstone Project Overview",
+      "segments": 25,
+      "duration_seconds": 329.6,
+      "assets": 25
+    },
+    {
+      "script_id": "8.2-building-client-onboarding-agent",
+      "title": "Module 8.2: Building the Client Onboarding Agent",
+      "segments": 37,
+      "duration_seconds": 801.8,
+      "assets": 37
+    },
+    {
+      "script_id": "8.3-testing-refinement",
+      "title": "Module 8.3: Testing & Refinement",
+      "segments": 28,
+      "duration_seconds": 534.6,
+      "assets": 28
+    },
+    {
+      "script_id": "8.4-certification-next-steps",
+      "title": "Module 8.4: Certification & Next Steps",
+      "segments": 25,
+      "duration_seconds": 365.8,
+      "assets": 25
+    },
+    {
+      "script_id": "script-0.1-welcome",
+      "title": "Welcome to AI Launchpad",
+      "segments": 14,
+      "duration_seconds": 257.5,
+      "assets": 14
+    },
+    {
+      "script_id": "script-0.2-learning-environment",
+      "title": "Your Learning Environment",
+      "segments": 18,
+      "duration_seconds": 288.1,
+      "assets": 18
+    },
+    {
+      "script_id": "script-0.3-prerequisites-check",
+      "title": "Prerequisites Check",
+      "segments": 17,
+      "duration_seconds": 290.2,
+      "assets": 17
+    },
+    {
+      "script_id": "script-1.1-ai-readiness-audit",
+      "title": "The AI Readiness Audit",
+      "segments": 35,
+      "duration_seconds": 645.8,
+      "assets": 35
+    },
+    {
+      "script_id": "script-1.2-account-setup-marathon",
+      "title": "Account Setup Marathon",
+      "segments": 65,
+      "duration_seconds": 703.8,
+      "assets": 63
+    },
+    {
+      "script_id": "script-1.3-launchpad-stack",
+      "title": "Understanding the Launchpad Stack",
+      "segments": 33,
+      "duration_seconds": 521.7,
+      "assets": 33
+    },
+    {
+      "script_id": "script-2.1-installing-claude-code",
+      "title": "Installing Claude Code",
+      "segments": 53,
+      "duration_seconds": 578.6,
+      "assets": 49
+    },
+    {
+      "script_id": "script-2.2-first-session",
+      "title": "Your First Claude Code Session",
+      "segments": 68,
+      "duration_seconds": 685.0,
+      "assets": 68
+    },
+    {
+      "script_id": "script-2.3-prompting-business-tasks",
+      "title": "Prompting for Business Tasks",
+      "segments": 67,
+      "duration_seconds": 809.5,
+      "assets": 61
+    },
+    {
+      "script_id": "script-2.4-configuring-settings",
+      "title": "Configuring Settings",
+      "segments": 58,
+      "duration_seconds": 611.0,
+      "assets": 58
+    },
+    {
+      "script_id": "script-2.5-advanced-features",
+      "title": "Advanced Features",
+      "segments": 57,
+      "duration_seconds": 653.7,
+      "assets": 57
+    },
+    {
+      "script_id": "script-3.1-what-are-mcp",
+      "title": "What Are MCP Servers?",
+      "segments": 13,
+      "duration_seconds": 272.9,
+      "assets": 13
+    },
+    {
+      "script_id": "script-3.2-installing-first-mcp",
+      "title": "Installing Your First MCP Server",
+      "segments": 25,
+      "duration_seconds": 442.5,
+      "assets": 25
+    },
+    {
+      "script_id": "script-3.3-connecting-google-services",
+      "title": "Connecting Google Services",
+      "segments": 25,
+      "duration_seconds": 449.3,
+      "assets": 23
+    },
+    {
+      "script_id": "script-3.4-connecting-github",
+      "title": "Connecting GitHub",
+      "segments": 23,
+      "duration_seconds": 405.3,
+      "assets": 23
+    },
+    {
+      "script_id": "script-3.5-troubleshooting-mcp",
+      "title": "Troubleshooting MCP Connections",
+      "segments": 23,
+      "duration_seconds": 336.2,
+      "assets": 23
+    },
+    {
+      "script_id": "script-4.1-understanding-skills",
+      "title": "Understanding Skills",
+      "segments": 21,
+      "duration_seconds": 355.5,
+      "assets": 21
+    },
+    {
+      "script_id": "script-4.2-installing-superpowers",
+      "title": "Installing the Superpowers Plugin",
+      "segments": 25,
+      "duration_seconds": 392.0,
+      "assets": 25
+    },
+    {
+      "script_id": "script-4.3-installing-industry-skills",
+      "title": "Installing Industry Skills",
+      "segments": 27,
+      "duration_seconds": 354.5,
+      "assets": 27
+    },
+    {
+      "script_id": "script-4.4-creating-custom-skill",
+      "title": "Creating Your First Custom Skill",
+      "segments": 32,
+      "duration_seconds": 568.2,
+      "assets": 32
+    }
+  ],
+  "generated_at": "2026-01-06T22:53:56.115304"
+}

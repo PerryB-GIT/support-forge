@@ -1,0 +1,262 @@
+{
+  "name": "Lead Capture & CRM Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-capture",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Form Submission",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "lead-capture-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate and enrich lead data\nconst lead = $input.first().json;\n\n// Required field validation\nconst requiredFields = ['email', 'name'];\nfor (const field of requiredFields) {\n  if (!lead[field]) {\n    throw new Error(`Missing required field: ${field}`);\n  }\n}\n\n// Email validation\nconst emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\nif (!emailRegex.test(lead.email)) {\n  throw new Error('Invalid email format');\n}\n\n// Lead scoring based on company size and industry\nlet score = 50; // Base score\n\nif (lead.company_size) {\n  const sizeScores = {\n    '1-10': 10,\n    '11-50': 20,\n    '51-200': 30,\n    '201-1000': 40,\n    '1000+': 50\n  };\n  score += sizeScores[lead.company_size] || 0;\n}\n\nif (lead.budget) {\n  const budgetScores = {\n    'under-5k': 5,\n    '5k-15k': 15,\n    '15k-50k': 25,\n    '50k+': 40\n  };\n  score += budgetScores[lead.budget] || 0;\n}\n\n// Determine lead tier\nlet tier = 'cold';\nif (score >= 100) tier = 'hot';\nelse if (score >= 70) tier = 'warm';\n\nreturn {\n  ...lead,\n  email: lead.email.toLowerCase().trim(),\n  name: lead.name.trim(),\n  lead_score: score,\n  lead_tier: tier,\n  source: lead.source || 'website',\n  created_at: new Date().toISOString(),\n  status: 'new'\n};"
+      },
+      "id": "validate-enrich",
+      "name": "Validate & Enrich Lead",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $json.created_at }}",
+            "Name": "={{ $json.name }}",
+            "Email": "={{ $json.email }}",
+            "Company": "={{ $json.company }}",
+            "Phone": "={{ $json.phone }}",
+            "Source": "={{ $json.source }}",
+            "Lead Score": "={{ $json.lead_score }}",
+            "Lead Tier": "={{ $json.lead_tier }}",
+            "Status": "={{ $json.status }}",
+            "Notes": "={{ $json.message }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "google-sheets",
+      "name": "Add to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [680, 180]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.lead_tier }}",
+              "rightValue": "hot",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-hot-lead",
+      "name": "Is Hot Lead?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 420]
+    },
+    {
+      "parameters": {
+        "channel": "#sales-leads",
+        "text": ":fire: *HOT LEAD ALERT* :fire:\n\n*Name:* {{ $json.name }}\n*Email:* {{ $json.email }}\n*Company:* {{ $json.company || 'Not provided' }}\n*Lead Score:* {{ $json.lead_score }}/150\n\n*Message:*\n{{ $json.message || 'No message provided' }}\n\n<https://your-crm.com/leads|View in CRM>",
+        "otherOptions": {}
+      },
+      "id": "slack-hot-lead",
+      "name": "Slack - Hot Lead Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [900, 360]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Thanks for reaching out, {{ $json.name.split(' ')[0] }}!",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: #4F46E5; color: white; padding: 20px; text-align: center; }\n    .content { padding: 20px; }\n    .cta { background: #4F46E5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; margin-top: 20px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Thanks for Reaching Out!</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.name.split(' ')[0] }},</p>\n      <p>Thank you for your interest in [Company Name]. We received your message and our team will review it shortly.</p>\n      <p>In the meantime, here are some resources you might find helpful:</p>\n      <ul>\n        <li><a href=\"#\">Our Services Overview</a></li>\n        <li><a href=\"#\">Case Studies</a></li>\n        <li><a href=\"#\">FAQ</a></li>\n      </ul>\n      <p>We typically respond within 24 business hours.</p>\n      <a href=\"#\" class=\"cta\">Schedule a Call</a>\n      <p style=\"margin-top: 30px;\">Best regards,<br>[Your Name]<br>[Company Name]</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "options": {
+          "replyTo": "hello@yourcompany.com"
+        }
+      },
+      "id": "send-confirmation",
+      "name": "Send Confirmation Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [900, 180]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Lead captured successfully', lead_id: $json.email }) }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "channel": "#sales-leads",
+        "text": ":seedling: *New Lead Captured*\n\n*Name:* {{ $json.name }}\n*Email:* {{ $json.email }}\n*Lead Tier:* {{ $json.lead_tier }}\n*Score:* {{ $json.lead_score }}/150",
+        "otherOptions": {}
+      },
+      "id": "slack-regular-lead",
+      "name": "Slack - Regular Lead",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [900, 480]
+    }
+  ],
+  "connections": {
+    "Webhook - Form Submission": {
+      "main": [
+        [
+          {
+            "node": "Validate & Enrich Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate & Enrich Lead": {
+      "main": [
+        [
+          {
+            "node": "Add to Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Is Hot Lead?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Hot Lead?": {
+      "main": [
+        [
+          {
+            "node": "Slack - Hot Lead Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack - Regular Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Confirmation Email": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Hot Lead Alert": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Regular Lead": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "leads",
+      "id": "1"
+    },
+    {
+      "name": "crm",
+      "id": "2"
+    }
+  ],
+  "pinData": {},
+  "_comment": "AI Launchpad Academy - Lead Capture Workflow. Replace YOUR_GOOGLE_SHEET_ID and configure Slack/Gmail credentials before use."
+}

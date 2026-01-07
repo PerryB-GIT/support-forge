@@ -1,0 +1,651 @@
+{
+  "script_id": "6.3-google-cloud-for-ai-workloads",
+  "title": "Module 6.3: Google Cloud for AI Workloads",
+  "total_duration_seconds": 428.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 10.7,
+      "visual_cue": "Google Cloud logo with AI graphics",
+      "visual_type": "illustration",
+      "spoken_text": "Google Cloud Platform - GCP. [PAUSE] While AWS dominates overall cloud market share, Google has carved out serious territory in AI and machine learning.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 2,
+      "start_time": 10.7,
+      "end_time": 26.2,
+      "visual_cue": "Why GCP for AI",
+      "visual_type": "text_overlay",
+      "spoken_text": "Why consider GCP? [PAUSE] They built TensorFlow. They run the AI behind Google Search, YouTube, and Gmail. Vertex AI gives you access to Gemini and other frontier models. Plus BigQuery is unmatched for large-scale data analysis.",
+      "word_count": 35
+    },
+    {
+      "segment_id": 3,
+      "start_time": 26.2,
+      "end_time": 37.0,
+      "visual_cue": "Lesson objectives",
+      "visual_type": "text_overlay",
+      "spoken_text": "Today we'll tour the GCP console, explore Vertex AI for model access, touch on BigQuery for data work, and understand when GCP makes more sense than AWS.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 4,
+      "start_time": 37.0,
+      "end_time": 42.1,
+      "visual_cue": "GCP Console login",
+      "visual_type": "screen_capture",
+      "spoken_text": "Head to console.cloud.google.com. [PAUSE] Sign in with your Google account.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 5,
+      "start_time": 42.1,
+      "end_time": 51.2,
+      "visual_cue": "Project selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "GCP organizes everything into projects. [PAUSE] Think of projects as containers. Each project has its own billing, permissions, and resources.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 6,
+      "start_time": 51.2,
+      "end_time": 58.3,
+      "visual_cue": "Creating first project",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click the project dropdown, then \"New Project.\" [PAUSE] Name it something meaningful - \"ai-launchpad-learning\" works.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 7,
+      "start_time": 58.3,
+      "end_time": 68.6,
+      "visual_cue": "Console dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "The dashboard shows your project overview. [PAUSE] Different layout than AWS, but same concept. Search bar up top, services in the left navigation.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 8,
+      "start_time": 68.6,
+      "end_time": 77.3,
+      "visual_cue": "Navigation menu",
+      "visual_type": "screen_capture",
+      "spoken_text": "Click the hamburger menu. [PAUSE] This expands the full service catalog. Categories like Compute, Storage, AI & Machine Learning.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 9,
+      "start_time": 77.3,
+      "end_time": 86.0,
+      "visual_cue": "Pinning services",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pin your frequently used services to the top. [PAUSE] Right-click any service and pin it. Keeps your workflow tight.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 10,
+      "start_time": 86.0,
+      "end_time": 98.7,
+      "visual_cue": "Cloud Shell",
+      "visual_type": "text_overlay",
+      "spoken_text": "Notice Cloud Shell in the top right - that terminal icon. [PAUSE] This gives you a browser-based command line with Google Cloud SDK pre-installed. Incredibly handy for quick operations.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 11,
+      "start_time": 98.7,
+      "end_time": 101.5,
+      "visual_cue": "Vertex AI in navigation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Search for \"Vertex AI\" and open it.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 12,
+      "start_time": 101.5,
+      "end_time": 109.8,
+      "visual_cue": "Vertex AI dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "Vertex AI is Google's unified AI platform. [PAUSE] Model training, deployment, and access to pre-built models like Gemini.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 13,
+      "start_time": 109.8,
+      "end_time": 115.3,
+      "visual_cue": "Model Garden",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Model Garden.\" [PAUSE] This is the catalog of available models.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 14,
+      "start_time": 115.3,
+      "end_time": 123.7,
+      "visual_cue": "Model categories",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll see:\n- **Foundation models:** Gemini, PaLM, Imagen\n- **Open models:** Llama, Mistral, Gemma\n- **Task-specific models:** Code generation, embeddings, vision",
+      "word_count": 21
+    },
+    {
+      "segment_id": 15,
+      "start_time": 123.7,
+      "end_time": 131.2,
+      "visual_cue": "Gemini model card",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click on Gemini. [PAUSE] This is Google's flagship model - their answer to GPT-4 and Claude.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 16,
+      "start_time": 131.2,
+      "end_time": 138.7,
+      "visual_cue": "Try in Studio",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Open in Vertex AI Studio.\" [PAUSE] This is like the ChatGPT interface but for Gemini.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 17,
+      "start_time": 138.7,
+      "end_time": 147.5,
+      "visual_cue": "Vertex AI Studio interface",
+      "visual_type": "screen_capture",
+      "spoken_text": "Here you can:\n- Chat with Gemini directly\n- Test different prompts\n- Adjust parameters like temperature\n- Save conversations as examples",
+      "word_count": 22
+    },
+    {
+      "segment_id": 18,
+      "start_time": 147.5,
+      "end_time": 163.4,
+      "visual_cue": "API access",
+      "visual_type": "text_overlay",
+      "spoken_text": "For production, you'll use the API. [PAUSE] Click \"Get code\" to see examples in Python, Node.js, curl.\n\n```python\nimport vertexai\nfrom vertexai.generative_models import GenerativeModel\n\nvertexai.init(project=\"your-project-id\", location=\"us-central1\")\nmodel = GenerativeModel(\"gemini-1.5-flash\")\n\nresponse = model.generate_content(\"Explain quantum computing simply\")\nprint(response.text)\n```",
+      "word_count": 36
+    },
+    {
+      "segment_id": 19,
+      "start_time": 163.4,
+      "end_time": 171.8,
+      "visual_cue": "Model deployment options",
+      "visual_type": "text_overlay",
+      "spoken_text": "Vertex AI also lets you:\n- Fine-tune models on your data\n- Deploy custom models as endpoints\n- Create model pipelines",
+      "word_count": 21
+    },
+    {
+      "segment_id": 20,
+      "start_time": 171.8,
+      "end_time": 194.9,
+      "visual_cue": "Comparison note",
+      "visual_type": "comparison_table",
+      "spoken_text": "When to use Vertex AI vs direct Claude API? [PAUSE]\n\nUse Vertex AI if:\n- You need Gemini specifically\n- You're already deep in GCP infrastructure\n- You need Google's compliance and enterprise features\n\nUse Anthropic directly if:\n- Claude is your primary model\n- You want simpler integration\n- You prefer Anthropic's direct relationship",
+      "word_count": 54
+    },
+    {
+      "segment_id": 21,
+      "start_time": 194.9,
+      "end_time": 200.0,
+      "visual_cue": "BigQuery in navigation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now let's look at BigQuery. [PAUSE] Search and open it.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 22,
+      "start_time": 200.0,
+      "end_time": 209.9,
+      "visual_cue": "BigQuery console",
+      "visual_type": "screen_capture",
+      "spoken_text": "BigQuery is Google's data warehouse. [PAUSE] It handles massive datasets - we're talking petabytes - with SQL queries that complete in seconds.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 23,
+      "start_time": 209.9,
+      "end_time": 221.8,
+      "visual_cue": "Why AI businesses need it",
+      "visual_type": "text_overlay",
+      "spoken_text": "Why does an AI business care? [PAUSE]\n\n- Analyze user behavior at scale\n- Process training data\n- Store and query conversation logs\n- Build analytics dashboards",
+      "word_count": 26
+    },
+    {
+      "segment_id": 24,
+      "start_time": 221.8,
+      "end_time": 231.3,
+      "visual_cue": "Creating a dataset",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's set up a dataset. [PAUSE] In the Explorer panel, click the three dots next to your project, then \"Create dataset.\"",
+      "word_count": 20
+    },
+    {
+      "segment_id": 25,
+      "start_time": 231.3,
+      "end_time": 238.1,
+      "visual_cue": "Dataset configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "- **Dataset ID:** `ai_analytics`\n- **Location:** US (multi-region for availability)\n- **Default expiration:** Leave blank for now",
+      "word_count": 17
+    },
+    {
+      "segment_id": 26,
+      "start_time": 238.1,
+      "end_time": 246.0,
+      "visual_cue": "Creating a table",
+      "visual_type": "text_overlay",
+      "spoken_text": "Inside your dataset, create a table. [PAUSE] You can upload CSV, JSON, or connect to Cloud Storage.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 27,
+      "start_time": 246.0,
+      "end_time": 252.8,
+      "visual_cue": "Schema definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "Define your schema:\n\n```\nconversation_id: STRING\nuser_input: STRING\nmodel_response: STRING\ntokens_used: INTEGER\nresponse_time_ms: FLOAT\ntimestamp: TIMESTAMP\n```",
+      "word_count": 17
+    },
+    {
+      "segment_id": 28,
+      "start_time": 252.8,
+      "end_time": 267.6,
+      "visual_cue": "Writing SQL queries",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now query your data with SQL:\n\n```sql\nSELECT\n  DATE(timestamp) as date,\n  COUNT(*) as conversations,\n  AVG(tokens_used) as avg_tokens,\n  AVG(response_time_ms) as avg_response_time\nFROM `your-project.ai_analytics.conversations`\nWHERE timestamp > TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 30 DAY)\nGROUP BY date\nORDER BY date DESC\n```",
+      "word_count": 37
+    },
+    {
+      "segment_id": 29,
+      "start_time": 267.6,
+      "end_time": 275.9,
+      "visual_cue": "Query results",
+      "visual_type": "text_overlay",
+      "spoken_text": "Results come back fast, even on millions of rows. [PAUSE] This is the power of BigQuery's columnar architecture.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 30,
+      "start_time": 275.9,
+      "end_time": 291.0,
+      "visual_cue": "Cost model",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pricing note: [PAUSE] BigQuery charges per query based on data scanned. The first terabyte per month is free. After that, $5 per TB scanned.\n\nPro tip: use `LIMIT` and partition your tables to control costs.",
+      "word_count": 34
+    },
+    {
+      "segment_id": 31,
+      "start_time": 291.0,
+      "end_time": 298.1,
+      "visual_cue": "Comparison diagram",
+      "visual_type": "comparison_table",
+      "spoken_text": "Real talk: you don't have to choose one cloud exclusively. [PAUSE] Many businesses use both.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 32,
+      "start_time": 298.1,
+      "end_time": 313.7,
+      "visual_cue": "Choose AWS when",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Choose AWS when:**\n- You need the broadest service catalog\n- Enterprise clients expect AWS compliance\n- You're deploying full-stack web apps (Amplify)\n- Lambda and API Gateway fit your architecture\n- You want Bedrock for multi-model AI access",
+      "word_count": 39
+    },
+    {
+      "segment_id": 33,
+      "start_time": 313.7,
+      "end_time": 329.7,
+      "visual_cue": "Choose GCP when",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Choose GCP when:**\n- You need Gemini specifically\n- Heavy data analytics work (BigQuery)\n- You're in the Google ecosystem (Workspace, Android)\n- You want integrated AI training (Vertex AI)\n- Kubernetes is central to your stack (GKE is excellent)",
+      "word_count": 40
+    },
+    {
+      "segment_id": 34,
+      "start_time": 329.7,
+      "end_time": 344.8,
+      "visual_cue": "Multi-cloud reality",
+      "visual_type": "text_overlay",
+      "spoken_text": "The hybrid approach works well: [PAUSE]\n- Host your app on AWS Amplify\n- Use Claude API directly from Anthropic\n- Analyze data in BigQuery\n- Pull in Gemini for specific tasks via Vertex AI",
+      "word_count": 34
+    },
+    {
+      "segment_id": 35,
+      "start_time": 344.8,
+      "end_time": 351.9,
+      "visual_cue": "Authentication across clouds",
+      "visual_type": "text_overlay",
+      "spoken_text": "For multi-cloud, manage credentials carefully. [PAUSE] Use environment variables, secret managers, and never hardcode keys.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 36,
+      "start_time": 351.9,
+      "end_time": 361.8,
+      "visual_cue": "GCP summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "Google Cloud is a powerful complement to your toolkit. [PAUSE] Vertex AI for model access, BigQuery for analytics, and solid infrastructure overall.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 37,
+      "start_time": 361.8,
+      "end_time": 374.2,
+      "visual_cue": "Action items",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your next steps:\n- Create a GCP project if you haven't\n- Try Vertex AI Studio with Gemini\n- Explore BigQuery's free sandbox\n- Think about what data you'll eventually analyze",
+      "word_count": 31
+    },
+    {
+      "segment_id": 38,
+      "start_time": 374.2,
+      "end_time": 382.1,
+      "visual_cue": "Cost reminder",
+      "visual_type": "text_overlay",
+      "spoken_text": "GCP also has a free tier - $300 in credits for new accounts. [PAUSE] Experiment without risk.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 39,
+      "start_time": 382.1,
+      "end_time": 391.2,
+      "visual_cue": "Final module lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Final lesson coming up: Cost Management and Optimization. [PAUSE] We'll make sure all this cloud power doesn't blow your budget.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 40,
+      "start_time": 391.2,
+      "end_time": 428.0,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you there.\n\n**Total Runtime:** 15 minutes\n**Tone:** Comparative, practical orientation\n**Key Visuals:**\n- GCP Console screen recordings\n- Vertex AI Studio demonstration\n- BigQuery query execution\n- AWS vs GCP comparison graphics\n\n**B-Roll Suggestions:**\n- Google data center imagery\n- AI/ML visualization graphics\n- Data flowing through systems\n\n**Technical Notes:**\n- Test Vertex AI access with current API\n- Verify BigQuery free tier still applies\n- Confirm Python SDK examples work\n\n**Viewer Prerequisites:**\n- Google account\n- GCP project created (can do during lesson)\n- Basic SQL knowledge helpful for BigQuery",
+      "word_count": 92
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "comparison_table",
+      "description": "Comparison diagram",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparison note",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Google Cloud logo with AI graphics",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "BigQuery console",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Console dashboard",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "GCP Console login",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Navigation menu",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Vertex AI Studio interface",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Vertex AI dashboard",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "API access",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Action items",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Authentication across clouds",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "BigQuery in navigation",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Choose AWS when",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Choose GCP when",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cloud Shell",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost model",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost reminder",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating a dataset",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating a table",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating first project",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Dataset configuration",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Final module lesson preview",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GCP summary",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gemini model card",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Lesson objectives",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Model Garden",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Model categories",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Model deployment options",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Multi-cloud reality",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pinning services",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Project selection",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Query results",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Schema definition",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Try in Studio",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Vertex AI in navigation",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Why AI businesses need it",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Why GCP for AI",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Writing SQL queries",
+      "segment_ids": [
+        28
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.998885"
+}

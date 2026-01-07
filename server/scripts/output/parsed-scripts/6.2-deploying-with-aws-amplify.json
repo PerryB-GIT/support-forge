@@ -1,0 +1,827 @@
+{
+  "script_id": "6.2-deploying-with-aws-amplify",
+  "title": "Module 6.2: Deploying with AWS Amplify",
+  "total_duration_seconds": 467.2,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 13.9,
+      "visual_cue": "AWS Amplify logo with deployment graphics",
+      "visual_type": "illustration",
+      "spoken_text": "Amplify is my go-to for deploying web apps. [PAUSE] GitHub push to live site in minutes. Automatic SSL. Custom domains. Built-in CI/CD. It handles the infrastructure so you can focus on building.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 2,
+      "start_time": 13.9,
+      "end_time": 25.1,
+      "visual_cue": "What we're building",
+      "visual_type": "text_overlay",
+      "spoken_text": "In this lesson, we'll connect a GitHub repository to Amplify, configure build settings, set up a custom domain with SSL, and understand environment variables for keeping secrets safe.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 3,
+      "start_time": 25.1,
+      "end_time": 37.0,
+      "visual_cue": "Prerequisites check",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll need a GitHub account with a repository to deploy. [PAUSE] If you've been following along, you've got projects ready. If not, fork any Next.js starter template.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 4,
+      "start_time": 37.0,
+      "end_time": 40.6,
+      "visual_cue": "AWS Console - Amplify",
+      "visual_type": "screen_capture",
+      "spoken_text": "Search \"Amplify\" in the AWS console and open it.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 5,
+      "start_time": 40.6,
+      "end_time": 48.1,
+      "visual_cue": "Amplify landing page",
+      "visual_type": "text_overlay",
+      "spoken_text": "If this is your first time, you'll see an intro screen. [PAUSE] Click \"Create new app.\"",
+      "word_count": 15
+    },
+    {
+      "segment_id": 6,
+      "start_time": 48.1,
+      "end_time": 58.0,
+      "visual_cue": "Source options",
+      "visual_type": "text_overlay",
+      "spoken_text": "Amplify asks where your code lives. [PAUSE] Select \"GitHub.\" Other options exist - GitLab, Bitbucket, CodeCommit - but GitHub is most common.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 7,
+      "start_time": 58.0,
+      "end_time": 64.3,
+      "visual_cue": "GitHub authorization",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Connect.\" [PAUSE] This opens GitHub authorization. Grant Amplify access to your repositories.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 8,
+      "start_time": 64.3,
+      "end_time": 73.8,
+      "visual_cue": "Repository selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now select your repository and branch. [PAUSE] Typically you'll deploy from `main` or `master`. Pick the branch that represents production-ready code.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 9,
+      "start_time": 73.8,
+      "end_time": 83.7,
+      "visual_cue": "Monorepo option",
+      "visual_type": "text_overlay",
+      "spoken_text": "If your app is in a subdirectory, check \"My app is a monorepo\" and enter the path. [PAUSE] Common for organized codebases.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 10,
+      "start_time": 83.7,
+      "end_time": 91.2,
+      "visual_cue": "App name configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Give your app a name. [PAUSE] This is internal to Amplify - something descriptive like \"client-website-production.\"",
+      "word_count": 15
+    },
+    {
+      "segment_id": 11,
+      "start_time": 91.2,
+      "end_time": 98.7,
+      "visual_cue": "Build settings page",
+      "visual_type": "screen_capture",
+      "spoken_text": "Amplify auto-detects your framework. [PAUSE] Next.js, React, Vue, plain HTML - it usually figures it out.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 12,
+      "start_time": 98.7,
+      "end_time": 110.6,
+      "visual_cue": "Auto-detected settings",
+      "visual_type": "screen_capture",
+      "spoken_text": "For a Next.js app, it knows to run `npm install` and `npm run build`. [PAUSE] The output directory is `.next` for SSR or `out` for static export.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 13,
+      "start_time": 110.6,
+      "end_time": 132.1,
+      "visual_cue": "amplify.yml file",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can also define settings with an `amplify.yml` file in your repo root. [PAUSE] This gives you version-controlled configuration.\n\nHere's a typical Next.js configuration:\n\n```yaml\nversion: 1\nfrontend:\n  phases:\n    preBuild:\n      commands:\n        - npm ci\n    build:\n      commands:\n        - npm run build\n  artifacts:\n    baseDirectory: .next\n    files:\n      - '**/*'\n  cache:\n    paths:\n      - node_modules/**/*\n```",
+      "word_count": 50
+    },
+    {
+      "segment_id": 14,
+      "start_time": 132.1,
+      "end_time": 146.8,
+      "visual_cue": "Build phases explanation",
+      "visual_type": "text_overlay",
+      "spoken_text": "**preBuild:** Install dependencies. [PAUSE] `npm ci` is faster and more reliable than `npm install` for CI environments.\n\n**build:** Compile your application.\n\n**artifacts:** What files to deploy.\n\n**cache:** What to save between builds for speed.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 15,
+      "start_time": 146.8,
+      "end_time": 149.2,
+      "visual_cue": "Environment variables section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now the important part: environment variables.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 16,
+      "start_time": 149.2,
+      "end_time": 162.3,
+      "visual_cue": "Adding environment variables",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Edit\" under Environment variables. [PAUSE] Add your secrets here:\n\n- `NEXT_PUBLIC_API_URL` - Your API endpoint\n- `ANTHROPIC_API_KEY` - Claude API key (if server-side)\n- `DATABASE_URL` - Database connection string",
+      "word_count": 29
+    },
+    {
+      "segment_id": 17,
+      "start_time": 162.3,
+      "end_time": 177.7,
+      "visual_cue": "Server vs client variables",
+      "visual_type": "comparison_table",
+      "spoken_text": "Critical distinction: [PAUSE] Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser. Everything else stays server-side only.\n\nNever put secret keys in `NEXT_PUBLIC_` prefixed variables. [PAUSE] They'll be visible in your JavaScript bundle.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 18,
+      "start_time": 177.7,
+      "end_time": 180.9,
+      "visual_cue": "Save and deploy",
+      "visual_type": "text_overlay",
+      "spoken_text": "Review your settings and click \"Save and deploy.\"",
+      "word_count": 8
+    },
+    {
+      "segment_id": 19,
+      "start_time": 180.9,
+      "end_time": 186.8,
+      "visual_cue": "Build progress page",
+      "visual_type": "text_overlay",
+      "spoken_text": "Amplify starts building immediately. [PAUSE] You can watch the logs in real-time.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 20,
+      "start_time": 186.8,
+      "end_time": 196.8,
+      "visual_cue": "Build stages",
+      "visual_type": "text_overlay",
+      "spoken_text": "The stages:\n1. **Provision:** Spinning up build environment\n2. **Build:** Running your build commands\n3. **Deploy:** Pushing to edge locations\n4. **Verify:** Confirming everything works",
+      "word_count": 25
+    },
+    {
+      "segment_id": 21,
+      "start_time": 196.8,
+      "end_time": 209.5,
+      "visual_cue": "Build logs scrolling",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch the logs. [PAUSE] If something fails, this is where you'll find out why. Most common issues:\n\n- Missing environment variables\n- Build command errors\n- Package installation failures",
+      "word_count": 28
+    },
+    {
+      "segment_id": 22,
+      "start_time": 209.5,
+      "end_time": 214.6,
+      "visual_cue": "Successful deployment",
+      "visual_type": "text_overlay",
+      "spoken_text": "Green checkmarks across the board. [PAUSE] Your app is live.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 23,
+      "start_time": 214.6,
+      "end_time": 224.9,
+      "visual_cue": "Amplify-provided URL",
+      "visual_type": "screen_capture",
+      "spoken_text": "Amplify gives you a URL like `main.abc123xyz.amplifyapp.com`. [PAUSE] It's live, it's got SSL, and it works. But you probably want your own domain.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 24,
+      "start_time": 224.9,
+      "end_time": 226.9,
+      "visual_cue": "Domain management section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Hosting\" then \"Custom domains.\"",
+      "word_count": 5
+    },
+    {
+      "segment_id": 25,
+      "start_time": 226.9,
+      "end_time": 228.9,
+      "visual_cue": "Add domain",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Add domain.\"",
+      "word_count": 3
+    },
+    {
+      "segment_id": 26,
+      "start_time": 228.9,
+      "end_time": 235.6,
+      "visual_cue": "Domain entry",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enter your domain - let's say `yourbusiness.com`. [PAUSE] Amplify will verify you own it.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 27,
+      "start_time": 235.6,
+      "end_time": 242.0,
+      "visual_cue": "Subdomain configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure your subdomains:\n- `yourbusiness.com` - Main production site\n- `www.yourbusiness.com` - Redirects to root domain",
+      "word_count": 16
+    },
+    {
+      "segment_id": 28,
+      "start_time": 242.0,
+      "end_time": 249.9,
+      "visual_cue": "SSL certificate",
+      "visual_type": "illustration",
+      "spoken_text": "Amplify automatically provisions an SSL certificate. [PAUSE] This takes a few minutes. Amazon Certificate Manager handles it.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 29,
+      "start_time": 249.9,
+      "end_time": 257.0,
+      "visual_cue": "DNS configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now the tricky part: DNS configuration. [PAUSE] You need to point your domain to Amplify.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 30,
+      "start_time": 257.0,
+      "end_time": 262.6,
+      "visual_cue": "DNS provider options - showing GoDaddy example",
+      "visual_type": "screen_capture",
+      "spoken_text": "If your domain is on GoDaddy, Route53, or another provider, you'll add these records:",
+      "word_count": 14
+    },
+    {
+      "segment_id": 31,
+      "start_time": 262.6,
+      "end_time": 267.0,
+      "visual_cue": "CNAME record example",
+      "visual_type": "text_overlay",
+      "spoken_text": "**For subdomains (www):**\n- Type: CNAME\n- Name: www\n- Value: [Amplify provides this - looks like d123abc.cloudfront.net]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 32,
+      "start_time": 267.0,
+      "end_time": 273.8,
+      "visual_cue": "ANAME/ALIAS record example",
+      "visual_type": "text_overlay",
+      "spoken_text": "**For root domain:**\n- Type: ANAME or ALIAS (if supported)\n- Name: @ or blank\n- Value: [The Amplify target]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 33,
+      "start_time": 273.8,
+      "end_time": 282.5,
+      "visual_cue": "Alternative - AWS nameservers",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alternatively, point your domain's nameservers to Route53 and let AWS handle everything. [PAUSE] More setup upfront, easier management long-term.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 34,
+      "start_time": 282.5,
+      "end_time": 292.8,
+      "visual_cue": "DNS propagation",
+      "visual_type": "text_overlay",
+      "spoken_text": "DNS changes take time to propagate - anywhere from minutes to 48 hours. [PAUSE] Usually it's under an hour. Amplify shows verification status.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 35,
+      "start_time": 292.8,
+      "end_time": 300.3,
+      "visual_cue": "Successful domain connection",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once verified, your custom domain is live with full SSL. [PAUSE] `https://yourbusiness.com` serves your Amplify app.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 36,
+      "start_time": 300.3,
+      "end_time": 305.4,
+      "visual_cue": "Git workflow diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Here's the magic of Amplify: [PAUSE] push code, automatic deploy.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 37,
+      "start_time": 305.4,
+      "end_time": 315.4,
+      "visual_cue": "Making a code change",
+      "visual_type": "text_overlay",
+      "spoken_text": "Every time you push to your connected branch, Amplify:\n1. Detects the change\n2. Pulls the code\n3. Runs the build\n4. Deploys if successful",
+      "word_count": 25
+    },
+    {
+      "segment_id": 38,
+      "start_time": 315.4,
+      "end_time": 323.8,
+      "visual_cue": "Branch-based deployments",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can connect multiple branches:\n- `main` -> production (yourbusiness.com)\n- `staging` -> preview (staging.yourbusiness.com)\n- `feature/*` -> auto-generated preview URLs",
+      "word_count": 21
+    },
+    {
+      "segment_id": 39,
+      "start_time": 323.8,
+      "end_time": 331.7,
+      "visual_cue": "Pull request previews",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enable PR previews. [PAUSE] Every pull request gets its own deployment URL. Review changes live before merging.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 40,
+      "start_time": 331.7,
+      "end_time": 341.6,
+      "visual_cue": "Preview settings",
+      "visual_type": "screen_capture",
+      "spoken_text": "In App settings, find \"Previews\" and enable them. [PAUSE] Now collaborators can see exactly what their PR will look like in production.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 41,
+      "start_time": 341.6,
+      "end_time": 346.3,
+      "visual_cue": "Build failed icon",
+      "visual_type": "illustration",
+      "spoken_text": "Builds fail. [PAUSE] It happens. Here's how to debug.",
+      "word_count": 8
+    },
+    {
+      "segment_id": 42,
+      "start_time": 346.3,
+      "end_time": 357.8,
+      "visual_cue": "Issue 1 - Missing env vars",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Issue: Build fails with undefined variables**\n\nCheck that all required environment variables are set in Amplify console. [PAUSE] They don't sync from your local `.env` file.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 43,
+      "start_time": 357.8,
+      "end_time": 368.2,
+      "visual_cue": "Issue 2 - Memory limits",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Issue: Build runs out of memory**\n\nAmplify has memory limits. For large apps, increase compute settings in App settings > Build settings > Build image settings.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 44,
+      "start_time": 368.2,
+      "end_time": 377.7,
+      "visual_cue": "Issue 3 - Wrong build command",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Issue: Wrong build output**\n\nMake sure artifacts baseDirectory matches your framework's output. [PAUSE] Next.js SSR uses `.next`, static export uses `out`.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 45,
+      "start_time": 377.7,
+      "end_time": 387.2,
+      "visual_cue": "Issue 4 - SSL certificate pending",
+      "visual_type": "illustration",
+      "spoken_text": "**Issue: SSL certificate stuck pending**\n\nDNS isn't configured correctly. [PAUSE] Double-check your CNAME or ALIAS records match exactly what Amplify expects.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 46,
+      "start_time": 387.2,
+      "end_time": 394.7,
+      "visual_cue": "Logs are your friend",
+      "visual_type": "text_overlay",
+      "spoken_text": "Always check the build logs. [PAUSE] The error message is usually there, just buried in output.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 47,
+      "start_time": 394.7,
+      "end_time": 405.0,
+      "visual_cue": "Deployment success visualization",
+      "visual_type": "illustration",
+      "spoken_text": "You've deployed a real application. [PAUSE] Code in GitHub, automatically built and deployed to global edge locations, custom domain with SSL. Professional infrastructure.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 48,
+      "start_time": 405.0,
+      "end_time": 413.4,
+      "visual_cue": "What Amplify handles for you",
+      "visual_type": "text_overlay",
+      "spoken_text": "Amplify handles:\n- Server provisioning\n- SSL certificates\n- CDN distribution\n- Automatic scaling\n- Zero-downtime deploys\n\nYou focus on building.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 49,
+      "start_time": 413.4,
+      "end_time": 421.3,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next: Google Cloud Platform for AI workloads. [PAUSE] Different platform, different strengths - especially for AI-specific services.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 50,
+      "start_time": 421.3,
+      "end_time": 431.6,
+      "visual_cue": "Practice assignment",
+      "visual_type": "text_overlay",
+      "spoken_text": "Deploy something today. [PAUSE] Take a project you've built and put it live. There's nothing like seeing your work on a real URL.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 51,
+      "start_time": 431.6,
+      "end_time": 467.2,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you in the next one.\n\n**Total Runtime:** 20 minutes\n**Tone:** Hands-on deployment guide, confidence-building\n**Key Visuals:**\n- Amplify console screen recordings\n- Build log progression\n- DNS configuration examples\n- Custom domain verification\n\n**B-Roll Suggestions:**\n- GitHub pushes triggering builds\n- Green checkmark animations\n- Globe/edge location graphics for CDN\n\n**Technical Accuracy:**\n- Test with actual Next.js deployment\n- Verify amplify.yml syntax\n- Confirm current Amplify UI matches script\n\n**Viewer Prerequisites:**\n- AWS account configured (from 6.1)\n- GitHub account with repository\n- Domain name (optional but recommended)",
+      "word_count": 89
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "comparison_table",
+      "description": "Server vs client variables",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Git workflow diagram",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "AWS Amplify logo with deployment graphics",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Build failed icon",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Deployment success visualization",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Issue 4 - SSL certificate pending",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "SSL certificate",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Console - Amplify",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Amplify-provided URL",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Auto-detected settings",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Build settings page",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "DNS provider options - showing GoDaddy example",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Issue 3 - Wrong build command",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Preview settings",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "ANAME/ALIAS record example",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Add domain",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding environment variables",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Alternative - AWS nameservers",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Amplify landing page",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "App name configuration",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Branch-based deployments",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Build logs scrolling",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Build phases explanation",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Build progress page",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Build stages",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "CNAME record example",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "DNS configuration",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "DNS propagation",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Domain entry",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Domain management section",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Environment variables section",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GitHub authorization",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Issue 1 - Missing env vars",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Issue 2 - Memory limits",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Logs are your friend",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Making a code change",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Monorepo option",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practice assignment",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Prerequisites check",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pull request previews",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Repository selection",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Save and deploy",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Source options",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Subdomain configuration",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Successful deployment",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Successful domain connection",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What Amplify handles for you",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What we're building",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "amplify.yml file",
+      "segment_ids": [
+        13
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.993970"
+}

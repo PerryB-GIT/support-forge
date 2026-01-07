@@ -1,0 +1,811 @@
+{
+  "script_id": "5.5-connecting-automations-to-claude",
+  "title": "Module 5.5: Connecting Automations to Claude",
+  "total_duration_seconds": 484.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 4.3,
+      "visual_cue": "Title \"Connecting Automations to Claude\" with neural network and gear icons merging",
+      "visual_type": "illustration",
+      "spoken_text": "This is where everything clicks together. [PAUSE] Literally.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 2,
+      "start_time": 4.3,
+      "end_time": 16.2,
+      "visual_cue": "Diagram showing automation + AI = intelligent systems",
+      "visual_type": "flowchart",
+      "spoken_text": "So far, you've built automations that move data and trigger actions. Powerful stuff. [PAUSE] But they're dumb pipes. They do exactly what you tell them, nothing more.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 3,
+      "start_time": 16.2,
+      "end_time": 27.3,
+      "visual_cue": "Claude logo appearing",
+      "visual_type": "illustration",
+      "spoken_text": "Now we add intelligence. [PAUSE] Claude becomes the brain inside your automation body. Data comes in, AI thinks about it, automation acts on that thinking.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 4,
+      "start_time": 27.3,
+      "end_time": 39.2,
+      "visual_cue": "Full loop diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "By the end of this lesson, you'll have a complete intelligent loop: triggers, AI processing, and automated actions. [PAUSE] This is the foundation of an AI-powered business.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 5,
+      "start_time": 39.2,
+      "end_time": 42.4,
+      "visual_cue": "Architecture diagram building",
+      "visual_type": "flowchart",
+      "spoken_text": "Let me show you how these pieces connect.",
+      "word_count": 8
+    },
+    {
+      "segment_id": 6,
+      "start_time": 42.4,
+      "end_time": 50.4,
+      "visual_cue": "Layer 1 - Triggers",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Layer 1: Triggers.** Something happens in the world - form submitted, email received, schedule fires. Your automation platform catches it.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 7,
+      "start_time": 50.4,
+      "end_time": 59.5,
+      "visual_cue": "Layer 2 - AI Processing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Layer 2: AI Processing.** Data hits Claude's API. [PAUSE] Claude analyzes, summarizes, decides, generates, or transforms. The thinking happens here.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 8,
+      "start_time": 59.5,
+      "end_time": 66.3,
+      "visual_cue": "Layer 3 - Actions",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Layer 3: Actions.** Based on Claude's output, automations execute. Send emails, update databases, post content, notify teams.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 9,
+      "start_time": 66.3,
+      "end_time": 78.6,
+      "visual_cue": "Feedback loop arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "And here's the key: [PAUSE] outputs can become new inputs. The email Claude drafted gets sent, the recipient replies, that reply triggers another cycle. It's a living system.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 10,
+      "start_time": 78.6,
+      "end_time": 90.6,
+      "visual_cue": "Connection methods",
+      "visual_type": "text_overlay",
+      "spoken_text": "Two main ways to connect Claude to your automations:\n\n**One:** Direct API calls via HTTP Request nodes\n**Two:** Native AI nodes in n8n or Zapier's AI actions\n\nWe'll cover both.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 11,
+      "start_time": 90.6,
+      "end_time": 97.3,
+      "visual_cue": "n8n workflow starting",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build a real example in n8n. [PAUSE] We'll create a customer support classifier.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 12,
+      "start_time": 97.3,
+      "end_time": 104.5,
+      "visual_cue": "Workflow overview",
+      "visual_type": "text_overlay",
+      "spoken_text": "The flow: Email arrives, Claude classifies it as urgent/normal/spam and suggests a response category, automation routes it accordingly.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 13,
+      "start_time": 104.5,
+      "end_time": 113.6,
+      "visual_cue": "Webhook trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Start with a Webhook trigger. [PAUSE] This receives incoming support emails. In practice, you'd connect this to your email system.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 14,
+      "start_time": 113.6,
+      "end_time": 119.1,
+      "visual_cue": "Adding HTTP Request node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add an HTTP Request node. [PAUSE] This calls Claude's API directly.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 15,
+      "start_time": 119.1,
+      "end_time": 121.1,
+      "visual_cue": "HTTP configuration - URL",
+      "visual_type": "text_overlay",
+      "spoken_text": "**URL:** `https://api.anthropic.com/v1/messages`\n\n**Method:** POST",
+      "word_count": 4
+    },
+    {
+      "segment_id": 16,
+      "start_time": 121.1,
+      "end_time": 124.3,
+      "visual_cue": "Headers configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Headers:**\n```\nx-api-key: [Your Anthropic API Key]\nanthropic-version: 2023-06-01\nContent-Type: application/json\n```",
+      "word_count": 8
+    },
+    {
+      "segment_id": 17,
+      "start_time": 124.3,
+      "end_time": 128.7,
+      "visual_cue": "Body configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Body (JSON):**\n\n```json\n{\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 500,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Classify this customer support email and suggest how to handle it.\\n\\nEmail Subject: {{ $json.subject }}\\nEmail Body: {{ $json.body }}\\n\\nRespond in JSON format with fields: priority (urgent/normal/low), category (billing/technical/general/spam), suggested_action (escalate/auto-reply/manual-review), and draft_response (a brief suggested reply).\"\n    }\n  ]\n}\n```",
+      "word_count": 11
+    },
+    {
+      "segment_id": 18,
+      "start_time": 128.7,
+      "end_time": 138.2,
+      "visual_cue": "JSON parsing highlight",
+      "visual_type": "text_overlay",
+      "spoken_text": "Notice we're asking Claude to respond in JSON. [PAUSE] This makes it easy to use the output in subsequent automation steps.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 19,
+      "start_time": 138.2,
+      "end_time": 143.3,
+      "visual_cue": "Testing the request",
+      "visual_type": "text_overlay",
+      "spoken_text": "Test with sample data. [PAUSE] Watch Claude's response come back.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 20,
+      "start_time": 143.3,
+      "end_time": 150.8,
+      "visual_cue": "Response parsing",
+      "visual_type": "text_overlay",
+      "spoken_text": "The response includes Claude's JSON analysis. [PAUSE] Now we can route based on priority and category.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 21,
+      "start_time": 150.8,
+      "end_time": 156.3,
+      "visual_cue": "Adding Switch node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add a Switch node. [PAUSE] This is conditional routing in n8n.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 22,
+      "start_time": 156.3,
+      "end_time": 166.3,
+      "visual_cue": "Switch configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Branch based on Claude's priority classification:\n- **Urgent:** Immediate Slack alert + escalation\n- **Normal:** Add to queue, send acknowledgment\n- **Low/Spam:** Log and archive",
+      "word_count": 25
+    },
+    {
+      "segment_id": 23,
+      "start_time": 166.3,
+      "end_time": 176.6,
+      "visual_cue": "Complete flow visualization",
+      "visual_type": "illustration",
+      "spoken_text": "The complete intelligent support system: [PAUSE] Emails come in, Claude triages them instantly, automation routes them appropriately. No human needed for initial classification.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 24,
+      "start_time": 176.6,
+      "end_time": 183.7,
+      "visual_cue": "n8n AI nodes panel",
+      "visual_type": "text_overlay",
+      "spoken_text": "n8n has built-in AI nodes that simplify this. [PAUSE] Let's look at the cleaner approach.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 25,
+      "start_time": 183.7,
+      "end_time": 189.6,
+      "visual_cue": "Adding AI Agent node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add the \"AI Agent\" node. [PAUSE] This is n8n's native Claude integration.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 26,
+      "start_time": 189.6,
+      "end_time": 196.3,
+      "visual_cue": "Agent configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select Claude as your model. [PAUSE] You'll need to add your Anthropic credentials first.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 27,
+      "start_time": 196.3,
+      "end_time": 207.1,
+      "visual_cue": "System prompt configuration",
+      "visual_type": "screen_capture",
+      "spoken_text": "**System Prompt:**\n```\nYou are a customer support triage assistant. Analyze incoming support requests and provide structured classification and suggested responses. Always be helpful and professional.\n```",
+      "word_count": 27
+    },
+    {
+      "segment_id": 28,
+      "start_time": 207.1,
+      "end_time": 217.5,
+      "visual_cue": "User prompt configuration",
+      "visual_type": "screen_capture",
+      "spoken_text": "**User Prompt:**\n```\nAnalyze this support email:\nSubject: {{ $json.subject }}\nBody: {{ $json.body }}\n\nClassify priority (urgent/normal/low), category (billing/technical/general), and suggest a response approach.\n```",
+      "word_count": 26
+    },
+    {
+      "segment_id": 29,
+      "start_time": 217.5,
+      "end_time": 227.4,
+      "visual_cue": "Comparing methods",
+      "visual_type": "comparison_table",
+      "spoken_text": "The native node handles API formatting, error handling, and parsing for you. [PAUSE] Less control, but much cleaner for standard use cases.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 30,
+      "start_time": 227.4,
+      "end_time": 245.8,
+      "visual_cue": "When to use each",
+      "visual_type": "text_overlay",
+      "spoken_text": "Use HTTP Request when:\n- You need custom headers or parameters\n- You're using features not yet in native nodes\n- You want maximum control\n\nUse native AI nodes when:\n- Standard classification, summarization, or generation\n- You want simpler maintenance\n- You prefer visual configuration",
+      "word_count": 46
+    },
+    {
+      "segment_id": 31,
+      "start_time": 245.8,
+      "end_time": 252.1,
+      "visual_cue": "New workflow - Content Intelligence",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build a complete intelligent loop from scratch. [PAUSE] A content intelligence system.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 32,
+      "start_time": 252.1,
+      "end_time": 266.9,
+      "visual_cue": "Workflow diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Here's what it does:\n1. Monitors competitor blog (RSS)\n2. Claude analyzes each article for insights\n3. Generates content ideas based on gaps\n4. Creates draft outlines\n5. Adds to your content calendar\n6. Notifies your team",
+      "word_count": 37
+    },
+    {
+      "segment_id": 33,
+      "start_time": 266.9,
+      "end_time": 274.0,
+      "visual_cue": "Step 1 - RSS Trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Step 1:** RSS Feed Read trigger. [PAUSE] Point it at a competitor or industry blog.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 34,
+      "start_time": 274.0,
+      "end_time": 295.6,
+      "visual_cue": "Step 2 - Claude Analysis",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Step 2:** AI Agent node for analysis.\n\nPrompt:\n```\nAnalyze this article for competitive intelligence.\n\nTitle: {{ $json.title }}\nContent: {{ $json.contentSnippet }}\n\nProvide:\n1. Key topics covered\n2. Angle or perspective taken\n3. What's missing or could be done better\n4. 2-3 content ideas we could create that would be more valuable\n```",
+      "word_count": 54
+    },
+    {
+      "segment_id": 35,
+      "start_time": 295.6,
+      "end_time": 317.2,
+      "visual_cue": "Step 3 - Idea Generation",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Step 3:** Another AI Agent for expansion.\n\nTake Claude's content ideas and generate full outlines:\n```\nBased on this content idea: {{ $json.content_ideas[0] }}\n\nCreate a detailed blog post outline including:\n- Compelling headline options (3)\n- Introduction hook\n- Main sections with key points\n- Call to action\n- Target word count\n```",
+      "word_count": 54
+    },
+    {
+      "segment_id": 36,
+      "start_time": 317.2,
+      "end_time": 331.6,
+      "visual_cue": "Step 4 - Google Sheets",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Step 4:** Google Sheets - Create Row.\n\nLog to your content calendar:\n- Title: Claude's best headline\n- Outline: The full outline\n- Source Inspiration: Link to original article\n- Status: \"Idea\"\n- Date Added: Today",
+      "word_count": 36
+    },
+    {
+      "segment_id": 37,
+      "start_time": 331.6,
+      "end_time": 344.4,
+      "visual_cue": "Step 5 - Slack Notification",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Step 5:** Slack notification to content team.\n\n```\n:bulb: New content idea generated\n\n*{{ $json.headline }}*\n\nInspired by competitor article: {{ $json.source_url }}\n\nOutline added to content calendar. Review when ready.\n```",
+      "word_count": 32
+    },
+    {
+      "segment_id": 38,
+      "start_time": 344.4,
+      "end_time": 349.5,
+      "visual_cue": "Complete workflow running",
+      "visual_type": "text_overlay",
+      "spoken_text": "Run the workflow. [PAUSE] Watch it cascade through each step.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 39,
+      "start_time": 349.5,
+      "end_time": 360.6,
+      "visual_cue": "Results in Sheets and Slack",
+      "visual_type": "text_overlay",
+      "spoken_text": "Check your spreadsheet - new content idea with full outline. [PAUSE] Check Slack - team notified. From competitor post to actionable content idea in seconds.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 40,
+      "start_time": 360.6,
+      "end_time": 364.6,
+      "visual_cue": "Orchestration patterns diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "A few patterns to remember as you build these systems.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 41,
+      "start_time": 364.6,
+      "end_time": 371.7,
+      "visual_cue": "Pattern 1 - Sequential",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Sequential:** Each step depends on the previous. [PAUSE] Analysis, then generation, then action. Most common.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 42,
+      "start_time": 371.7,
+      "end_time": 381.6,
+      "visual_cue": "Pattern 2 - Parallel",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Parallel:** Multiple AI calls at once for different purposes. [PAUSE] Analyze for sentiment AND extract entities AND summarize. Faster, costs more tokens.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 43,
+      "start_time": 381.6,
+      "end_time": 388.3,
+      "visual_cue": "Pattern 3 - Conditional",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Conditional:** AI decides what happens next. [PAUSE] Classification that routes to different action branches.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 44,
+      "start_time": 388.3,
+      "end_time": 395.8,
+      "visual_cue": "Pattern 4 - Iterative",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Iterative:** Loop through items, AI processes each one. [PAUSE] Analyze 10 articles, generate ideas for each.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 45,
+      "start_time": 395.8,
+      "end_time": 402.5,
+      "visual_cue": "Cost awareness callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch your token usage. [PAUSE] Each AI call costs money. Build smart, not excessive.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 46,
+      "start_time": 402.5,
+      "end_time": 412.4,
+      "visual_cue": "Recap visualization",
+      "visual_type": "illustration",
+      "spoken_text": "You've connected the pieces. [PAUSE] Automation platforms provide the muscle, Claude provides the brain. Together, they create intelligent systems that actually think.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 47,
+      "start_time": 412.4,
+      "end_time": 419.9,
+      "visual_cue": "Module 5 complete badge",
+      "visual_type": "animated_title",
+      "spoken_text": "That completes Module 5: Automation Engines. [PAUSE] You've gone from automation strategy to running intelligent loops.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 48,
+      "start_time": 419.9,
+      "end_time": 431.8,
+      "visual_cue": "Module 6 preview",
+      "visual_type": "animated_title",
+      "spoken_text": "Coming up in Module 6: Cloud Deployment. [PAUSE] We'll take everything you've built and deploy it properly - AWS, Amplify, Google Cloud, and keeping costs under control.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 49,
+      "start_time": 431.8,
+      "end_time": 444.9,
+      "visual_cue": "Practice challenge",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your challenge: Take one of your existing workflows and add Claude intelligence to it. [PAUSE] Even a simple classification or summary step transforms a dumb pipe into a smart system.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 50,
+      "start_time": 444.9,
+      "end_time": 484.5,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "Great work. See you in Module 6.\n\n**Total Runtime:** 15 minutes\n**Tone:** Technical integration, culminating excitement\n**Key Visuals:**\n- Architecture diagrams building step-by-step\n- n8n workflow construction screen recording\n- API request/response visualization\n- Data flowing through intelligent systems\n\n**B-Roll Suggestions:**\n- Neural network animations\n- Data transformation graphics\n- Results appearing in Sheets/Slack\n\n**Technical Requirements:**\n- Anthropic API key needed for demos\n- Claude Sonnet model recommended for cost efficiency\n- n8n credentials properly configured\n\n**Code Artifacts to Include:**\n- HTTP Request body template for Claude API\n- Sample prompts for classification\n- Content intelligence workflow JSON export",
+      "word_count": 99
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Module 5 complete badge",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 6 preview",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparing methods",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Architecture diagram building",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Diagram showing automation + AI = intelligent systems",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Full loop diagram",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Orchestration patterns diagram",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Workflow diagram",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Claude logo appearing",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Complete flow visualization",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Recap visualization",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Title \"Connecting Automations to Claude\" with neural network and gear icons merg...",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Step 3 - Idea Generation",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "System prompt configuration",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "User prompt configuration",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding AI Agent node",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding HTTP Request node",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Switch node",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Agent configuration",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Body configuration",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Complete workflow running",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Connection methods",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost awareness callout",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Feedback loop arrow",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "HTTP configuration - URL",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Headers configuration",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "JSON parsing highlight",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Layer 1 - Triggers",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Layer 2 - AI Processing",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Layer 3 - Actions",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New workflow - Content Intelligence",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 1 - Sequential",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 2 - Parallel",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 3 - Conditional",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 4 - Iterative",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practice challenge",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Response parsing",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Results in Sheets and Slack",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 1 - RSS Trigger",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 2 - Claude Analysis",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 4 - Google Sheets",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 5 - Slack Notification",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Switch configuration",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing the request",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Webhook trigger",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "When to use each",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Workflow overview",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n AI nodes panel",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n workflow starting",
+      "segment_ids": [
+        11
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.983720"
+}

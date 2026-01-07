@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy | AI Launchpad - Support Forge</title>
+    <meta name="description" content="Access your AI Launchpad Academy courses. Learn to build your complete AI stack with step-by-step video lessons.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Launchpad Academy | Support Forge">
+    <meta property="og:description" content="Your complete video course library for AI implementation mastery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://support-forge.com/academy">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Plyr Video Player -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <!-- Academy Styles -->
+    <link rel="stylesheet" href="academy/academy.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+</head>
+<body>
+    <!-- React Root -->
+    <div id="academy-root">
+        <!-- Loading state -->
+        <div class="academy-loading">
+            <div class="loading-spinner"></div>
+            <p>Loading Academy...</p>
+        </div>
+    </div>
+
+    <!-- React via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel for JSX (development - in production you'd precompile) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Plyr Video Player -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+    <!-- Academy Components -->
+    <script type="text/babel" src="academy/components/ProgressBar.js"></script>
+    <script type="text/babel" src="academy/components/ModuleAccordion.js"></script>
+    <script type="text/babel" src="academy/components/LoginForm.js"></script>
+    <script type="text/babel" src="academy/components/RegisterForm.js"></script>
+    <script type="text/babel" src="academy/components/Dashboard.js"></script>
+    <script type="text/babel" src="academy/components/CourseView.js"></script>
+    <script type="text/babel" src="academy/components/LessonView.js"></script>
+
+    <!-- Main App -->
+    <script type="text/babel" src="academy/app.js"></script>
+</body>
+</html>

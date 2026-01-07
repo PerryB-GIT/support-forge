@@ -1,0 +1,255 @@
+# n8n Docker Compose Configuration
+# ================================
+# Self-hosted n8n with PostgreSQL database
+#
+# Usage:
+#   1. Copy this file to your server
+#   2. Create a .env file with your settings (see below)
+#   3. Run: docker-compose up -d
+#
+# Required .env variables:
+#   POSTGRES_PASSWORD=your_secure_password
+#   N8N_ENCRYPTION_KEY=your_32_char_encryption_key
+#   N8N_HOST=your.domain.com
+#   N8N_BASIC_AUTH_USER=admin
+#   N8N_BASIC_AUTH_PASSWORD=your_admin_password
+#
+# Generate encryption key: openssl rand -hex 16
+
+version: '3.8'
+
+services:
+  # ===================
+  # PostgreSQL Database
+  # ===================
+  # Stores workflow data, credentials, and execution history
+  # Using PostgreSQL for better performance and reliability vs SQLite
+  postgres:
+    image: postgres:15-alpine
+    container_name: n8n-postgres
+    restart: unless-stopped
+
+    # Environment configuration
+    environment:
+      # Database name for n8n
+      POSTGRES_DB: n8n
+      # Default admin user
+      POSTGRES_USER: n8n
+      # Password from .env file - CHANGE THIS!
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      # Use UTC timezone for consistency
+      TZ: UTC
+
+    # Persistent storage for database
+    volumes:
+      # Named volume for PostgreSQL data
+      # Survives container restarts and updates
+      - postgres_data:/var/lib/postgresql/data
+
+    # Health check to ensure database is ready
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n -d n8n"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    # Internal network only - not exposed to host
+    networks:
+      - n8n-network
+
+  # ===================
+  # n8n Application
+  # ===================
+  # The main automation engine
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+
+    # Wait for database to be healthy before starting
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    # Port mapping
+    # Change 5678 to your preferred port if needed
+    ports:
+      - "5678:5678"
+
+    # Environment configuration
+    environment:
+      # ===================
+      # Database Connection
+      # ===================
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: n8n
+      DB_POSTGRESDB_USER: n8n
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+
+      # ===================
+      # n8n Core Settings
+      # ===================
+      # Your domain (required for webhooks to work)
+      N8N_HOST: ${N8N_HOST:-localhost}
+      N8N_PORT: 5678
+      N8N_PROTOCOL: https
+
+      # Webhook URL - how external services reach your n8n
+      # Format: https://your.domain.com/
+      WEBHOOK_URL: https://${N8N_HOST:-localhost}/
+
+      # ===================
+      # Security Settings
+      # ===================
+      # Encryption key for credentials storage
+      # IMPORTANT: Generate a unique key and keep it safe!
+      # Lost key = lost access to all stored credentials
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:-please-change-this-encryption-key}
+
+      # Basic authentication for n8n UI
+      # Protects your n8n instance from unauthorized access
+      N8N_BASIC_AUTH_ACTIVE: "true"
+      N8N_BASIC_AUTH_USER: ${N8N_BASIC_AUTH_USER:-admin}
+      N8N_BASIC_AUTH_PASSWORD: ${N8N_BASIC_AUTH_PASSWORD:-changeme}
+
+      # ===================
+      # Execution Settings
+      # ===================
+      # Save execution data for debugging
+      EXECUTIONS_DATA_SAVE_ON_ERROR: all
+      EXECUTIONS_DATA_SAVE_ON_SUCCESS: all
+      EXECUTIONS_DATA_SAVE_ON_PROGRESS: "true"
+      EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS: "true"
+
+      # How long to keep execution data (in hours)
+      # 168 hours = 7 days
+      EXECUTIONS_DATA_MAX_AGE: 168
+
+      # Prune old executions to save disk space
+      EXECUTIONS_DATA_PRUNE: "true"
+      EXECUTIONS_DATA_PRUNE_MAX_COUNT: 10000
+
+      # ===================
+      # Performance Settings
+      # ===================
+      # Generic timezone
+      GENERIC_TIMEZONE: UTC
+      TZ: UTC
+
+      # Node.js memory limit (adjust based on your server)
+      NODE_OPTIONS: --max-old-space-size=512
+
+      # ===================
+      # Optional: Email Settings
+      # ===================
+      # Uncomment and configure for error notifications
+      # N8N_EMAIL_MODE: smtp
+      # N8N_SMTP_HOST: smtp.gmail.com
+      # N8N_SMTP_PORT: 587
+      # N8N_SMTP_USER: your-email@gmail.com
+      # N8N_SMTP_PASS: your-app-password
+      # N8N_SMTP_SENDER: your-email@gmail.com
+
+      # ===================
+      # Optional: Metrics
+      # ===================
+      # Enable Prometheus metrics endpoint
+      # N8N_METRICS: "true"
+      # N8N_METRICS_PREFIX: n8n_
+
+    # Persistent storage
+    volumes:
+      # Workflow files and custom nodes
+      - n8n_data:/home/node/.n8n
+      # Local files that workflows might need to access
+      - ./local-files:/files
+
+    # Network configuration
+    networks:
+      - n8n-network
+
+    # Resource limits (optional, uncomment to enable)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.0'
+    #       memory: 1G
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 256M
+
+# ===================
+# Named Volumes
+# ===================
+# Persist data across container restarts
+volumes:
+  # PostgreSQL data storage
+  postgres_data:
+    driver: local
+  # n8n workflows and configuration
+  n8n_data:
+    driver: local
+
+# ===================
+# Networks
+# ===================
+# Isolated network for n8n components
+networks:
+  n8n-network:
+    driver: bridge
+
+# ===================
+# DEPLOYMENT NOTES
+# ===================
+#
+# 1. SECURITY CHECKLIST:
+#    [ ] Change POSTGRES_PASSWORD
+#    [ ] Generate unique N8N_ENCRYPTION_KEY
+#    [ ] Set strong N8N_BASIC_AUTH_PASSWORD
+#    [ ] Set correct N8N_HOST domain
+#    [ ] Use HTTPS (reverse proxy recommended)
+#
+# 2. REVERSE PROXY (Nginx example):
+#    server {
+#        listen 443 ssl http2;
+#        server_name n8n.yourdomain.com;
+#
+#        ssl_certificate /path/to/cert.pem;
+#        ssl_certificate_key /path/to/key.pem;
+#
+#        location / {
+#            proxy_pass http://localhost:5678;
+#            proxy_http_version 1.1;
+#            proxy_set_header Upgrade $http_upgrade;
+#            proxy_set_header Connection "upgrade";
+#            proxy_set_header Host $host;
+#            proxy_set_header X-Real-IP $remote_addr;
+#            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#            proxy_set_header X-Forwarded-Proto $scheme;
+#            chunked_transfer_encoding off;
+#            proxy_buffering off;
+#            proxy_cache off;
+#        }
+#    }
+#
+# 3. BACKUP STRATEGY:
+#    # Backup database
+#    docker exec n8n-postgres pg_dump -U n8n n8n > backup.sql
+#
+#    # Backup volumes
+#    docker run --rm -v n8n_data:/data -v $(pwd):/backup alpine \
+#      tar czf /backup/n8n-data.tar.gz /data
+#
+# 4. UPDATING n8n:
+#    docker-compose pull
+#    docker-compose up -d
+#
+# 5. VIEWING LOGS:
+#    docker-compose logs -f n8n
+#
+# 6. COMMON ISSUES:
+#    - Webhooks not working: Check WEBHOOK_URL matches your domain
+#    - Credentials error: Ensure N8N_ENCRYPTION_KEY hasn't changed
+#    - Database connection: Verify PostgreSQL is healthy first

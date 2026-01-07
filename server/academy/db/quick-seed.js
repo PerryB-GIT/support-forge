@@ -103,7 +103,7 @@ function seedDatabase() {
 
   db.transaction(() => {
     // Clear existing data
-    db.exec('DELETE FROM lesson_progress');
+    db.exec('DELETE FROM user_progress');
     db.exec('DELETE FROM video_parts');
     db.exec('DELETE FROM lessons');
     db.exec('DELETE FROM modules');
@@ -132,9 +132,9 @@ function seedDatabase() {
       for (let i = 0; i < mod.lessons.length; i++) {
         const lesson = mod.lessons[i];
         const lessonResult = db.prepare(`
-          INSERT INTO lessons (module_id, script_id, title, duration_seconds, segment_count, sort_order, is_free_preview)
+          INSERT INTO lessons (module_id, script_id, lesson_number, title, duration_seconds, sort_order, is_preview)
           VALUES (?, ?, ?, ?, ?, ?, ?)
-        `).run(moduleId, lesson.id, lesson.title, lesson.duration, 1, i + 1, mod.number === 0 ? 1 : 0);
+        `).run(moduleId, lesson.id, i + 1, lesson.title, lesson.duration, i + 1, mod.number === 0 ? 1 : 0);
 
         const lessonId = lessonResult.lastInsertRowid;
         console.log(`    Lesson: ${lesson.title}`);
@@ -143,9 +143,9 @@ function seedDatabase() {
         if (lesson.videos) {
           for (const video of lesson.videos) {
             db.prepare(`
-              INSERT INTO video_parts (lesson_id, part_number, s3_key, filename, status)
-              VALUES (?, ?, ?, ?, 'ready')
-            `).run(lessonId, video.part, video.s3Key, video.filename);
+              INSERT INTO video_parts (lesson_id, part_number, s3_key, status)
+              VALUES (?, ?, ?, 'ready')
+            `).run(lessonId, video.part, video.s3Key);
             console.log(`      Video: ${video.filename}`);
           }
         }

@@ -1,0 +1,411 @@
+{
+  "script_id": "8.1-capstone-project-overview",
+  "title": "Module 8.1: Capstone Project Overview",
+  "total_duration_seconds": 329.6,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 8.7,
+      "visual_cue": "Dramatic opening - \"CAPSTONE PROJECT\" text with heroic music cue, graduation cap graphic transforming into automation workflow",
+      "visual_type": "illustration",
+      "spoken_text": "This is it. [PAUSE]\n\nEverything you've learned. Every concept. Every tool. Every technique. It all comes together right here.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 2,
+      "start_time": 8.7,
+      "end_time": 22.6,
+      "visual_cue": "Title card - \"Module 8.1: Your First Agent Workflow\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Welcome to the capstone project of AI Launchpad Academy.\n\n[PAUSE]\n\nYou're about to build something real. Something complete. Something you could deploy tomorrow to serve actual clients.\n\nLet's see what we're building.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 3,
+      "start_time": 22.6,
+      "end_time": 60.4,
+      "visual_cue": "\"Client Onboarding Agent\" title with professional business icons",
+      "visual_type": "illustration",
+      "spoken_text": "Every business has a moment that sets the tone for the entire client relationship: onboarding. [PAUSE]\n\nWhen a new client signs up, what happens? In most businesses, it's a scramble. Someone needs to send a welcome email. Someone needs to set up their folder in Google Drive. Someone needs to add them to the CRM. Someone needs to notify the team. Someone needs to schedule a kickoff call.\n\n[PAUSE]\n\nA lot of \"someones.\" A lot of manual steps. A lot of room for things to fall through the cracks.",
+      "word_count": 87
+    },
+    {
+      "segment_id": 4,
+      "start_time": 60.4,
+      "end_time": 68.8,
+      "visual_cue": "Animation showing manual chaos transforming into smooth automation flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your capstone project changes that. You're building an intelligent agent that handles client onboarding automatically, professionally, and consistently, every single time.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 5,
+      "start_time": 68.8,
+      "end_time": 72.0,
+      "visual_cue": "Architecture diagram appearing piece by piece",
+      "visual_type": "flowchart",
+      "spoken_text": "Here's the complete system you're about to create:",
+      "word_count": 8
+    },
+    {
+      "segment_id": 6,
+      "start_time": 72.0,
+      "end_time": 79.2,
+      "visual_cue": "Trigger layer",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Trigger**: A webhook connected to a client intake form. When someone submits their information, the automation kicks off.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 7,
+      "start_time": 79.2,
+      "end_time": 96.0,
+      "visual_cue": "AI layer",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Claude AI Processing**: This is the brain. Claude will analyze the new client, determine their needs, and generate a personalized welcome email. Not a template. Not a mail merge. A thoughtfully crafted message that acknowledges who they are and what they need.",
+      "word_count": 42
+    },
+    {
+      "segment_id": 8,
+      "start_time": 96.0,
+      "end_time": 112.8,
+      "visual_cue": "Automation layer",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Automated Actions**: Based on the client information, your agent will:\n- Create a properly organized folder structure in Google Drive\n- Add the client to your Google Sheet or CRM with all relevant details\n- Schedule a welcome call on Google Calendar",
+      "word_count": 42
+    },
+    {
+      "segment_id": 9,
+      "start_time": 112.8,
+      "end_time": 126.3,
+      "visual_cue": "Notification layer",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Notifications**: The system will:\n- Send the personalized welcome email to the client\n- Post a notification to your team's Slack channel so everyone knows a new client has arrived\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 10,
+      "start_time": 126.3,
+      "end_time": 134.3,
+      "visual_cue": "Full architecture visible",
+      "visual_type": "text_overlay",
+      "spoken_text": "Trigger, AI processing, automated actions, notifications. That's a complete agent workflow. And you're going to build every piece of it.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 11,
+      "start_time": 134.3,
+      "end_time": 138.3,
+      "visual_cue": "Three pillars graphic",
+      "visual_type": "illustration",
+      "spoken_text": "I chose client onboarding for the capstone for three reasons.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 12,
+      "start_time": 138.3,
+      "end_time": 150.7,
+      "visual_cue": "Pillar 1 illuminates",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Reason one: it's universally valuable.** Every business onboards clients. This isn't a toy example. This is something you could use in your own business or sell to clients as a service.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 13,
+      "start_time": 150.7,
+      "end_time": 161.1,
+      "visual_cue": "Pillar 2 illuminates",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Reason two: it uses everything you've learned.** Webhooks and triggers. Claude for intelligent processing. Multiple API integrations. Conditional logic. Error handling. Data transformation. It's all here.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 14,
+      "start_time": 161.1,
+      "end_time": 178.3,
+      "visual_cue": "Pillar 3 illuminates",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Reason three: it's impressive.** When this is done, you'll have something to show. A complete system that transforms a form submission into a fully configured client setup in seconds. That's the kind of automation that makes people understand what AI agents can do.",
+      "word_count": 43
+    },
+    {
+      "segment_id": 15,
+      "start_time": 178.3,
+      "end_time": 181.9,
+      "visual_cue": "Checklist with checkboxes",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end of this capstone, you will have:",
+      "word_count": 9
+    },
+    {
+      "segment_id": 16,
+      "start_time": 181.9,
+      "end_time": 214.6,
+      "visual_cue": "Items appearing with checkmarks",
+      "visual_type": "illustration",
+      "spoken_text": "A working webhook that receives form submissions.\n\nClaude processing that analyzes client information and generates personalized content.\n\nA Google Drive folder structure created automatically for each new client.\n\nClient data logged to a Google Sheet with all relevant fields populated.\n\nA calendar event scheduled for the welcome call.\n\nA welcome email sent to the client.\n\nA Slack notification alerting your team.\n\nAnd documentation of your entire system.\n\n[PAUSE]\n\nThat's not a simple hello-world exercise. That's a production-grade automation system.",
+      "word_count": 78
+    },
+    {
+      "segment_id": 17,
+      "start_time": 214.6,
+      "end_time": 218.2,
+      "visual_cue": "Requirements checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we dive into building, make sure you have:",
+      "word_count": 9
+    },
+    {
+      "segment_id": 18,
+      "start_time": 218.2,
+      "end_time": 253.3,
+      "visual_cue": "Requirements appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Access to n8n (en-eight-en) or Zapier. We'll be building in n8n for this walkthrough, but I'll call out Zapier equivalents as we go.\n\nA Claude API key with available credits.\n\nA Google account with access to Drive, Sheets, and Calendar.\n\nA Slack workspace where you can post messages. If you don't have one, create a free workspace for testing.\n\nAn email account you can send from.\n\n[PAUSE]\n\nIf any of these aren't set up, pause here and get them ready. We're going to move fast.",
+      "word_count": 84
+    },
+    {
+      "segment_id": 19,
+      "start_time": 253.3,
+      "end_time": 256.1,
+      "visual_cue": "Timeline showing three upcoming videos",
+      "visual_type": "screen_capture",
+      "spoken_text": "Here's what's coming in the next modules:",
+      "word_count": 7
+    },
+    {
+      "segment_id": 20,
+      "start_time": 256.1,
+      "end_time": 266.1,
+      "visual_cue": "Module 8.2 card",
+      "visual_type": "animated_title",
+      "spoken_text": "**Module 8.2: Building the Client Onboarding Agent.** This is the main event. Forty minutes of hands-on building. We'll go step by step through every component.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 21,
+      "start_time": 266.1,
+      "end_time": 272.9,
+      "visual_cue": "Module 8.3 card",
+      "visual_type": "animated_title",
+      "spoken_text": "**Module 8.3: Testing and Refinement.** We'll run end-to-end tests, handle edge cases, and iterate on the design.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 22,
+      "start_time": 272.9,
+      "end_time": 281.3,
+      "visual_cue": "Module 8.4 card",
+      "visual_type": "animated_title",
+      "spoken_text": "**Module 8.4: Certification and Next Steps.** You made it. Quiz time, badges, and a look at where to go from here.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 23,
+      "start_time": 281.3,
+      "end_time": 296.0,
+      "visual_cue": "Energetic transition - \"Ready to Build?\" text",
+      "visual_type": "text_overlay",
+      "spoken_text": "I'm excited. You should be too.\n\n[PAUSE]\n\nYou walked into this course curious about AI automation. You're about to walk out with a complete, working agent system and the skills to build many more.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 24,
+      "start_time": 296.0,
+      "end_time": 298.0,
+      "visual_cue": "\"Next: 8.2 - Building the Client Onboarding Agent\" with play button graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Let's build.",
+      "word_count": 2
+    },
+    {
+      "segment_id": 25,
+      "start_time": 298.0,
+      "end_time": 329.6,
+      "visual_cue": "End card with AI Launchpad Academy logo and \"CAPSTONE\" badge",
+      "visual_type": "animated_title",
+      "spoken_text": "- Pacing: Energetic and exciting. This is the kickoff to the finale.\n- Music: Consider upbeat, inspiring background music during the architecture reveal.\n- Visuals: Make the architecture diagram look impressive. This should feel like a big deal.\n- Tone: Celebratory but focused. They've made it here. Now let's deliver.\n- Energy: Higher than previous modules. This is the payoff.\n\n- n8n: \"en-eight-en\"\n- webhook: \"WEB-hook\"\n- CRM: \"C-R-M\" (spelled out)\n- API: \"A-P-I\" (spelled out)\n- capstone: \"CAP-stone\"",
+      "word_count": 79
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo and \"CAPSTONE\" badge",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 8.2 card",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 8.3 card",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 8.4 card",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 8.1: Your First Agent Workflow\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Architecture diagram appearing piece by piece",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Client Onboarding Agent\" title with professional business icons",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Next: 8.2 - Building the Client Onboarding Agent\" with play button graphic",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Dramatic opening - \"CAPSTONE PROJECT\" text with heroic music cue, graduation cap...",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Items appearing with checkmarks",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Three pillars graphic",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Timeline showing three upcoming videos",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "AI layer",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Animation showing manual chaos transforming into smooth automation flow",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Automation layer",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist with checkboxes",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Energetic transition - \"Ready to Build?\" text",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Full architecture visible",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Notification layer",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pillar 1 illuminates",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pillar 2 illuminates",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pillar 3 illuminates",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Requirements appearing",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Requirements checklist",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Trigger layer",
+      "segment_ids": [
+        6
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.020124"
+}

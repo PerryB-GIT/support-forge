@@ -1,0 +1,1039 @@
+{
+  "script_id": "5.4-zapier-essentials",
+  "title": "Module 5.4: Zapier Essentials",
+  "total_duration_seconds": 546.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 10.3,
+      "visual_cue": "Zapier logo with \"Essentials\" subtitle",
+      "visual_type": "illustration",
+      "spoken_text": "Zapier. [PAUSE] Over 7,000 app integrations, used by millions of businesses, and honestly the fastest way to get automations running without touching code.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 2,
+      "start_time": 10.3,
+      "end_time": 20.2,
+      "visual_cue": "Zapier interface preview",
+      "visual_type": "screen_capture",
+      "spoken_text": "If n8n is the power tool for technical users, Zapier is the Swiss Army knife for everyone else. [PAUSE] Let's master it.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 3,
+      "start_time": 20.2,
+      "end_time": 29.8,
+      "visual_cue": "Lesson objectives",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end of this lesson, you'll understand Zapier's interface, know how to create multi-step Zaps, and have two real automations running. Let's go.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 4,
+      "start_time": 29.8,
+      "end_time": 39.3,
+      "visual_cue": "Zapier dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "When you log into Zapier, this is your dashboard. [PAUSE] Clean, simple, focused on one thing: getting you to build Zaps.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 5,
+      "start_time": 39.3,
+      "end_time": 42.1,
+      "visual_cue": "Navigation callouts",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's break down what you're looking at.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 6,
+      "start_time": 42.1,
+      "end_time": 54.0,
+      "visual_cue": "Left sidebar highlighted",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Left sidebar:** Your main navigation. [PAUSE] \"Zaps\" shows everything you've built. \"Home\" is your dashboard. \"Transfers\" is for bulk data moves - we'll skip that for now.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 7,
+      "start_time": 54.0,
+      "end_time": 64.7,
+      "visual_cue": "Zaps section highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "The Zaps section has folders for organization. [PAUSE] Create folders by client, by function, whatever makes sense. Don't just dump everything in the root.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 8,
+      "start_time": 64.7,
+      "end_time": 77.4,
+      "visual_cue": "History section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Task History:** This is your execution log. [PAUSE] Every time a Zap runs, it shows up here. Green means success, red means something broke. You'll check this when debugging.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 9,
+      "start_time": 77.4,
+      "end_time": 83.7,
+      "visual_cue": "Create button highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "That big \"Create\" button? [PAUSE] That's where we'll spend most of our time.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 10,
+      "start_time": 83.7,
+      "end_time": 94.0,
+      "visual_cue": "Templates section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Zapier also has pre-built templates. [PAUSE] Thousands of them. For common workflows, don't reinvent the wheel - start with a template and customize.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 11,
+      "start_time": 94.0,
+      "end_time": 98.7,
+      "visual_cue": "Terminology diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Quick vocabulary lesson. [PAUSE] Zapier has its own language.",
+      "word_count": 8
+    },
+    {
+      "segment_id": 12,
+      "start_time": 98.7,
+      "end_time": 106.2,
+      "visual_cue": "Zap definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "A **Zap** is a complete automation. [PAUSE] It's the entire workflow from trigger to final action.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 13,
+      "start_time": 106.2,
+      "end_time": 115.3,
+      "visual_cue": "Trigger definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "A **Trigger** is what starts the Zap. [PAUSE] New email arrives, form submitted, calendar event created. Something happens, Zap fires.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 14,
+      "start_time": 115.3,
+      "end_time": 125.6,
+      "visual_cue": "Action definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "An **Action** is what the Zap does in response. [PAUSE] Send email, create row, update record. The work that happens after the trigger.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 15,
+      "start_time": 125.6,
+      "end_time": 135.5,
+      "visual_cue": "Task definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "A **Task** is one successful action. [PAUSE] Zapier bills by tasks. Run 100 Zaps that each do one action? That's 100 tasks.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 16,
+      "start_time": 135.5,
+      "end_time": 143.0,
+      "visual_cue": "Path definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Paths** are conditional branches. [PAUSE] If this, do that. Otherwise, do something else. Like if-else statements.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 17,
+      "start_time": 143.0,
+      "end_time": 154.5,
+      "visual_cue": "Filter definition",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Filters** stop the Zap if conditions aren't met. [PAUSE] Only continue if the email is from this domain. Only run if the amount is over $100.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 18,
+      "start_time": 154.5,
+      "end_time": 156.5,
+      "visual_cue": "Click Create - Zaps",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Create\" and select \"Zaps.\"",
+      "word_count": 5
+    },
+    {
+      "segment_id": 19,
+      "start_time": 156.5,
+      "end_time": 163.2,
+      "visual_cue": "Zap editor opening",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is the Zap editor. [PAUSE] Trigger on top, actions below. Simple visual flow.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 20,
+      "start_time": 163.2,
+      "end_time": 169.9,
+      "visual_cue": "Selecting trigger app",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Trigger\" and let's pick an app. [PAUSE] Type \"Google Forms\" and select it.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 21,
+      "start_time": 169.9,
+      "end_time": 175.4,
+      "visual_cue": "Google Forms options",
+      "visual_type": "text_overlay",
+      "spoken_text": "Zapier shows available triggers. [PAUSE] We want \"New Response in Spreadsheet.\"",
+      "word_count": 10
+    },
+    {
+      "segment_id": 22,
+      "start_time": 175.4,
+      "end_time": 182.5,
+      "visual_cue": "Account connection",
+      "visual_type": "text_overlay",
+      "spoken_text": "Connect your Google account if you haven't. [PAUSE] Follow the OAuth (oh-auth) flow, grant permissions.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 23,
+      "start_time": 182.5,
+      "end_time": 191.6,
+      "visual_cue": "Selecting form",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select your spreadsheet and worksheet where form responses land. [PAUSE] If you're following along, create a quick Google Form first.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 24,
+      "start_time": 191.6,
+      "end_time": 199.1,
+      "visual_cue": "Test trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Test trigger.\" [PAUSE] Zapier pulls recent responses so you have real data to work with.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 25,
+      "start_time": 199.1,
+      "end_time": 208.2,
+      "visual_cue": "Sample data displayed",
+      "visual_type": "text_overlay",
+      "spoken_text": "See this sample data? [PAUSE] These field names become available in every step below. That's how you reference incoming information.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 26,
+      "start_time": 208.2,
+      "end_time": 214.1,
+      "visual_cue": "Adding action",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click the plus sign to add an action. [PAUSE] Search for \"Slack.\"",
+      "word_count": 11
+    },
+    {
+      "segment_id": 27,
+      "start_time": 214.1,
+      "end_time": 216.1,
+      "visual_cue": "Slack action options",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select \"Send Channel Message.\"",
+      "word_count": 4
+    },
+    {
+      "segment_id": 28,
+      "start_time": 216.1,
+      "end_time": 224.9,
+      "visual_cue": "Slack configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it:\n- **Channel:** Pick your notifications channel\n- **Message Text:** Click in the field, then click the \"+\" to insert data",
+      "word_count": 22
+    },
+    {
+      "segment_id": 29,
+      "start_time": 224.9,
+      "end_time": 231.7,
+      "visual_cue": "Data mapping",
+      "visual_type": "text_overlay",
+      "spoken_text": "Build your message by mixing text and data:\n\n```\nNew form response received!\nName: [Insert Name field]\nEmail: [Insert Email field]\nMessage: [Insert Message field]\n```",
+      "word_count": 17
+    },
+    {
+      "segment_id": 30,
+      "start_time": 231.7,
+      "end_time": 238.8,
+      "visual_cue": "Formatting options",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can use Slack markdown. [PAUSE] Asterisks for bold, underscores for italics. Make it scannable.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 31,
+      "start_time": 238.8,
+      "end_time": 245.5,
+      "visual_cue": "Test action",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Test action.\" [PAUSE] This sends a real message to Slack. Check your channel.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 32,
+      "start_time": 245.5,
+      "end_time": 249.8,
+      "visual_cue": "Slack message confirmation",
+      "visual_type": "text_overlay",
+      "spoken_text": "There it is. [PAUSE] Your first Zap works.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 33,
+      "start_time": 249.8,
+      "end_time": 261.3,
+      "visual_cue": "Publishing Zap",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Publish.\" [PAUSE] Give it a clear name: \"Google Form to Slack Notification.\"\n\nYour Zap is now live. Every form response triggers a Slack message automatically.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 34,
+      "start_time": 261.3,
+      "end_time": 270.0,
+      "visual_cue": "Multi-step diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Single-step Zaps are useful, but multi-step is where Zapier shines. [PAUSE] Chain together as many actions as you need.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 35,
+      "start_time": 270.0,
+      "end_time": 277.9,
+      "visual_cue": "Editing previous Zap",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's expand our form notification Zap. [PAUSE] Open it and click the plus after the Slack action.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 36,
+      "start_time": 277.9,
+      "end_time": 279.9,
+      "visual_cue": "Adding Gmail action",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add \"Gmail - Send Email.\"",
+      "word_count": 5
+    },
+    {
+      "segment_id": 37,
+      "start_time": 279.9,
+      "end_time": 297.5,
+      "visual_cue": "Gmail configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "We'll send an auto-reply to the person who submitted:\n\n- **To:** [Insert their Email field]\n- **Subject:** \"Thanks for reaching out!\"\n- **Body:**\n\n```\nHi [Insert Name],\n\nThanks for contacting us. We've received your message and will get back to you within 24 hours.\n\nBest regards,\nYour Team\n```",
+      "word_count": 44
+    },
+    {
+      "segment_id": 38,
+      "start_time": 297.5,
+      "end_time": 302.6,
+      "visual_cue": "Testing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Test the action. [PAUSE] Check that the email sends correctly.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 39,
+      "start_time": 302.6,
+      "end_time": 307.0,
+      "visual_cue": "Adding another action",
+      "visual_type": "text_overlay",
+      "spoken_text": "One more. Click plus, add \"Google Sheets - Create Spreadsheet Row.\"",
+      "word_count": 11
+    },
+    {
+      "segment_id": 40,
+      "start_time": 307.0,
+      "end_time": 317.8,
+      "visual_cue": "Sheets configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "This logs every submission to a master tracking sheet:\n\n- **Spreadsheet:** Your leads spreadsheet\n- **Worksheet:** The appropriate sheet\n- **Row data:** Map each field to columns",
+      "word_count": 27
+    },
+    {
+      "segment_id": 41,
+      "start_time": 317.8,
+      "end_time": 329.3,
+      "visual_cue": "Complete multi-step flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now you have a three-action Zap: [PAUSE] Form submission notifies you on Slack, sends auto-reply to the submitter, and logs everything to a spreadsheet. All automatic.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 42,
+      "start_time": 329.3,
+      "end_time": 334.4,
+      "visual_cue": "New Zap creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build something more sophisticated. [PAUSE] A meeting follow-up system.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 43,
+      "start_time": 334.4,
+      "end_time": 341.1,
+      "visual_cue": "Calendar trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Trigger: Google Calendar - Event End. [PAUSE] This fires when a calendar event finishes.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 44,
+      "start_time": 341.1,
+      "end_time": 346.2,
+      "visual_cue": "Event configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select your calendar. [PAUSE] Test to pull a recent event.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 45,
+      "start_time": 346.2,
+      "end_time": 351.3,
+      "visual_cue": "Adding filter",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's where it gets smart. [PAUSE] Add a \"Filter\" step.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 46,
+      "start_time": 351.3,
+      "end_time": 363.2,
+      "visual_cue": "Filter configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure the filter:\n- **Only continue if:** Event Title contains \"Client\" or \"Sales\" or \"Discovery\"\n\nThis way, internal meetings don't trigger follow-ups. [PAUSE] Only client-facing meetings do.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 47,
+      "start_time": 363.2,
+      "end_time": 379.4,
+      "visual_cue": "Adding delay",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add \"Delay by Zapier.\" [PAUSE] Set it to 1 hour.\n\nWhy delay? [PAUSE] You don't want to email them the second the meeting ends. Give yourself time to finish notes, then the automation handles follow-up.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 48,
+      "start_time": 379.4,
+      "end_time": 381.4,
+      "visual_cue": "Adding Gmail",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add Gmail - Send Email.",
+      "word_count": 5
+    },
+    {
+      "segment_id": 49,
+      "start_time": 381.4,
+      "end_time": 401.4,
+      "visual_cue": "Email configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure the follow-up:\n\n- **To:** You'll need the attendee email from the event data\n- **Subject:** \"Great meeting - next steps from [Event Title]\"\n- **Body:**\n\n```\nHi,\n\nIt was great connecting during our [Event Title] call today.\n\nAs discussed, here are the next steps:\n[You'll fill this in via the Zapier email draft feature, or use a template]\n\nLooking forward to our continued conversation.\n\nBest,\n[Your Name]\n```",
+      "word_count": 50
+    },
+    {
+      "segment_id": 50,
+      "start_time": 401.4,
+      "end_time": 414.1,
+      "visual_cue": "Important callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pro tip: [PAUSE] Instead of sending directly, use \"Gmail - Create Draft.\" This queues up the follow-up for you to review and personalize before sending. Best of both worlds.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 51,
+      "start_time": 414.1,
+      "end_time": 424.8,
+      "visual_cue": "Complete flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "The flow: Meeting ends, waits an hour, creates a draft follow-up email for client meetings only. [PAUSE] You never forget to follow up again.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 52,
+      "start_time": 424.8,
+      "end_time": 428.7,
+      "visual_cue": "New Zap creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "One more practical example: content repurposing. [PAUSE]",
+      "word_count": 6
+    },
+    {
+      "segment_id": 53,
+      "start_time": 428.7,
+      "end_time": 432.3,
+      "visual_cue": "RSS trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Trigger: RSS by Zapier - New Item in Feed.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 54,
+      "start_time": 432.3,
+      "end_time": 439.0,
+      "visual_cue": "RSS configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Feed URL: Your blog's RSS feed. [PAUSE] Every new post you publish triggers this.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 55,
+      "start_time": 439.0,
+      "end_time": 442.2,
+      "visual_cue": "Adding Formatter",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add \"Formatter by Zapier\" - Text - Truncate.",
+      "word_count": 8
+    },
+    {
+      "segment_id": 56,
+      "start_time": 442.2,
+      "end_time": 451.0,
+      "visual_cue": "Truncate configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "This shortens your blog content for social media:\n- **Input:** The blog post content\n- **Max Length:** 250 characters\n- **Append:** \"...\"",
+      "word_count": 22
+    },
+    {
+      "segment_id": 57,
+      "start_time": 451.0,
+      "end_time": 453.4,
+      "visual_cue": "Adding LinkedIn",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add LinkedIn - Create Share Update.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 58,
+      "start_time": 453.4,
+      "end_time": 456.6,
+      "visual_cue": "LinkedIn configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "- **Comment:** [Insert truncated content]\n- **Content URL:** [Insert blog post URL]\n- **Content Title:** [Insert blog title]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 59,
+      "start_time": 456.6,
+      "end_time": 464.9,
+      "visual_cue": "Adding parallel path for Twitter alternative",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can add paths here to post to multiple platforms. [PAUSE] Same content, different formats for each network.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 60,
+      "start_time": 464.9,
+      "end_time": 475.6,
+      "visual_cue": "Complete flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "The result: Publish a blog post, automatically share to LinkedIn with a proper preview. [PAUSE] Expand it to Twitter, Facebook, wherever your audience lives.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 61,
+      "start_time": 475.6,
+      "end_time": 483.5,
+      "visual_cue": "Recap slide",
+      "visual_type": "screen_capture",
+      "spoken_text": "You've mastered Zapier basics. [PAUSE] You understand the interface, built multi-step Zaps, and created two real automations.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 62,
+      "start_time": 483.5,
+      "end_time": 493.4,
+      "visual_cue": "Zapier vs n8n comparison reminder",
+      "visual_type": "comparison_table",
+      "spoken_text": "Remember: Zapier excels at quick integrations and non-technical users. [PAUSE] If you find yourself fighting its limitations, that's when n8n becomes attractive.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 63,
+      "start_time": 493.4,
+      "end_time": 504.9,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next lesson brings it all together. [PAUSE] We'll connect these automations to Claude, creating intelligent loops where AI handles the thinking and automations handle the doing.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 64,
+      "start_time": 504.9,
+      "end_time": 515.6,
+      "visual_cue": "Practice assignment",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your assignment: Build one Zap that solves a real problem in your business. [PAUSE] Don't pick something theoretical - pick something you actually need.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 65,
+      "start_time": 515.6,
+      "end_time": 546.0,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you in the next one.\n\n**Total Runtime:** 20 minutes\n**Tone:** Practical, interface-focused, lots of clicking\n**Key Visuals:**\n- Zapier interface screen recordings\n- Step-by-step configuration close-ups\n- Data mapping demonstrations\n- Test execution results\n\n**B-Roll Suggestions:**\n- App logo animations\n- Data flowing between services\n- Slack/email notifications appearing\n\n**Technical Notes:**\n- All demonstrated Zaps use free tier compatible features\n- Filter syntax may vary based on Zapier updates\n- LinkedIn posting requires business account",
+      "word_count": 76
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "comparison_table",
+      "description": "Zapier vs n8n comparison reminder",
+      "segment_ids": [
+        62
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Multi-step diagram",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Terminology diagram",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Zapier logo with \"Essentials\" subtitle",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Left sidebar highlighted",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Recap slide",
+      "segment_ids": [
+        61
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier dashboard",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface preview",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account connection",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Action definition",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Formatter",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Gmail",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Gmail action",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding LinkedIn",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding action",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding another action",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding delay",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding filter",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding parallel path for Twitter alternative",
+      "segment_ids": [
+        59
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Calendar trigger",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Click Create - Zaps",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Complete flow",
+      "segment_ids": [
+        51,
+        60
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Complete multi-step flow",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Create button highlighted",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Data mapping",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Editing previous Zap",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Email configuration",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        65
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Event configuration",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Filter configuration",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Filter definition",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Formatting options",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gmail configuration",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Forms options",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "History section",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Important callout",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Lesson objectives",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "LinkedIn configuration",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Navigation callouts",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New Zap creation",
+      "segment_ids": [
+        42,
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        63
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Path definition",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practice assignment",
+      "segment_ids": [
+        64
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Publishing Zap",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "RSS configuration",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "RSS trigger",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Sample data displayed",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Selecting form",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Selecting trigger app",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Sheets configuration",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack action options",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack configuration",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack message confirmation",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Task definition",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Templates section",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Test action",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Test trigger",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Trigger definition",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Truncate configuration",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zap definition",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zap editor opening",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zaps section highlighted",
+      "segment_ids": [
+        7
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.978784"
+}

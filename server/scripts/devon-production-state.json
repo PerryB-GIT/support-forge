@@ -1,0 +1,142 @@
+{
+  "jobs": {
+    "5.1-automation-strategy-part1": {
+      "script_id": "5.1-automation-strategy-part1",
+      "heygen_video_id": "a5b5caf80bbe49198f9c2a20b0f61251",
+      "status": "failed",
+      "video_url": null,
+      "output_path": null,
+      "error": {
+        "code": "MOVIO_PAYMENT_INSUFFICIENT_CREDIT",
+        "detail": "Insufficient credit",
+        "message": "Insufficient credit"
+      },
+      "created_at": "2026-01-06T21:28:36.393645",
+      "completed_at": null,
+      "duration": null
+    },
+    "5.1-automation-strategy-part2": {
+      "script_id": "5.1-automation-strategy-part2",
+      "heygen_video_id": "d40f8969692e49d6a6558e1c873e277e",
+      "status": "failed",
+      "video_url": null,
+      "output_path": null,
+      "error": {
+        "code": "MOVIO_PAYMENT_INSUFFICIENT_CREDIT",
+        "detail": "Insufficient credit",
+        "message": "Insufficient credit"
+      },
+      "created_at": "2026-01-06T21:28:37.681495",
+      "completed_at": null,
+      "duration": null
+    },
+    "7.1-credential-security-part1": {
+      "script_id": "7.1-credential-security-part1",
+      "heygen_video_id": "dade81b520f84d0fa989e4633a71f8f0",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/dade81b520f84d0fa989e4633a71f8f0.mp4?Expires=1768360894&Signature=AqxBpxM3lUohUibwl4rOOwFBc-MgWhOz9QrtJ-N6dHqxykOk0pf0NnnVsk~fJ3jexgsjLj9BGi9oTlUrdWj~KjWvo-yheP-wqafeFD2tJRez3RYaO21XTjeovj4zIqv1scQwex5fo9TPs07xtWQi98CFky8DbLhJORLc14zrS68WTpxOwFJqfowbE4DARvsc7m8XVeaOYoHV4BIa-w1HZbio4DBMa1LYTQkZmIErCIxmDVnKHMnDTjg8KqqK93WPt4jeC9rNno6mIgZ4mM-9HAD~uII82UPJESxg3hn6ok6tzFmVJ0v7RC-fZhqrvNWOUbPhM5pNkjj9s6tbJHRjDQ__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\7.1-credential-security-part1.mp4",
+      "error": null,
+      "created_at": "2026-01-06T21:28:39.033670",
+      "completed_at": "2026-01-06T22:27:48.925878",
+      "duration": 175.17
+    },
+    "7.1-credential-security-part2": {
+      "script_id": "7.1-credential-security-part2",
+      "heygen_video_id": "58bb8917416348caad1743a208a64da4",
+      "status": "failed",
+      "video_url": null,
+      "output_path": null,
+      "error": {
+        "code": "MOVIO_VIDEO_IS_TOO_LONG",
+        "detail": "Video is too long (> 180.0s). Please upgrade your plan to generate longer videos",
+        "message": "Video is too long (> 180.0s). Please upgrade your plan to generate longer videos"
+      },
+      "created_at": "2026-01-06T21:28:40.380356",
+      "completed_at": null,
+      "duration": null
+    },
+    "7.1-credential-security-part3": {
+      "script_id": "7.1-credential-security-part3",
+      "heygen_video_id": "19be1d17e86044b99c5886f94e499a16",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/19be1d17e86044b99c5886f94e499a16.mp4?Expires=1768358498&Signature=i1eb8c9lRCmPxdMFm3jdrb5-cqcZ1gwBR4SN~bDjbLxTskc4-g86ng-seCfq3~j5nmD8BMJ-PZSNF~IfZHNciWwy-PclNJAYUeHtMgRVgiuTay9XKAsuHztlyTgtCDtxPc8YCOeUVeVYpE7kW4qIyEKcNhQCXD86Yu0oE215Dg9BGrDQeijes938gt0xe-IlE93oVJP9vaRhGESxFznGrwepmGeogieYrQ1G5lsy0fvHlZySOLqoZqLpYyZUMsVPoaUcZAzNla~hjbCgPiVfoQndQF9C7eJp4fwj1mvBqi5QAEo69f8uAcLB1TBkmkkzAXvzk-H3fHI-lZXZxt3zvg__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\7.1-credential-security-part3.mp4",
+      "error": null,
+      "created_at": "2026-01-06T21:28:41.768737",
+      "completed_at": "2026-01-06T21:42:15.614755",
+      "duration": 173.132
+    },
+    "7.1-credential-security-part4": {
+      "script_id": "7.1-credential-security-part4",
+      "heygen_video_id": "d07491ccfceb488ba431dfbe5d2513b5",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/d07491ccfceb488ba431dfbe5d2513b5.mp4?Expires=1768358982&Signature=OyAlCD2oTlV54Ast7XPH0Iclb~PpqTXqnpgMVaiggClq7tBWfE5bhy2JM3vktf2WCcZ3xz6QwpEVMh8w-X8eAueqxmhO2Wj9XJhsWrpMAahNHi5X2yh7s8bda9ZeLRGwSXWageJJU1TYwf6CHeW6gWPoojWF58~1jDoCQ8pAb1pSrNE1xJg3F8Ln3gwH2gYt6d-CRwfEztTr0aHAaXeL49vaFxsRY9vH8ce04lrSDg3-xshOXyq8nOVia~M25bOumcKCUq~ch~TUEp3yA-crdRmfPKcW2nwd60unqTTCYi2DibKeIqV08tI4CfrCDd-miXMo6uLxdi5MIpZcE77upA__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\7.1-credential-security-part4.mp4",
+      "error": null,
+      "created_at": "2026-01-06T21:42:28.411785",
+      "completed_at": "2026-01-06T21:52:15.587554",
+      "duration": 76.949
+    },
+    "8.1-capstone-project-overview-part1": {
+      "script_id": "8.1-capstone-project-overview-part1",
+      "heygen_video_id": "cee3e4dc01d644b8b3a18a0ba85453b3",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/cee3e4dc01d644b8b3a18a0ba85453b3.mp4?Expires=1768359806&Signature=d2yDCdOLKEATbp7P5RSdxwg7Td~wVErEbSy6tQmvGv-Sxly8Shvb-NgQ4zOXd6PADjAm0gZPyLtpX1kFKkc5m0b-kEr9EHZzLTGGifGbybbEBkhRjkMMeASauIGYUfV359-DqRX20fepfA5TxS67HR5haOxEYdnVYYIJTnmMWcI86eIHhPo9mwzPWoRnFhLNG0ZfGMD9yJ5OnEc2n1ef0yVW5bWxObvYU3mfYz068Ns~Lu5bLeGBBv1ugmR-h8VL77g4xlEF-fN5yEahLWUj3haAtjnrlPqluQh9H39T9KIRjj8rPe5DyEr18J-~S9m3ekH67yYqlrK3~a0YvCcSdg__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\8.1-capstone-project-overview-part1.mp4",
+      "error": null,
+      "created_at": "2026-01-06T21:46:02.478923",
+      "completed_at": "2026-01-06T22:09:56.558977",
+      "duration": 164.851
+    },
+    "7.1-credential-security-part5": {
+      "script_id": "7.1-credential-security-part5",
+      "heygen_video_id": "76bb3c6595b84c54b2dd5838dc9e463d",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/76bb3c6595b84c54b2dd5838dc9e463d.mp4?Expires=1768359995&Signature=WmYCTZGlOIdswG9THFi-fDcJGJ~pV~oYNSvCEli6iVXnfW31KF0-VhKIKGlZYAXNl3u1ajuT-MoQsVcBCSe2Yf45hfbP4Gl~C6epdubL3IZWgPE4xGrCoX61UbtyADE8Cl4O3GlXnHUwmNijMe4cVNZiAN3GuobevneV755~Wof2snmxpaQSQRW9k9nUmtAynOviwFQwERb37wkQBd4P3hr0UEKMLvdizW7wgEzH2o6L7VusbZzpBtKQSsLe~aNTKisuin~D7NsSbiaOeaDnBuSq27rJ-egTBIylCAmiB97deHaEwlLzkZIiNvVNKQo~bXMK2--8Mg1EcON8pRWC8A__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\7.1-credential-security-part5.mp4",
+      "error": null,
+      "created_at": "2026-01-06T21:52:31.939775",
+      "completed_at": "2026-01-06T22:10:01.003057",
+      "duration": 10.781
+    },
+    "8.1-capstone-project-overview-part2": {
+      "script_id": "8.1-capstone-project-overview-part2",
+      "heygen_video_id": "70c5b7bed3cb48e7838454b0d4fd0375",
+      "status": "failed",
+      "video_url": null,
+      "output_path": null,
+      "error": {
+        "code": "MOVIO_PAYMENT_INSUFFICIENT_CREDIT",
+        "detail": "Insufficient credit",
+        "message": "Insufficient credit"
+      },
+      "created_at": "2026-01-06T22:10:16.212420",
+      "completed_at": null,
+      "duration": null
+    },
+    "8.2-building-client-onboarding-agent-part1": {
+      "script_id": "8.2-building-client-onboarding-agent-part1",
+      "heygen_video_id": "cb9579ad4b514124aa7ca34667bb8fa7",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/cb9579ad4b514124aa7ca34667bb8fa7.mp4?Expires=1768361708&Signature=hl7epZrT-AXGPMgZ-pEyZkwYbHcHi~F2fXqL7YPJNIv28-aPJPFOKOCD94Q~gAvW9lkagyN33wcvkzjWYz8-vw6vOtR6cmfgGReaWBIevyYTrpVKS-TeGvHm95tC5npT5ISkl-yGBpevugDGqzgJZ8lEWaf3WqMh2GtNH-48iJFON6O7wO8BNg2a7YQaQEnWZN4u8T3ShIWuvPNXKChx52LonCxVPotkX6I8iAOmPpw4ptuK1oY~HVSh1E3aK3pWsgt7cLkyMsAMgIxA06Z2SuwuBCDkYRnaGm~4G0tJbt9a1RoKVlDMQXVRSXmrYd7Lzky4ZutPV5EbaCvx-MrQzA__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\8.2-building-client-onboarding-agent-part1.mp4",
+      "error": null,
+      "created_at": "2026-01-06T22:10:17.544907",
+      "completed_at": "2026-01-06T22:35:06.289778",
+      "duration": 180.472
+    },
+    "8.2-building-client-onboarding-agent-part2": {
+      "script_id": "8.2-building-client-onboarding-agent-part2",
+      "heygen_video_id": "6af8590e11f84918a91d6aebfd5f1762",
+      "status": "completed",
+      "video_url": "https://files2.heygen.ai/aws_pacific/avatar_tmp/99b3dedee1ee48039523f0edc8fed806/6af8590e11f84918a91d6aebfd5f1762.mp4?Expires=1768363024&Signature=Cqas1YCUmldFAwprI8cunOXqK7OQzPZw6wrSv0qH2RtWyX4SkXUprdsMPtb7vgtz7Nt6ehagH4KSe1bEcICsXb-iz064ZuUNTnM7HuECccllVo~DjfPXSs694oVHvHpwZkRbEvKFXohdov6f0rMBdb4tTVkM1o1PpVpgA6Ol1o3oPW2knxaruThTYmok6PbsasU9sujiX-fOjuTcRlwCSNxVKLHmw3JZBnme9PZTZD1QPVikJVdBlT0FLDkPwLkurJ33hUMaK9Lkqe9msnRD5z5AU8tK7m9UqQHvSIoUzlY-8bdZ4U8HwKADfzm3SC3VIOnfKSTpCA2-d4jZ0nNtpQ__&Key-Pair-Id=K38HBHX5LX3X2H",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\devon-videos\\8.2-building-client-onboarding-agent-part2.mp4",
+      "error": null,
+      "created_at": "2026-01-06T22:28:06.916804",
+      "completed_at": "2026-01-07T11:50:00.557150",
+      "duration": 177.442
+    }
+  },
+  "updated_at": "2026-01-07T11:50:02.424787"
+}

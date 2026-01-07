@@ -1,0 +1,200 @@
+{
+  "name": "Invoice Email Processor",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minute": 15
+            }
+          ]
+        },
+        "filters": {
+          "q": "subject:(invoice OR receipt OR payment) has:attachment"
+        }
+      },
+      "id": "email-trigger",
+      "name": "Check for Invoice Emails",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "get",
+        "messageId": "={{ $json.id }}",
+        "options": {
+          "attachmentPrefix": "invoice_"
+        }
+      },
+      "id": "get-attachments",
+      "name": "Get Attachments",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [450, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract invoice details from email\nconst email = $input.first().json;\n\n// Parse common invoice patterns\nconst subject = email.subject || '';\nconst body = email.textPlain || email.snippet || '';\n\n// Extract amount (looks for $ followed by numbers)\nconst amountMatch = body.match(/\\$([\\d,]+\\.?\\d*)/i);\nconst amount = amountMatch ? amountMatch[1].replace(',', '') : 'Unknown';\n\n// Extract invoice number patterns\nconst invoiceMatch = body.match(/(?:invoice|inv|receipt)\\s*#?\\s*:?\\s*([A-Z0-9-]+)/i);\nconst invoiceNumber = invoiceMatch ? invoiceMatch[1] : 'Unknown';\n\n// Extract vendor from sender\nconst from = email.from || '';\nconst vendorMatch = from.match(/([^<]+)/);\nconst vendor = vendorMatch ? vendorMatch[1].trim() : from;\n\n// Extract date\nconst dateMatch = body.match(/(\\d{1,2}[\\/\\-]\\d{1,2}[\\/\\-]\\d{2,4})/i);\nconst invoiceDate = dateMatch ? dateMatch[1] : new Date().toLocaleDateString();\n\nreturn [{\n  json: {\n    vendor: vendor,\n    invoiceNumber: invoiceNumber,\n    amount: amount,\n    date: invoiceDate,\n    subject: subject,\n    emailId: email.id,\n    hasAttachment: email.attachments?.length > 0,\n    processedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "extract-details",
+      "name": "Extract Invoice Details",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_SPREADSHEET_ID",
+          "mode": "list"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Invoices",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $json.date }}",
+            "Vendor": "={{ $json.vendor }}",
+            "Invoice #": "={{ $json.invoiceNumber }}",
+            "Amount": "={{ $json.amount }}",
+            "Status": "Pending Review",
+            "Email Subject": "={{ $json.subject }}",
+            "Processed": "={{ $json.processedAt }}"
+          }
+        }
+      },
+      "id": "save-to-sheets",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.2,
+      "position": [850, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "Invoices/{{ $now.format('yyyy-MM') }}/{{ $json.vendor }}_{{ $json.invoiceNumber }}.pdf",
+        "folderId": {
+          "__rl": true,
+          "value": "YOUR_FOLDER_ID",
+          "mode": "list"
+        },
+        "options": {}
+      },
+      "id": "upload-to-drive",
+      "name": "Upload to Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [850, 400],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Drive"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "addLabels",
+        "messageId": "={{ $json.emailId }}",
+        "labelIds": ["Processed", "Invoices"]
+      },
+      "id": "label-email",
+      "name": "Label Processed Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1050, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#accounting",
+        "text": "📄 New Invoice Processed\n• Vendor: {{ $json.vendor }}\n• Amount: ${{ $json.amount }}\n• Invoice #: {{ $json.invoiceNumber }}\n• Date: {{ $json.date }}",
+        "otherOptions": {}
+      },
+      "id": "notify-slack",
+      "name": "Notify Accounting",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1050, 500],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Slack"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Check for Invoice Emails": {
+      "main": [
+        [{ "node": "Get Attachments", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get Attachments": {
+      "main": [
+        [{ "node": "Extract Invoice Details", "type": "main", "index": 0 }]
+      ]
+    },
+    "Extract Invoice Details": {
+      "main": [
+        [
+          { "node": "Save to Google Sheets", "type": "main", "index": 0 },
+          { "node": "Upload to Drive", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Save to Google Sheets": {
+      "main": [
+        [{ "node": "Label Processed Email", "type": "main", "index": 0 }]
+      ]
+    },
+    "Upload to Drive": {
+      "main": [
+        [{ "node": "Label Processed Email", "type": "main", "index": 0 }]
+      ]
+    },
+    "Label Processed Email": {
+      "main": [
+        [{ "node": "Notify Accounting", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["automation", "invoices", "accounting"],
+  "pinData": {}
+}

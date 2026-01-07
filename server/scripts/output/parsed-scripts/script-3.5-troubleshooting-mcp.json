@@ -1,0 +1,382 @@
+{
+  "script_id": "script-3.5-troubleshooting-mcp",
+  "title": "Troubleshooting MCP Connections",
+  "total_duration_seconds": 336.2,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 18.2,
+      "visual_cue": "Lesson title \"Troubleshooting MCP Connections\" with wrench icon",
+      "visual_type": "animated_title",
+      "spoken_text": "MCP is powerful, but sometimes things break. [PAUSE] Connections fail, tools don't show up, actions timeout.\n\nDon't worry - it happens to everyone. [PAUSE] In this lesson, I'll show you how to diagnose and fix the most common MCP issues.",
+      "word_count": 38
+    },
+    {
+      "segment_id": 2,
+      "start_time": 18.2,
+      "end_time": 23.4,
+      "visual_cue": "\"Common Issues\" list preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end, you'll know exactly where to look when something goes wrong.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.4,
+      "end_time": 32.1,
+      "visual_cue": "Error message \"Failed to connect to MCP server\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "The most common issue: Claude Code starts but your MCP server doesn't connect. [PAUSE]\n\n### Check Your Config File",
+      "word_count": 18
+    },
+    {
+      "segment_id": 4,
+      "start_time": 32.1,
+      "end_time": 42.4,
+      "visual_cue": "File path and config file location",
+      "visual_type": "text_overlay",
+      "spoken_text": "First, verify your config file exists and is valid JSON. [PAUSE]\n\nOn Windows, check:\n```\n%APPDATA%\\Claude\\claude_desktop_config.json\n```\n\nOn Mac:\n```\n~/Library/Application Support/Claude/claude_desktop_config.json\n```",
+      "word_count": 22
+    },
+    {
+      "segment_id": 5,
+      "start_time": 42.4,
+      "end_time": 71.1,
+      "visual_cue": "Example of invalid JSON with arrow pointing to error",
+      "visual_type": "text_overlay",
+      "spoken_text": "Common JSON mistakes:\n\n- Missing comma between entries [PAUSE]\n- Trailing comma after last entry [PAUSE]\n- Missing quotes around strings [PAUSE]\n- Wrong bracket type - curly braces vs square brackets [PAUSE]\n\nUse a JSON validator if you're unsure. [PAUSE] Search \"JSON validator\" online, paste your config, and it'll show any syntax errors.\n\n### Verify the URL",
+      "word_count": 53
+    },
+    {
+      "segment_id": 6,
+      "start_time": 71.1,
+      "end_time": 90.1,
+      "visual_cue": "Config file with URL highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "For Zapier MCP, make sure your URL is correct. [PAUSE] It should be the full URL from your Zapier MCP settings.\n\nDouble-check you copied the entire thing. [PAUSE] These URLs are long and it's easy to miss the end.\n\n### Restart Properly",
+      "word_count": 40
+    },
+    {
+      "segment_id": 7,
+      "start_time": 90.1,
+      "end_time": 103.1,
+      "visual_cue": "Terminal showing exit and restart sequence",
+      "visual_type": "screen_capture",
+      "spoken_text": "Did you actually restart Claude Code? [PAUSE] Config changes only take effect on startup.\n\nExit completely - use /exit or close the terminal. [PAUSE] Then start fresh.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 8,
+      "start_time": 103.1,
+      "end_time": 111.4,
+      "visual_cue": "Claude saying \"I don't have access to those tools\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've connected the MCP server, but Claude says it doesn't have certain tools. [PAUSE]\n\n### Check Zapier Actions",
+      "word_count": 17
+    },
+    {
+      "segment_id": 9,
+      "start_time": 111.4,
+      "end_time": 140.3,
+      "visual_cue": "Zapier MCP interface showing actions list",
+      "visual_type": "screen_capture",
+      "spoken_text": "The most likely cause: you haven't added that action in Zapier. [PAUSE]\n\nGo to your Zapier MCP settings and review your actions list. [PAUSE] If you want Claude to send emails but you haven't added the Gmail Send Email action, it won't work.\n\nAdd the missing action, and it's instantly available. [PAUSE] No Claude Code restart needed for Zapier changes.\n\n### Account Connection Issues",
+      "word_count": 61
+    },
+    {
+      "segment_id": 10,
+      "start_time": 140.3,
+      "end_time": 154.5,
+      "visual_cue": "Zapier showing disconnected account warning",
+      "visual_type": "text_overlay",
+      "spoken_text": "Sometimes an account connection expires. [PAUSE] Zapier shows a warning icon next to disconnected accounts.\n\nClick into the action and reconnect. [PAUSE] Re-authorize through OAuth, and you're back in business.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 11,
+      "start_time": 154.5,
+      "end_time": 162.8,
+      "visual_cue": "Error message \"Tool execution failed\" or timeout",
+      "visual_type": "text_overlay",
+      "spoken_text": "The MCP connects, the tool exists, but when Claude tries to use it... error. [PAUSE]\n\n### Check Permissions",
+      "word_count": 17
+    },
+    {
+      "segment_id": 12,
+      "start_time": 162.8,
+      "end_time": 182.3,
+      "visual_cue": "Google permissions screen",
+      "visual_type": "text_overlay",
+      "spoken_text": "For Google services, make sure you granted the right permissions. [PAUSE] If Claude can't read your calendar, maybe you didn't authorize calendar access during OAuth.\n\nFix: go to Zapier, disconnect and reconnect the account, and make sure you check all the permission boxes.\n\n### Service-Side Issues",
+      "word_count": 45
+    },
+    {
+      "segment_id": 13,
+      "start_time": 182.3,
+      "end_time": 196.6,
+      "visual_cue": "Service status page example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Sometimes it's not you - it's them. [PAUSE] Google has outages. GitHub has outages. Zapier has outages.\n\nIf things were working and suddenly stopped, check status pages:\n- status.google.com\n- githubstatus.com\n- status.zapier.com",
+      "word_count": 32
+    },
+    {
+      "segment_id": 14,
+      "start_time": 196.6,
+      "end_time": 201.0,
+      "visual_cue": "Status page showing incident",
+      "visual_type": "screen_capture",
+      "spoken_text": "If there's an incident, just wait it out.\n\n### Rate Limits",
+      "word_count": 11
+    },
+    {
+      "segment_id": 15,
+      "start_time": 201.0,
+      "end_time": 217.2,
+      "visual_cue": "\"Rate limit exceeded\" error",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're making lots of requests quickly, you might hit rate limits. [PAUSE] This is especially common with Gmail.\n\nSolution: slow down. [PAUSE] Space out your requests, or wait a few minutes before trying again.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 16,
+      "start_time": 217.2,
+      "end_time": 224.7,
+      "visual_cue": "\"Authentication failed\" or \"Invalid token\" error",
+      "visual_type": "text_overlay",
+      "spoken_text": "Auth errors usually mean your connection expired or was revoked. [PAUSE]\n\n### Zapier MCP URL Changed",
+      "word_count": 15
+    },
+    {
+      "segment_id": 17,
+      "start_time": 224.7,
+      "end_time": 244.1,
+      "visual_cue": "Zapier settings showing MCP URL",
+      "visual_type": "screen_capture",
+      "spoken_text": "If you regenerated your Zapier MCP URL, your old one won't work. [PAUSE] Update your config file with the new URL.\n\n### OAuth Token Expired\n\nGoogle and GitHub tokens can expire. [PAUSE] Go to Zapier, find the affected action, and reconnect the account.",
+      "word_count": 41
+    },
+    {
+      "segment_id": 18,
+      "start_time": 244.1,
+      "end_time": 246.9,
+      "visual_cue": "\"Debugging Tips\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you're stuck, here's your debugging checklist:",
+      "word_count": 7
+    },
+    {
+      "segment_id": 19,
+      "start_time": 246.9,
+      "end_time": 298.0,
+      "visual_cue": "Checklist items appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "1. **Ask Claude what tools it has.** [PAUSE] Type \"What MCP tools do you have access to?\" This confirms what's actually connected.\n\n2. **Try a simple action first.** [PAUSE] Don't test with complex queries. Try \"Find events on my calendar for today\" - something basic.\n\n3. **Check Zapier's task history.** [PAUSE] Zapier logs every action. You can see what was called, what parameters were sent, and what errors occurred.\n\n4. **Look at Claude Code's startup output.** [PAUSE] When Claude Code starts, it shows MCP connection status. Errors appear there.\n\n5. **Test outside Claude.** [PAUSE] If Google Calendar isn't working, can you access it normally? Isolate whether it's an MCP issue or a service issue.",
+      "word_count": 109
+    },
+    {
+      "segment_id": 20,
+      "start_time": 298.0,
+      "end_time": 300.8,
+      "visual_cue": "Help resources",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're still stuck after all this:",
+      "word_count": 7
+    },
+    {
+      "segment_id": 21,
+      "start_time": 300.8,
+      "end_time": 313.6,
+      "visual_cue": "Resource links",
+      "visual_type": "text_overlay",
+      "spoken_text": "- **Anthropic's Discord** - Active community, people share MCP issues and solutions\n- **Zapier Support** - For Zapier-specific MCP issues\n- **GitHub Issues** - For Claude Code bugs, check the official repo",
+      "word_count": 32
+    },
+    {
+      "segment_id": 22,
+      "start_time": 313.6,
+      "end_time": 326.7,
+      "visual_cue": "Module 3 completion graphic",
+      "visual_type": "animated_title",
+      "spoken_text": "That wraps up Module 3. [PAUSE] You've learned what MCP is, installed Zapier MCP, connected Google services and GitHub, and now you know how to fix things when they break.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 23,
+      "start_time": 326.7,
+      "end_time": 336.2,
+      "visual_cue": "\"Next: Module 4 - Skills & Plugins\" with arrow",
+      "visual_type": "animated_title",
+      "spoken_text": "In Module 4, we're moving to Skills and Plugins - ways to extend Claude's capabilities even further. [PAUSE] See you there.",
+      "word_count": 20
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "\"Next: Module 4 - Skills & Plugins\" with arrow",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Lesson title \"Troubleshooting MCP Connections\" with wrench icon",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 3 completion graphic",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Status page showing incident",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal showing exit and restart sequence",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier MCP interface showing actions list",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier settings showing MCP URL",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Authentication failed\" or \"Invalid token\" error",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Common Issues\" list preview",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Debugging Tips\" header",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Rate limit exceeded\" error",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist items appearing",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude saying \"I don't have access to those tools\"",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Config file with URL highlighted",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error message \"Failed to connect to MCP server\"",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error message \"Tool execution failed\" or timeout",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example of invalid JSON with arrow pointing to error",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File path and config file location",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google permissions screen",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Help resources",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Resource links",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Service status page example",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zapier showing disconnected account warning",
+      "segment_ids": [
+        10
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "10 minutes",
+    "lesson": "3.5 - Troubleshooting MCP Connections"
+  },
+  "parsed_at": "2026-01-06T22:53:56.100564"
+}

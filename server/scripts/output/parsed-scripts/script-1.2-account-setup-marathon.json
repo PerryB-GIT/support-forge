@@ -1,0 +1,1045 @@
+{
+  "script_id": "script-1.2-account-setup-marathon",
+  "title": "Account Setup Marathon",
+  "total_duration_seconds": 703.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 11.1,
+      "visual_cue": "\"Account Setup Marathon\" title with timer graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Alright, let's knock this out. The Account Setup Marathon. Twenty minutes to get you signed up for every platform you'll need in this course.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 2,
+      "start_time": 11.1,
+      "end_time": 36.1,
+      "visual_cue": "List of platforms with logos",
+      "visual_type": "text_overlay",
+      "spoken_text": "We're covering GitHub, Anthropic for Claude, Google Cloud, AWS, n8n, and Zapier. By the end of this lesson, you'll have all your accounts created and you won't have to think about signup processes again.\n\n[PAUSE]\n\nI'll walk you through each one, explain what it's for, and point out anything you need to watch for. Let's go.\n\n[PAUSE]",
+      "word_count": 55
+    },
+    {
+      "segment_id": 3,
+      "start_time": 36.1,
+      "end_time": 50.4,
+      "visual_cue": "GitHub logo and homepage",
+      "visual_type": "illustration",
+      "spoken_text": "First up: GitHub (git-hub). This is where code lives on the internet. Even if you're not a developer, you'll need this because Claude Code uses GitHub for project management and version control.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 4,
+      "start_time": 50.4,
+      "end_time": 57.1,
+      "visual_cue": "github.com signup page",
+      "visual_type": "text_overlay",
+      "spoken_text": "Head to github.com (git-hub dot com). Click Sign Up in the top right.\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 5,
+      "start_time": 57.1,
+      "end_time": 67.0,
+      "visual_cue": "Email entry step",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enter your email address. Use your primary business email, not a throwaway. This account will become part of your professional toolkit.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 6,
+      "start_time": 67.0,
+      "end_time": 77.3,
+      "visual_cue": "Password creation step",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a strong password. GitHub will tell you if it meets their requirements. Write this down somewhere secure, you'll need it later.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 7,
+      "start_time": 77.3,
+      "end_time": 88.0,
+      "visual_cue": "Username selection step",
+      "visual_type": "text_overlay",
+      "spoken_text": "Choose a username. Keep it professional. Your name or business name works well. Avoid numbers and underscores if you can, they look dated.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 8,
+      "start_time": 88.0,
+      "end_time": 94.3,
+      "visual_cue": "Verification puzzle",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll get a verification puzzle, those \"prove you're human\" challenges. Complete it.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 9,
+      "start_time": 94.3,
+      "end_time": 102.6,
+      "visual_cue": "Email verification",
+      "visual_type": "text_overlay",
+      "spoken_text": "GitHub will send a verification code to your email. Check your inbox, grab the code, enter it.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 10,
+      "start_time": 102.6,
+      "end_time": 118.9,
+      "visual_cue": "Profile customization questions",
+      "visual_type": "text_overlay",
+      "spoken_text": "They'll ask some questions about how you plan to use GitHub. You can skip most of this or select \"Just me\" for team size and whatever seems closest to your use case. These answers don't affect functionality.\n\n[PAUSE]",
+      "word_count": 37
+    },
+    {
+      "segment_id": 11,
+      "start_time": 118.9,
+      "end_time": 128.4,
+      "visual_cue": "GitHub dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "And you're in. You should be looking at your new GitHub dashboard. Bookmark this page, we'll come back to it.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 12,
+      "start_time": 128.4,
+      "end_time": 138.7,
+      "visual_cue": "Anthropic logo and Claude interface",
+      "visual_type": "screen_capture",
+      "spoken_text": "Next: Anthropic (an-THRO-pic). This is the company behind Claude, which powers Claude Code. You need an account here to get API access.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 13,
+      "start_time": 138.7,
+      "end_time": 147.0,
+      "visual_cue": "console.anthropic.com",
+      "visual_type": "screen_capture",
+      "spoken_text": "Go to console.anthropic.com (console dot anthropic dot com). This is the developer console, not the chat interface.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 14,
+      "start_time": 147.0,
+      "end_time": 161.3,
+      "visual_cue": "Sign up options",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can sign up with your Google account or with email. I recommend Google if you've got a Google Workspace account for your business. It's faster and one less password to remember.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 15,
+      "start_time": 161.3,
+      "end_time": 171.6,
+      "visual_cue": "Account creation flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're using email, enter your email and create a password. They'll send you a verification email. Click the link to verify.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 16,
+      "start_time": 171.6,
+      "end_time": 180.7,
+      "visual_cue": "Phone verification requirement",
+      "visual_type": "text_overlay",
+      "spoken_text": "Anthropic requires phone verification. This is a security measure. Enter your phone number and the code they text you.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 17,
+      "start_time": 180.7,
+      "end_time": 189.4,
+      "visual_cue": "Console dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "Once you're verified, you'll land on the console dashboard. You'll see options for API keys, usage, and billing.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 18,
+      "start_time": 189.4,
+      "end_time": 204.9,
+      "visual_cue": "Free credits callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's the good news: new accounts typically get free API credits to start. The exact amount varies, but it's usually enough to complete this entire course. Check your billing section to see what you've got.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 19,
+      "start_time": 204.9,
+      "end_time": 218.0,
+      "visual_cue": "API Keys section preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Don't create an API key yet. We'll do that together when we set up Claude Code in Module 2. Just know that this is where you'll come back to.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 20,
+      "start_time": 218.0,
+      "end_time": 226.3,
+      "visual_cue": "Google Cloud logo",
+      "visual_type": "illustration",
+      "spoken_text": "Third: Google Cloud. This gives you access to various APIs (A-P-Is) and services we'll use for integrations.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 21,
+      "start_time": 226.3,
+      "end_time": 234.2,
+      "visual_cue": "cloud.google.com",
+      "visual_type": "text_overlay",
+      "spoken_text": "Go to cloud.google.com (cloud dot google dot com). Click \"Get started for free\" or \"Start free.\"\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 22,
+      "start_time": 234.2,
+      "end_time": 248.9,
+      "visual_cue": "Google account sign-in",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you have a Google account, sign in with it. If not, you'll need to create one first. Since we already covered this might be linked with Anthropic signup, you probably have one.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 23,
+      "start_time": 248.9,
+      "end_time": 263.2,
+      "visual_cue": "Billing setup requirement",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now here's the thing. Google Cloud requires a credit card for verification, even for the free tier. They won't charge you for free tier usage, but they need the card on file.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 24,
+      "start_time": 263.2,
+      "end_time": 276.7,
+      "visual_cue": "Free tier details - $300 credit",
+      "visual_type": "text_overlay",
+      "spoken_text": "New accounts get three hundred dollars in free credits that last ninety days, plus access to always-free products. For what we're doing, you won't come close to using that up.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 25,
+      "start_time": 276.7,
+      "end_time": 285.8,
+      "visual_cue": "Account type selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "When asked about account type, select Individual unless you have a specific business entity you want to bill to.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 26,
+      "start_time": 285.8,
+      "end_time": 297.7,
+      "visual_cue": "Address and payment entry",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enter your address and credit card information. Again, this is verification only. You can set up billing alerts to make sure you never accidentally get charged.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 27,
+      "start_time": 297.7,
+      "end_time": 312.4,
+      "visual_cue": "Google Cloud Console",
+      "visual_type": "screen_capture",
+      "spoken_text": "Once you're through, you'll see the Google Cloud Console. It looks complicated, lots of options and menus. Don't worry about any of that right now. We'll use specific features when we need them.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 28,
+      "start_time": 312.4,
+      "end_time": 319.5,
+      "visual_cue": "AWS logo",
+      "visual_type": "illustration",
+      "spoken_text": "Fourth: AWS (A-W-S), Amazon Web Services. This is the big one for cloud infrastructure.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 29,
+      "start_time": 319.5,
+      "end_time": 326.2,
+      "visual_cue": "aws.amazon.com",
+      "visual_type": "text_overlay",
+      "spoken_text": "Go to aws.amazon.com (aws dot amazon dot com). Click \"Create an AWS Account.\"\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 30,
+      "start_time": 326.2,
+      "end_time": 338.1,
+      "visual_cue": "Root user email entry",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enter an email address. This will be your root user email. Use a business email you control. Don't use a shared email address, this is sensitive.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 31,
+      "start_time": 338.1,
+      "end_time": 346.4,
+      "visual_cue": "Account name entry",
+      "visual_type": "text_overlay",
+      "spoken_text": "Choose an account name. This is for your reference, something like \"Your Business AI Operations\" works fine.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 32,
+      "start_time": 346.4,
+      "end_time": 350.7,
+      "visual_cue": "Verification code",
+      "visual_type": "text_overlay",
+      "spoken_text": "They'll send a verification code. Enter it.\n\n[PAUSE]",
+      "word_count": 7
+    },
+    {
+      "segment_id": 33,
+      "start_time": 350.7,
+      "end_time": 361.8,
+      "visual_cue": "Root user password creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a strong password. This is your AWS root password, make it unique and store it securely. A password manager is highly recommended here.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 34,
+      "start_time": 361.8,
+      "end_time": 373.3,
+      "visual_cue": "Contact information - Personal vs Business",
+      "visual_type": "comparison_table",
+      "spoken_text": "You'll choose between Personal and Business account types. For most students, Personal is fine unless your company is paying for this and needs formal invoicing.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 35,
+      "start_time": 373.3,
+      "end_time": 384.0,
+      "visual_cue": "Credit card requirement",
+      "visual_type": "text_overlay",
+      "spoken_text": "Like Google Cloud, AWS requires a credit card. Same deal: verification purposes, free tier exists, you won't get charged for what we're doing.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 36,
+      "start_time": 384.0,
+      "end_time": 391.1,
+      "visual_cue": "Phone verification",
+      "visual_type": "text_overlay",
+      "spoken_text": "Phone verification next. Enter your number, receive a call or text, enter the code.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 37,
+      "start_time": 391.1,
+      "end_time": 398.6,
+      "visual_cue": "Support plan selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "Support plan selection: choose Basic Support (free). You don't need paid support for this course.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 38,
+      "start_time": 398.6,
+      "end_time": 408.9,
+      "visual_cue": "AWS Console",
+      "visual_type": "screen_capture",
+      "spoken_text": "And you're in the AWS Console. Even more options than Google Cloud. Again, we'll navigate this together when we need specific services.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 39,
+      "start_time": 408.9,
+      "end_time": 420.8,
+      "visual_cue": "Enable MFA recommendation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Quick recommendation: enable MFA (M-F-A), that's multi-factor authentication, on your AWS account. It's in the security credentials section. AWS accounts are valuable targets, so protect yours.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 40,
+      "start_time": 420.8,
+      "end_time": 431.9,
+      "visual_cue": "n8n logo and interface preview",
+      "visual_type": "screen_capture",
+      "spoken_text": "Fifth: n8n (n-eight-n). This is an open-source automation platform. Think of it like Zapier but with more flexibility and a more generous free tier.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 41,
+      "start_time": 431.9,
+      "end_time": 439.4,
+      "visual_cue": "n8n.io cloud signup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Go to n8n.io (n-eight-n dot io). Click on \"Get started free\" for their cloud version.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 42,
+      "start_time": 439.4,
+      "end_time": 445.7,
+      "visual_cue": "Email signup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enter your email and create a password. They'll send a confirmation email.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 43,
+      "start_time": 445.7,
+      "end_time": 451.2,
+      "visual_cue": "Email verification",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click the link in your email to verify your account.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 44,
+      "start_time": 451.2,
+      "end_time": 464.7,
+      "visual_cue": "Onboarding questions",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll get some onboarding questions about your role and what you want to automate. Answer honestly, it helps them tailor the experience, but it won't limit what you can do.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 45,
+      "start_time": 464.7,
+      "end_time": 478.2,
+      "visual_cue": "n8n workspace",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once you're in, you'll see your n8n workspace. The interface might look intimidating with all the nodes and connections, but we'll break it down step by step in later modules.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 46,
+      "start_time": 478.2,
+      "end_time": 490.9,
+      "visual_cue": "Free tier limitations",
+      "visual_type": "text_overlay",
+      "spoken_text": "The free tier includes a certain number of workflow executions per month. For learning and small-scale automation, it's plenty. You can always upgrade later if you need more.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 47,
+      "start_time": 490.9,
+      "end_time": 499.2,
+      "visual_cue": "Zapier logo",
+      "visual_type": "illustration",
+      "spoken_text": "Last one: Zapier (ZAP-ee-er). This is the most popular automation platform, and it integrates with practically everything.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 48,
+      "start_time": 499.2,
+      "end_time": 504.7,
+      "visual_cue": "zapier.com signup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Go to zapier.com (zap-ee-er dot com). Click \"Sign up free.\"\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 49,
+      "start_time": 504.7,
+      "end_time": 513.8,
+      "visual_cue": "Sign up options",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can sign up with Google, Facebook, Microsoft, or email. Google's usually fastest if you have a Google account.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 50,
+      "start_time": 513.8,
+      "end_time": 522.1,
+      "visual_cue": "Account creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "If using email, enter it and create a password. Verify your email when they send the confirmation.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 51,
+      "start_time": 522.1,
+      "end_time": 536.4,
+      "visual_cue": "Onboarding flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Zapier has a pretty extensive onboarding. They'll ask what apps you use, what you want to automate. You can skip most of this if you want, or answer to get personalized recommendations.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 52,
+      "start_time": 536.4,
+      "end_time": 544.7,
+      "visual_cue": "Zapier dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "You'll land on the Zapier dashboard. You'll see options to create Zaps, that's what they call automations.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 53,
+      "start_time": 544.7,
+      "end_time": 561.4,
+      "visual_cue": "Free tier details",
+      "visual_type": "text_overlay",
+      "spoken_text": "The free tier includes five Zaps (active automations) and one hundred tasks per month. A task is one action in an automation. For learning purposes, this is enough. Most production use cases will need a paid plan eventually.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 54,
+      "start_time": 561.4,
+      "end_time": 567.7,
+      "visual_cue": "Password manager recommendation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Okay, you've now got six new accounts. Let's talk organization and security.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 55,
+      "start_time": 567.7,
+      "end_time": 580.8,
+      "visual_cue": "Password manager interface example",
+      "visual_type": "screen_capture",
+      "spoken_text": "If you're not using a password manager, start now. 1Password (one password), Bitwarden (bit-warden), LastPass (last pass), whatever you prefer. Store all these credentials there. You'll thank yourself later.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 56,
+      "start_time": 580.8,
+      "end_time": 593.1,
+      "visual_cue": "Enable 2FA everywhere callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Enable two-factor authentication, 2FA (two-F-A), on every account that offers it. That's all of them. GitHub, Anthropic, Google, AWS, n8n, Zapier, all of them have 2FA options.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 57,
+      "start_time": 593.1,
+      "end_time": 605.8,
+      "visual_cue": "Recovery codes reminder",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you set up 2FA, you'll get recovery codes. Save these somewhere secure and offline. If you lose access to your authenticator app, these codes are your backup.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 58,
+      "start_time": 605.8,
+      "end_time": 621.3,
+      "visual_cue": "Organized account list example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a simple document or note listing all your accounts, what each one is for, and what email you used for each. Not passwords, just reference information. This becomes valuable when you're managing multiple platforms.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 59,
+      "start_time": 621.3,
+      "end_time": 625.2,
+      "visual_cue": "Cost breakdown chart",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's recap what all this costs.\n\n[PAUSE]",
+      "word_count": 6
+    },
+    {
+      "segment_id": 60,
+      "start_time": 625.2,
+      "end_time": 646.3,
+      "visual_cue": "Free tiers highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "GitHub: completely free for what we're doing. Anthropic: free credits to start, then pay-as-you-go, typically pennies per interaction. Google Cloud: three hundred dollars in free credits, more than enough. AWS: free tier covers our usage. n8n: generous free tier. Zapier: limited free tier, may need upgrade for production use.\n\n[PAUSE]",
+      "word_count": 49
+    },
+    {
+      "segment_id": 61,
+      "start_time": 646.3,
+      "end_time": 658.2,
+      "visual_cue": "\"Total startup cost: $0\" callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Total cost to get started: zero dollars. You can complete this entire course without paying for any of these services if you stay within free tiers.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 62,
+      "start_time": 658.2,
+      "end_time": 666.5,
+      "visual_cue": "All six account logos with checkmarks",
+      "visual_type": "illustration",
+      "spoken_text": "You did it. Six accounts, all set up, all verified. The boring but necessary work is done.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 63,
+      "start_time": 666.5,
+      "end_time": 685.5,
+      "visual_cue": "Account checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Take a moment to verify: GitHub, checked. Anthropic, checked. Google Cloud, checked. AWS, checked. n8n, checked. Zapier, checked. Passwords stored securely. 2FA enabled.\n\n[PAUSE]\n\nIf any of these gave you trouble, hit the community forum. Someone's probably had the same issue.\n\n[PAUSE]",
+      "word_count": 40
+    },
+    {
+      "segment_id": 64,
+      "start_time": 685.5,
+      "end_time": 701.8,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next lesson, we're stepping back to see the big picture. I'll walk you through the complete Launchpad Stack, how all these services connect, and what role each one plays. You'll understand exactly what we're building.\n\n[PAUSE]",
+      "word_count": 37
+    },
+    {
+      "segment_id": 65,
+      "start_time": 701.8,
+      "end_time": 703.8,
+      "visual_cue": "Fade to \"Next: Understanding the Launchpad Stack\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Understanding the Launchpad Stack\" with Support Forge branding",
+      "segment_ids": [
+        65
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Contact information - Personal vs Business",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Account Setup Marathon\" title with timer graphic",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "AWS logo",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "All six account logos with checkmarks",
+      "segment_ids": [
+        62
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "GitHub logo and homepage",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Google Cloud logo",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Zapier logo",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Console",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Anthropic logo and Claude interface",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Console dashboard",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "GitHub dashboard",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Google Cloud Console",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Password manager interface example",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier dashboard",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "console.anthropic.com",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n logo and interface preview",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Total startup cost: $0\" callout",
+      "segment_ids": [
+        61
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "API Keys section preview",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account checklist",
+      "segment_ids": [
+        63
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account creation",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account creation flow",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account name entry",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account type selection",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Address and payment entry",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Billing setup requirement",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost breakdown chart",
+      "segment_ids": [
+        59
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Credit card requirement",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Email entry step",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Email signup",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Email verification",
+      "segment_ids": [
+        9,
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Enable 2FA everywhere callout",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Enable MFA recommendation",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free credits callout",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tier details",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tier details - $300 credit",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tier limitations",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tiers highlighted",
+      "segment_ids": [
+        60
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google account sign-in",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "List of platforms with logos",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        64
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Onboarding flow",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Onboarding questions",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Organized account list example",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Password creation step",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Password manager recommendation",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Phone verification",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Phone verification requirement",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Profile customization questions",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Recovery codes reminder",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Root user email entry",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Root user password creation",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Sign up options",
+      "segment_ids": [
+        14,
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Support plan selection",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Username selection step",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Verification code",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Verification puzzle",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "aws.amazon.com",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "cloud.google.com",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "github.com signup page",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n workspace",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n.io cloud signup",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "zapier.com signup",
+      "segment_ids": [
+        48
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "20 minutes (~3000-3400 words)",
+    "lesson": "Module 1, Lesson 2",
+    "purpose": "GitHub, Anthropic, Google Cloud, AWS, n8n, Zapier account creation",
+    "stated_word_count": "2,100",
+    "stated_runtime": "19:00-20:00"
+  },
+  "parsed_at": "2026-01-06T22:53:56.047841"
+}

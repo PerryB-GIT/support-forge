@@ -1,0 +1,389 @@
+{
+  "name": "Invoice Processor - Email to Accounting",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute",
+              "minute": 15
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "includeSpamTrash": false,
+          "q": "has:attachment filename:pdf subject:(invoice OR bill OR receipt) is:unread"
+        }
+      },
+      "id": "gmail-trigger",
+      "name": "Gmail - Watch for Invoices",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "messageId": "={{ $json.id }}",
+        "downloadAttachments": true,
+        "options": {}
+      },
+      "id": "get-attachments",
+      "name": "Get Attachments",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Filter for PDF attachments only\nconst items = $input.all();\nconst pdfAttachments = [];\n\nfor (const item of items) {\n  if (item.json.attachments) {\n    for (const attachment of item.json.attachments) {\n      if (attachment.mimeType === 'application/pdf' || attachment.filename?.toLowerCase().endsWith('.pdf')) {\n        pdfAttachments.push({\n          json: {\n            email_id: item.json.id,\n            email_subject: item.json.subject,\n            email_from: item.json.from,\n            email_date: item.json.date,\n            attachment_id: attachment.attachmentId,\n            filename: attachment.filename,\n            size: attachment.size\n          },\n          binary: item.binary\n        });\n      }\n    }\n  }\n}\n\nif (pdfAttachments.length === 0) {\n  return [{ json: { no_pdfs: true } }];\n}\n\nreturn pdfAttachments;"
+      },
+      "id": "filter-pdfs",
+      "name": "Filter PDF Attachments",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.no_pdfs }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-pdfs-exist",
+      "name": "Has PDFs?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4-vision-preview",
+        "messages": {
+          "values": [
+            {
+              "content": "Analyze this invoice/receipt PDF and extract the following information in JSON format:\n{\n  \"vendor_name\": \"\",\n  \"invoice_number\": \"\",\n  \"invoice_date\": \"\",\n  \"due_date\": \"\",\n  \"total_amount\": \"\",\n  \"currency\": \"\",\n  \"line_items\": [{\"description\": \"\", \"quantity\": \"\", \"unit_price\": \"\", \"amount\": \"\"}],\n  \"tax_amount\": \"\",\n  \"subtotal\": \"\",\n  \"payment_terms\": \"\",\n  \"vendor_address\": \"\",\n  \"category\": \"\" // e.g., Software, Utilities, Office Supplies, Professional Services, etc.\n}\n\nIf a field is not found, use null. For amounts, use numeric values without currency symbols."
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0
+        }
+      },
+      "id": "extract-invoice-data",
+      "name": "Extract Invoice Data (AI)",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.4,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the AI response and structure the data\nconst aiResponse = $input.first().json.message.content;\nconst emailData = $('Filter PDF Attachments').first().json;\n\nlet invoiceData;\ntry {\n  // Try to extract JSON from the response\n  const jsonMatch = aiResponse.match(/\\{[\\s\\S]*\\}/);\n  if (jsonMatch) {\n    invoiceData = JSON.parse(jsonMatch[0]);\n  } else {\n    throw new Error('No JSON found in response');\n  }\n} catch (e) {\n  invoiceData = {\n    vendor_name: 'PARSE ERROR',\n    invoice_number: null,\n    total_amount: null,\n    error: 'Could not parse AI response'\n  };\n}\n\n// Generate unique processing ID\nconst processId = 'INV-' + Date.now().toString(36).toUpperCase();\n\n// Determine approval requirements based on amount\nconst amount = parseFloat(invoiceData.total_amount) || 0;\nlet approvalRequired = 'auto';\nif (amount >= 5000) approvalRequired = 'executive';\nelse if (amount >= 1000) approvalRequired = 'manager';\n\nreturn {\n  process_id: processId,\n  processed_at: new Date().toISOString(),\n  source_email: {\n    from: emailData.email_from,\n    subject: emailData.email_subject,\n    date: emailData.email_date,\n    attachment: emailData.filename\n  },\n  invoice: invoiceData,\n  approval_required: approvalRequired,\n  status: 'pending_review'\n};"
+      },
+      "id": "structure-data",
+      "name": "Structure Invoice Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_INVOICES_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Invoices",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Process ID": "={{ $json.process_id }}",
+            "Date Processed": "={{ $json.processed_at }}",
+            "Vendor": "={{ $json.invoice.vendor_name }}",
+            "Invoice #": "={{ $json.invoice.invoice_number }}",
+            "Invoice Date": "={{ $json.invoice.invoice_date }}",
+            "Due Date": "={{ $json.invoice.due_date }}",
+            "Amount": "={{ $json.invoice.total_amount }}",
+            "Currency": "={{ $json.invoice.currency }}",
+            "Category": "={{ $json.invoice.category }}",
+            "Status": "={{ $json.status }}",
+            "Approval Required": "={{ $json.approval_required }}",
+            "Source Email": "={{ $json.source_email.from }}",
+            "Attachment": "={{ $json.source_email.attachment }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "save-to-sheet",
+      "name": "Save to Invoices Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [1560, 200]
+    },
+    {
+      "parameters": {
+        "name": "={{ $json.source_email.attachment }}",
+        "folderId": {
+          "__rl": true,
+          "value": "YOUR_INVOICES_FOLDER_ID",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "upload-to-drive",
+      "name": "Upload to Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1560, 320]
+    },
+    {
+      "parameters": {
+        "channel": "#accounting",
+        "text": ":receipt: *New Invoice Processed*\n\n*Vendor:* {{ $json.invoice.vendor_name }}\n*Invoice #:* {{ $json.invoice.invoice_number || 'Not found' }}\n*Amount:* {{ $json.invoice.currency || '$' }}{{ $json.invoice.total_amount }}\n*Due Date:* {{ $json.invoice.due_date || 'Not specified' }}\n*Category:* {{ $json.invoice.category || 'Uncategorized' }}\n\n*Source:* {{ $json.source_email.from }}\n*Approval Required:* {{ $json.approval_required }}\n*Process ID:* `{{ $json.process_id }}`\n\n{{ $json.approval_required !== 'auto' ? ':warning: *Requires ' + $json.approval_required + ' approval*' : '' }}",
+        "attachments": [],
+        "otherOptions": {}
+      },
+      "id": "slack-notification",
+      "name": "Slack - Invoice Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1560, 440]
+    },
+    {
+      "parameters": {
+        "operation": "markAsRead",
+        "messageId": "={{ $('Filter PDF Attachments').first().json.email_id }}"
+      },
+      "id": "mark-as-read",
+      "name": "Mark Email as Read",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.approval_required }}",
+              "rightValue": "auto",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-approval-needed",
+      "name": "Needs Approval?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1780, 440]
+    },
+    {
+      "parameters": {
+        "sendTo": "approver@yourcompany.com",
+        "subject": "Invoice Approval Required - {{ $('Structure Invoice Data').item.json.invoice.vendor_name }} - ${{ $('Structure Invoice Data').item.json.invoice.total_amount }}",
+        "emailType": "html",
+        "message": "<h2>Invoice Requires Your Approval</h2>\n<p>The following invoice requires {{ $('Structure Invoice Data').item.json.approval_required }} approval:</p>\n<table style=\"border-collapse: collapse; width: 100%; max-width: 500px;\">\n<tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Vendor</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $('Structure Invoice Data').item.json.invoice.vendor_name }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Invoice #</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $('Structure Invoice Data').item.json.invoice.invoice_number }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Amount</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $('Structure Invoice Data').item.json.invoice.currency || '$' }}{{ $('Structure Invoice Data').item.json.invoice.total_amount }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Due Date</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $('Structure Invoice Data').item.json.invoice.due_date }}</td></tr>\n<tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Category</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $('Structure Invoice Data').item.json.invoice.category }}</td></tr>\n</table>\n<p style=\"margin-top: 20px;\">Process ID: {{ $('Structure Invoice Data').item.json.process_id }}</p>\n<p><a href=\"#approve\" style=\"background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-right: 10px;\">Approve</a>\n<a href=\"#reject\" style=\"background: #f44336; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;\">Reject</a></p>"
+      },
+      "id": "send-approval-email",
+      "name": "Send Approval Request",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2000, 380]
+    },
+    {
+      "parameters": {},
+      "id": "no-approval-needed",
+      "name": "No Approval Needed",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [2000, 500]
+    },
+    {
+      "parameters": {},
+      "id": "no-pdfs-noop",
+      "name": "No PDFs Found",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1120, 400]
+    }
+  ],
+  "connections": {
+    "Gmail - Watch for Invoices": {
+      "main": [
+        [
+          {
+            "node": "Get Attachments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Attachments": {
+      "main": [
+        [
+          {
+            "node": "Filter PDF Attachments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter PDF Attachments": {
+      "main": [
+        [
+          {
+            "node": "Has PDFs?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has PDFs?": {
+      "main": [
+        [
+          {
+            "node": "Extract Invoice Data (AI)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No PDFs Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Invoice Data (AI)": {
+      "main": [
+        [
+          {
+            "node": "Structure Invoice Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structure Invoice Data": {
+      "main": [
+        [
+          {
+            "node": "Save to Invoices Sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload to Google Drive",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Slack - Invoice Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Invoices Sheet": {
+      "main": [
+        [
+          {
+            "node": "Mark Email as Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Invoice Alert": {
+      "main": [
+        [
+          {
+            "node": "Needs Approval?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs Approval?": {
+      "main": [
+        [
+          {
+            "node": "Send Approval Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Approval Needed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "accounting",
+      "id": "1"
+    },
+    {
+      "name": "invoices",
+      "id": "2"
+    },
+    {
+      "name": "automation",
+      "id": "3"
+    }
+  ],
+  "pinData": {},
+  "_comment": "AI Launchpad Academy - Invoice Processor Workflow. Replace YOUR_INVOICES_SHEET_ID and YOUR_INVOICES_FOLDER_ID before use. Requires OpenAI API for invoice data extraction."
+}

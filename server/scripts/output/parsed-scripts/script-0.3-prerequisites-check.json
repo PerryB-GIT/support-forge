@@ -1,0 +1,289 @@
+{
+  "script_id": "script-0.3-prerequisites-check",
+  "title": "Prerequisites Check",
+  "total_duration_seconds": 290.2,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 22.6,
+      "visual_cue": "Checklist graphic on dark background with purple accents",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we dive into the actual content, let's make sure you've got everything you need. Nothing worse than getting excited about a lesson and then hitting a wall because something's not set up right.\n\n[PAUSE]\n\nThis is a quick prerequisites check. Five minutes now saves you hours of frustration later.\n\n[PAUSE]",
+      "word_count": 49
+    },
+    {
+      "segment_id": 2,
+      "start_time": 22.6,
+      "end_time": 45.2,
+      "visual_cue": "Computer specifications checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's start with your computer. You don't need anything fancy, but there are some minimums.\n\n[PAUSE]\n\nYou'll need a computer running Windows 10 or newer, macOS (mac-O-S) 10.15 or newer, or a recent Linux distribution like Ubuntu (oo-BOON-too). If your computer is less than five years old, you're probably fine.\n\n[PAUSE]",
+      "word_count": 49
+    },
+    {
+      "segment_id": 3,
+      "start_time": 45.2,
+      "end_time": 65.5,
+      "visual_cue": "RAM and storage requirements",
+      "visual_type": "text_overlay",
+      "spoken_text": "For memory, eight gigabytes of RAM (ram) is the minimum. Sixteen is better if you're going to run multiple tools at once, which you will be. Storage wise, make sure you've got at least twenty gigs free. We'll be installing several applications and working with project files.\n\n[PAUSE]",
+      "word_count": 47
+    },
+    {
+      "segment_id": 4,
+      "start_time": 65.5,
+      "end_time": 81.4,
+      "visual_cue": "Internet connection requirement",
+      "visual_type": "text_overlay",
+      "spoken_text": "And obviously, you need reliable internet. We're working with cloud services and APIs (A-P-Is) throughout this course. If your connection drops constantly, that's going to be a problem. Basic broadband is fine, you don't need fiber.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 5,
+      "start_time": 81.4,
+      "end_time": 91.7,
+      "visual_cue": "Software list appearing item by item",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now for software. Don't install anything yet, I'm just listing what you'll need. We'll do the actual installations together in Module 1.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 6,
+      "start_time": 91.7,
+      "end_time": 103.6,
+      "visual_cue": "\"Web Browser\" with Chrome/Edge/Firefox logos",
+      "visual_type": "screen_capture",
+      "spoken_text": "First, a modern web browser. Chrome, Edge, or Firefox. Keep it updated to the latest version. Some of the tools we use have specific browser requirements.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 7,
+      "start_time": 103.6,
+      "end_time": 120.7,
+      "visual_cue": "\"Code Editor\" with VS Code logo",
+      "visual_type": "comparison_table",
+      "spoken_text": "Second, a code editor. We'll be using Visual Studio Code, or VS Code for short. It's free, it's powerful, and it works on every operating system. If you already have it installed, great. If not, we'll cover that setup.\n\n[PAUSE]",
+      "word_count": 39
+    },
+    {
+      "segment_id": 8,
+      "start_time": 120.7,
+      "end_time": 140.2,
+      "visual_cue": "\"Terminal Access\" with command prompt icon",
+      "visual_type": "screen_capture",
+      "spoken_text": "Third, terminal access. On Mac and Linux, you've already got this built in. On Windows, we'll set up something called WSL (W-S-L), which stands for Windows Subsystem for Linux. This gives you a proper Linux environment right inside Windows. Trust me, it makes everything easier.\n\n[PAUSE]",
+      "word_count": 45
+    },
+    {
+      "segment_id": 9,
+      "start_time": 140.2,
+      "end_time": 156.1,
+      "visual_cue": "\"Git\" with version control icon",
+      "visual_type": "illustration",
+      "spoken_text": "Fourth, Git (git). This is version control software. Even if you're not a developer, you'll need it because Claude Code uses it under the hood. Don't worry if you've never used it, we'll walk through everything.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 10,
+      "start_time": 156.1,
+      "end_time": 181.9,
+      "visual_cue": "Account logos - GitHub, Anthropic, Google, AWS, n8n, Zapier",
+      "visual_type": "text_overlay",
+      "spoken_text": "Throughout Module 1, you'll be creating accounts on several platforms. Here's a heads up on what's coming.\n\n[PAUSE]\n\nGitHub (git-hub) for code hosting and version control. Anthropic (an-THRO-pic) for Claude and Claude Code access. Google Cloud for certain API services. AWS (A-W-S), that's Amazon Web Services, for cloud infrastructure. And automation platforms, specifically n8n (n-eight-n) and Zapier (ZAP-ee-er).\n\n[PAUSE]",
+      "word_count": 57
+    },
+    {
+      "segment_id": 11,
+      "start_time": 181.9,
+      "end_time": 198.6,
+      "visual_cue": "\"Most have free tiers\" callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Good news: most of these have free tiers that'll cover everything in this course. I'll point out where costs might come in, but for the most part, you can complete this entire program without spending money on services.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 12,
+      "start_time": 198.6,
+      "end_time": 214.1,
+      "visual_cue": "Credit card warning",
+      "visual_type": "text_overlay",
+      "spoken_text": "Fair warning though, some services do require a credit card for verification, even on free tiers. That's standard practice. They won't charge you unless you explicitly upgrade or exceed free limits, which we won't do.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 13,
+      "start_time": 214.1,
+      "end_time": 221.2,
+      "visual_cue": "Clock/calendar graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Let's talk time. This course is self-paced, but I want to set realistic expectations.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 14,
+      "start_time": 221.2,
+      "end_time": 247.0,
+      "visual_cue": "\"3-5 hours per week recommended\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Plan for three to five hours per week if you want steady progress. That includes watching lessons, doing the hands-on exercises, and letting concepts sink in.\n\n[PAUSE]\n\nYou can definitely go faster if you're motivated and have more time. But cramming ten hours in one day, then nothing for two weeks? That doesn't work. Consistency beats intensity here.\n\n[PAUSE]",
+      "word_count": 57
+    },
+    {
+      "segment_id": 15,
+      "start_time": 247.0,
+      "end_time": 268.8,
+      "visual_cue": "Visual checklist with all items",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's your action item before moving on. Go through this checklist:\n\nComputer meets minimum specs? Check. Web browser updated? Check. Ready to dedicate three to five hours per week? Check. Credit card available for account verification? Check.\n\n[PAUSE]\n\nIf you've got all that, you're ready for Module 1.\n\n[PAUSE]",
+      "word_count": 47
+    },
+    {
+      "segment_id": 16,
+      "start_time": 268.8,
+      "end_time": 288.2,
+      "visual_cue": "Module 1 preview thumbnail",
+      "visual_type": "animated_title",
+      "spoken_text": "Coming up, we're diving into the Landscape phase. You'll complete your AI Readiness Audit, set up all your accounts, and get a clear picture of the stack we're building. That's where the real work begins.\n\n[PAUSE]\n\nI'll see you in Module 1.\n\n[PAUSE]",
+      "word_count": 41
+    },
+    {
+      "segment_id": 17,
+      "start_time": 288.2,
+      "end_time": 290.2,
+      "visual_cue": "Fade to \"Next: Module 1 - The AI Readiness Audit\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Module 1 - The AI Readiness Audit\" with Support Forge branding",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 1 preview thumbnail",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "\"Code Editor\" with VS Code logo",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Git\" with version control icon",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Clock/calendar graphic",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Terminal Access\" with command prompt icon",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Web Browser\" with Chrome/Edge/Firefox logos",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"3-5 hours per week recommended\"",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Most have free tiers\" callout",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account logos - GitHub, Anthropic, Google, AWS, n8n, Zapier",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist graphic on dark background with purple accents",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Computer specifications checklist",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Credit card warning",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Internet connection requirement",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "RAM and storage requirements",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Software list appearing item by item",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Visual checklist with all items",
+      "segment_ids": [
+        15
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "5 minutes (~750-850 words)",
+    "lesson": "Module 0, Lesson 3",
+    "purpose": "Required setup verification, system requirements, what students need before Module 1",
+    "stated_word_count": "800",
+    "stated_runtime": "4:50-5:05"
+  },
+  "parsed_at": "2026-01-06T22:53:56.038704"
+}

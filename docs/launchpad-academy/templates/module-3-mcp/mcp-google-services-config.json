@@ -1,0 +1,188 @@
+{
+  // =============================================================
+  // GOOGLE SERVICES MCP CONFIGURATION
+  // =============================================================
+  // This template covers Google Calendar, Drive, and Gmail
+  //
+  // RECOMMENDED APPROACH: Use Zapier MCP for Google services
+  // Zapier handles OAuth complexity and token refresh automatically
+  // =============================================================
+
+  // ---------------------------------------------------------
+  // OPTION 1: ZAPIER-BASED GOOGLE INTEGRATION (Recommended)
+  // ---------------------------------------------------------
+  // Benefits:
+  // - No OAuth setup required on your end
+  // - Automatic token refresh
+  // - Unified interface for all Google services
+  // - Built-in error handling
+  //
+  // Setup Steps:
+  // 1. Go to zapier.com/mcp
+  // 2. Connect your Zapier account to Claude Code
+  // 3. In Zapier, add Google service connections:
+  //    - Click "Add new action"
+  //    - Search for "Google Calendar", "Google Drive", or "Gmail"
+  //    - Authorize each service with your Google account
+  // 4. The services appear automatically in Claude Code
+  // ---------------------------------------------------------
+
+  "mcpServers": {
+    "zapier": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/mcp-client",
+        "https://mcp.zapier.com/api/mcp/mcp"
+      ],
+      "env": {
+        "ZAPIER_MCP_API_KEY": "YOUR_ZAPIER_MCP_API_KEY"
+      }
+    }
+  },
+
+  // ---------------------------------------------------------
+  // OPTION 2: DIRECT GOOGLE API INTEGRATION (Advanced)
+  // ---------------------------------------------------------
+  // Use this if you need custom control or can't use Zapier
+  //
+  // Prerequisites:
+  // 1. Google Cloud Console project
+  // 2. OAuth 2.0 credentials configured
+  // 3. APIs enabled for each service
+  //
+  // Google Cloud Console Setup:
+  // 1. Go to console.cloud.google.com
+  // 2. Create a new project or select existing
+  // 3. Navigate to "APIs & Services" > "Enabled APIs"
+  // 4. Enable the following APIs:
+  //    - Google Calendar API
+  //    - Google Drive API
+  //    - Gmail API
+  // 5. Go to "Credentials" > "Create Credentials" > "OAuth 2.0 Client ID"
+  // 6. Configure OAuth consent screen (External or Internal)
+  // 7. Download the JSON credentials file
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // GOOGLE CALENDAR - OAuth Scopes Required
+  // ---------------------------------------------------------
+  // Full access:
+  //   https://www.googleapis.com/auth/calendar
+  //
+  // Read-only access:
+  //   https://www.googleapis.com/auth/calendar.readonly
+  //
+  // Events only:
+  //   https://www.googleapis.com/auth/calendar.events
+  //
+  // Capabilities:
+  // - Create, read, update, delete events
+  // - Manage calendar settings
+  // - Access multiple calendars
+  // - Set reminders and notifications
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // GOOGLE DRIVE - OAuth Scopes Required
+  // ---------------------------------------------------------
+  // Full access:
+  //   https://www.googleapis.com/auth/drive
+  //
+  // File access only:
+  //   https://www.googleapis.com/auth/drive.file
+  //
+  // Read-only:
+  //   https://www.googleapis.com/auth/drive.readonly
+  //
+  // Metadata only:
+  //   https://www.googleapis.com/auth/drive.metadata.readonly
+  //
+  // Capabilities:
+  // - Upload and download files
+  // - Create and manage folders
+  // - Share files and set permissions
+  // - Search across Drive
+  // - Access Google Docs, Sheets, Slides
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // GMAIL - OAuth Scopes Required
+  // ---------------------------------------------------------
+  // Full access (read, send, delete):
+  //   https://mail.google.com/
+  //
+  // Send only:
+  //   https://www.googleapis.com/auth/gmail.send
+  //
+  // Read-only:
+  //   https://www.googleapis.com/auth/gmail.readonly
+  //
+  // Modify (read, send, no delete):
+  //   https://www.googleapis.com/auth/gmail.modify
+  //
+  // Compose only:
+  //   https://www.googleapis.com/auth/gmail.compose
+  //
+  // Capabilities:
+  // - Read and search emails
+  // - Send emails and replies
+  // - Manage labels and filters
+  // - Access attachments
+  // - Create drafts
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // OAUTH CONSENT SCREEN CONFIGURATION
+  // ---------------------------------------------------------
+  // When setting up OAuth in Google Cloud Console:
+  //
+  // 1. User Type:
+  //    - Internal: Only users in your Google Workspace org
+  //    - External: Any Google user (requires verification for sensitive scopes)
+  //
+  // 2. App Information:
+  //    - App name: "Claude Code Integration" (or your preference)
+  //    - Support email: Your email
+  //    - Logo: Optional
+  //
+  // 3. Scopes:
+  //    - Add only the scopes you need (principle of least privilege)
+  //    - Sensitive scopes require Google verification for external apps
+  //
+  // 4. Test Users (External apps in testing):
+  //    - Add email addresses that can use the integration
+  //    - Limited to 100 users during testing phase
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // SECURITY BEST PRACTICES
+  // ---------------------------------------------------------
+  // 1. Use the minimum required scopes
+  // 2. Store credentials securely (never in git)
+  // 3. Use environment variables for sensitive data
+  // 4. Regularly review and revoke unused access
+  // 5. Monitor API usage in Google Cloud Console
+  // 6. Enable audit logging for compliance
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // TROUBLESHOOTING GOOGLE OAUTH
+  // ---------------------------------------------------------
+  // "Access Denied" or "App not verified":
+  //   - Add your email to test users in OAuth consent screen
+  //   - For production, complete Google's verification process
+  //
+  // "Invalid Scope":
+  //   - Ensure APIs are enabled in Google Cloud Console
+  //   - Check scope URLs are exactly correct (case-sensitive)
+  //
+  // "Token Expired":
+  //   - Zapier handles this automatically
+  //   - For direct integration, implement token refresh logic
+  //
+  // "Quota Exceeded":
+  //   - Check API quotas in Google Cloud Console
+  //   - Request quota increase if needed
+  // ---------------------------------------------------------
+}

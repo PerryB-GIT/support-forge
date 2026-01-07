@@ -1,0 +1,178 @@
+{
+  "name": "Daily Briefing Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily 8 AM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "primary",
+          "mode": "list"
+        },
+        "returnAll": false,
+        "limit": 20,
+        "options": {
+          "timeMax": "={{ $now.plus({ days: 1 }).toISO() }}",
+          "timeMin": "={{ $now.toISO() }}"
+        }
+      },
+      "id": "get-calendar",
+      "name": "Get Today's Calendar",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.1,
+      "position": [450, 200],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "getAll",
+        "returnAll": false,
+        "limit": 10,
+        "filters": {
+          "q": "is:unread",
+          "labelIds": ["INBOX"]
+        }
+      },
+      "id": "get-emails",
+      "name": "Get Unread Emails",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [450, 400],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Gmail"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": []
+        },
+        "combineOperation": "all"
+      },
+      "id": "merge-data",
+      "name": "Merge Data",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process calendar and email data\nconst calendar = $('Get Today\\'s Calendar').all();\nconst emails = $('Get Unread Emails').all();\n\n// Format calendar events\nconst events = calendar.map(item => {\n  const event = item.json;\n  return `- ${event.start?.dateTime ? new Date(event.start.dateTime).toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'}) : 'All day'}: ${event.summary || 'No title'}`;\n}).join('\\n');\n\n// Format emails\nconst emailSummary = emails.slice(0, 5).map(item => {\n  const email = item.json;\n  return `- From: ${email.from} | Subject: ${email.subject}`;\n}).join('\\n');\n\n// Build briefing\nconst briefing = `\n# Daily Briefing - ${new Date().toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}\n\n## Today's Schedule (${calendar.length} events)\n${events || 'No events scheduled'}\n\n## Unread Emails (${emails.length} total)\n${emailSummary || 'Inbox is clear!'}\n\n## Quick Actions\n- [ ] Review priority emails\n- [ ] Prepare for first meeting\n- [ ] Check task list\n\n---\nGenerated at ${new Date().toLocaleTimeString()}\n`;\n\nreturn [{ json: { briefing, eventCount: calendar.length, emailCount: emails.length } }];"
+      },
+      "id": "generate-briefing",
+      "name": "Generate Briefing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "channel": "#general",
+        "text": "=Good morning! Here's your daily briefing:\n\n{{ $json.briefing }}",
+        "otherOptions": {}
+      },
+      "id": "send-slack",
+      "name": "Send to Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1050, 200],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Slack"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $env.ADMIN_EMAIL }}",
+        "subject": "Daily Briefing - {{ $now.format('MMMM d, yyyy') }}",
+        "emailType": "text",
+        "message": "={{ $json.briefing }}"
+      },
+      "id": "send-email",
+      "name": "Send Email Backup",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1050, 400],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Gmail"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily 8 AM Trigger": {
+      "main": [
+        [
+          { "node": "Get Today's Calendar", "type": "main", "index": 0 },
+          { "node": "Get Unread Emails", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Get Today's Calendar": {
+      "main": [
+        [{ "node": "Merge Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get Unread Emails": {
+      "main": [
+        [{ "node": "Merge Data", "type": "main", "index": 1 }]
+      ]
+    },
+    "Merge Data": {
+      "main": [
+        [{ "node": "Generate Briefing", "type": "main", "index": 0 }]
+      ]
+    },
+    "Generate Briefing": {
+      "main": [
+        [
+          { "node": "Send to Slack", "type": "main", "index": 0 },
+          { "node": "Send Email Backup", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["automation", "daily", "briefing"],
+  "pinData": {}
+}

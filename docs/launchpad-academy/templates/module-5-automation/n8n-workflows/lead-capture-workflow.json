@@ -1,0 +1,172 @@
+{
+  "name": "Lead Capture - Form to Sheet + Email",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-capture",
+        "responseMode": "onReceived",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Form Submission",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "lead-capture-webhook"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Leads",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.name }}",
+            "Email": "={{ $json.email }}",
+            "Phone": "={{ $json.phone }}",
+            "Company": "={{ $json.company }}",
+            "Message": "={{ $json.message }}",
+            "Source": "={{ $json.source || 'Website Form' }}",
+            "Submitted At": "={{ $now.toISO() }}",
+            "Status": "New"
+          }
+        },
+        "options": {}
+      },
+      "id": "google-sheets-append",
+      "name": "Google Sheets - Add Lead",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "notifications@yourcompany.com",
+        "toEmail": "sales@yourcompany.com",
+        "subject": "=New Lead: {{ $json.name }} from {{ $json.company || 'Unknown Company' }}",
+        "emailType": "html",
+        "html": "=<h2>New Lead Received</h2>\n<table style=\"border-collapse: collapse; width: 100%; max-width: 600px;\">\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Name</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $json.name }}</td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Email</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\"><a href=\"mailto:{{ $json.email }}\">{{ $json.email }}</a></td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Phone</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $json.phone || 'Not provided' }}</td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Company</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $json.company || 'Not provided' }}</td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Message</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $json.message || 'No message' }}</td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Source</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $json.source || 'Website Form' }}</td>\n  </tr>\n  <tr>\n    <td style=\"padding: 10px; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;\">Received</td>\n    <td style=\"padding: 10px; border: 1px solid #ddd;\">{{ $now.format('MMMM d, yyyy h:mm a') }}</td>\n  </tr>\n</table>\n<p style=\"margin-top: 20px;\"><a href=\"YOUR_GOOGLE_SHEET_URL\" style=\"background: #4285f4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;\">View in Spreadsheet</a></p>",
+        "options": {
+          "replyTo": "={{ $json.email }}"
+        }
+      },
+      "id": "send-email-notification",
+      "name": "Email - Notify Team",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [750, 300],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIAL_ID",
+          "name": "SMTP Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Thank you for your submission. We'll be in touch soon!\",\n  \"leadId\": \"{{ $json.name.replace(/\\s+/g, '-').toLowerCase() }}-{{ Date.now() }}\"\n}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1000, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Form Submission": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Add Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Add Lead": {
+      "main": [
+        [
+          {
+            "node": "Email - Notify Team",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email - Notify Team": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "launchpad-academy-template"
+  },
+  "tags": [
+    {
+      "id": "1",
+      "name": "Lead Generation"
+    },
+    {
+      "id": "2",
+      "name": "Forms"
+    }
+  ],
+  "pinData": {},
+  "__README__": {
+    "description": "Lead Capture Workflow - Receives form submissions via webhook, adds to Google Sheets, and sends email notification",
+    "setup_instructions": [
+      "1. Import this workflow into n8n",
+      "2. Replace YOUR_GOOGLE_SHEET_ID with your actual Google Sheet ID",
+      "3. Set up Google Sheets OAuth2 credentials",
+      "4. Set up SMTP credentials for email",
+      "5. Update email addresses (fromEmail, toEmail)",
+      "6. Activate the workflow",
+      "7. Copy the webhook URL and use it in your form"
+    ],
+    "expected_webhook_payload": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+1234567890",
+      "company": "Acme Inc",
+      "message": "I'm interested in your services",
+      "source": "Contact Page"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "heygen": {
+    "api_key": "",
+    "api_base": "https://api.heygen.com/v2",
+    "default_avatar_id": "August_Casual_Front2_public",
+    "default_voice_id": "453c20e1525a429080e2ad9e4b26f2cd",
+    "avatar_name": "Devon",
+    "voice_name": "Archer",
+    "video_dimensions": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "paths": {
+    "queue_file": "video-queue.md",
+    "state_file": "video-state.json",
+    "output_dir": "output",
+    "assets_dir": "assets",
+    "log_file": "video-orchestrator.log"
+  },
+  "settings": {
+    "dry_run": false,
+    "auto_retry": true,
+    "max_retries": 3,
+    "retry_delay_seconds": 60,
+    "polling_interval_seconds": 30
+  },
+  "notifications": {
+    "enabled": false,
+    "webhook_url": ""
+  }
+}

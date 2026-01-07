@@ -1,0 +1,400 @@
+{
+  "name": "Client Onboarding - Drive + Email + CRM",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "client-onboarding",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - New Client",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "client-onboarding-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Generate folder name and project ID\nconst clientName = $input.item.json.company_name || $input.item.json.client_name;\nconst timestamp = new Date().toISOString().slice(0, 10);\nconst projectId = `PRJ-${Date.now().toString(36).toUpperCase()}`;\n\n// Clean folder name (remove special characters)\nconst folderName = `${clientName.replace(/[^a-zA-Z0-9\\s-]/g, '')} - ${projectId}`;\n\nreturn {\n  ...item.json,\n  folder_name: folderName,\n  project_id: projectId,\n  onboarding_date: timestamp,\n  full_name: `${$input.item.json.first_name || ''} ${$input.item.json.last_name || ''}`.trim() || clientName\n};"
+      },
+      "id": "prepare-data",
+      "name": "Code - Prepare Client Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "create",
+        "name": "={{ $json.folder_name }}",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "name"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "YOUR_CLIENT_FOLDERS_PARENT_ID",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-main-folder",
+      "name": "Google Drive - Create Client Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [700, 200],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "create",
+        "name": "01 - Contracts",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "name"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Google Drive - Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-contracts-folder",
+      "name": "Google Drive - Contracts Subfolder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [950, 100],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "create",
+        "name": "02 - Deliverables",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "name"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Google Drive - Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-deliverables-folder",
+      "name": "Google Drive - Deliverables Subfolder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [950, 200],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "folder",
+        "operation": "create",
+        "name": "03 - Communications",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "name"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Google Drive - Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-communications-folder",
+      "name": "Google Drive - Communications Subfolder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [950, 300],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_CRM_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Clients",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Project ID": "={{ $('Code - Prepare Client Data').item.json.project_id }}",
+            "Company Name": "={{ $('Code - Prepare Client Data').item.json.company_name }}",
+            "Contact Name": "={{ $('Code - Prepare Client Data').item.json.full_name }}",
+            "Email": "={{ $('Code - Prepare Client Data').item.json.email }}",
+            "Phone": "={{ $('Code - Prepare Client Data').item.json.phone }}",
+            "Service Type": "={{ $('Code - Prepare Client Data').item.json.service_type }}",
+            "Onboarding Date": "={{ $('Code - Prepare Client Data').item.json.onboarding_date }}",
+            "Status": "Active",
+            "Folder Link": "=https://drive.google.com/drive/folders/{{ $('Google Drive - Create Client Folder').item.json.id }}",
+            "Notes": "={{ $('Code - Prepare Client Data').item.json.notes || '' }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "add-to-crm",
+      "name": "Google Sheets - Add to CRM",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1200, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "welcome@yourcompany.com",
+        "toEmail": "={{ $('Code - Prepare Client Data').item.json.email }}",
+        "subject": "=Welcome to [Your Company]! Getting Started with {{ $('Code - Prepare Client Data').item.json.company_name }}",
+        "emailType": "html",
+        "html": "=<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: #4A90A4; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }\n    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 8px 8px; }\n    .button { display: inline-block; background: #4A90A4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; margin: 10px 0; }\n    .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #666; }\n    .checklist { background: white; padding: 15px; border-radius: 4px; margin: 15px 0; }\n    .checklist li { margin: 8px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Welcome Aboard! 🎉</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $('Code - Prepare Client Data').item.json.full_name }},</p>\n      \n      <p>Thank you for choosing <strong>[Your Company]</strong>! We're thrilled to have <strong>{{ $('Code - Prepare Client Data').item.json.company_name }}</strong> as a client and can't wait to help you achieve your goals.</p>\n      \n      <p><strong>Your Project ID:</strong> {{ $('Code - Prepare Client Data').item.json.project_id }}</p>\n      \n      <h3>📁 Your Client Portal</h3>\n      <p>We've set up a dedicated folder for all project files:</p>\n      <a href=\"https://drive.google.com/drive/folders/{{ $('Google Drive - Create Client Folder').item.json.id }}\" class=\"button\">Access Your Folder</a>\n      \n      <div class=\"checklist\">\n        <h3>✅ Next Steps</h3>\n        <ul>\n          <li>Schedule your kickoff call</li>\n          <li>Complete the onboarding questionnaire</li>\n          <li>Review and sign the service agreement</li>\n          <li>Provide access to necessary accounts/tools</li>\n        </ul>\n      </div>\n      \n      <h3>📅 Schedule Your Kickoff Call</h3>\n      <p>Let's get started! Book a time that works for you:</p>\n      <a href=\"YOUR_CALENDLY_LINK\" class=\"button\">Book Kickoff Call</a>\n      \n      <h3>📞 Need Help?</h3>\n      <p>If you have any questions, don't hesitate to reach out:</p>\n      <ul>\n        <li>Email: support@yourcompany.com</li>\n        <li>Phone: (555) 123-4567</li>\n      </ul>\n      \n      <p>We're excited to work with you!</p>\n      \n      <p>Best regards,<br>\n      <strong>The [Your Company] Team</strong></p>\n    </div>\n    <div class=\"footer\">\n      <p>© 2024 [Your Company]. All rights reserved.</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "options": {
+          "ccEmail": "team@yourcompany.com"
+        }
+      },
+      "id": "send-welcome-email",
+      "name": "Email - Send Welcome",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1450, 200],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIAL_ID",
+          "name": "SMTP Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": {
+          "__rl": true,
+          "value": "#new-clients",
+          "mode": "name"
+        },
+        "text": "=🎉 *New Client Onboarded!*\n\n*Company:* {{ $('Code - Prepare Client Data').item.json.company_name }}\n*Contact:* {{ $('Code - Prepare Client Data').item.json.full_name }}\n*Email:* {{ $('Code - Prepare Client Data').item.json.email }}\n*Service:* {{ $('Code - Prepare Client Data').item.json.service_type }}\n*Project ID:* {{ $('Code - Prepare Client Data').item.json.project_id }}\n\n📁 <https://drive.google.com/drive/folders/{{ $('Google Drive - Create Client Folder').item.json.id }}|Client Folder>\n📊 <YOUR_CRM_SHEET_URL|View in CRM>",
+        "otherOptions": {}
+      },
+      "id": "slack-notification",
+      "name": "Slack - Notify Team",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1700, 200],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_SLACK_CREDENTIAL_ID",
+          "name": "Slack Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Client onboarded successfully\",\n  \"data\": {\n    \"project_id\": \"{{ $('Code - Prepare Client Data').item.json.project_id }}\",\n    \"folder_id\": \"{{ $('Google Drive - Create Client Folder').item.json.id }}\",\n    \"folder_url\": \"https://drive.google.com/drive/folders/{{ $('Google Drive - Create Client Folder').item.json.id }}\",\n    \"onboarding_date\": \"{{ $('Code - Prepare Client Data').item.json.onboarding_date }}\"\n  }\n}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1950, 200]
+    }
+  ],
+  "connections": {
+    "Webhook - New Client": {
+      "main": [
+        [
+          {
+            "node": "Code - Prepare Client Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code - Prepare Client Data": {
+      "main": [
+        [
+          {
+            "node": "Google Drive - Create Client Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive - Create Client Folder": {
+      "main": [
+        [
+          {
+            "node": "Google Drive - Contracts Subfolder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Drive - Deliverables Subfolder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Drive - Communications Subfolder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive - Contracts Subfolder": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Add to CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Add to CRM": {
+      "main": [
+        [
+          {
+            "node": "Email - Send Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email - Send Welcome": {
+      "main": [
+        [
+          {
+            "node": "Slack - Notify Team",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Notify Team": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "launchpad-academy-template"
+  },
+  "tags": [
+    {
+      "id": "6",
+      "name": "Onboarding"
+    },
+    {
+      "id": "7",
+      "name": "CRM"
+    },
+    {
+      "id": "8",
+      "name": "Google Drive"
+    }
+  ],
+  "pinData": {},
+  "__README__": {
+    "description": "Client Onboarding Workflow - Creates Google Drive folder structure, adds to CRM spreadsheet, sends welcome email, notifies team",
+    "setup_instructions": [
+      "1. Import this workflow into n8n",
+      "2. Create a parent folder in Google Drive for all client folders",
+      "3. Replace YOUR_CLIENT_FOLDERS_PARENT_ID with the parent folder ID",
+      "4. Create a Google Sheet for CRM with 'Clients' tab and columns: Project ID, Company Name, Contact Name, Email, Phone, Service Type, Onboarding Date, Status, Folder Link, Notes",
+      "5. Replace YOUR_CRM_SHEET_ID with your Sheet ID",
+      "6. Set up Google Drive and Sheets OAuth2 credentials",
+      "7. Set up SMTP credentials for email",
+      "8. Set up Slack API credentials",
+      "9. Update email content with your company details",
+      "10. Update YOUR_CALENDLY_LINK with your booking link",
+      "11. Activate the workflow"
+    ],
+    "expected_webhook_payload": {
+      "company_name": "Acme Corporation",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@acme.com",
+      "phone": "+1 (555) 123-4567",
+      "service_type": "Web Development",
+      "notes": "Referred by existing client"
+    },
+    "folder_structure_created": [
+      "Client Name - PRJ-XXXXXX/",
+      "  01 - Contracts/",
+      "  02 - Deliverables/",
+      "  03 - Communications/"
+    ],
+    "customization_tips": [
+      "Add more subfolders by duplicating the folder creation nodes",
+      "Copy template files into the new folders automatically",
+      "Integrate with actual CRM systems (HubSpot, Pipedrive, etc.)",
+      "Add calendar integration for automatic kickoff meeting",
+      "Include Stripe integration for invoicing setup"
+    ]
+  }
+}

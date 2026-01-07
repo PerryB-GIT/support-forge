@@ -1,0 +1,613 @@
+{
+  "name": "Video Production Pipeline - Script to Avatar Video",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "video-production",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Receive Script Request",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "video-production-webhook"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.body.scriptFileId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "google-drive-read",
+      "name": "Google Drive - Read Script",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [500, 300],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "YOUR_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the script markdown to extract narration segments\nconst scriptContent = $input.first().json.data;\nconst scriptText = typeof scriptContent === 'string' ? scriptContent : scriptContent.toString();\n\n// Parse incoming metadata\nconst metadata = $('Webhook - Receive Script Request').first().json.body;\n\n// Extract narration blocks (text between [NARRATION] markers or plain paragraphs)\nconst lines = scriptText.split('\\n');\nlet segments = [];\nlet currentSegment = {\n  type: 'narration',\n  content: '',\n  order: 0\n};\nlet inNarration = false;\nlet segmentOrder = 0;\n\nfor (const line of lines) {\n  // Check for narration markers\n  if (line.includes('[NARRATION]') || line.includes('[AVATAR]')) {\n    inNarration = true;\n    if (currentSegment.content.trim()) {\n      currentSegment.order = segmentOrder++;\n      segments.push({...currentSegment});\n      currentSegment = { type: 'narration', content: '', order: 0 };\n    }\n    continue;\n  }\n  \n  if (line.includes('[/NARRATION]') || line.includes('[/AVATAR]') || line.includes('[SCREEN]')) {\n    inNarration = false;\n    if (currentSegment.content.trim()) {\n      currentSegment.order = segmentOrder++;\n      segments.push({...currentSegment});\n      currentSegment = { type: 'narration', content: '', order: 0 };\n    }\n    continue;\n  }\n  \n  // Skip markdown headers and code blocks for narration\n  if (line.startsWith('#') || line.startsWith('```') || line.startsWith('---')) {\n    continue;\n  }\n  \n  // Add content to current segment\n  if (inNarration || (!line.startsWith('|') && line.trim())) {\n    currentSegment.content += line + ' ';\n  }\n}\n\n// Add final segment if exists\nif (currentSegment.content.trim()) {\n  currentSegment.order = segmentOrder++;\n  segments.push(currentSegment);\n}\n\n// If no segments found with markers, use full cleaned text\nif (segments.length === 0) {\n  const cleanedText = scriptText\n    .replace(/```[\\s\\S]*?```/g, '') // Remove code blocks\n    .replace(/\\|[\\s\\S]*?\\|/g, '') // Remove tables\n    .replace(/^#+.*/gm, '') // Remove headers\n    .replace(/^--.*/gm, '') // Remove horizontal rules\n    .replace(/\\[.*?\\]/g, '') // Remove markdown links text\n    .replace(/\\(http.*?\\)/g, '') // Remove URLs\n    .trim();\n  \n  segments = [{\n    type: 'narration',\n    content: cleanedText,\n    order: 0\n  }];\n}\n\n// Combine all narration into single script for HeyGen\nconst fullNarration = segments\n  .sort((a, b) => a.order - b.order)\n  .map(s => s.content.trim())\n  .join('\\n\\n');\n\nreturn {\n  json: {\n    scriptFileId: metadata.scriptFileId,\n    lessonId: metadata.lessonId || 'unknown',\n    moduleId: metadata.moduleId || 'unknown',\n    title: metadata.title || 'Untitled Lesson',\n    segments: segments,\n    fullNarration: fullNarration,\n    segmentCount: segments.length,\n    characterCount: fullNarration.length,\n    estimatedDuration: Math.ceil(fullNarration.length / 150), // ~150 chars per second\n    requestedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "parse-script",
+      "name": "Code - Parse Script Segments",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [750, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.characterCount }}",
+              "operation": "largerEqual",
+              "value2": 50
+            }
+          ]
+        }
+      },
+      "id": "validate-script",
+      "name": "IF - Script Valid",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1000, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.heygen.com/v2/video/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"video_inputs\": [\n    {\n      \"character\": {\n        \"type\": \"avatar\",\n        \"avatar_id\": \"{{ $env.HEYGEN_AVATAR_ID || 'Kristin_public_3_20240108' }}\",\n        \"avatar_style\": \"normal\"\n      },\n      \"voice\": {\n        \"type\": \"text\",\n        \"input_text\": {{ JSON.stringify($json.fullNarration) }},\n        \"voice_id\": \"{{ $env.HEYGEN_VOICE_ID || '2d5b0e6cf36f460aa7fc47e3eee4ba54' }}\",\n        \"speed\": 1.0\n      },\n      \"background\": {\n        \"type\": \"color\",\n        \"value\": \"#1a1a2e\"\n      }\n    }\n  ],\n  \"dimension\": {\n    \"width\": 1920,\n    \"height\": 1080\n  },\n  \"aspect_ratio\": \"16:9\",\n  \"test\": false,\n  \"caption\": true\n}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "heygen-generate",
+      "name": "HTTP - HeyGen Generate Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1250, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "YOUR_HEYGEN_CREDENTIAL_ID",
+          "name": "HeyGen API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.heygen.com/v1/video_status.get?video_id={{ $json.data.video_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "heygen-check-status",
+      "name": "HTTP - Check Video Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1500, 200],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "YOUR_HEYGEN_CREDENTIAL_ID",
+          "name": "HeyGen API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.data.status }}",
+              "operation": "equals",
+              "value2": "completed"
+            }
+          ]
+        }
+      },
+      "id": "check-completion",
+      "name": "IF - Video Ready",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1750, 200]
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "wait-for-processing",
+      "name": "Wait - 30 Seconds",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2000, 350]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TRACKING_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "VideoProduction",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "LessonID": "={{ $('Code - Parse Script Segments').item.json.lessonId }}",
+            "ModuleID": "={{ $('Code - Parse Script Segments').item.json.moduleId }}",
+            "Title": "={{ $('Code - Parse Script Segments').item.json.title }}",
+            "VideoID": "={{ $('HTTP - HeyGen Generate Video').item.json.data.video_id }}",
+            "VideoURL": "={{ $json.data.video_url }}",
+            "ThumbnailURL": "={{ $json.data.thumbnail_url || '' }}",
+            "Duration": "={{ $json.data.duration || $('Code - Parse Script Segments').item.json.estimatedDuration }}",
+            "Status": "completed",
+            "CreatedAt": "={{ $('Code - Parse Script Segments').item.json.requestedAt }}",
+            "CompletedAt": "={{ $now.toISO() }}",
+            "CharacterCount": "={{ $('Code - Parse Script Segments').item.json.characterCount }}",
+            "SegmentCount": "={{ $('Code - Parse Script Segments').item.json.segmentCount }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-log-success",
+      "name": "Google Sheets - Log Completed Video",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [2000, 100],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": {
+          "__rl": true,
+          "value": "#video-production",
+          "mode": "name"
+        },
+        "text": "=:movie_camera: *Video Ready!*\n\n*{{ $('Code - Parse Script Segments').item.json.title }}*\nModule: {{ $('Code - Parse Script Segments').item.json.moduleId }}\nLesson: {{ $('Code - Parse Script Segments').item.json.lessonId }}\n\n:stopwatch: Duration: ~{{ $json.data.duration || $('Code - Parse Script Segments').item.json.estimatedDuration }} seconds\n:link: <{{ $json.data.video_url }}|Download Video>\n\n_Generated via Support Forge Video Pipeline_",
+        "otherOptions": {
+          "unfurl_links": false,
+          "unfurl_media": true
+        }
+      },
+      "id": "slack-notify-success",
+      "name": "Slack - Notify Video Ready",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [2250, 100],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_SLACK_CREDENTIAL_ID",
+          "name": "Slack Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Video generation completed\",\n  \"data\": {\n    \"videoId\": \"{{ $('HTTP - HeyGen Generate Video').item.json.data.video_id }}\",\n    \"videoUrl\": \"{{ $json.data.video_url }}\",\n    \"lessonId\": \"{{ $('Code - Parse Script Segments').item.json.lessonId }}\",\n    \"title\": \"{{ $('Code - Parse Script Segments').item.json.title }}\"\n  }\n}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond - Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2500, 100]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TRACKING_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "VideoProduction",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "LessonID": "={{ $('Code - Parse Script Segments').item.json.lessonId }}",
+            "ModuleID": "={{ $('Code - Parse Script Segments').item.json.moduleId }}",
+            "Title": "={{ $('Code - Parse Script Segments').item.json.title }}",
+            "VideoID": "={{ $('HTTP - HeyGen Generate Video').item.json.data.video_id }}",
+            "VideoURL": "",
+            "ThumbnailURL": "",
+            "Duration": "={{ $('Code - Parse Script Segments').item.json.estimatedDuration }}",
+            "Status": "processing",
+            "CreatedAt": "={{ $('Code - Parse Script Segments').item.json.requestedAt }}",
+            "CompletedAt": "",
+            "CharacterCount": "={{ $('Code - Parse Script Segments').item.json.characterCount }}",
+            "SegmentCount": "={{ $('Code - Parse Script Segments').item.json.segmentCount }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-log-processing",
+      "name": "Google Sheets - Log Processing",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [2000, 500],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Video is processing. Check tracking sheet for status.\",\n  \"data\": {\n    \"videoId\": \"{{ $('HTTP - HeyGen Generate Video').item.json.data.video_id }}\",\n    \"status\": \"processing\",\n    \"lessonId\": \"{{ $('Code - Parse Script Segments').item.json.lessonId }}\"\n  }\n}",
+        "options": {}
+      },
+      "id": "respond-processing",
+      "name": "Respond - Processing",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2250, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": false,\n  \"message\": \"Script validation failed. Script must contain at least 50 characters of narration.\",\n  \"data\": {\n    \"characterCount\": {{ $json.characterCount }},\n    \"lessonId\": \"{{ $json.lessonId }}\"\n  }\n}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-invalid",
+      "name": "Respond - Invalid Script",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1250, 450]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TRACKING_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "VideoErrors",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "LessonID": "={{ $('Code - Parse Script Segments').item.json.lessonId }}",
+            "Title": "={{ $('Code - Parse Script Segments').item.json.title }}",
+            "Error": "Script validation failed - insufficient content",
+            "CharacterCount": "={{ $json.characterCount }}",
+            "Timestamp": "={{ $now.toISO() }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-log-error",
+      "name": "Google Sheets - Log Error",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1500, 450],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": {
+          "__rl": true,
+          "value": "#video-production",
+          "mode": "name"
+        },
+        "text": "=:warning: *Video Production Failed*\n\n*{{ $('Code - Parse Script Segments').item.json.title }}*\nLesson: {{ $('Code - Parse Script Segments').item.json.lessonId }}\n\n:x: Error: Script validation failed - only {{ $json.characterCount }} characters found (minimum 50 required)\n\n_Please check the script file and try again._",
+        "otherOptions": {}
+      },
+      "id": "slack-notify-error",
+      "name": "Slack - Notify Error",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1750, 450],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_SLACK_CREDENTIAL_ID",
+          "name": "Slack Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook - Receive Script Request": {
+      "main": [
+        [
+          {
+            "node": "Google Drive - Read Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive - Read Script": {
+      "main": [
+        [
+          {
+            "node": "Code - Parse Script Segments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code - Parse Script Segments": {
+      "main": [
+        [
+          {
+            "node": "IF - Script Valid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Script Valid": {
+      "main": [
+        [
+          {
+            "node": "HTTP - HeyGen Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond - Invalid Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond - Invalid Script": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Log Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Log Error": {
+      "main": [
+        [
+          {
+            "node": "Slack - Notify Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP - HeyGen Generate Video": {
+      "main": [
+        [
+          {
+            "node": "HTTP - Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP - Check Video Status": {
+      "main": [
+        [
+          {
+            "node": "IF - Video Ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Video Ready": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Log Completed Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait - 30 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait - 30 Seconds": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Log Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Log Processing": {
+      "main": [
+        [
+          {
+            "node": "Respond - Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Log Completed Video": {
+      "main": [
+        [
+          {
+            "node": "Slack - Notify Video Ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Notify Video Ready": {
+      "main": [
+        [
+          {
+            "node": "Respond - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "support-forge-video-pipeline"
+  },
+  "tags": [
+    {
+      "id": "video",
+      "name": "Video Production"
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen"
+    },
+    {
+      "id": "automation",
+      "name": "AI Automation"
+    }
+  ],
+  "pinData": {},
+  "__README__": {
+    "description": "Video Production Pipeline - Automates avatar video generation from script files stored in Google Drive using HeyGen API",
+    "workflow_overview": "1. Receives webhook with Google Drive script file ID\n2. Downloads and parses script content\n3. Extracts narration segments\n4. Calls HeyGen API to generate avatar video\n5. Tracks progress in Google Sheets\n6. Notifies via Slack when complete",
+    "setup_instructions": [
+      "1. Import this workflow into n8n",
+      "2. Set up Google Drive OAuth2 credentials",
+      "3. Set up Google Sheets OAuth2 credentials",
+      "4. Create HeyGen API key credential (HTTP Header Auth with 'X-Api-Key' header)",
+      "5. Set up Slack OAuth credentials",
+      "6. Create Google Sheet with 'VideoProduction' and 'VideoErrors' tabs",
+      "7. Replace YOUR_TRACKING_SHEET_ID with your Sheet ID",
+      "8. Update Slack channel name",
+      "9. Set HEYGEN_AVATAR_ID and HEYGEN_VOICE_ID environment variables",
+      "10. Activate the workflow"
+    ],
+    "required_credentials": [
+      "Google Drive OAuth2 API",
+      "Google Sheets OAuth2 API",
+      "HeyGen API Key (HTTP Header Auth)",
+      "Slack OAuth2 API"
+    ],
+    "google_sheets_structure": {
+      "VideoProduction": {
+        "columns": [
+          "LessonID",
+          "ModuleID",
+          "Title",
+          "VideoID",
+          "VideoURL",
+          "ThumbnailURL",
+          "Duration",
+          "Status",
+          "CreatedAt",
+          "CompletedAt",
+          "CharacterCount",
+          "SegmentCount"
+        ]
+      },
+      "VideoErrors": {
+        "columns": [
+          "LessonID",
+          "Title",
+          "Error",
+          "CharacterCount",
+          "Timestamp"
+        ]
+      }
+    },
+    "webhook_payload_example": {
+      "scriptFileId": "1abc123def456_google_drive_file_id",
+      "lessonId": "2.3",
+      "moduleId": "module-2",
+      "title": "Advanced Prompting Techniques"
+    },
+    "script_format": "Markdown with optional [NARRATION] or [AVATAR] markers. Plain paragraphs are extracted for narration. Code blocks, tables, and headers are excluded.",
+    "customization_tips": [
+      "Adjust the Wait node duration based on your typical video length",
+      "Add error retry logic for HeyGen API failures",
+      "Customize avatar and voice IDs in the HeyGen request",
+      "Add a separate workflow for batch processing multiple scripts",
+      "Integrate with Canva API for final video assembly"
+    ]
+  }
+}

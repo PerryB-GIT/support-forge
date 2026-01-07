@@ -1,0 +1,63 @@
+{
+  "production": {
+    "outputDir": "./output/videos",
+    "tempDir": "./temp",
+    "stateFile": "./video-production-state.json"
+  },
+  "heygen": {
+    "apiKey": "${HEYGEN_API_KEY}",
+    "defaultAvatar": "August_Casual_Front2_public",
+    "defaultVoice": "453c20e1525a429080e2ad9e4b26f2cd",
+    "avatarName": "Devon",
+    "voiceName": "Archer",
+    "defaultBackground": "support-forge-studio",
+    "videoSettings": {
+      "resolution": "720p",
+      "aspectRatio": "16:9",
+      "fps": 30
+    }
+  },
+  "vertexAi": {
+    "projectId": "${GOOGLE_CLOUD_PROJECT}",
+    "location": "us-central1",
+    "veoModel": "veo-3",
+    "videoSettings": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8,
+      "generateAudio": true
+    }
+  },
+  "googleTts": {
+    "projectId": "${GOOGLE_CLOUD_PROJECT}",
+    "voiceName": "en-US-Neural2-J",
+    "speakingRate": 1.0,
+    "pitch": 0
+  },
+  "canva": {
+    "apiKey": "${CANVA_API_KEY}",
+    "brandKit": "support-forge",
+    "templateIds": {
+      "lessonIntro": "",
+      "lessonOutro": "",
+      "chapterCard": "",
+      "screenCapture": ""
+    }
+  },
+  "paths": {
+    "scripts": "../../../docs/academy-content/video-scripts",
+    "resources": "../../../docs/launchpad-academy/templates",
+    "output": "./output"
+  },
+  "branding": {
+    "primaryColor": "#8B5CF6",
+    "secondaryColor": "#1E1B4B",
+    "fontFamily": "Inter",
+    "logoPath": "./assets/support-forge-logo.png"
+  },
+  "notifications": {
+    "slack": {
+      "webhookUrl": "${SLACK_WEBHOOK_URL}",
+      "channel": "#video-production"
+    }
+  }
+}

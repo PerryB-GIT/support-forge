@@ -1,0 +1,446 @@
+{
+  "script_id": "script-4.3-installing-industry-skills",
+  "title": "Installing Industry Skills",
+  "total_duration_seconds": 354.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 20.6,
+      "visual_cue": "Lesson title \"Installing Industry Skills\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Superpowers is great for general development workflows. [PAUSE] But what if you need something more specific?\n\nMaybe you're doing data analysis and need skills for that. [PAUSE] Or you're a DevOps engineer who needs deployment skills. Or you work with specific frameworks like React or Django.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 2,
+      "start_time": 20.6,
+      "end_time": 33.7,
+      "visual_cue": "Various industry/specialty icons",
+      "visual_type": "illustration",
+      "spoken_text": "The Claude Code community has created skills for tons of use cases. [PAUSE] In this lesson, we'll find these skills, install them from GitHub, and customize them for your needs.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 3,
+      "start_time": 33.7,
+      "end_time": 41.2,
+      "visual_cue": "\"Where to Find Skills\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Skills are shared in several places. [PAUSE] Let me show you where to look.\n\n### GitHub",
+      "word_count": 15
+    },
+    {
+      "segment_id": 4,
+      "start_time": 41.2,
+      "end_time": 52.7,
+      "visual_cue": "GitHub search interface",
+      "visual_type": "screen_capture",
+      "spoken_text": "GitHub is the primary source. [PAUSE] Search for \"claude code skills\" or \"claude skills\" and you'll find repositories full of them.\n\nSome popular repositories to check:",
+      "word_count": 25
+    },
+    {
+      "segment_id": 5,
+      "start_time": 52.7,
+      "end_time": 65.1,
+      "visual_cue": "Repository examples with names",
+      "visual_type": "text_overlay",
+      "spoken_text": "- **anthropics/claude-code-skills** - Official collection from Anthropic\n- **awesome-claude-skills** - Community curated list\n- Individual developer repos with specialized skills\n\nWhen you find a skill repository, look for a few things:",
+      "word_count": 31
+    },
+    {
+      "segment_id": 6,
+      "start_time": 65.1,
+      "end_time": 81.9,
+      "visual_cue": "What to look for in a repo",
+      "visual_type": "text_overlay",
+      "spoken_text": "- **SKILL.md files** - The actual skill definitions\n- **README** - Explains what skills are included and how to use them\n- **Recent updates** - Active maintenance is a good sign\n- **Stars and forks** - Community validation\n\n### Claude Code Marketplace",
+      "word_count": 42
+    },
+    {
+      "segment_id": 7,
+      "start_time": 81.9,
+      "end_time": 92.6,
+      "visual_cue": "Marketplace concept",
+      "visual_type": "text_overlay",
+      "spoken_text": "Some skills are available through a marketplace or registry. [PAUSE] Check Claude Code's documentation for the latest on official skill distribution.\n\n### Community Forums",
+      "word_count": 23
+    },
+    {
+      "segment_id": 8,
+      "start_time": 92.6,
+      "end_time": 103.3,
+      "visual_cue": "Discord/Forum icons",
+      "visual_type": "illustration",
+      "spoken_text": "Anthropic's Discord and various AI developer communities often share skills. [PAUSE] Search for \"skill\" in these communities and you'll find people sharing their creations.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 9,
+      "start_time": 103.3,
+      "end_time": 110.4,
+      "visual_cue": "Step-by-step installation header",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's walk through installing a skill from GitHub. [PAUSE]\n\n### Step 1: Find the Repository",
+      "word_count": 14
+    },
+    {
+      "segment_id": 10,
+      "start_time": 110.4,
+      "end_time": 132.3,
+      "visual_cue": "Browser showing a GitHub skill repo",
+      "visual_type": "screen_capture",
+      "spoken_text": "I'll use an example. Say you found a repository called \"document-skills\" that has skills for creating presentations, PDFs, and Word documents.\n\nNavigate to the repo. [PAUSE] Find the skill files - usually in a folder structure like:\n\n```\n/skills\n  /pdf-creation\n    SKILL.md\n  /presentation\n    SKILL.md\n  /docx\n    SKILL.md\n```\n\n### Step 2: Clone or Download",
+      "word_count": 51
+    },
+    {
+      "segment_id": 11,
+      "start_time": 132.3,
+      "end_time": 147.8,
+      "visual_cue": "Git clone command",
+      "visual_type": "screen_capture",
+      "spoken_text": "You have two options. [PAUSE] Clone the whole repository:\n\n```\ngit clone https://github.com/example/document-skills.git\n```\n\nOr download just the files you need by clicking \"Download ZIP\" or copying individual files.\n\n### Step 3: Place in Skills Directory",
+      "word_count": 35
+    },
+    {
+      "segment_id": 12,
+      "start_time": 147.8,
+      "end_time": 154.6,
+      "visual_cue": "File system showing skills directory",
+      "visual_type": "text_overlay",
+      "spoken_text": "Skills go in your Claude Code configuration directory:\n\nWindows:\n```\n%APPDATA%\\Claude\\skills\\\n```\n\nMac:\n```\n~/Library/Application Support/Claude/skills/\n```",
+      "word_count": 17
+    },
+    {
+      "segment_id": 13,
+      "start_time": 154.6,
+      "end_time": 168.1,
+      "visual_cue": "Moving files into place",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a folder for each skill. [PAUSE] The folder name becomes part of the skill's invocation name.\n\n```\nskills/\n  document-skills/\n    pdf-creation/\n      SKILL.md\n    presentation/\n      SKILL.md\n```\n\n### Step 4: Restart Claude Code",
+      "word_count": 30
+    },
+    {
+      "segment_id": 14,
+      "start_time": 168.1,
+      "end_time": 180.0,
+      "visual_cue": "Restarting Claude Code",
+      "visual_type": "text_overlay",
+      "spoken_text": "Exit and restart Claude Code. [PAUSE] The new skills are loaded on startup.\n\n### Step 5: Verify\n\n```\nWhat skills do I have related to documents?\n```",
+      "word_count": 26
+    },
+    {
+      "segment_id": 15,
+      "start_time": 180.0,
+      "end_time": 183.2,
+      "visual_cue": "Claude listing the new document skills",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude should now show your newly installed skills.",
+      "word_count": 8
+    },
+    {
+      "segment_id": 16,
+      "start_time": 183.2,
+      "end_time": 191.5,
+      "visual_cue": "\"Customization\" header with edit icon",
+      "visual_type": "illustration",
+      "spoken_text": "Here's where it gets powerful. [PAUSE] Skills are just text files. You can modify them.\n\n### Why Customize?",
+      "word_count": 17
+    },
+    {
+      "segment_id": 17,
+      "start_time": 191.5,
+      "end_time": 207.9,
+      "visual_cue": "Customization scenarios",
+      "visual_type": "text_overlay",
+      "spoken_text": "- The skill is almost what you need, but not quite\n- You want to add your company's specific guidelines\n- You need to change the output format\n- You want to combine elements from multiple skills\n\n### How to Customize",
+      "word_count": 41
+    },
+    {
+      "segment_id": 18,
+      "start_time": 207.9,
+      "end_time": 235.8,
+      "visual_cue": "Opening SKILL.md in editor",
+      "visual_type": "text_overlay",
+      "spoken_text": "Open the SKILL.md file in your text editor. [PAUSE] Let's look at a typical structure:\n\n```markdown\n# PDF Creation Skill\n\nCreate professional PDF documents from content.\n\nWhen invoked, follow these steps:\n1. Ask what type of document the user needs\n2. Gather the content\n3. Format according to [specific guidelines]\n4. Generate the PDF\n\n- Use professional formatting\n- Include page numbers\n- Add headers with document title\n```",
+      "word_count": 66
+    },
+    {
+      "segment_id": 19,
+      "start_time": 235.8,
+      "end_time": 258.5,
+      "visual_cue": "Making edits to the skill",
+      "visual_type": "text_overlay",
+      "spoken_text": "Say you want to add your company branding. [PAUSE] Edit the instructions:\n\n```markdown\n\nWhen invoked, follow these steps:\n1. Ask what type of document the user needs\n2. Gather the content\n3. Apply Acme Corp branding:\n   - Logo in top right\n   - Blue (#0066CC) headers\n   - Arial font family\n4. Generate the PDF\n```",
+      "word_count": 53
+    },
+    {
+      "segment_id": 20,
+      "start_time": 258.5,
+      "end_time": 268.8,
+      "visual_cue": "Saving the modified skill",
+      "visual_type": "text_overlay",
+      "spoken_text": "Save the file. [PAUSE] No restart needed for skill content changes - Claude reads the file fresh each time.\n\n### Creating Skill Variants",
+      "word_count": 22
+    },
+    {
+      "segment_id": 21,
+      "start_time": 268.8,
+      "end_time": 283.1,
+      "visual_cue": "Copying a skill to create variant",
+      "visual_type": "text_overlay",
+      "spoken_text": "Sometimes you want the original AND a customized version. [PAUSE] Just copy the folder:\n\n```\nskills/\n  pdf-creation/\n    SKILL.md          (original)\n  pdf-creation-branded/\n    SKILL.md          (your customized version)\n```\n\nNow you have both `/pdf-creation` and `/pdf-creation-branded` available.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 22,
+      "start_time": 283.1,
+      "end_time": 288.6,
+      "visual_cue": "\"Skills Organization\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "As you collect skills, organization matters. [PAUSE]\n\n### Use Clear Naming",
+      "word_count": 10
+    },
+    {
+      "segment_id": 23,
+      "start_time": 288.6,
+      "end_time": 300.6,
+      "visual_cue": "Good vs bad folder names",
+      "visual_type": "comparison_table",
+      "spoken_text": "**Good:**\n- `code-review-frontend`\n- `deploy-aws-amplify`\n- `morning-briefing`\n\n**Avoid:**\n- `skill1`\n- `new-skill`\n- `test`\n\nThe folder name is what you'll type every day. Make it memorable.\n\n### Group Related Skills",
+      "word_count": 30
+    },
+    {
+      "segment_id": 24,
+      "start_time": 300.6,
+      "end_time": 310.6,
+      "visual_cue": "Organized folder structure",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\nskills/\n  development/\n    code-review/\n    debugging/\n    testing/\n  deployment/\n    aws-deploy/\n    vercel-deploy/\n  productivity/\n    morning-briefing/\n    meeting-notes/\n```\n\nThis keeps things tidy as your collection grows.\n\n### Document Your Customizations",
+      "word_count": 25
+    },
+    {
+      "segment_id": 25,
+      "start_time": 310.6,
+      "end_time": 325.4,
+      "visual_cue": "README in skills folder",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you customize a skill, add a comment at the top noting what you changed:\n\n```markdown\n<!-- Customized 2024-01-15: Added Acme Corp branding requirements -->\n# PDF Creation Skill\n...\n```\n\nFuture you will thank present you.",
+      "word_count": 37
+    },
+    {
+      "segment_id": 26,
+      "start_time": 325.4,
+      "end_time": 339.8,
+      "visual_cue": "Lesson summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "You now know how to:\n\n- Find skills on GitHub and in community forums\n- Install skills to your Claude Code configuration\n- Customize skills to match your specific needs\n- Organize your growing skills library",
+      "word_count": 36
+    },
+    {
+      "segment_id": 27,
+      "start_time": 339.8,
+      "end_time": 354.5,
+      "visual_cue": "\"Next: Creating Your First Custom Skill\" with arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "But why stop at customizing other people's skills? [PAUSE] In the next lesson, we'll build a skill from scratch. You'll understand exactly how skills work and be able to create whatever workflow you need.",
+      "word_count": 33
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title \"Installing Industry Skills\"",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Good vs bad folder names",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Customization\" header with edit icon",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Discord/Forum icons",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Various industry/specialty icons",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Browser showing a GitHub skill repo",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Git clone command",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "GitHub search interface",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Step-by-step installation header",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: Creating Your First Custom Skill\" with arrow",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Skills Organization\" header",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Where to Find Skills\" header",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude listing the new document skills",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Copying a skill to create variant",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Customization scenarios",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File system showing skills directory",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Lesson summary",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Making edits to the skill",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Marketplace concept",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Moving files into place",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Opening SKILL.md in editor",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Organized folder structure",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "README in skills folder",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Repository examples with names",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Restarting Claude Code",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Saving the modified skill",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What to look for in a repo",
+      "segment_ids": [
+        6
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes",
+    "lesson": "4.3 - Installing Industry Skills"
+  },
+  "parsed_at": "2026-01-06T22:53:56.109951"
+}

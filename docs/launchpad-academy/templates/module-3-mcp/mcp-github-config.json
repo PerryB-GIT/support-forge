@@ -1,0 +1,249 @@
+{
+  // =============================================================
+  // GITHUB MCP SERVER CONFIGURATION
+  // =============================================================
+  // Enables Claude Code to interact with GitHub repositories,
+  // issues, pull requests, and more
+  // =============================================================
+
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_YOUR_TOKEN_HERE"
+      }
+    }
+  },
+
+  // ---------------------------------------------------------
+  // CREATING A PERSONAL ACCESS TOKEN (PAT)
+  // ---------------------------------------------------------
+  //
+  // OPTION 1: Fine-Grained Token (Recommended - More Secure)
+  // --------------------------------------------------------
+  // 1. Go to: github.com/settings/tokens?type=beta
+  // 2. Click "Generate new token"
+  // 3. Configure:
+  //    - Token name: "Claude Code MCP"
+  //    - Expiration: Set based on your security needs (90 days recommended)
+  //    - Repository access:
+  //      * "All repositories" for full access
+  //      * "Only select repositories" for limited access
+  //
+  // 4. Permissions (select what you need):
+  //
+  //    REPOSITORY PERMISSIONS:
+  //    -----------------------
+  //    | Permission          | Access Level | Use Case                    |
+  //    |---------------------|--------------|-----------------------------|
+  //    | Contents            | Read & Write | Clone, push, read files     |
+  //    | Issues              | Read & Write | Create/manage issues        |
+  //    | Pull requests       | Read & Write | Create/review PRs           |
+  //    | Metadata            | Read-only    | Basic repo info (required)  |
+  //    | Commit statuses     | Read & Write | CI status updates           |
+  //    | Workflows           | Read & Write | GitHub Actions management   |
+  //    | Actions             | Read & Write | Run/view workflow runs      |
+  //    | Discussions         | Read & Write | Manage discussions          |
+  //    | Projects            | Read & Write | Manage project boards       |
+  //
+  //    ACCOUNT PERMISSIONS:
+  //    --------------------
+  //    | Permission          | Access Level | Use Case                    |
+  //    |---------------------|--------------|-----------------------------|
+  //    | Gists               | Read & Write | Create/manage gists         |
+  //    | Profile             | Read-only    | Access user profile info    |
+  //
+  // 5. Click "Generate token"
+  // 6. COPY THE TOKEN IMMEDIATELY - You won't see it again!
+  //
+  // ---------------------------------------------------------
+  //
+  // OPTION 2: Classic Token (Simpler but Less Secure)
+  // -------------------------------------------------
+  // 1. Go to: github.com/settings/tokens
+  // 2. Click "Generate new token (classic)"
+  // 3. Configure:
+  //    - Note: "Claude Code MCP"
+  //    - Expiration: 90 days (recommended)
+  //
+  // 4. Select scopes:
+  //
+  //    ESSENTIAL SCOPES:
+  //    [x] repo              - Full control of private repositories
+  //        [x] repo:status   - Access commit status
+  //        [x] repo_deployment - Access deployment status
+  //        [x] public_repo   - Access public repositories
+  //        [x] repo:invite   - Access repository invitations
+  //
+  //    RECOMMENDED ADDITIONAL SCOPES:
+  //    [x] workflow          - Update GitHub Action workflows
+  //    [x] gist              - Create gists
+  //    [x] read:org          - Read org membership
+  //    [x] read:user         - Read user profile data
+  //    [x] user:email        - Access user email addresses
+  //
+  //    OPTIONAL SCOPES:
+  //    [ ] delete_repo       - Delete repositories (use with caution!)
+  //    [ ] admin:org         - Full org control (rarely needed)
+  //    [ ] admin:repo_hook   - Manage repository hooks
+  //
+  // 5. Click "Generate token"
+  // 6. COPY THE TOKEN IMMEDIATELY!
+  //
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // STORING YOUR TOKEN SECURELY
+  // ---------------------------------------------------------
+  //
+  // NEVER DO THIS:
+  // - Commit tokens to git repositories
+  // - Share tokens in chat/email
+  // - Store in plain text files in shared locations
+  //
+  // RECOMMENDED APPROACHES:
+  //
+  // 1. Environment Variable (Best):
+  //
+  //    Windows (PowerShell):
+  //    $env:GITHUB_PERSONAL_ACCESS_TOKEN = "ghp_your_token"
+  //
+  //    Windows (Persistent - run as admin):
+  //    [Environment]::SetEnvironmentVariable("GITHUB_PERSONAL_ACCESS_TOKEN", "ghp_your_token", "User")
+  //
+  //    Mac/Linux:
+  //    export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_your_token"
+  //
+  //    Add to ~/.bashrc or ~/.zshrc for persistence
+  //
+  // 2. Credential Manager:
+  //
+  //    Windows Credential Manager:
+  //    - Open "Credential Manager" from Control Panel
+  //    - Add a "Generic Credential"
+  //    - Internet address: github.com
+  //    - User name: your-github-username
+  //    - Password: your-token
+  //
+  //    Mac Keychain:
+  //    security add-generic-password -a "github" -s "github_pat" -w "ghp_your_token"
+  //
+  // 3. Secret Manager (Enterprise):
+  //    - AWS Secrets Manager
+  //    - HashiCorp Vault
+  //    - Azure Key Vault
+  //
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // CAPABILITIES WITH GITHUB MCP
+  // ---------------------------------------------------------
+  //
+  // Repository Operations:
+  // - List repositories
+  // - Create new repositories
+  // - Clone/fork repositories
+  // - Read file contents
+  // - Create/update files
+  // - Delete files
+  //
+  // Branch Operations:
+  // - List branches
+  // - Create branches
+  // - Delete branches
+  // - Get branch protection rules
+  //
+  // Pull Request Operations:
+  // - List pull requests
+  // - Create pull requests
+  // - Review pull requests
+  // - Merge pull requests
+  // - Add comments
+  //
+  // Issue Operations:
+  // - List issues
+  // - Create issues
+  // - Update issues
+  // - Add labels
+  // - Assign users
+  // - Close issues
+  //
+  // Other Operations:
+  // - Create gists
+  // - Manage releases
+  // - Access GitHub Actions
+  // - Search code/repositories
+  //
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // EXAMPLE USAGE IN CLAUDE CODE
+  // ---------------------------------------------------------
+  //
+  // After configuration, you can ask Claude Code:
+  //
+  // "Create a new issue in my-repo about the login bug"
+  // "List all open pull requests in organization/project"
+  // "Create a PR from feature-branch to main"
+  // "Show me recent commits on the develop branch"
+  // "Add the 'bug' label to issue #42"
+  // "Create a new branch called feature/user-auth"
+  //
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // TROUBLESHOOTING
+  // ---------------------------------------------------------
+  //
+  // "Bad credentials":
+  //   - Token may be expired - generate a new one
+  //   - Token may be revoked - check github.com/settings/tokens
+  //   - Copy/paste error - ensure no extra whitespace
+  //
+  // "Not Found" (404):
+  //   - Repository may be private and token lacks 'repo' scope
+  //   - Repository name may be incorrect
+  //   - You may not have access to that repository
+  //
+  // "Forbidden" (403):
+  //   - Token lacks required scope for that operation
+  //   - Rate limit exceeded (5000 requests/hour for authenticated)
+  //   - Organization has restricted third-party access
+  //
+  // "Unprocessable Entity" (422):
+  //   - Request parameters are invalid
+  //   - Branch protection rules may be blocking the operation
+  //
+  // Rate Limiting:
+  //   - Authenticated: 5000 requests/hour
+  //   - Check remaining: curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/rate_limit
+  //
+  // ---------------------------------------------------------
+
+  // ---------------------------------------------------------
+  // ORGANIZATION ACCESS
+  // ---------------------------------------------------------
+  //
+  // If you need access to organization repositories:
+  //
+  // 1. For Fine-Grained Tokens:
+  //    - Select the organization under "Resource owner"
+  //    - Organization admin may need to approve
+  //
+  // 2. For Classic Tokens:
+  //    - Token needs 'repo' scope
+  //    - Go to: github.com/settings/tokens
+  //    - Click "Configure SSO" next to your token (if org uses SAML)
+  //    - Authorize the token for your organization
+  //
+  // 3. Organization Settings (Admin):
+  //    - github.com/organizations/YOUR_ORG/settings/oauth_application_policy
+  //    - Ensure third-party access is not restricted
+  //    - Or approve specific OAuth apps
+  //
+  // ---------------------------------------------------------
+}

@@ -1,0 +1,165 @@
+{
+  // =============================================================
+  // MCP (Model Context Protocol) Configuration Template
+  // =============================================================
+  // This file configures Claude Code to connect to external MCP servers
+  // Location: Place this in your project root or ~/.claude/ directory
+  //
+  // IMPORTANT: Remove all // comments before using this file
+  // JSON does not support comments - they are here for learning only
+  // =============================================================
+
+  "mcpServers": {
+
+    // ---------------------------------------------------------
+    // ZAPIER MCP SERVER
+    // ---------------------------------------------------------
+    // Zapier's MCP enables Claude to interact with 6,000+ apps
+    // Setup: https://zapier.com/mcp
+    //
+    // To get your API key:
+    // 1. Go to zapier.com and sign in
+    // 2. Navigate to zapier.com/mcp
+    // 3. Create a new MCP connection
+    // 4. Copy the provided configuration
+    // ---------------------------------------------------------
+    "zapier": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/mcp-client",
+        "https://mcp.zapier.com/api/mcp/mcp"
+      ],
+      "env": {
+        "ZAPIER_MCP_API_KEY": "YOUR_ZAPIER_MCP_API_KEY_HERE"
+      }
+    },
+
+    // ---------------------------------------------------------
+    // GOOGLE SERVICES (Calendar, Drive, Gmail)
+    // ---------------------------------------------------------
+    // Unified Google services access via Zapier MCP
+    // See: mcp-google-services-config.json for detailed setup
+    //
+    // OAuth scopes needed:
+    // - https://www.googleapis.com/auth/calendar
+    // - https://www.googleapis.com/auth/drive
+    // - https://www.googleapis.com/auth/gmail.modify
+    // ---------------------------------------------------------
+    // Note: Google services are typically accessed through Zapier MCP
+    // Configure individual Google app connections in Zapier dashboard
+
+    // ---------------------------------------------------------
+    // GITHUB MCP SERVER
+    // ---------------------------------------------------------
+    // Direct GitHub integration for repos, issues, PRs
+    // See: mcp-github-config.json for detailed setup
+    //
+    // To get your Personal Access Token:
+    // 1. Go to github.com/settings/tokens
+    // 2. Generate new token (classic) or fine-grained token
+    // 3. Select required scopes (see mcp-github-config.json)
+    // ---------------------------------------------------------
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT_HERE"
+      }
+    },
+
+    // ---------------------------------------------------------
+    // FILESYSTEM ACCESS (Local files)
+    // ---------------------------------------------------------
+    // Allows Claude to read/write files in specified directories
+    // SECURITY: Only grant access to directories you trust
+    // ---------------------------------------------------------
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        // Add allowed directories as additional arguments
+        "/path/to/allowed/directory1",
+        "/path/to/allowed/directory2"
+      ]
+    },
+
+    // ---------------------------------------------------------
+    // BROWSER AUTOMATION (Puppeteer)
+    // ---------------------------------------------------------
+    // Web scraping and browser automation capabilities
+    // Requires: Node.js and Chrome/Chromium installed
+    // ---------------------------------------------------------
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+
+    // ---------------------------------------------------------
+    // DATABASE ACCESS (PostgreSQL example)
+    // ---------------------------------------------------------
+    // Direct database queries - USE WITH CAUTION
+    // Never expose production database credentials
+    // ---------------------------------------------------------
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres"
+      ],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/dbname"
+      }
+    },
+
+    // ---------------------------------------------------------
+    // SLACK INTEGRATION
+    // ---------------------------------------------------------
+    // Send messages and interact with Slack workspaces
+    // Requires: Slack Bot Token with appropriate permissions
+    // ---------------------------------------------------------
+    "slack": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-YOUR-SLACK-BOT-TOKEN",
+        "SLACK_TEAM_ID": "YOUR_TEAM_ID"
+      }
+    }
+  },
+
+  // =============================================================
+  // CONFIGURATION NOTES
+  // =============================================================
+  //
+  // 1. API KEY SECURITY:
+  //    - Never commit API keys to version control
+  //    - Use environment variables when possible
+  //    - Rotate keys periodically
+  //
+  // 2. TESTING YOUR CONFIG:
+  //    - Start Claude Code and check for connection errors
+  //    - Use /mcp-status or similar to verify connections
+  //    - Check logs at ~/.claude/logs/ for detailed errors
+  //
+  // 3. COMMON ISSUES:
+  //    - "Connection refused": Server not running or wrong port
+  //    - "Authentication failed": Invalid or expired API key
+  //    - "Permission denied": Insufficient scopes/permissions
+  //
+  // 4. GETTING HELP:
+  //    - See mcp-troubleshooting-guide.md for solutions
+  //    - Check MCP server documentation for specific issues
+  //    - Join the Anthropic Discord for community support
+  // =============================================================
+}

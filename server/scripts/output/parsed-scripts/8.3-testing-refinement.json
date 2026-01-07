@@ -1,0 +1,459 @@
+{
+  "script_id": "8.3-testing-refinement",
+  "title": "Module 8.3: Testing & Refinement",
+  "total_duration_seconds": 534.6,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 5.9,
+      "visual_cue": "\"Testing Mode\" graphic with quality assurance checkmark",
+      "visual_type": "illustration",
+      "spoken_text": "You've built something impressive. [PAUSE] Now let's make sure it actually works.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 2,
+      "start_time": 5.9,
+      "end_time": 18.3,
+      "visual_cue": "Title card - \"Module 8.3: Testing & Refinement\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Testing isn't just running the automation once and calling it done. It's about stress-testing, finding edge cases, and making your system bulletproof.\n\nLet's put your Client Onboarding Agent through its paces.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 3,
+      "start_time": 18.3,
+      "end_time": 23.1,
+      "visual_cue": "\"End-to-End Testing\" with full workflow diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "First, the happy path. Let's run a complete test with realistic data.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 4,
+      "start_time": 23.1,
+      "end_time": 50.6,
+      "visual_cue": "Test data form",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a test submission with this data:\n\n```json\n{\n  \"businessName\": \"Mountain View Photography\",\n  \"contactName\": \"James Chen\",\n  \"email\": \"your-test-email@example.com\",\n  \"phone\": \"555-987-6543\",\n  \"services\": \"We're a wedding and portrait photography studio looking to streamline our client booking process and automate our marketing outreach.\",\n  \"preferredDay\": \"Thursday\",\n  \"preferredTime\": \"Afternoon\"\n}\n```\n\nUse your real email so you can see what the client receives.\n\n[PAUSE]\n\nSend that to your webhook. Now watch.",
+      "word_count": 65
+    },
+    {
+      "segment_id": 5,
+      "start_time": 50.6,
+      "end_time": 59.7,
+      "visual_cue": "n8n execution view showing workflow progress",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch the execution in n8n. Each node should show a green checkmark as it completes.\n\n[PAUSE]\n\nNow verify each output:",
+      "word_count": 19
+    },
+    {
+      "segment_id": 6,
+      "start_time": 59.7,
+      "end_time": 96.8,
+      "visual_cue": "Verification checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Open Google Drive. Is there a \"Mountain View Photography - Client Folder\" with subfolders tailored to photography and marketing needs?\n\nCheck your Google Sheet. Is there a new row with all the client details and Claude's analysis?\n\nLook at your calendar. Is there a welcome call scheduled for Thursday afternoon?\n\nCheck your email. Did you receive a personalized welcome that mentions wedding photography and booking automation?\n\nCheck Slack. Did your team channel get the notification?\n\n[PAUSE]\n\nIf all five checked out, your happy path is working. But we're not done.",
+      "word_count": 89
+    },
+    {
+      "segment_id": 7,
+      "start_time": 96.8,
+      "end_time": 104.0,
+      "visual_cue": "\"Edge Cases\" with warning triangle icon",
+      "visual_type": "text_overlay",
+      "spoken_text": "Real-world data is messy. Let's see how your automation handles the unexpected.\n\n### Edge Case 1: Missing Fields",
+      "word_count": 18
+    },
+    {
+      "segment_id": 8,
+      "start_time": 104.0,
+      "end_time": 130.2,
+      "visual_cue": "Incomplete form data",
+      "visual_type": "text_overlay",
+      "spoken_text": "What happens if someone submits the form without filling in all fields?\n\n```json\n{\n  \"businessName\": \"Quick Test LLC\",\n  \"contactName\": \"\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"\",\n  \"services\": \"\",\n  \"preferredDay\": \"Monday\",\n  \"preferredTime\": \"Morning\"\n}\n```\n\nSend this to your webhook.\n\n[PAUSE]\n\nWhat happened? [PAUSE] If your workflow errored out, that's a problem. If it completed but with weird results, that's also a problem.",
+      "word_count": 58
+    },
+    {
+      "segment_id": 9,
+      "start_time": 130.2,
+      "end_time": 153.0,
+      "visual_cue": "Adding validation",
+      "visual_type": "text_overlay",
+      "spoken_text": "The fix: add validation at the start of your workflow.\n\nAdd an \"IF\" node right after your webhook:\n\n```\nCondition: {{ $json.email }} is not empty\nAND {{ $json.businessName }} is not empty\n```\n\nOn the true branch, continue with the workflow.\nOn the false branch, add a \"Respond to Webhook\" node that returns an error message.",
+      "word_count": 57
+    },
+    {
+      "segment_id": 10,
+      "start_time": 153.0,
+      "end_time": 166.6,
+      "visual_cue": "Error response configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "```json\n{\n  \"success\": false,\n  \"error\": \"Missing required fields: email and business name are required\"\n}\n```\n\nNow incomplete submissions get a clear error instead of breaking your system.\n\n### Edge Case 2: Unusual Characters",
+      "word_count": 34
+    },
+    {
+      "segment_id": 11,
+      "start_time": 166.6,
+      "end_time": 202.9,
+      "visual_cue": "Special characters test",
+      "visual_type": "text_overlay",
+      "spoken_text": "What if a business name has special characters?\n\n```json\n{\n  \"businessName\": \"O'Brien & Associates, LLC\",\n  \"contactName\": \"Patrick O'Brien\",\n  \"email\": \"patrick@obrien-assoc.com\",\n  \"phone\": \"555-111-2222\",\n  \"services\": \"Legal consulting firm needing document automation\",\n  \"preferredDay\": \"Wednesday\",\n  \"preferredTime\": \"Morning\"\n}\n```\n\n[PAUSE]\n\nDoes the folder get created correctly? Does the email render properly? Apostrophes and ampersands can cause issues in certain contexts.\n\nIf you find problems, you may need to add a \"Code\" node to sanitize business names for folder creation while keeping the original for display.\n\n### Edge Case 3: Very Long Input",
+      "word_count": 87
+    },
+    {
+      "segment_id": 12,
+      "start_time": 202.9,
+      "end_time": 246.8,
+      "visual_cue": "Long text test",
+      "visual_type": "text_overlay",
+      "spoken_text": "What if someone writes a novel in the services field?\n\n```json\n{\n  \"businessName\": \"Verbose Industries\",\n  \"contactName\": \"Talkative Tim\",\n  \"email\": \"tim@verbose.com\",\n  \"phone\": \"555-333-4444\",\n  \"services\": \"We are a mid-sized manufacturing company with operations in three states. We manufacture precision components for the aerospace industry. Our current challenges include... [imagine 2000 more characters here]\",\n  \"preferredDay\": \"Friday\",\n  \"preferredTime\": \"Evening\"\n}\n```\n\n[PAUSE]\n\nDoes Claude handle the long input? Does the Slack message get truncated or error out? Does the Google Sheet handle it?\n\nFor Slack, there's a character limit. Add logic to truncate long fields:\n\n```javascript\n{{ $json.services.substring(0, 500) }}{{ $json.services.length > 500 ? '...' : '' }}\n```\n\n### Edge Case 4: Malformed Email",
+      "word_count": 106
+    },
+    {
+      "segment_id": 13,
+      "start_time": 246.8,
+      "end_time": 277.1,
+      "visual_cue": "Invalid email test",
+      "visual_type": "text_overlay",
+      "spoken_text": "What if someone enters an invalid email?\n\n```json\n{\n  \"businessName\": \"Typo Corp\",\n  \"contactName\": \"Careless Carl\",\n  \"email\": \"not-a-real-email\",\n  \"phone\": \"555-555-5555\",\n  \"services\": \"General consulting\",\n  \"preferredDay\": \"Tuesday\",\n  \"preferredTime\": \"Morning\"\n}\n```\n\n[PAUSE]\n\nThe Gmail node will likely fail trying to send to an invalid address. Your calendar invite will fail too.\n\nAdd email validation to your IF node:\n\n```javascript\n{{ $json.email.includes('@') && $json.email.includes('.') }}\n```\n\nThis is basic validation. For production, consider using a regex pattern.",
+      "word_count": 72
+    },
+    {
+      "segment_id": 14,
+      "start_time": 277.1,
+      "end_time": 285.5,
+      "visual_cue": "\"Error Handling\" with safety net icon",
+      "visual_type": "illustration",
+      "spoken_text": "Even with good validation, external services can fail. The Claude API might be down. Google might have an outage. What then?",
+      "word_count": 21
+    },
+    {
+      "segment_id": 15,
+      "start_time": 285.5,
+      "end_time": 298.3,
+      "visual_cue": "Error workflow configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "In n8n, you can add error handling to any node.\n\nClick on a node. Go to Settings. Enable \"Continue On Fail.\"\n\nBut that's not enough. You want to know when something fails.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 16,
+      "start_time": 298.3,
+      "end_time": 316.7,
+      "visual_cue": "Error notification branch",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's a pattern: after critical nodes, add a check for errors.\n\nAfter the Claude API call, add an IF node:\n\n```\nCondition: {{ $json.error }} is empty\n```\n\nTrue branch: continue normally.\nFalse branch: send an error notification to Slack and log to an error spreadsheet.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 17,
+      "start_time": 316.7,
+      "end_time": 331.9,
+      "visual_cue": "Error notification message",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\n:warning: *Client Onboarding Error*\n\nWorkflow failed at: Claude API Call\nClient: {{ $('Webhook').item.json.businessName }}\nError: {{ $json.error.message }}\n\nManual processing required.\n```\n\nNow when something breaks, your team knows immediately. The client isn't left hanging without explanation.",
+      "word_count": 38
+    },
+    {
+      "segment_id": 18,
+      "start_time": 331.9,
+      "end_time": 335.1,
+      "visual_cue": "\"Performance\" with speedometer icon",
+      "visual_type": "illustration",
+      "spoken_text": "Your workflow works. But is it fast enough?",
+      "word_count": 8
+    },
+    {
+      "segment_id": 19,
+      "start_time": 335.1,
+      "end_time": 347.4,
+      "visual_cue": "Execution time display",
+      "visual_type": "text_overlay",
+      "spoken_text": "Check the execution time in n8n. A typical run should complete in ten to thirty seconds. If it's taking minutes, something might be wrong.\n\n[PAUSE]\n\nCommon performance issues:",
+      "word_count": 27
+    },
+    {
+      "segment_id": 20,
+      "start_time": 347.4,
+      "end_time": 387.7,
+      "visual_cue": "Issue list",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Slow Claude responses**: If Claude is taking more than fifteen seconds, consider using a faster model for simpler tasks. Claude Haiku is faster than Claude Sonnet for straightforward content generation.\n\n**Sequential API calls**: If you're making multiple independent API calls, consider running them in parallel using n8n's \"Execute Workflow\" node with multiple instances.\n\n**Large file handling**: If you're working with attachments, process them asynchronously rather than blocking the main workflow.\n\n[PAUSE]\n\nFor client onboarding, thirty seconds is fine. The client submitted a form; they don't expect an instant response. But monitor it. If response times creep up, investigate.",
+      "word_count": 97
+    },
+    {
+      "segment_id": 21,
+      "start_time": 387.7,
+      "end_time": 392.9,
+      "visual_cue": "\"Continuous Improvement\" with upward arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your first version is rarely your best version. Here's how to iterate effectively.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 22,
+      "start_time": 392.9,
+      "end_time": 440.4,
+      "visual_cue": "Feedback loop diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "**Step one: gather data.** After running for a week or two, look at your logs. What patterns do you see? What fields are people leaving blank? What errors are most common?\n\n**Step two: review outputs.** Read through Claude's generated emails. Are they hitting the right tone? Are they missing anything? Use this feedback to refine your prompts.\n\n**Step three: talk to users.** Ask your team: is the Slack notification giving you what you need? Ask clients: did the onboarding email feel personal?\n\n[PAUSE]\n\n**Step four: refine.** Based on feedback, update your workflow. Maybe you add a field to the intake form. Maybe you adjust Claude's prompt to be more specific. Maybe you add another automation step.",
+      "word_count": 115
+    },
+    {
+      "segment_id": 23,
+      "start_time": 440.4,
+      "end_time": 453.6,
+      "visual_cue": "Version history",
+      "visual_type": "text_overlay",
+      "spoken_text": "Keep notes on what you change and why. n8n has version history for workflows. Use it. When something breaks, you can roll back. When something works better, you can see what you changed.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 24,
+      "start_time": 453.6,
+      "end_time": 457.6,
+      "visual_cue": "Final testing checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before you call your capstone complete, run through this checklist:",
+      "word_count": 10
+    },
+    {
+      "segment_id": 25,
+      "start_time": 457.6,
+      "end_time": 485.1,
+      "visual_cue": "Checklist items appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "End-to-end test with realistic data passes.\n\nEmpty field handling works without errors.\n\nSpecial characters in business names handled correctly.\n\nLong text inputs don't break anything.\n\nInvalid email addresses are caught.\n\nError notifications fire when external services fail.\n\nExecution time is reasonable.\n\nClaude outputs are reviewed and refined.\n\nDocumentation is complete.\n\nWorkflow is set to active.\n\n[PAUSE]\n\nCheck all ten, and your Client Onboarding Agent is production-ready.",
+      "word_count": 65
+    },
+    {
+      "segment_id": 26,
+      "start_time": 485.1,
+      "end_time": 504.6,
+      "visual_cue": "\"Testing Complete\" badge",
+      "visual_type": "illustration",
+      "spoken_text": "Testing isn't glamorous, but it's what separates a demo from a real system.\n\n[PAUSE]\n\nYour automation will encounter weird data. Services will have outages. Users will do unexpected things. By testing for these scenarios now, you've built something that handles reality, not just the happy path.",
+      "word_count": 45
+    },
+    {
+      "segment_id": 27,
+      "start_time": 504.6,
+      "end_time": 510.2,
+      "visual_cue": "\"Next: 8.4 - Certification & Next Steps\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "One module left. You've built it. You've tested it. Now let's make it official.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 28,
+      "start_time": 510.2,
+      "end_time": 534.6,
+      "visual_cue": "End card with AI Launchpad Academy logo",
+      "visual_type": "animated_title",
+      "spoken_text": "See you in the finale.\n\n- Pacing: Practical and systematic. This is debugging/QA content.\n- Screen recordings: Show actual test runs and error scenarios.\n- Energy: Satisfied but thorough. They're in the home stretch.\n- Consider: Providing a downloadable testing checklist.\n\n- n8n: \"en-eight-en\"\n- regex: \"REG-ex\" or \"REE-jex\"\n- async: \"A-sink\"\n- substring: \"sub-string\"\n- Haiku: \"HY-koo\"\n- Sonnet: \"SON-et\"",
+      "word_count": 61
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 8.3: Testing & Refinement\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "\"End-to-End Testing\" with full workflow diagram",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Feedback loop diagram",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Error Handling\" with safety net icon",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Performance\" with speedometer icon",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Testing Complete\" badge",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Testing Mode\" graphic with quality assurance checkmark",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Continuous Improvement\" with upward arrow",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Edge Cases\" with warning triangle icon",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: 8.4 - Certification & Next Steps\"",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding validation",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist items appearing",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error notification branch",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error notification message",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error response configuration",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error workflow configuration",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Execution time display",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Final testing checklist",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Incomplete form data",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Invalid email test",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Issue list",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Long text test",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Special characters test",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Test data form",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Verification checklist",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Version history",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n execution view showing workflow progress",
+      "segment_ids": [
+        5
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.028106"
+}

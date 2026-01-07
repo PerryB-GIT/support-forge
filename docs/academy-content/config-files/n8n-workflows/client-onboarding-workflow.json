@@ -1,0 +1,248 @@
+{
+  "name": "Client Onboarding Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "new-client",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-new-client",
+      "name": "Webhook - New Client",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare client data for onboarding\nconst client = $input.first().json;\n\n// Generate unique client ID\nconst clientId = 'CLI-' + Date.now().toString(36).toUpperCase();\n\n// Calculate onboarding timeline\nconst startDate = new Date();\nconst kickoffDate = new Date(startDate);\nkickoffDate.setDate(startDate.getDate() + 2);\n\nconst setupCompleteDate = new Date(startDate);\nsetupCompleteDate.setDate(startDate.getDate() + 7);\n\nconst checkInDate = new Date(startDate);\ncheckInDate.setDate(startDate.getDate() + 14);\n\nreturn {\n  client_id: clientId,\n  company_name: client.company_name,\n  contact_name: client.contact_name,\n  contact_email: client.contact_email,\n  contact_phone: client.contact_phone || '',\n  package: client.package || 'standard',\n  start_date: startDate.toISOString().split('T')[0],\n  kickoff_date: kickoffDate.toISOString().split('T')[0],\n  setup_complete_date: setupCompleteDate.toISOString().split('T')[0],\n  checkin_date: checkInDate.toISOString().split('T')[0],\n  status: 'onboarding',\n  created_at: startDate.toISOString(),\n  \n  // Onboarding checklist items\n  checklist: [\n    { task: 'Send welcome email', due_days: 0, status: 'pending' },\n    { task: 'Create client folder', due_days: 0, status: 'pending' },\n    { task: 'Schedule kickoff call', due_days: 1, status: 'pending' },\n    { task: 'Send intake questionnaire', due_days: 1, status: 'pending' },\n    { task: 'Kickoff call', due_days: 2, status: 'pending' },\n    { task: 'System access setup', due_days: 3, status: 'pending' },\n    { task: 'Initial configuration', due_days: 5, status: 'pending' },\n    { task: 'Training session', due_days: 7, status: 'pending' },\n    { task: 'Go-live support', due_days: 10, status: 'pending' },\n    { task: '2-week check-in', due_days: 14, status: 'pending' }\n  ]\n};"
+      },
+      "id": "prepare-client-data",
+      "name": "Prepare Client Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_CLIENTS_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Clients",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Client ID": "={{ $json.client_id }}",
+            "Company": "={{ $json.company_name }}",
+            "Contact": "={{ $json.contact_name }}",
+            "Email": "={{ $json.contact_email }}",
+            "Phone": "={{ $json.contact_phone }}",
+            "Package": "={{ $json.package }}",
+            "Start Date": "={{ $json.start_date }}",
+            "Status": "={{ $json.status }}",
+            "Kickoff Date": "={{ $json.kickoff_date }}",
+            "Setup Complete": "={{ $json.setup_complete_date }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "add-to-client-sheet",
+      "name": "Add to Client Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [680, 180]
+    },
+    {
+      "parameters": {
+        "name": "={{ $json.company_name }}",
+        "folderId": {
+          "__rl": true,
+          "value": "YOUR_CLIENTS_FOLDER_ID",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-client-folder",
+      "name": "Create Client Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.contact_email }}",
+        "subject": "Welcome to [Company Name]! - Your Onboarding Journey Starts Now",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }\n    .container { max-width: 600px; margin: 0 auto; }\n    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }\n    .content { padding: 30px 20px; }\n    .timeline { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 20px 0; }\n    .timeline-item { display: flex; margin: 15px 0; }\n    .timeline-dot { width: 12px; height: 12px; background: #667eea; border-radius: 50%; margin-right: 15px; margin-top: 5px; }\n    .cta { display: inline-block; background: #667eea; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; margin-top: 20px; }\n    .footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 14px; color: #666; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Welcome Aboard! 🎉</h1>\n      <p>We're thrilled to have {{ $json.company_name }} join us</p>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $json.contact_name }},</p>\n      <p>Thank you for choosing [Company Name]! We're excited to partner with you and help achieve your goals.</p>\n      \n      <h3>Your Onboarding Timeline</h3>\n      <div class=\"timeline\">\n        <div class=\"timeline-item\">\n          <div class=\"timeline-dot\"></div>\n          <div><strong>Today:</strong> Welcome package and intake questionnaire</div>\n        </div>\n        <div class=\"timeline-item\">\n          <div class=\"timeline-dot\"></div>\n          <div><strong>{{ $json.kickoff_date }}:</strong> Kickoff call (60 min)</div>\n        </div>\n        <div class=\"timeline-item\">\n          <div class=\"timeline-dot\"></div>\n          <div><strong>{{ $json.setup_complete_date }}:</strong> System setup complete + training</div>\n        </div>\n        <div class=\"timeline-item\">\n          <div class=\"timeline-dot\"></div>\n          <div><strong>{{ $json.checkin_date }}:</strong> 2-week check-in call</div>\n        </div>\n      </div>\n      \n      <h3>What's Next?</h3>\n      <ol>\n        <li>Complete the intake questionnaire (link below) - takes about 10 minutes</li>\n        <li>Book your kickoff call using the scheduling link</li>\n        <li>Gather any brand assets, logins, or documents we discussed</li>\n      </ol>\n      \n      <a href=\"#\" class=\"cta\">Complete Intake Questionnaire</a>\n      \n      <p style=\"margin-top: 30px;\">Your dedicated account manager will reach out within 24 hours to introduce themselves.</p>\n      \n      <p>Questions? Reply to this email or call us at [phone number].</p>\n      \n      <p>Looking forward to working together!</p>\n      <p><strong>The [Company Name] Team</strong></p>\n    </div>\n    <div class=\"footer\">\n      <p>Your Client ID: {{ $json.client_id }}</p>\n      <p>[Company Name] | [Address] | [Website]</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "options": {
+          "replyTo": "onboarding@yourcompany.com"
+        }
+      },
+      "id": "send-welcome-email",
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [680, 420]
+    },
+    {
+      "parameters": {
+        "channel": "#client-success",
+        "text": ":tada: *New Client Onboarding Started!*\n\n*Company:* {{ $json.company_name }}\n*Contact:* {{ $json.contact_name }} ({{ $json.contact_email }})\n*Package:* {{ $json.package }}\n*Client ID:* `{{ $json.client_id }}`\n\n*Key Dates:*\n• Kickoff Call: {{ $json.kickoff_date }}\n• Setup Complete: {{ $json.setup_complete_date }}\n• 2-Week Check-in: {{ $json.checkin_date }}\n\n<https://drive.google.com/drive/folders/YOUR_FOLDER|Client Folder> | <https://your-crm.com/clients/{{ $json.client_id }}|CRM Record>",
+        "attachments": [],
+        "otherOptions": {}
+      },
+      "id": "slack-new-client",
+      "name": "Slack - New Client Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "calendarId": "primary",
+        "start": "={{ $json.kickoff_date }}T10:00:00",
+        "end": "={{ $json.kickoff_date }}T11:00:00",
+        "summary": "Kickoff Call - {{ $json.company_name }}",
+        "description": "Client Onboarding Kickoff Call\\n\\nClient: {{ $json.company_name }}\\nContact: {{ $json.contact_name }}\\nEmail: {{ $json.contact_email }}\\nClient ID: {{ $json.client_id }}\\n\\nAgenda:\\n1. Introductions\\n2. Review goals and expectations\\n3. Walk through onboarding timeline\\n4. Q&A\\n5. Next steps",
+        "additionalFields": {
+          "conferenceDataVersion": 1,
+          "attendees": [
+            "={{ $json.contact_email }}"
+          ]
+        }
+      },
+      "id": "create-kickoff-event",
+      "name": "Create Kickoff Calendar Event",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.2,
+      "position": [900, 420]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, client_id: $json.client_id, message: 'Client onboarding initiated successfully' }) }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - New Client": {
+      "main": [
+        [
+          {
+            "node": "Prepare Client Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Client Data": {
+      "main": [
+        [
+          {
+            "node": "Add to Client Sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Client Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Client Sheet": {
+      "main": [
+        [
+          {
+            "node": "Slack - New Client Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Client Folder": {
+      "main": [
+        [
+          {
+            "node": "Slack - New Client Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Email": {
+      "main": [
+        [
+          {
+            "node": "Create Kickoff Calendar Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - New Client Alert": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Kickoff Calendar Event": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "onboarding",
+      "id": "1"
+    },
+    {
+      "name": "clients",
+      "id": "2"
+    }
+  ],
+  "pinData": {},
+  "_comment": "AI Launchpad Academy - Client Onboarding Workflow. Replace YOUR_CLIENTS_SHEET_ID and YOUR_CLIENTS_FOLDER_ID before use."
+}

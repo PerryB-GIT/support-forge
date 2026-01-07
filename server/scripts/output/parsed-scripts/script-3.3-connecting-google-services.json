@@ -1,0 +1,402 @@
+{
+  "script_id": "script-3.3-connecting-google-services",
+  "title": "Connecting Google Services",
+  "total_duration_seconds": 449.3,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 21.8,
+      "visual_cue": "Lesson title with Google Workspace icons - Calendar, Drive, Gmail",
+      "visual_type": "animated_title",
+      "spoken_text": "Google services are probably central to how you work. [PAUSE] Calendar for scheduling, Drive for files, Gmail for communication.\n\nIn this lesson, we're connecting all three through Zapier MCP. [PAUSE] By the end, Claude will be able to check your schedule, find your documents, and help manage your email.",
+      "word_count": 47
+    },
+    {
+      "segment_id": 2,
+      "start_time": 21.8,
+      "end_time": 23.8,
+      "visual_cue": "Diagram showing Claude connected to Google services through Zapier",
+      "visual_type": "flowchart",
+      "spoken_text": "Let's set each one up.",
+      "word_count": 5
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.8,
+      "end_time": 36.5,
+      "visual_cue": "Google Calendar logo prominently displayed",
+      "visual_type": "illustration",
+      "spoken_text": "We'll start with Calendar since it's the most immediately useful. [PAUSE] Nothing beats asking Claude \"what's on my schedule today\" and getting a real answer.\n\n### Adding Calendar Actions",
+      "word_count": 28
+    },
+    {
+      "segment_id": 4,
+      "start_time": 36.5,
+      "end_time": 51.1,
+      "visual_cue": "Zapier interface, navigating to add actions",
+      "visual_type": "screen_capture",
+      "spoken_text": "Head to your Zapier MCP settings. [PAUSE] Click \"Add Actions\" and search for Google Calendar.\n\nYou'll see a bunch of options. [PAUSE] Let me tell you which ones are most useful:",
+      "word_count": 29
+    },
+    {
+      "segment_id": 5,
+      "start_time": 51.1,
+      "end_time": 100.2,
+      "visual_cue": "List of Calendar actions with checkmarks on recommended ones",
+      "visual_type": "illustration",
+      "spoken_text": "**Find Events** - This is essential. [PAUSE] It lets Claude search your calendar by date, keywords, or attendees. Add this one first.\n\n**Create Detailed Event** - Lets Claude add events to your calendar. [PAUSE] Great for when you're in flow and say \"schedule a meeting with John next Tuesday at 2pm.\"\n\n**Quick Add Event** - A simpler version. [PAUSE] You give Claude natural language like \"Lunch with Sarah Friday noon\" and it figures out the details.\n\n**Update Event** - Modify existing events. [PAUSE] \"Move my 3pm to 4pm.\"\n\n**Delete Event** - Remove events. [PAUSE] Use with caution, obviously.\n\nAdd at least Find Events and Create Detailed Event to start.",
+      "word_count": 104
+    },
+    {
+      "segment_id": 6,
+      "start_time": 100.2,
+      "end_time": 113.3,
+      "visual_cue": "OAuth flow for Google Calendar",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you add your first Calendar action, Zapier prompts you to connect your Google account. [PAUSE] Click through the OAuth flow, grant calendar permissions, and you're set.\n\n### Testing Calendar",
+      "word_count": 29
+    },
+    {
+      "segment_id": 7,
+      "start_time": 113.3,
+      "end_time": 121.6,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Back in Claude Code, let's test it. [PAUSE] Type:\n\n```\nWhat meetings do I have this week?\n```",
+      "word_count": 17
+    },
+    {
+      "segment_id": 8,
+      "start_time": 121.6,
+      "end_time": 139.9,
+      "visual_cue": "Claude calling google_calendar_find_events and returning results",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude calls the find_events tool, gets your calendar data, and presents it clearly. [PAUSE] You'll see event names, times, and any attendees.\n\nNow try creating an event:\n\n```\nAdd a reminder to my calendar for tomorrow at 9am called \"Review project proposal\"\n```",
+      "word_count": 42
+    },
+    {
+      "segment_id": 9,
+      "start_time": 139.9,
+      "end_time": 156.0,
+      "visual_cue": "Claude calling create_detailed_event",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude creates the event and confirms it. [PAUSE] Check your actual Google Calendar - it's really there.\n\n[PAUSE]\n\nThat's Google Calendar connected. [PAUSE] You can now manage your schedule entirely through conversation.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 10,
+      "start_time": 156.0,
+      "end_time": 166.3,
+      "visual_cue": "Google Drive logo",
+      "visual_type": "illustration",
+      "spoken_text": "Next up, Google Drive. [PAUSE] This one's incredibly useful for finding documents you can never remember the name of.\n\n### Adding Drive Actions",
+      "word_count": 22
+    },
+    {
+      "segment_id": 11,
+      "start_time": 166.3,
+      "end_time": 169.5,
+      "visual_cue": "Zapier interface, adding Drive actions",
+      "visual_type": "screen_capture",
+      "spoken_text": "Back in Zapier, add these Google Drive actions:",
+      "word_count": 8
+    },
+    {
+      "segment_id": 12,
+      "start_time": 169.5,
+      "end_time": 224.3,
+      "visual_cue": "List of Drive actions",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Find a File** - Search for files by name. [PAUSE] \"Where's that Q4 budget spreadsheet?\"\n\n**Find a Folder** - Search for folders. [PAUSE] Useful for organizing and navigating.\n\n**Get File Permissions** - See who has access to a file. [PAUSE] Good for security checks.\n\n**Create Folder** - Make new folders. [PAUSE] \"Create a folder called 'Client Projects 2024'.\"\n\n**Upload File** - Move files into Drive. [PAUSE] Claude can take a local file and put it in Drive.\n\n**Copy File** - Duplicate files. [PAUSE] Great for templates.\n\n**Move File** - Reorganize your Drive. [PAUSE] \"Move the proposal to the Sales folder.\"\n\nConnect your Google account when prompted. [PAUSE] Same OAuth flow as before.\n\n### Testing Drive",
+      "word_count": 107
+    },
+    {
+      "segment_id": 13,
+      "start_time": 224.3,
+      "end_time": 230.7,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's try some searches:\n\n```\nFind any files in my Google Drive related to \"invoice\"\n```",
+      "word_count": 16
+    },
+    {
+      "segment_id": 14,
+      "start_time": 230.7,
+      "end_time": 247.4,
+      "visual_cue": "Claude calling google_drive_find_a_file and returning results",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude searches your Drive and returns matching files with their names and links. [PAUSE] You can click the links to open them directly.\n\nTry something more specific:\n\n```\nDo I have a folder called \"Projects\" in my Drive?\n```",
+      "word_count": 38
+    },
+    {
+      "segment_id": 15,
+      "start_time": 247.4,
+      "end_time": 264.8,
+      "visual_cue": "Claude searching for folders",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude finds it and can tell you what's inside, who has access, when it was modified.\n\n[PAUSE]\n\nHere's a powerful workflow. [PAUSE] Say:\n\n```\nFind my most recent presentation file and tell me who it's shared with\n```",
+      "word_count": 36
+    },
+    {
+      "segment_id": 16,
+      "start_time": 264.8,
+      "end_time": 277.5,
+      "visual_cue": "Claude chaining Find File with Get Permissions",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude chains two actions together - finds the file, then checks its permissions. [PAUSE] This is where MCP gets powerful. Claude can combine multiple tools to answer complex questions.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 17,
+      "start_time": 277.5,
+      "end_time": 287.0,
+      "visual_cue": "Gmail logo",
+      "visual_type": "illustration",
+      "spoken_text": "Gmail integration is powerful but deserves extra caution. [PAUSE] We're talking about reading and potentially sending emails.\n\n### Adding Gmail Actions",
+      "word_count": 20
+    },
+    {
+      "segment_id": 18,
+      "start_time": 287.0,
+      "end_time": 289.4,
+      "visual_cue": "Zapier interface, adding Gmail actions",
+      "visual_type": "screen_capture",
+      "spoken_text": "Here's what I recommend starting with:",
+      "word_count": 6
+    },
+    {
+      "segment_id": 19,
+      "start_time": 289.4,
+      "end_time": 338.0,
+      "visual_cue": "List of Gmail actions with security notes",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Find Email** - Search your inbox. [PAUSE] \"Find emails from John about the project.\" Essential and low-risk.\n\n**Create Draft** - Write draft emails. [PAUSE] Claude composes the email, but you review and send. Safer than direct sending.\n\n**Add Label to Email** - Organize emails. [PAUSE] Great for inbox management workflows.\n\n**Archive Email** - Clean up your inbox. [PAUSE]\n\n**Send Email** - Actually send messages. [PAUSE] Only add this if you trust Claude with send access. I'd recommend starting with Create Draft instead.\n\nConnect your Google account. [PAUSE] Gmail permissions are a bit more sensitive, so Google might show extra warnings. That's normal.\n\n### Testing Gmail",
+      "word_count": 99
+    },
+    {
+      "segment_id": 20,
+      "start_time": 338.0,
+      "end_time": 343.2,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Start with a safe search:\n\n```\nFind my most recent unread emails\n```",
+      "word_count": 13
+    },
+    {
+      "segment_id": 21,
+      "start_time": 343.2,
+      "end_time": 361.5,
+      "visual_cue": "Claude calling gmail_find_email with query parameters",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude searches using Gmail's query syntax and returns your unread messages. [PAUSE] You'll see sender, subject, and a snippet of the content.\n\nNow try drafting:\n\n```\nDraft a reply to that last email thanking them and saying I'll review it by Friday\n```",
+      "word_count": 42
+    },
+    {
+      "segment_id": 22,
+      "start_time": 361.5,
+      "end_time": 383.6,
+      "visual_cue": "Claude calling gmail_create_draft",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude creates a draft in your Gmail. [PAUSE] It's sitting there waiting for you to review. Open Gmail, check the Drafts folder, and you'll see it.\n\n[PAUSE]\n\nThis workflow is perfect. [PAUSE] Claude helps you write emails quickly, but you maintain control over what actually gets sent.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 23,
+      "start_time": 383.6,
+      "end_time": 393.1,
+      "visual_cue": "\"Putting It All Together\" header with workflow diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Now you've got Calendar, Drive, and Gmail connected. [PAUSE] Let me show you some workflows that combine them.\n\n### Morning Briefing",
+      "word_count": 20
+    },
+    {
+      "segment_id": 24,
+      "start_time": 393.1,
+      "end_time": 439.0,
+      "visual_cue": "Example prompt and response",
+      "visual_type": "screen_capture",
+      "spoken_text": "```\nGive me a morning briefing: What's on my calendar today, any urgent emails, and find any documents I need for today's meetings\n```\n\nClaude checks your calendar, searches for unread important emails, and finds relevant files. [PAUSE] One question, multiple services, complete picture.\n\n### Meeting Prep\n\n```\nI have a meeting with Acme Corp tomorrow. Find any recent emails from them and any documents in Drive related to Acme.\n```\n\nClaude does the research across services so you're prepared.\n\n### Email to Calendar\n\n```\nCheck my email for any meeting requests I haven't responded to and add them to my calendar\n```\n\nClaude bridges the gap between your inbox and calendar.",
+      "word_count": 111
+    },
+    {
+      "segment_id": 25,
+      "start_time": 439.0,
+      "end_time": 449.3,
+      "visual_cue": "\"Next: Connecting GitHub\" with arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "That's Google services connected. [PAUSE] In the next lesson, we'll add GitHub integration for developers who want Claude working with their code repositories.",
+      "word_count": 22
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title with Google Workspace icons - Calendar, Drive, Gmail",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "\"Putting It All Together\" header with workflow diagram",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Diagram showing Claude connected to Google services through Zapier",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Gmail logo",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Google Calendar logo prominently displayed",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Google Drive logo",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "List of Calendar actions with checkmarks on recommended ones",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal",
+      "segment_ids": [
+        7,
+        13,
+        20
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Example prompt and response",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface, adding Drive actions",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface, adding Gmail actions",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface, navigating to add actions",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: Connecting GitHub\" with arrow",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling create_detailed_event",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling gmail_create_draft",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling gmail_find_email with query parameters",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling google_calendar_find_events and returning results",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling google_drive_find_a_file and returning results",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude chaining Find File with Get Permissions",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude searching for folders",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "List of Drive actions",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "List of Gmail actions with security notes",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "OAuth flow for Google Calendar",
+      "segment_ids": [
+        6
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "20 minutes",
+    "lesson": "3.3 - Connecting Google Services via Zapier MCP"
+  },
+  "parsed_at": "2026-01-06T22:53:56.092210"
+}

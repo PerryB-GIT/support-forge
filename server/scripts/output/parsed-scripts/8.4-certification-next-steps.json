@@ -1,0 +1,411 @@
+{
+  "script_id": "8.4-certification-next-steps",
+  "title": "Module 8.4: Certification & Next Steps",
+  "total_duration_seconds": 365.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 2.7,
+      "visual_cue": "Celebratory opening - confetti animation, achievement music, \"CONGRATULATIONS\" text",
+      "visual_type": "text_overlay",
+      "spoken_text": "You did it.\n\n[PAUSE]",
+      "word_count": 3
+    },
+    {
+      "segment_id": 2,
+      "start_time": 2.7,
+      "end_time": 12.7,
+      "visual_cue": "Title card - \"Module 8.4: Certification & Next Steps\"",
+      "visual_type": "animated_title",
+      "spoken_text": "This is the final module of AI Launchpad Academy. And before we talk about what's next, let's take a moment to acknowledge what you've accomplished.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 3,
+      "start_time": 12.7,
+      "end_time": 23.5,
+      "visual_cue": "Journey map showing all modules completed, path illuminated",
+      "visual_type": "text_overlay",
+      "spoken_text": "Think back to where you started.\n\nModule 1: You learned what AI agents actually are. Not magic. Not science fiction. Practical tools that connect intelligence to action.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 4,
+      "start_time": 23.5,
+      "end_time": 75.8,
+      "visual_cue": "Module highlights appearing as a montage",
+      "visual_type": "text_overlay",
+      "spoken_text": "Module 2: You connected Zapier and n8n to Claude. Your first taste of making AI do real work.\n\nModule 3: You mastered prompts. Not just writing instructions, but engineering reliable, repeatable interactions with AI.\n\nModule 4: You orchestrated multi-step workflows. Conditionals, loops, error handling. The building blocks of serious automation.\n\nModule 5: You built real AI agents. Support ticket classifiers. Sales assistants. Content generators that actually work.\n\nModule 6: You got good at debugging. When things broke, you knew how to find the problem and fix it.\n\nModule 7: You learned to build responsibly. Security, access control, ethical considerations. The stuff that separates professionals from hobbyists.\n\nModule 8: You built a complete, production-grade system from scratch. A client onboarding agent that would impress any client or employer.\n\n[PAUSE]",
+      "word_count": 127
+    },
+    {
+      "segment_id": 5,
+      "start_time": 75.8,
+      "end_time": 81.0,
+      "visual_cue": "Stats graphic - \"You've completed X hours of learning, built X workflows, connected X services\"",
+      "visual_type": "illustration",
+      "spoken_text": "That's not a casual accomplishment. You've developed real skills that real businesses need.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 6,
+      "start_time": 81.0,
+      "end_time": 85.4,
+      "visual_cue": "Quiz announcement graphic",
+      "visual_type": "illustration",
+      "spoken_text": "To earn your AI Launchpad Academy certification, complete the final assessment.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 7,
+      "start_time": 85.4,
+      "end_time": 106.9,
+      "visual_cue": "Quiz details",
+      "visual_type": "text_overlay",
+      "spoken_text": "The quiz covers key concepts from all eight modules. It's not a memory test. It's a verification that you understand the principles well enough to apply them.\n\n[PAUSE]\n\nYou'll find the quiz in your course dashboard. Take your time. Review the modules if needed. When you pass, your certificate unlocks automatically.",
+      "word_count": 50
+    },
+    {
+      "segment_id": 8,
+      "start_time": 106.9,
+      "end_time": 128.9,
+      "visual_cue": "Sample certificate preview",
+      "visual_type": "illustration",
+      "spoken_text": "Your certificate includes:\n\n- Your name\n- Completion date\n- Course title: AI Launchpad Academy: Certified AI Agent Builder\n- A unique verification ID that employers or clients can check\n\nThis is proof that you didn't just watch videos. You built things. You tested them. You understand how AI automation works at a practical level.",
+      "word_count": 55
+    },
+    {
+      "segment_id": 9,
+      "start_time": 128.9,
+      "end_time": 132.5,
+      "visual_cue": "Digital badge graphic - professional, shareable",
+      "visual_type": "illustration",
+      "spoken_text": "Along with your certificate, you'll receive a digital badge.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 10,
+      "start_time": 132.5,
+      "end_time": 148.5,
+      "visual_cue": "Badge use cases",
+      "visual_type": "illustration",
+      "spoken_text": "Add it to your LinkedIn profile. Include it in your email signature. Put it on your portfolio site.\n\nWhen potential clients or employers see this badge, they know you have hands-on experience with AI automation. Not theoretical knowledge. Practical skills.",
+      "word_count": 40
+    },
+    {
+      "segment_id": 11,
+      "start_time": 148.5,
+      "end_time": 152.9,
+      "visual_cue": "LinkedIn profile example with badge",
+      "visual_type": "illustration",
+      "spoken_text": "In a market where everyone claims AI expertise, verifiable credentials matter.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 12,
+      "start_time": 152.9,
+      "end_time": 158.9,
+      "visual_cue": "\"Your Journey Continues\" with road stretching to horizon",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've completed the course, but you're just getting started. Here's where to go from here.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 13,
+      "start_time": 158.9,
+      "end_time": 177.2,
+      "visual_cue": "Three paths appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Path One: Build for Yourself**\n\nTake what you learned and automate your own work. What tasks eat up your time every week? Client communication? Data entry? Report generation? [PAUSE] Build an agent for it. Start with something small. Get it working. Then expand.",
+      "word_count": 42
+    },
+    {
+      "segment_id": 14,
+      "start_time": 177.2,
+      "end_time": 184.4,
+      "visual_cue": "Personal automation ideas",
+      "visual_type": "screen_capture",
+      "spoken_text": "Every automation you build for yourself is practice. And practice makes you better.\n\n**Path Two: Build for Clients**",
+      "word_count": 18
+    },
+    {
+      "segment_id": 15,
+      "start_time": 184.4,
+      "end_time": 223.9,
+      "visual_cue": "Client work path",
+      "visual_type": "text_overlay",
+      "spoken_text": "There's a massive demand for AI automation skills. Businesses know they need this but don't know how to do it themselves.\n\nHere's a path:\n\nStart by building one automation for a client, friend, or local business. Do it for free or cheap to build your portfolio.\n\nDocument the results. \"Saved X hours per week\" or \"Reduced response time by Y percent.\"\n\nUse that case study to pitch the next client. Charge more.\n\nRepeat.\n\n[PAUSE]\n\nWithin six months, you could have a legitimate consulting practice or a solid addition to your existing business.\n\n**Path Three: Go Deeper**",
+      "word_count": 95
+    },
+    {
+      "segment_id": 16,
+      "start_time": 223.9,
+      "end_time": 227.9,
+      "visual_cue": "Advanced learning path",
+      "visual_type": "text_overlay",
+      "spoken_text": "This course gave you the foundation. There's more to explore.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 17,
+      "start_time": 227.9,
+      "end_time": 242.3,
+      "visual_cue": "Advanced topics appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Advanced prompt engineering. Multi-agent systems where multiple AI agents collaborate. Custom model fine-tuning. Building your own MCP servers. Voice and vision integrations.\n\nStay curious. The field is evolving fast. What's cutting-edge today is table stakes tomorrow.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 18,
+      "start_time": 242.3,
+      "end_time": 244.3,
+      "visual_cue": "Community graphic",
+      "visual_type": "illustration",
+      "spoken_text": "You're not alone in this.",
+      "word_count": 5
+    },
+    {
+      "segment_id": 19,
+      "start_time": 244.3,
+      "end_time": 262.6,
+      "visual_cue": "Community resources",
+      "visual_type": "text_overlay",
+      "spoken_text": "Join our community forum. Share what you're building. Ask questions when you get stuck. Help others who are where you were a few weeks ago.\n\n[PAUSE]\n\nFollow the AI Launchpad Academy for updates. New modules. New techniques. New integrations as the field evolves.",
+      "word_count": 42
+    },
+    {
+      "segment_id": 20,
+      "start_time": 262.6,
+      "end_time": 270.6,
+      "visual_cue": "Newsletter signup prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "And subscribe to the newsletter. When there are major developments in AI automation, that's where you'll hear about them first.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 21,
+      "start_time": 270.6,
+      "end_time": 309.1,
+      "visual_cue": "Thoughtful closing visual - person looking forward with AI elements around them",
+      "visual_type": "illustration",
+      "spoken_text": "Let me leave you with this.\n\n[PAUSE]\n\nAI is changing how work gets done. That's not hype. That's reality. The question isn't whether AI will transform business operations. It already is. The question is who will be doing the transforming.\n\n[PAUSE]\n\nYou have the skills now. You understand how to connect AI intelligence to real-world actions. You know how to build systems that think, decide, and act.\n\n[PAUSE]\n\nThat's valuable. That's rare. And it's only going to become more valuable as more businesses wake up to what's possible.",
+      "word_count": 85
+    },
+    {
+      "segment_id": 22,
+      "start_time": 309.1,
+      "end_time": 319.4,
+      "visual_cue": "Quote appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "\"The best time to learn this was a year ago. The second best time is now.\"\n\n[PAUSE]\n\nYou did it now. You're ready.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 23,
+      "start_time": 319.4,
+      "end_time": 323.4,
+      "visual_cue": "\"Congratulations, AI Agent Builder\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Congratulations on completing AI Launchpad Academy.\n\nGo build something great.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 24,
+      "start_time": 323.4,
+      "end_time": 325.4,
+      "visual_cue": "End card with AI Launchpad Academy logo, certificate/badge imagery, community links",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    },
+    {
+      "segment_id": 25,
+      "start_time": 325.4,
+      "end_time": 365.8,
+      "visual_cue": "Final frame - \"Thank you for learning with us. Now go automate something.\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "- Pacing: Celebratory and reflective. This is a graduation moment.\n- Music: Inspiring, achievement-style background music throughout.\n- Visuals: High production value for this finale. Confetti, badges, certificates should look professional.\n- Tone: Warm and encouraging but not patronizing. They accomplished something real.\n- Call-to-action: Make the quiz and community links prominent in the video description.\n\n- MCP: \"M-C-P\" (spelled out)\n- LinkedIn: \"LINKED-in\"\n- AI: \"A-I\" (spelled out)\n- n8n: \"en-eight-en\"\n\n1. Link to certification quiz\n2. Link to community forum\n3. Link to newsletter signup\n4. Badge download instructions\n5. Certificate verification link\n6. Suggested next courses or resources",
+      "word_count": 101
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo, certificate/badge imagery, community li...",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 8.4: Certification & Next Steps\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Badge use cases",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Community graphic",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Digital badge graphic - professional, shareable",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "LinkedIn profile example with badge",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Quiz announcement graphic",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Sample certificate preview",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Stats graphic - \"You've completed X hours of learning, built X workflows, connec...",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Thoughtful closing visual - person looking forward with AI elements around them",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Newsletter signup prompt",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Personal automation ideas",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Congratulations, AI Agent Builder\"",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Journey Continues\" with road stretching to horizon",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Advanced learning path",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Advanced topics appearing",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Celebratory opening - confetti animation, achievement music, \"CONGRATULATIONS\" t...",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Client work path",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Community resources",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Final frame - \"Thank you for learning with us. Now go automate something.\"",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Journey map showing all modules completed, path illuminated",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Module highlights appearing as a montage",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Quiz details",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Quote appearing",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three paths appearing",
+      "segment_ids": [
+        13
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.031283"
+}

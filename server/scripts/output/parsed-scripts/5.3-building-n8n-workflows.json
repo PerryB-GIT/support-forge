@@ -1,0 +1,1001 @@
+{
+  "script_id": "5.3-building-n8n-workflows",
+  "title": "Module 5.3: Building n8n Workflows",
+  "total_duration_seconds": 638.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 9.9,
+      "visual_cue": "\"Building n8n Workflows\" title with three workflow icons",
+      "visual_type": "illustration",
+      "spoken_text": "Time to build real automations. [PAUSE] In this lesson, we're creating three complete workflows that you can deploy in your business today.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 2,
+      "start_time": 9.9,
+      "end_time": 38.0,
+      "visual_cue": "Three workflow cards appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's what we're building:\n\n**One:** Lead Capture - Form submission to Google Sheet to email notification. [PAUSE] Never miss a lead again.\n\n**Two:** Content Pipeline - RSS feed to AI summary to Slack notification. [PAUSE] Stay on top of industry news without the time sink.\n\n**Three:** Client Onboarding - Webhook trigger to folder creation to welcome email. [PAUSE] Professional onboarding on autopilot.",
+      "word_count": 59
+    },
+    {
+      "segment_id": 3,
+      "start_time": 38.0,
+      "end_time": 43.2,
+      "visual_cue": "Design principles intro",
+      "visual_type": "animated_title",
+      "spoken_text": "But first, let's cover the principles that separate amateur automations from professional ones.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 4,
+      "start_time": 43.2,
+      "end_time": 58.2,
+      "visual_cue": "Principle 1 with icon",
+      "visual_type": "illustration",
+      "spoken_text": "**Principle One: Single Responsibility.** [PAUSE] Each workflow should do one thing well. Don't try to cram your entire business into one mega-workflow. [PAUSE] Three focused workflows beat one complex mess every time.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 5,
+      "start_time": 58.2,
+      "end_time": 72.9,
+      "visual_cue": "Principle 2 with icon",
+      "visual_type": "illustration",
+      "spoken_text": "**Principle Two: Error Handling.** [PAUSE] What happens when something fails? Because it will fail. API goes down, credentials expire, data comes in weird. Plan for it. n8n has error handling nodes - use them.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 6,
+      "start_time": 72.9,
+      "end_time": 84.4,
+      "visual_cue": "Principle 3 with icon",
+      "visual_type": "illustration",
+      "spoken_text": "**Principle Three: Clear Naming.** [PAUSE] Name your workflows and nodes descriptively. \"Workflow 1\" tells you nothing. \"Lead Capture - Website Form to CRM\" tells you everything.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 7,
+      "start_time": 84.4,
+      "end_time": 98.3,
+      "visual_cue": "Principle 4 with icon",
+      "visual_type": "illustration",
+      "spoken_text": "**Principle Four: Test Before You Trust.** [PAUSE] Never activate a workflow without running it manually first. Test with real data, weird data, missing data. Find the edge cases before your customers do.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 8,
+      "start_time": 98.3,
+      "end_time": 109.0,
+      "visual_cue": "Principle 5 with icon",
+      "visual_type": "illustration",
+      "spoken_text": "**Principle Five: Document Your Logic.** [PAUSE] Use the notes feature in n8n. Future you will thank present you when something breaks at 2 AM.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 9,
+      "start_time": 109.0,
+      "end_time": 113.0,
+      "visual_cue": "Node catalog grid",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we build, let's tour the nodes you'll use constantly.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 10,
+      "start_time": 113.0,
+      "end_time": 128.2,
+      "visual_cue": "Trigger nodes section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Triggers** - These start your workflow:\n- **Webhook:** Receives data from external sources\n- **Schedule:** Runs at specific times (cron jobs)\n- **Form Trigger:** Built-in forms that capture data\n- **Email Trigger:** Watches an inbox for new messages",
+      "word_count": 38
+    },
+    {
+      "segment_id": 11,
+      "start_time": 128.2,
+      "end_time": 142.6,
+      "visual_cue": "Action nodes section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Actions** - These do things:\n- **HTTP Request:** Call any API\n- **Google Sheets:** Read/write spreadsheet data\n- **Gmail/Email:** Send messages\n- **Slack:** Post to channels\n- **If:** Conditional branching\n- **Set:** Transform and modify data",
+      "word_count": 36
+    },
+    {
+      "segment_id": 12,
+      "start_time": 142.6,
+      "end_time": 152.2,
+      "visual_cue": "AI nodes section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**AI Nodes** - The good stuff:\n- **OpenAI:** GPT for text generation\n- **AI Agent:** Complex reasoning chains\n- **Text Classifier:** Categorize content automatically",
+      "word_count": 24
+    },
+    {
+      "segment_id": 13,
+      "start_time": 152.2,
+      "end_time": 161.8,
+      "visual_cue": "Utility nodes section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Utilities:**\n- **Code:** Custom JavaScript or Python\n- **Merge:** Combine data streams\n- **Split Out:** Process arrays item by item\n- **Wait:** Pause execution",
+      "word_count": 24
+    },
+    {
+      "segment_id": 14,
+      "start_time": 161.8,
+      "end_time": 167.4,
+      "visual_cue": "New workflow creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build. Create a new workflow and name it \"Lead Capture - Website Form.\"",
+      "word_count": 14
+    },
+    {
+      "segment_id": 15,
+      "start_time": 167.4,
+      "end_time": 176.5,
+      "visual_cue": "Adding Form Trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click the plus and search for \"n8n Form Trigger.\" [PAUSE] This is a built-in form that n8n hosts for you.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 16,
+      "start_time": 176.5,
+      "end_time": 189.3,
+      "visual_cue": "Form configuration panel",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure the form fields. We'll keep it simple:\n- **Name** - Text field, required\n- **Email** - Email field, required\n- **Phone** - Text field, optional\n- **Message** - Text area, required",
+      "word_count": 32
+    },
+    {
+      "segment_id": 17,
+      "start_time": 189.3,
+      "end_time": 200.8,
+      "visual_cue": "Form URL displayed",
+      "visual_type": "text_overlay",
+      "spoken_text": "See that URL at the top? [PAUSE] That's your form's live address. People can submit directly to it, or you can embed it on your website.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 18,
+      "start_time": 200.8,
+      "end_time": 208.3,
+      "visual_cue": "Adding Google Sheets node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next node: Google Sheets. [PAUSE] Click the plus, search for it, select \"Append or Update Row.\"",
+      "word_count": 15
+    },
+    {
+      "segment_id": 19,
+      "start_time": 208.3,
+      "end_time": 218.6,
+      "visual_cue": "Google Sheets configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select your credential. [PAUSE] For the spreadsheet, you'll need to create one first with columns matching your form: Name, Email, Phone, Message, Date.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 20,
+      "start_time": 218.6,
+      "end_time": 232.2,
+      "visual_cue": "Mapping fields",
+      "visual_type": "text_overlay",
+      "spoken_text": "Map the fields:\n- Name column: `{{ $json.Name }}`\n- Email column: `{{ $json.Email }}`\n- Phone column: `{{ $json.Phone }}`\n- Message column: `{{ $json.Message }}`\n- Date column: `{{ $now.format('yyyy-MM-dd HH:mm') }}`",
+      "word_count": 34
+    },
+    {
+      "segment_id": 21,
+      "start_time": 232.2,
+      "end_time": 240.9,
+      "visual_cue": "Expression editor showing",
+      "visual_type": "text_overlay",
+      "spoken_text": "That dollar-sign syntax? [PAUSE] That's how n8n references data. The `$json` object contains whatever came from the previous node.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 22,
+      "start_time": 240.9,
+      "end_time": 248.0,
+      "visual_cue": "Adding Gmail node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Third node: Gmail - Send Email. [PAUSE] This notifies you when a lead comes in.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 23,
+      "start_time": 248.0,
+      "end_time": 265.2,
+      "visual_cue": "Gmail configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it:\n- **To:** Your email address\n- **Subject:** `New Lead: {{ $json.Name }}`\n- **Body:**\n```\nNew lead submitted!\n\nName: {{ $json.Name }}\nEmail: {{ $json.Email }}\nPhone: {{ $json.Phone }}\nMessage: {{ $json.Message }}\n\nSubmitted at: {{ $now.format('yyyy-MM-dd HH:mm') }}\n```",
+      "word_count": 43
+    },
+    {
+      "segment_id": 24,
+      "start_time": 265.2,
+      "end_time": 276.3,
+      "visual_cue": "Complete workflow view",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's the complete flow: [PAUSE] Form submission triggers the workflow, data saves to your sheet, you get an email. Three nodes, fully automated lead capture.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 25,
+      "start_time": 276.3,
+      "end_time": 286.2,
+      "visual_cue": "Testing the workflow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's test. Click \"Test Workflow,\" then open the form URL in a new tab. [PAUSE] Fill it out with test data, submit.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 26,
+      "start_time": 286.2,
+      "end_time": 295.7,
+      "visual_cue": "Execution success",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch the execution. [PAUSE] Green checks across the board. Check your spreadsheet - new row. Check your email - notification arrived.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 27,
+      "start_time": 295.7,
+      "end_time": 303.6,
+      "visual_cue": "Activating the workflow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Toggle the workflow to Active. [PAUSE] It's now live, 24/7, capturing leads while you do other things.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 28,
+      "start_time": 303.6,
+      "end_time": 306.8,
+      "visual_cue": "New workflow - Content Pipeline",
+      "visual_type": "text_overlay",
+      "spoken_text": "New workflow: \"Content Pipeline - AI News Digest.\"",
+      "word_count": 8
+    },
+    {
+      "segment_id": 29,
+      "start_time": 306.8,
+      "end_time": 312.3,
+      "visual_cue": "Schedule Trigger node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Start with Schedule Trigger. [PAUSE] We want this running every morning.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 30,
+      "start_time": 312.3,
+      "end_time": 322.6,
+      "visual_cue": "Schedule configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set it to run daily at 8 AM. [PAUSE] The cron expression is `0 8 * * *` if you want to use advanced mode.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 31,
+      "start_time": 322.6,
+      "end_time": 328.5,
+      "visual_cue": "RSS Feed Read node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next: RSS Feed Read. [PAUSE] This pulls articles from any news source.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 32,
+      "start_time": 328.5,
+      "end_time": 339.7,
+      "visual_cue": "RSS configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "For the URL, let's use a tech news feed:\n```\nhttps://feeds.feedburner.com/TechCrunch/\n```\n\nYou can use any RSS feed - industry publications, competitor blogs, whatever you need to track.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 33,
+      "start_time": 339.7,
+      "end_time": 346.4,
+      "visual_cue": "Limit items option",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set \"Limit\" to 5. [PAUSE] We don't need every article, just the top stories.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 34,
+      "start_time": 346.4,
+      "end_time": 353.5,
+      "visual_cue": "Adding OpenAI node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's where it gets interesting. [PAUSE] Add an OpenAI node - specifically \"Message a Model.\"",
+      "word_count": 14
+    },
+    {
+      "segment_id": 35,
+      "start_time": 353.5,
+      "end_time": 368.6,
+      "visual_cue": "OpenAI configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Model: GPT-4 or GPT-3.5-turbo. [PAUSE]\n\nFor the prompt:\n```\nSummarize this news article in 2-3 sentences. Focus on why it matters for business owners. Be concise.\n\nTitle: {{ $json.title }}\nContent: {{ $json.contentSnippet }}\n```",
+      "word_count": 34
+    },
+    {
+      "segment_id": 36,
+      "start_time": 368.6,
+      "end_time": 378.1,
+      "visual_cue": "Showing data flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "The RSS node outputs an array of articles. [PAUSE] n8n automatically runs the OpenAI node for each one. No loops needed.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 37,
+      "start_time": 378.1,
+      "end_time": 380.5,
+      "visual_cue": "Adding Slack node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Final node: Slack - Send Message.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 38,
+      "start_time": 380.5,
+      "end_time": 392.0,
+      "visual_cue": "Slack configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Select your workspace and channel. [PAUSE] For the message:\n\n```\n*{{ $('RSS Feed Read').item.json.title }}*\n{{ $json.message.content }}\n\n<{{ $('RSS Feed Read').item.json.link }}|Read Full Article>\n```",
+      "word_count": 25
+    },
+    {
+      "segment_id": 39,
+      "start_time": 392.0,
+      "end_time": 405.1,
+      "visual_cue": "Complete workflow view",
+      "visual_type": "text_overlay",
+      "spoken_text": "The complete pipeline: [PAUSE] Every morning at 8 AM, grab the latest articles, AI summarizes each one, summaries post to Slack. Stay informed in 60 seconds instead of 60 minutes.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 40,
+      "start_time": 405.1,
+      "end_time": 414.2,
+      "visual_cue": "Testing with manual trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "For testing, add a Manual Trigger temporarily so you don't have to wait until 8 AM. [PAUSE] Run it now.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 41,
+      "start_time": 414.2,
+      "end_time": 419.3,
+      "visual_cue": "Slack messages appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Check Slack. [PAUSE] Five summaries, perfectly formatted, ready to skim.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 42,
+      "start_time": 419.3,
+      "end_time": 422.5,
+      "visual_cue": "New workflow - Client Onboarding",
+      "visual_type": "text_overlay",
+      "spoken_text": "Last one: \"Client Onboarding - New Client Setup.\"",
+      "word_count": 8
+    },
+    {
+      "segment_id": 43,
+      "start_time": 422.5,
+      "end_time": 431.2,
+      "visual_cue": "Webhook Trigger",
+      "visual_type": "text_overlay",
+      "spoken_text": "Start with Webhook trigger. [PAUSE] This receives data from external sources - your payment processor, CRM, or booking system.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 44,
+      "start_time": 431.2,
+      "end_time": 442.3,
+      "visual_cue": "Webhook configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Copy the webhook URL. [PAUSE] You'll paste this wherever your client signup happens. When someone pays or books, it hits this URL with their information.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 45,
+      "start_time": 442.3,
+      "end_time": 449.9,
+      "visual_cue": "Expected data structure",
+      "visual_type": "text_overlay",
+      "spoken_text": "We'll expect this data structure:\n```json\n{\n  \"name\": \"Jane Smith\",\n  \"email\": \"jane@example.com\",\n  \"company\": \"Smith Co\",\n  \"package\": \"Premium\"\n}\n```",
+      "word_count": 19
+    },
+    {
+      "segment_id": 46,
+      "start_time": 449.9,
+      "end_time": 452.7,
+      "visual_cue": "Adding Google Drive node",
+      "visual_type": "text_overlay",
+      "spoken_text": "First action: Google Drive - Create Folder.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 47,
+      "start_time": 452.7,
+      "end_time": 463.0,
+      "visual_cue": "Drive configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "This creates a client folder for deliverables. [PAUSE]\n\nFolder name: `{{ $json.company }} - {{ $json.name }}`\nParent folder: Select your \"Clients\" folder",
+      "word_count": 22
+    },
+    {
+      "segment_id": 48,
+      "start_time": 463.0,
+      "end_time": 465.4,
+      "visual_cue": "Adding Google Docs node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next: Google Docs - Create Document.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 49,
+      "start_time": 465.4,
+      "end_time": 478.9,
+      "visual_cue": "Docs configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "This creates a welcome document. [PAUSE]\n\nName: `Welcome - {{ $json.name }}`\nFolder: The folder we just created (use `{{ $('Google Drive').item.json.id }}`)\nContent: A templated welcome message with their details",
+      "word_count": 30
+    },
+    {
+      "segment_id": 50,
+      "start_time": 478.9,
+      "end_time": 482.5,
+      "visual_cue": "Adding Gmail node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now Gmail - Send Email for the welcome message.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 51,
+      "start_time": 482.5,
+      "end_time": 516.4,
+      "visual_cue": "Gmail configuration with HTML",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is where you make an impression. [PAUSE]\n\nTo: `{{ $json.email }}`\nSubject: `Welcome to [Your Business], {{ $json.name }}!`\nBody type: HTML\n\n```html\n<h2>Welcome aboard, {{ $json.name }}!</h2>\n\n<p>We're thrilled to have you as a {{ $json.package }} client.</p>\n\n<p>Here's what happens next:</p>\n<ol>\n  <li>You'll receive access to your client folder within 24 hours</li>\n  <li>Our team will reach out to schedule your kickoff call</li>\n  <li>Review the welcome document we've prepared for you</li>\n</ol>\n\n<p>Questions? Reply to this email anytime.</p>\n\n<p>Best,<br>Your Name</p>\n```",
+      "word_count": 81
+    },
+    {
+      "segment_id": 52,
+      "start_time": 516.4,
+      "end_time": 519.2,
+      "visual_cue": "Adding Slack notification node",
+      "visual_type": "text_overlay",
+      "spoken_text": "One more: Slack notification to your team.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 53,
+      "start_time": 519.2,
+      "end_time": 531.6,
+      "visual_cue": "Slack team notification",
+      "visual_type": "text_overlay",
+      "spoken_text": "Channel: Your team channel\nMessage:\n```\n:tada: New client signed up!\n\n*{{ $json.name }}* from *{{ $json.company }}*\nPackage: {{ $json.package }}\n\nFolder created, welcome email sent. Ready for kickoff.\n```",
+      "word_count": 31
+    },
+    {
+      "segment_id": 54,
+      "start_time": 531.6,
+      "end_time": 537.9,
+      "visual_cue": "Adding error handling",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's add error handling. [PAUSE] Click \"Add Error Trigger\" in the workflow settings.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 55,
+      "start_time": 537.9,
+      "end_time": 546.6,
+      "visual_cue": "Error workflow branch",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add a Gmail node that emails you if anything fails. [PAUSE] Subject: \"ALERT: Onboarding Failed for {{ $json.name }}\"",
+      "word_count": 18
+    },
+    {
+      "segment_id": 56,
+      "start_time": 546.6,
+      "end_time": 556.5,
+      "visual_cue": "Complete workflow view",
+      "visual_type": "text_overlay",
+      "spoken_text": "The complete onboarding flow: [PAUSE] Client signs up, folder created, documents prepared, welcome email sent, team notified. All in about 3 seconds.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 57,
+      "start_time": 556.5,
+      "end_time": 563.3,
+      "visual_cue": "Testing with webhook.site",
+      "visual_type": "text_overlay",
+      "spoken_text": "To test without real signups, use webhook.site or send a test POST request with the expected JSON.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 58,
+      "start_time": 563.3,
+      "end_time": 566.8,
+      "visual_cue": "Three completed workflows displayed",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've built three production-ready workflows. [PAUSE]",
+      "word_count": 5
+    },
+    {
+      "segment_id": 59,
+      "start_time": 566.8,
+      "end_time": 576.7,
+      "visual_cue": "Customization callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Remember, these are templates. [PAUSE] Customize them for your business. Add more fields, change the messaging, adjust the logic. Make them yours.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 60,
+      "start_time": 576.7,
+      "end_time": 585.4,
+      "visual_cue": "Maintenance reminder",
+      "visual_type": "text_overlay",
+      "spoken_text": "One last thing: check your workflows weekly. [PAUSE] Make sure executions are succeeding. Fix issues before they become problems.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 61,
+      "start_time": 585.4,
+      "end_time": 595.7,
+      "visual_cue": "Resources panel",
+      "visual_type": "text_overlay",
+      "spoken_text": "In your course resources, I've included the JSON exports for all three workflows. [PAUSE] Import them directly into n8n and modify from there.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 62,
+      "start_time": 595.7,
+      "end_time": 606.0,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next up: Zapier Essentials. [PAUSE] We'll build similar automations using the other major platform, so you can choose what works best for you.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 63,
+      "start_time": 606.0,
+      "end_time": 638.0,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you there.\n\n**Total Runtime:** 25 minutes\n**Tone:** Hands-on tutorial, building in real-time\n**Key Visuals:**\n- Screen recording of each workflow build\n- Node configuration close-ups\n- Data flow animations\n- Execution success indicators\n\n**B-Roll Suggestions:**\n- Lead form submissions\n- Google Sheets rows appearing\n- Slack notifications arriving\n- Email inbox receiving messages\n\n**Resources to Include:**\n- JSON exports for all three workflows\n- Google Sheets template for lead capture\n- Sample webhook payload for onboarding\n- Customization checklists",
+      "word_count": 80
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Design principles intro",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Building n8n Workflows\" title with three workflow icons",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Principle 1 with icon",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Principle 2 with icon",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Principle 3 with icon",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Principle 4 with icon",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Principle 5 with icon",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "AI nodes section",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Action nodes section",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Activating the workflow",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Form Trigger",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Gmail node",
+      "segment_ids": [
+        22,
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Google Docs node",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Google Drive node",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Google Sheets node",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding OpenAI node",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Slack node",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding Slack notification node",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding error handling",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Complete workflow view",
+      "segment_ids": [
+        24,
+        39,
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Customization callout",
+      "segment_ids": [
+        59
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Docs configuration",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Drive configuration",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        63
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error workflow branch",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Execution success",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Expected data structure",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Expression editor showing",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Form URL displayed",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Form configuration panel",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gmail configuration",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gmail configuration with HTML",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Sheets configuration",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Limit items option",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Maintenance reminder",
+      "segment_ids": [
+        60
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mapping fields",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New workflow - Client Onboarding",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New workflow - Content Pipeline",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New workflow creation",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        62
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Node catalog grid",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "OpenAI configuration",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "RSS Feed Read node",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "RSS configuration",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Resources panel",
+      "segment_ids": [
+        61
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Schedule Trigger node",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Schedule configuration",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Showing data flow",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack configuration",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack messages appearing",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack team notification",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing the workflow",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing with manual trigger",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing with webhook.site",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three completed workflows displayed",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three workflow cards appearing",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Trigger nodes section",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Utility nodes section",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Webhook Trigger",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Webhook configuration",
+      "segment_ids": [
+        44
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.972640"
+}

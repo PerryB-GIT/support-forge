@@ -1,0 +1,617 @@
+{
+  "name": "Client Onboarding Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "client-onboarding",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - New Client",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "client-onboarding-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-email",
+              "leftValue": "={{ $json.body.client.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            },
+            {
+              "id": "condition-name",
+              "leftValue": "={{ $json.body.client.name }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            },
+            {
+              "id": "condition-company",
+              "leftValue": "={{ $json.body.client.company }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "validate-data",
+      "name": "Validate Required Fields",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ \"success\": false, \"error\": \"Missing required fields\", \"required\": [\"client.name\", \"client.email\", \"client.company\"], \"received\": $json.body }) }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "error-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [680, 480]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and normalize client data\nconst body = $input.first().json.body;\n\nconst clientData = {\n  // Client info\n  clientName: body.client?.name || '',\n  clientEmail: body.client?.email || '',\n  clientCompany: body.client?.company || '',\n  clientPhone: body.client?.phone || '',\n  clientWebsite: body.client?.website || '',\n  \n  // Project info\n  projectType: body.project?.type || 'custom',\n  projectName: body.project?.name || body.client?.company || 'New Project',\n  projectBudget: body.project?.budget || 'TBD',\n  projectTimeline: body.project?.timeline || 'TBD',\n  projectStartDate: body.project?.startDate || '',\n  projectDescription: body.project?.description || '',\n  \n  // Preferences\n  communicationMethod: body.preferences?.communicationMethod || 'email',\n  meetingPreference: body.preferences?.meetingPreference || 'morning',\n  timezone: body.preferences?.timezone || 'America/New_York',\n  specialRequests: body.preferences?.specialRequests || '',\n  \n  // Generated fields\n  clientId: `CLT-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,\n  onboardingDate: new Date().toISOString().split('T')[0],\n  folderName: body.client?.company?.replace(/[^a-zA-Z0-9\\s]/g, '').replace(/\\s+/g, '-') || 'new-client',\n  \n  // Email personalization\n  welcomeSubject: `Welcome to Our Team, ${body.client?.name?.split(' ')[0] || 'there'}! Let's Get Started`,\n};\n\n// Determine meeting time based on preference\nconst now = new Date();\nnow.setDate(now.getDate() + 3); // Schedule 3 days out\nlet meetingHour = 10; // Default morning\nif (clientData.meetingPreference === 'afternoon') meetingHour = 14;\nif (clientData.meetingPreference === 'evening') meetingHour = 17;\nnow.setHours(meetingHour, 0, 0, 0);\nclientData.suggestedMeetingTime = now.toISOString();\n\nreturn clientData;"
+      },
+      "id": "prepare-data",
+      "name": "Prepare Client Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "={{ $json.folderName }}",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "root",
+          "mode": "list",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "id": "create-main-folder",
+      "name": "Create Client Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [900, 140],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "google-drive-credentials",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "01-Contracts",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-contracts-folder",
+      "name": "Create Contracts Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1120, 20],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "google-drive-credentials",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "02-Project-Brief",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-brief-folder",
+      "name": "Create Brief Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1120, 140],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "google-drive-credentials",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "03-Assets",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-assets-folder",
+      "name": "Create Assets Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1120, 260],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "google-drive-credentials",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "name": "04-Deliverables",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "={{ $('Create Client Folder').item.json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "id": "create-deliverables-folder",
+      "name": "Create Deliverables Folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1120, 380],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "google-drive-credentials",
+          "name": "Google Drive Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Clients",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Client ID": "={{ $('Prepare Client Data').item.json.clientId }}",
+            "Client Name": "={{ $('Prepare Client Data').item.json.clientName }}",
+            "Company": "={{ $('Prepare Client Data').item.json.clientCompany }}",
+            "Email": "={{ $('Prepare Client Data').item.json.clientEmail }}",
+            "Phone": "={{ $('Prepare Client Data').item.json.clientPhone }}",
+            "Website": "={{ $('Prepare Client Data').item.json.clientWebsite }}",
+            "Project Type": "={{ $('Prepare Client Data').item.json.projectType }}",
+            "Budget": "={{ $('Prepare Client Data').item.json.projectBudget }}",
+            "Timeline": "={{ $('Prepare Client Data').item.json.projectTimeline }}",
+            "Start Date": "={{ $('Prepare Client Data').item.json.projectStartDate }}",
+            "Onboarding Date": "={{ $('Prepare Client Data').item.json.onboardingDate }}",
+            "Drive Folder": "={{ $('Create Client Folder').item.json.webViewLink }}",
+            "Status": "Onboarding",
+            "Notes": "={{ $('Prepare Client Data').item.json.specialRequests }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "add-to-spreadsheet",
+      "name": "Add to Client Tracker",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [900, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "google-sheets-credentials",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "calendarId": {
+          "__rl": true,
+          "value": "primary",
+          "mode": "list",
+          "cachedResultName": "Primary Calendar"
+        },
+        "title": "Kickoff Meeting: {{ $('Prepare Client Data').item.json.clientCompany }}",
+        "start": "={{ $('Prepare Client Data').item.json.suggestedMeetingTime }}",
+        "end": "={{ (new Date(new Date($('Prepare Client Data').item.json.suggestedMeetingTime).getTime() + 60*60*1000)).toISOString() }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ $('Prepare Client Data').item.json.clientEmail }}"
+          ],
+          "description": "Kickoff meeting with {{ $('Prepare Client Data').item.json.clientName }} from {{ $('Prepare Client Data').item.json.clientCompany }}.\n\nProject Type: {{ $('Prepare Client Data').item.json.projectType }}\nBudget: {{ $('Prepare Client Data').item.json.projectBudget }}\nTimeline: {{ $('Prepare Client Data').item.json.projectTimeline }}\n\nAgenda:\n1. Introductions\n2. Project overview and goals\n3. Timeline review\n4. Next steps and action items\n5. Q&A",
+          "conferenceData": {
+            "conferenceDataValues": {
+              "conferenceSolution": "hangoutsMeet"
+            }
+          },
+          "guestsCanModify": true,
+          "sendUpdates": "all",
+          "location": "Google Meet (link in invite)"
+        }
+      },
+      "id": "schedule-kickoff",
+      "name": "Schedule Kickoff Meeting",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.1,
+      "position": [900, 460],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "google-calendar-credentials",
+          "name": "Google Calendar Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Prepare Client Data').item.json.clientEmail }}",
+        "subject": "={{ $('Prepare Client Data').item.json.welcomeSubject }}",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .container { max-width: 600px; margin: 0 auto; padding: 20px; }\n    .header { background: #4F46E5; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }\n    .content { background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px; }\n    .button { display: inline-block; background: #4F46E5; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 10px 0; }\n    .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }\n    ul { padding-left: 20px; }\n    li { margin: 8px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Welcome Aboard!</h1>\n    </div>\n    <div class=\"content\">\n      <p>Hi {{ $('Prepare Client Data').item.json.clientName.split(' ')[0] }},</p>\n      \n      <p>Thank you for choosing us for your <strong>{{ $('Prepare Client Data').item.json.projectType }}</strong> project. We're thrilled to be working with {{ $('Prepare Client Data').item.json.clientCompany }} and can't wait to get started!</p>\n      \n      <h3>Here's what happens next:</h3>\n      <ul>\n        <li><strong>Kickoff Meeting</strong> - We've scheduled a meeting for {{ new Date($('Prepare Client Data').item.json.suggestedMeetingTime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' }) }}. Check your calendar for the invite!</li>\n        <li><strong>Project Folder</strong> - We've created a shared workspace for all project materials</li>\n        <li><strong>Next Steps</strong> - We'll send over an onboarding checklist with everything we need to hit the ground running</li>\n      </ul>\n      \n      <p style=\"text-align: center;\">\n        <a href=\"{{ $('Create Client Folder').item.json.webViewLink }}\" class=\"button\">View Project Folder</a>\n      </p>\n      \n      <h3>Your Project Details:</h3>\n      <ul>\n        <li><strong>Project Type:</strong> {{ $('Prepare Client Data').item.json.projectType }}</li>\n        <li><strong>Timeline:</strong> {{ $('Prepare Client Data').item.json.projectTimeline }}</li>\n        <li><strong>Budget:</strong> {{ $('Prepare Client Data').item.json.projectBudget }}</li>\n      </ul>\n      \n      <p>If you have any questions before our kickoff, don't hesitate to reach out. We're here to help!</p>\n      \n      <p>Looking forward to working together,<br>\n      <strong>Your Project Team</strong></p>\n    </div>\n    <div class=\"footer\">\n      <p>Your Company Name | contact@yourcompany.com | www.yourcompany.com</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "options": {
+          "replyTo": "team@yourcompany.com"
+        }
+      },
+      "id": "send-welcome-email",
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1340, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "gmail-credentials",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": "#new-clients",
+        "text": ":tada: *New Client Onboarded!*",
+        "otherOptions": {
+          "attachments": [
+            {
+              "color": "#4F46E5",
+              "pretext": "",
+              "authorName": "",
+              "title": "{{ $('Prepare Client Data').item.json.clientCompany }}",
+              "titleLink": "={{ $('Create Client Folder').item.json.webViewLink }}",
+              "text": "*Contact:* {{ $('Prepare Client Data').item.json.clientName }}\n*Email:* {{ $('Prepare Client Data').item.json.clientEmail }}\n*Project Type:* {{ $('Prepare Client Data').item.json.projectType }}\n*Budget:* {{ $('Prepare Client Data').item.json.projectBudget }}\n*Timeline:* {{ $('Prepare Client Data').item.json.projectTimeline }}",
+              "fields": {
+                "item": [
+                  {
+                    "title": "Client ID",
+                    "value": "={{ $('Prepare Client Data').item.json.clientId }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Kickoff",
+                    "value": "={{ new Date($('Prepare Client Data').item.json.suggestedMeetingTime).toLocaleDateString() }}",
+                    "short": true
+                  }
+                ]
+              },
+              "footer": "Client Onboarding Automation"
+            }
+          ],
+          "unfurlLinks": false,
+          "unfurlMedia": false
+        }
+      },
+      "id": "slack-notification",
+      "name": "Notify Team on Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1560, 300],
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "slack-credentials",
+          "name": "Slack Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ \"success\": true, \"message\": \"Client onboarded successfully\", \"data\": { \"clientId\": $('Prepare Client Data').item.json.clientId, \"clientName\": $('Prepare Client Data').item.json.clientName, \"company\": $('Prepare Client Data').item.json.clientCompany, \"folder\": $('Create Client Folder').item.json.webViewLink, \"kickoffMeeting\": $('Schedule Kickoff Meeting').item.json.htmlLink, \"spreadsheetRow\": $('Add to Client Tracker').item.json.updates?.updatedRows || 1, \"emailSent\": true, \"slackNotified\": true } }) }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "id": "success-response",
+      "name": "Success Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "errorMessage": "={{ $json.error || 'An error occurred during onboarding' }}"
+      },
+      "id": "error-handler",
+      "name": "Error Handler",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [1780, 480]
+    },
+    {
+      "parameters": {},
+      "id": "merge-folders",
+      "name": "Wait for Folders",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1340, 140]
+    }
+  ],
+  "connections": {
+    "Webhook - New Client": {
+      "main": [
+        [
+          {
+            "node": "Validate Required Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Required Fields": {
+      "main": [
+        [
+          {
+            "node": "Prepare Client Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Client Data": {
+      "main": [
+        [
+          {
+            "node": "Create Client Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Add to Client Tracker",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Schedule Kickoff Meeting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Client Folder": {
+      "main": [
+        [
+          {
+            "node": "Create Contracts Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Brief Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Assets Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Deliverables Folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Contracts Folder": {
+      "main": [
+        [
+          {
+            "node": "Wait for Folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Brief Folder": {
+      "main": [
+        [
+          {
+            "node": "Wait for Folders",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create Assets Folder": {
+      "main": [
+        [
+          {
+            "node": "Wait for Folders",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Deliverables Folder": {
+      "main": [
+        [
+          {
+            "node": "Wait for Folders",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Add to Client Tracker": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Folders": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Email": {
+      "main": [
+        [
+          {
+            "node": "Notify Team on Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Team on Slack": {
+      "main": [
+        [
+          {
+            "node": "Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "id": "1",
+      "name": "client-management"
+    },
+    {
+      "id": "2",
+      "name": "onboarding"
+    },
+    {
+      "id": "3",
+      "name": "automation"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-15T10:00:00.000Z",
+  "versionId": "1"
+}

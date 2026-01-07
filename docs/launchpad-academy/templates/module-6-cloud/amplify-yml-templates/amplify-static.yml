@@ -1,0 +1,117 @@
+# AWS Amplify Build Configuration for Static Sites
+# Place this file as amplify.yml in your repository root
+#
+# Supports: Plain HTML/CSS/JS, Hugo, Jekyll, or any static site generator
+# Note: Adjust baseDirectory based on your project structure
+
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # For plain HTML sites, no build needed
+        - echo "Preparing static site deployment"
+
+        # Uncomment for Hugo:
+        # - wget https://github.com/gohugoio/hugo/releases/download/v0.120.0/hugo_extended_0.120.0_linux-amd64.tar.gz
+        # - tar -xvf hugo_extended_0.120.0_linux-amd64.tar.gz
+        # - mv hugo /usr/local/bin/
+
+        # Uncomment for Jekyll:
+        # - gem install bundler
+        # - bundle install
+
+    build:
+      commands:
+        # For plain HTML sites
+        - echo "No build step required"
+
+        # Uncomment for Hugo:
+        # - hugo --minify
+
+        # Uncomment for Jekyll:
+        # - bundle exec jekyll build
+
+  artifacts:
+    # Root directory for plain HTML
+    # Change to 'public' for Hugo
+    # Change to '_site' for Jekyll
+    baseDirectory: /
+    files:
+      - '**/*'
+    # Exclude files you don't want deployed
+    excludePaths:
+      - '.git/**/*'
+      - 'README.md'
+      - '.gitignore'
+      - 'amplify.yml'
+
+  cache:
+    paths: []
+    # Uncomment for Jekyll:
+    # - vendor/**/*
+
+# Rewrites and redirects
+customRules:
+  # Redirect www to non-www (or vice versa)
+  # - source: 'https://www.example.com'
+  #   target: 'https://example.com'
+  #   status: '301'
+
+  # Custom 404 page
+  - source: '/<*>'
+    target: '/404.html'
+    status: '404'
+    condition: null
+
+# Custom headers for caching and security
+customHeaders:
+  # Cache static assets for 1 year
+  - pattern: '**/*.js'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.css'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.jpg'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.png'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.webp'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.svg'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.woff2'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+
+  # HTML files - shorter cache for easier updates
+  - pattern: '**/*.html'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=3600, must-revalidate'
+
+  # Security headers for all files
+  - pattern: '**/*'
+    headers:
+      - key: 'X-Frame-Options'
+        value: 'DENY'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'Referrer-Policy'
+        value: 'strict-origin-when-cross-origin'
+
+# Note: For static sites, environment variables are typically not needed
+# If you need to inject values, consider using a build step that replaces
+# placeholders in your HTML files

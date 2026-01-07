@@ -1,0 +1,732 @@
+{
+  "projectInfo": {
+    "title": "AI Launchpad Academy - Client Onboarding Agent",
+    "description": "Image resources for capstone project video about automating client onboarding with n8n, Claude AI, and Google Workspace",
+    "createdDate": "2026-01-07",
+    "totalCategories": 10
+  },
+  "imageResources": [
+    {
+      "category": "n8n Workflow Interface",
+      "description": "Screenshots and visuals of n8n workflow automation platform",
+      "usageSegments": ["Introduction", "Webhook Triggers", "Workflow Overview", "Architecture Diagrams"],
+      "resources": [
+        {
+          "name": "n8n Official Website Screenshots",
+          "source": "https://n8n.io/",
+          "type": "screenshot",
+          "description": "Take screenshots directly from n8n.io showcasing the visual workflow builder interface",
+          "license": "Screenshot for educational purposes",
+          "notes": "Best option - use your own n8n instance or demo environment"
+        },
+        {
+          "name": "n8n Workflow Templates Gallery",
+          "source": "https://n8n.io/workflows/",
+          "type": "screenshot",
+          "description": "1000+ community workflow templates showing various automation patterns",
+          "license": "Screenshot for educational purposes"
+        },
+        {
+          "name": "n8n Google Workspace Integration Example",
+          "source": "https://n8n.io/integrations/google-workspace-admin/",
+          "type": "screenshot",
+          "description": "Example workflow showing Google Workspace Admin integration",
+          "license": "Screenshot for educational purposes"
+        },
+        {
+          "name": "n8n Employee Onboarding Template",
+          "source": "https://n8n.io/workflows/3860-automate-employee-onboarding-with-slack-jira-and-google-workspace-integration/",
+          "type": "reference",
+          "description": "Template workflow for employee onboarding with Slack, Jira, and Google Workspace - highly relevant reference",
+          "license": "n8n template"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom n8n workflow screenshot",
+        "tools": ["n8n Cloud free trial", "Local n8n Docker instance"],
+        "steps": [
+          "Build the actual Client Onboarding workflow in n8n",
+          "Screenshot the completed workflow canvas",
+          "Capture individual node configurations"
+        ]
+      }
+    },
+    {
+      "category": "Google Workspace Icons",
+      "description": "Official icons for Drive, Sheets, Calendar, Gmail",
+      "usageSegments": ["Google Drive Folder Creation", "Google Sheets/CRM", "Google Calendar Scheduling", "Email Sending"],
+      "resources": [
+        {
+          "name": "Icons8 Google Workspace Collection",
+          "source": "https://icons8.com/icons/set/google-workspace",
+          "type": "icon-pack",
+          "description": "Complete set of Google Workspace icons including Gmail, Calendar, Drive, Docs, Forms, Meet, Sheets, Slides",
+          "license": "Free with attribution, premium without",
+          "formats": ["PNG", "SVG", "Figma"]
+        },
+        {
+          "name": "Gmelius Google Workspace Logos",
+          "source": "https://gmelius.com/logos",
+          "type": "icon-pack",
+          "description": "Calendar, Chat, Docs, Drive, Forms, Gmail, Meet, Sheets, Slides icons",
+          "license": "Free download",
+          "formats": ["PNG", "SVG", "Figma plugin"]
+        },
+        {
+          "name": "Icons8 Google Workspace Blue Style",
+          "source": "https://icons8.com/icons/set/google-workspace--blue",
+          "type": "icon-pack",
+          "description": "Google Workspace icons in consistent blue color scheme",
+          "license": "Free with attribution"
+        }
+      ],
+      "brandGuidelines": {
+        "note": "Review Google Brand Guidelines before use",
+        "guidelines": "Do not distort, alter, or add effects to Google logos",
+        "officialColors": {
+          "blue": "#4285F4",
+          "red": "#EA4335",
+          "yellow": "#FBBC05",
+          "green": "#34A853"
+        }
+      },
+      "alternativeCreation": {
+        "description": "Use simplified generic icons if brand usage is restricted",
+        "suggestions": [
+          "Create abstract folder, spreadsheet, calendar, envelope icons",
+          "Use Flaticon or Noun Project for generic alternatives"
+        ]
+      }
+    },
+    {
+      "category": "Slack Interface and Logo",
+      "description": "Official Slack branding and interface elements",
+      "usageSegments": ["Slack Notifications", "Team Communication"],
+      "resources": [
+        {
+          "name": "Slack Official Media Kit",
+          "source": "https://slack.com/media-kit",
+          "type": "brand-kit",
+          "description": "Official logo files, product screenshots (desktop, mobile, tablet), brand guidelines",
+          "license": "Official Slack brand assets",
+          "languages": ["English", "French", "German", "Japanese"],
+          "notes": "Primary recommended source"
+        },
+        {
+          "name": "Slack Brandfolder - Official Digital Assets",
+          "source": "https://brandfolder.com/slack",
+          "type": "brand-kit",
+          "description": "Official logos, images, and brand assets with usage guidelines",
+          "license": "Official Slack assets"
+        },
+        {
+          "name": "Slack Brand Guidelines PDF",
+          "source": "https://a.slack-edge.com/4d5bb/marketing/img/media-kit/slack_brand_guidelines_september2020.pdf",
+          "type": "guidelines",
+          "description": "Complete brand guidelines document",
+          "license": "Reference document"
+        },
+        {
+          "name": "Brandfetch Slack Assets",
+          "source": "https://brandfetch.com/slack.com",
+          "type": "third-party",
+          "description": "Slack logo and brand assets in SVG, PNG, vector formats",
+          "license": "Verify before commercial use"
+        }
+      ],
+      "brandColors": {
+        "auberginePurple": "#4A154B",
+        "primaryPalette": "Four primary colors optimized for screen"
+      },
+      "alternativeCreation": {
+        "description": "Create generic messaging/notification icon if brand restrictions apply",
+        "suggestions": ["Chat bubble icon", "Bell notification icon", "Team collaboration illustration"]
+      }
+    },
+    {
+      "category": "Claude AI / Anthropic Branding",
+      "description": "Claude and Anthropic logo and brand elements",
+      "usageSegments": ["Claude AI Processing", "AI Integration", "Introduction"],
+      "resources": [
+        {
+          "name": "Anthropic Press Kit",
+          "source": "https://www.anthropic.com/news (Media assets section)",
+          "type": "brand-kit",
+          "description": "Official downloadable press kit with logos",
+          "license": "Official Anthropic assets",
+          "notes": "Primary recommended source"
+        },
+        {
+          "name": "Claude Logo on Wikimedia Commons",
+          "source": "https://commons.wikimedia.org/wiki/File:Claude_AI_logo.svg",
+          "type": "svg",
+          "description": "SVG file 690x148 pixels, PNG previews up to 2560x549 pixels",
+          "license": "Check Wikimedia licensing",
+          "formats": ["SVG", "PNG"]
+        },
+        {
+          "name": "Brandfetch Claude Assets",
+          "source": "https://brandfetch.com/claude.ai",
+          "type": "third-party",
+          "description": "Claude logo and brand assets in SVG, PNG, vector formats",
+          "license": "Verify before use"
+        },
+        {
+          "name": "Brandfetch Anthropic Assets",
+          "source": "https://brandfetch.com/anthropic.com",
+          "type": "third-party",
+          "description": "Anthropic company logo and brand assets",
+          "license": "Verify before use"
+        }
+      ],
+      "brandColors": {
+        "primaryAccent": "#DA7756",
+        "rgb": "218, 119, 86",
+        "description": "Terra cotta color used as main accent/CTA"
+      },
+      "typography": {
+        "logo": "__copernicus_669e4a (custom serif)",
+        "body": "ui-serif, Georgia, Cambria, Times New Roman, serif"
+      },
+      "alternativeCreation": {
+        "description": "Create abstract AI concept graphic if brand usage restricted",
+        "suggestions": [
+          "Neural network visualization",
+          "AI brain concept illustration",
+          "Chat/conversation bubble with AI sparkle effect"
+        ]
+      }
+    },
+    {
+      "category": "Automation/Workflow Concepts",
+      "description": "General automation and workflow process illustrations",
+      "usageSegments": ["Introduction", "Workflow Overview", "Architecture Diagrams", "Process Flow"],
+      "resources": [
+        {
+          "name": "Unsplash Workflow Automation",
+          "source": "https://unsplash.com/s/photos/workflow-automation",
+          "type": "photography",
+          "description": "100+ free workflow automation images, free for commercial use, no attribution required",
+          "license": "Unsplash License (free commercial use)"
+        },
+        {
+          "name": "Unsplash Business Automation",
+          "source": "https://unsplash.com/s/photos/business-automation",
+          "type": "photography",
+          "description": "100+ free business automation images",
+          "license": "Unsplash License"
+        },
+        {
+          "name": "Pexels Workflow",
+          "source": "https://www.pexels.com/search/workflow/",
+          "type": "photography",
+          "description": "1000+ workflow stock photos for free download",
+          "license": "Pexels License (free commercial use)"
+        },
+        {
+          "name": "Freepik Workflow Automation Vectors",
+          "source": "https://www.freepik.com/free-photos-vectors/workflow-automation",
+          "type": "vector",
+          "description": "Free vectors, stock photos, PSD files for workflow automation",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "iStock Workflow Automation Illustrations",
+          "source": "https://www.istockphoto.com/illustrations/workflow-automation",
+          "type": "illustration",
+          "description": "5,900+ royalty-free workflow automation illustrations",
+          "license": "Paid (iStock license)"
+        },
+        {
+          "name": "Adobe Stock Workflow Automation",
+          "source": "https://stock.adobe.com/search?k=workflow+automation",
+          "type": "mixed",
+          "description": "1.4+ million workflow automation images",
+          "license": "Paid (Adobe Stock license)"
+        },
+        {
+          "name": "Vecteezy Workflow Automation",
+          "source": "https://www.vecteezy.com/free-photos/workflow-automation",
+          "type": "mixed",
+          "description": "4,633 workflow automation stock images, photos, wallpapers",
+          "license": "Free with attribution"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom workflow diagram",
+        "tools": ["Figma", "Canva", "Lucidchart", "draw.io"],
+        "elements": [
+          "Connected nodes representing each step",
+          "Gear/cog icons for automation",
+          "Arrow flows between components",
+          "Color-coded service blocks"
+        ]
+      }
+    },
+    {
+      "category": "Client Onboarding Illustrations",
+      "description": "Business onboarding and client welcome visuals",
+      "usageSegments": ["Introduction", "Form Submissions", "Client Onboarding Automation"],
+      "resources": [
+        {
+          "name": "Freepik Client Onboarding Vectors",
+          "source": "https://www.freepik.com/vectors/client-onboarding",
+          "type": "vector",
+          "description": "Client onboarding vectors, stock photos, PSD files free for commercial use",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "Freepik Onboarding Process",
+          "source": "https://www.freepik.com/free-photos-vectors/onboarding-process",
+          "type": "mixed",
+          "description": "Onboarding process visuals and illustrations",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "iStock Client Onboarding Illustrations",
+          "source": "https://www.istockphoto.com/illustrations/client-onboarding",
+          "type": "illustration",
+          "description": "2,900+ client onboarding illustrations including handshakes, deals, partnerships",
+          "license": "Paid (iStock license)"
+        },
+        {
+          "name": "iStock Customer Onboarding Photos",
+          "source": "https://www.istockphoto.com/photos/customer-onboarding",
+          "type": "photography",
+          "description": "9,500+ customer onboarding stock photos",
+          "license": "Paid (iStock license)"
+        }
+      ],
+      "suggestedSearchTerms": [
+        "client welcome",
+        "new customer",
+        "business handshake",
+        "partnership agreement",
+        "contract signing",
+        "welcome aboard"
+      ],
+      "alternativeCreation": {
+        "description": "Create custom onboarding illustration",
+        "tools": ["Canva", "Figma", "Adobe Illustrator"],
+        "concepts": [
+          "Person filling out form on laptop",
+          "Handshake between business people",
+          "Welcome sign with company elements",
+          "Checklist with checkmarks"
+        ]
+      }
+    },
+    {
+      "category": "Webhook/API Concepts",
+      "description": "Technical graphics for webhooks and API integrations",
+      "usageSegments": ["Webhook Triggers", "Form Submissions", "Architecture Diagrams"],
+      "resources": [
+        {
+          "name": "Dribbble Webhook Designs",
+          "source": "https://dribbble.com/tags/webhooks",
+          "type": "design",
+          "description": "Webhook designs, themes, templates from designers",
+          "license": "Varies by designer"
+        },
+        {
+          "name": "Svix Webhook Architecture Diagram",
+          "source": "https://www.svix.com/resources/webhook-architecture-diagram/",
+          "type": "diagram",
+          "description": "Technical webhook architecture diagram for reference",
+          "license": "Reference/educational"
+        },
+        {
+          "name": "Dreamstime Webhook Illustrations",
+          "source": "https://www.dreamstime.com/illustration/webhook.html",
+          "type": "illustration",
+          "description": "27 webhook stock illustrations including 3D keyboard, server diagrams",
+          "license": "Paid (Dreamstime license)"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom webhook/API diagram",
+        "tools": ["draw.io", "Lucidchart", "Figma", "Excalidraw"],
+        "elements": [
+          "HTTP request arrows",
+          "Server icons",
+          "JSON payload representations",
+          "Event trigger symbols",
+          "Endpoint connections"
+        ],
+        "style": "Technical but clean, use consistent color coding"
+      }
+    },
+    {
+      "category": "Email Automation",
+      "description": "Email sending and notification visuals",
+      "usageSegments": ["Email Sending (Gmail)", "Notifications"],
+      "resources": [
+        {
+          "name": "Flaticon Email Automation Icons",
+          "source": "https://www.flaticon.com/free-icons/email-automation",
+          "type": "icon",
+          "description": "726 email automation icons in SVG, PSD, PNG, EPS, ICON FONT",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "Flaticon Email Notification Icons",
+          "source": "https://www.flaticon.com/free-icons/email-notification",
+          "type": "icon",
+          "description": "7,093 email notification icons in SVG, PSD, PNG, EPS",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "Vecteezy Email Automation Vectors",
+          "source": "https://www.vecteezy.com/free-vector/email-automation",
+          "type": "vector",
+          "description": "2,608 email automation vectors, icons, clipart graphics",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "SVG Repo Email Notification Alert",
+          "source": "https://www.svgrepo.com/svg/343426/email-notification-alert",
+          "type": "svg",
+          "description": "Email notification alert SVG in monocolor and multicolor",
+          "license": "Free",
+          "formats": ["SVG", "Sketch", "Figma"]
+        },
+        {
+          "name": "Noun Project Email Automation",
+          "source": "https://thenounproject.com/browse/icons/term/email-automation/",
+          "type": "icon",
+          "description": "91 email automation icons, royalty-free PNG and vector",
+          "license": "Free with attribution / paid without"
+        },
+        {
+          "name": "iStock Email Notification Illustrations",
+          "source": "https://www.istockphoto.com/illustrations/email-notification-icon",
+          "type": "illustration",
+          "description": "23,300+ email notification icon stock illustrations",
+          "license": "Paid (iStock license)"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom email automation graphic",
+        "elements": [
+          "Envelope icon with automation cog",
+          "Email flying from computer to recipient",
+          "Notification bell with email symbol"
+        ]
+      }
+    },
+    {
+      "category": "Calendar Scheduling",
+      "description": "Calendar and meeting scheduling visuals",
+      "usageSegments": ["Google Calendar Scheduling", "Meeting Booking"],
+      "resources": [
+        {
+          "name": "Vecteezy Schedule Appointment Vectors",
+          "source": "https://www.vecteezy.com/free-vector/schedule-appointment",
+          "type": "vector",
+          "description": "119,713 schedule appointment vectors, icons, clipart graphics",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "Freepik Meeting Schedule Vectors",
+          "source": "https://www.freepik.com/vectors/meeting-schedule",
+          "type": "vector",
+          "description": "Popular meeting schedule vectors, AI-generated and stock vectors",
+          "license": "Free with attribution"
+        },
+        {
+          "name": "iStock Schedule Meeting Icons",
+          "source": "https://www.istockphoto.com/illustrations/schedule-meeting-icon",
+          "type": "illustration",
+          "description": "38,300+ schedule meeting icon stock illustrations",
+          "license": "Paid (iStock license)"
+        },
+        {
+          "name": "iStock Booking Calendar Illustrations",
+          "source": "https://www.istockphoto.com/illustrations/booking-calendar",
+          "type": "illustration",
+          "description": "3,300+ booking calendar stock illustrations",
+          "license": "Paid (iStock license)"
+        },
+        {
+          "name": "Dreamstime Appointment Scheduling",
+          "source": "https://www.dreamstime.com/illustration/appointment-scheduling.html",
+          "type": "illustration",
+          "description": "5,993 appointment scheduling illustrations including isometric concepts",
+          "license": "Paid (Dreamstime license)"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom calendar scheduling graphic",
+        "elements": [
+          "Calendar with highlighted date",
+          "Clock icon indicating time slot",
+          "Person booking appointment on device",
+          "Checkmark on calendar date"
+        ]
+      }
+    },
+    {
+      "category": "Architecture Diagrams",
+      "description": "System architecture and integration diagrams",
+      "usageSegments": ["Architecture Diagrams", "System Overview", "Integration Flow"],
+      "resources": [
+        {
+          "name": "Lucidchart Integration Architecture Template",
+          "source": "https://lucid.co/templates/integration-architecture-example",
+          "type": "template",
+          "description": "Integration architecture example template",
+          "license": "Lucidchart account required"
+        },
+        {
+          "name": "draw.io (diagrams.net)",
+          "source": "https://app.diagrams.net/",
+          "type": "tool",
+          "description": "Free online diagram software for flowcharts, UML, network diagrams, architecture diagrams",
+          "license": "Free"
+        },
+        {
+          "name": "Miro Architecture Diagramming",
+          "source": "https://miro.com/diagramming/what-is-software-architecture-diagramming/",
+          "type": "tool",
+          "description": "Architecture diagramming tools and templates with collaboration features",
+          "license": "Free tier available"
+        },
+        {
+          "name": "AWS Architecture Diagramming Guide",
+          "source": "https://aws.amazon.com/what-is/architecture-diagramming/",
+          "type": "guide",
+          "description": "Comprehensive guide on architecture diagramming principles",
+          "license": "Reference"
+        },
+        {
+          "name": "Microsoft Azure Architecture Diagrams",
+          "source": "https://learn.microsoft.com/en-us/azure/well-architected/architect-role/design-diagrams",
+          "type": "guide",
+          "description": "Best practices for creating architecture design diagrams",
+          "license": "Reference"
+        }
+      ],
+      "alternativeCreation": {
+        "description": "Create custom architecture diagram for Client Onboarding Agent",
+        "tools": ["draw.io (free)", "Lucidchart", "Figma", "Miro", "Excalidraw"],
+        "suggestedComponents": [
+          "Form submission trigger (client)",
+          "Webhook endpoint",
+          "n8n workflow engine (central)",
+          "Claude AI processing node",
+          "Google Drive API",
+          "Google Sheets API",
+          "Google Calendar API",
+          "Gmail API",
+          "Slack API",
+          "CRM database"
+        ],
+        "layoutSuggestion": "Left-to-right flow or hub-and-spoke with n8n at center"
+      }
+    }
+  ],
+  "recommendedSources": {
+    "freeCommercialUse": [
+      {
+        "name": "Unsplash",
+        "url": "https://unsplash.com",
+        "type": "Photography",
+        "license": "Free commercial use, no attribution required"
+      },
+      {
+        "name": "Pexels",
+        "url": "https://pexels.com",
+        "type": "Photography & Video",
+        "license": "Free commercial use, no attribution required"
+      },
+      {
+        "name": "Freepik",
+        "url": "https://freepik.com",
+        "type": "Vectors & Photos",
+        "license": "Free with attribution"
+      },
+      {
+        "name": "Flaticon",
+        "url": "https://flaticon.com",
+        "type": "Icons",
+        "license": "Free with attribution"
+      },
+      {
+        "name": "SVG Repo",
+        "url": "https://svgrepo.com",
+        "type": "SVG Icons",
+        "license": "Free"
+      },
+      {
+        "name": "Icons8",
+        "url": "https://icons8.com",
+        "type": "Icons & Illustrations",
+        "license": "Free with attribution"
+      },
+      {
+        "name": "Vecteezy",
+        "url": "https://vecteezy.com",
+        "type": "Vectors",
+        "license": "Free with attribution"
+      }
+    ],
+    "diagramTools": [
+      {
+        "name": "draw.io / diagrams.net",
+        "url": "https://app.diagrams.net/",
+        "license": "Free",
+        "bestFor": "Architecture diagrams, flowcharts"
+      },
+      {
+        "name": "Excalidraw",
+        "url": "https://excalidraw.com",
+        "license": "Free",
+        "bestFor": "Hand-drawn style diagrams"
+      },
+      {
+        "name": "Miro",
+        "url": "https://miro.com",
+        "license": "Free tier available",
+        "bestFor": "Collaborative diagrams"
+      },
+      {
+        "name": "Lucidchart",
+        "url": "https://lucidchart.com",
+        "license": "Free tier available",
+        "bestFor": "Professional diagrams"
+      },
+      {
+        "name": "Figma",
+        "url": "https://figma.com",
+        "license": "Free tier available",
+        "bestFor": "Custom graphics and diagrams"
+      },
+      {
+        "name": "Canva",
+        "url": "https://canva.com",
+        "license": "Free tier available",
+        "bestFor": "Presentations, social graphics"
+      }
+    ],
+    "officialBrandAssets": [
+      {
+        "name": "Slack Media Kit",
+        "url": "https://slack.com/media-kit",
+        "notes": "Official logos and screenshots"
+      },
+      {
+        "name": "Anthropic Press Kit",
+        "url": "https://www.anthropic.com/news",
+        "notes": "Look for Media assets section"
+      },
+      {
+        "name": "Google Brand Guidelines",
+        "url": "https://about.google/brand-resource-center/",
+        "notes": "Official Google/Workspace guidelines"
+      },
+      {
+        "name": "n8n Website",
+        "url": "https://n8n.io",
+        "notes": "Screenshot your own workflows"
+      }
+    ]
+  },
+  "videoSegmentImageMapping": {
+    "1_Introduction": {
+      "primaryImages": ["n8n workflow overview", "Claude AI logo", "Automation concept illustration"],
+      "secondaryImages": ["Client onboarding illustration"]
+    },
+    "2_WebhookTriggers": {
+      "primaryImages": ["Webhook architecture diagram", "n8n webhook node screenshot"],
+      "secondaryImages": ["API integration graphic", "Form submission illustration"]
+    },
+    "3_FormSubmissions": {
+      "primaryImages": ["Form/input illustration", "Data entry concept"],
+      "secondaryImages": ["Client onboarding form mockup"]
+    },
+    "4_ClaudeAIProcessing": {
+      "primaryImages": ["Claude AI logo", "Anthropic branding"],
+      "secondaryImages": ["AI processing concept", "NLP/text analysis illustration"]
+    },
+    "5_GoogleDriveFolderCreation": {
+      "primaryImages": ["Google Drive icon", "Folder structure illustration"],
+      "secondaryImages": ["Cloud storage concept"]
+    },
+    "6_GoogleSheetsCRM": {
+      "primaryImages": ["Google Sheets icon", "Spreadsheet/CRM illustration"],
+      "secondaryImages": ["Data entry automation concept"]
+    },
+    "7_GoogleCalendarScheduling": {
+      "primaryImages": ["Google Calendar icon", "Calendar scheduling illustration"],
+      "secondaryImages": ["Meeting booking concept"]
+    },
+    "8_EmailSendingGmail": {
+      "primaryImages": ["Gmail icon", "Email automation illustration"],
+      "secondaryImages": ["Email notification concept"]
+    },
+    "9_SlackNotifications": {
+      "primaryImages": ["Slack logo", "Slack interface screenshot"],
+      "secondaryImages": ["Team notification concept"]
+    },
+    "10_ArchitectureDiagram": {
+      "primaryImages": ["Custom architecture diagram showing full flow"],
+      "secondaryImages": ["Integration flowchart", "System overview"]
+    }
+  },
+  "creationGuidelines": {
+    "styleConsistency": {
+      "colorPalette": "Consistent color scheme across all custom graphics",
+      "suggestedColors": {
+        "primary": "#4A90D9 (professional blue)",
+        "secondary": "#2ECC71 (success green)",
+        "accent": "#DA7756 (Claude terra cotta)",
+        "neutral": "#333333, #666666, #F5F5F5"
+      },
+      "typography": "Clean, professional sans-serif fonts",
+      "iconStyle": "Flat design or subtle 3D, consistent across all"
+    },
+    "dimensions": {
+      "video": "1920x1080 (16:9 HD)",
+      "thumbnails": "1280x720",
+      "icons": "256x256 or vector",
+      "diagramExport": "PNG or SVG at 2x resolution"
+    },
+    "accessibility": {
+      "colorContrast": "Ensure sufficient contrast for readability",
+      "altText": "Prepare descriptions for all images",
+      "simplicity": "Avoid overly complex diagrams"
+    }
+  },
+  "priorityDownloads": [
+    {
+      "priority": 1,
+      "item": "Slack logo from official media kit",
+      "source": "https://slack.com/media-kit",
+      "reason": "High visibility, needs official branding"
+    },
+    {
+      "priority": 2,
+      "item": "Claude/Anthropic logo",
+      "source": "Anthropic press kit or Wikimedia Commons",
+      "reason": "Central to the capstone topic"
+    },
+    {
+      "priority": 3,
+      "item": "Google Workspace icon set",
+      "source": "https://icons8.com/icons/set/google-workspace",
+      "reason": "Multiple segments require these icons"
+    },
+    {
+      "priority": 4,
+      "item": "n8n workflow screenshots",
+      "source": "Create from own n8n instance",
+      "reason": "Most authentic representation"
+    },
+    {
+      "priority": 5,
+      "item": "Custom architecture diagram",
+      "source": "Create in draw.io or Figma",
+      "reason": "Unique to this project, cannot be sourced"
+    }
+  ]
+}

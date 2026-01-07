@@ -1,0 +1,945 @@
+{
+  "script_id": "script-2.4-configuring-settings",
+  "title": "Configuring Settings",
+  "total_duration_seconds": 611.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 11.9,
+      "visual_cue": "\"Configuring Settings\" title",
+      "visual_type": "screen_capture",
+      "spoken_text": "Claude Code works great out of the box. But when you configure it for your specific needs, it becomes a true partner that understands your business.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 2,
+      "start_time": 11.9,
+      "end_time": 27.3,
+      "visual_cue": "Configuration options overview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In this lesson, we're covering the settings file, the CLAUDE.md file, and other customizations that make Claude Code feel like it was built just for you.\n\n[PAUSE]\n\nLet's set it up right.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 3,
+      "start_time": 27.3,
+      "end_time": 36.4,
+      "visual_cue": "Settings file location",
+      "visual_type": "screen_capture",
+      "spoken_text": "Claude Code uses a settings file to control its behavior. Let's find it and understand what we can configure.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 4,
+      "start_time": 36.4,
+      "end_time": 50.7,
+      "visual_cue": "Default settings location by OS",
+      "visual_type": "screen_capture",
+      "spoken_text": "The settings file location varies by operating system. On Mac and Linux, look in your home directory under .claude (dot claude). On Windows with WSL, same location within your Ubuntu home directory.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 5,
+      "start_time": 50.7,
+      "end_time": 58.5,
+      "visual_cue": "Navigate to settings",
+      "visual_type": "screen_capture",
+      "spoken_text": "In your terminal, type: cd ~/.claude\n\n[PAUSE]\n\nThen: ls to see what's there.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 6,
+      "start_time": 58.5,
+      "end_time": 66.4,
+      "visual_cue": "settings.json file",
+      "visual_type": "screen_capture",
+      "spoken_text": "You'll see a file called settings.json or similar. This is where Claude Code stores its configuration.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 7,
+      "start_time": 66.4,
+      "end_time": 79.8,
+      "visual_cue": "Viewing the file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's look at it. You can ask Claude Code directly: \"Show me my Claude Code settings file\"\n\n[PAUSE]\n\nOr use a text editor. In terminal: cat settings.json\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 8,
+      "start_time": 79.8,
+      "end_time": 89.3,
+      "visual_cue": "Default settings content",
+      "visual_type": "screen_capture",
+      "spoken_text": "The default settings are minimal. Claude Code works without much configuration. But we can add options to enhance the experience.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 9,
+      "start_time": 89.3,
+      "end_time": 95.6,
+      "visual_cue": "Available settings categories",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let me walk you through the most useful settings you can configure.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 10,
+      "start_time": 95.6,
+      "end_time": 111.9,
+      "visual_cue": "Model selection setting",
+      "visual_type": "text_overlay",
+      "spoken_text": "Model selection. You can specify which Claude model to use. The default is usually the latest, which is what you want. But if you needed to use a specific version for compatibility, you could set it here.\n\n[PAUSE]",
+      "word_count": 37
+    },
+    {
+      "segment_id": 11,
+      "start_time": 111.9,
+      "end_time": 124.2,
+      "visual_cue": "API key configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "API key location. If you're using an API key directly instead of browser authentication, you configure where that key comes from here. Usually an environment variable reference.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 12,
+      "start_time": 124.2,
+      "end_time": 135.3,
+      "visual_cue": "Default behaviors",
+      "visual_type": "text_overlay",
+      "spoken_text": "Default behaviors. Things like whether to auto-confirm file operations, that's risky but some people prefer it, or whether to show cost estimates by default.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 13,
+      "start_time": 135.3,
+      "end_time": 142.4,
+      "visual_cue": "Theme and display",
+      "visual_type": "text_overlay",
+      "spoken_text": "Theme and display options. Some versions support different visual themes or output formatting preferences.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 14,
+      "start_time": 142.4,
+      "end_time": 162.2,
+      "visual_cue": "Editing settings",
+      "visual_type": "screen_capture",
+      "spoken_text": "To edit settings, you can ask Claude: \"Help me configure my Claude Code settings for better performance\"\n\n[PAUSE]\n\nOr edit the file directly in a text editor. Make sure to use valid JSON (jay-son) syntax. One wrong comma and the file won't parse.\n\n[PAUSE]",
+      "word_count": 42
+    },
+    {
+      "segment_id": 15,
+      "start_time": 162.2,
+      "end_time": 171.7,
+      "visual_cue": "CLAUDE.md introduction",
+      "visual_type": "animated_title",
+      "spoken_text": "Now for the real customization power: the CLAUDE.md file. This is where you give Claude persistent context about your projects.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 16,
+      "start_time": 171.7,
+      "end_time": 188.4,
+      "visual_cue": "What CLAUDE.md does",
+      "visual_type": "text_overlay",
+      "spoken_text": "When Claude Code starts in a directory that contains a CLAUDE.md file, it automatically reads that file. The content becomes part of Claude's context, so it knows about your project without you having to explain it every time.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 17,
+      "start_time": 188.4,
+      "end_time": 197.9,
+      "visual_cue": "Where to place it",
+      "visual_type": "text_overlay",
+      "spoken_text": "Place CLAUDE.md in the root of any project directory. When you launch Claude Code in that directory, it loads automatically.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 18,
+      "start_time": 197.9,
+      "end_time": 204.2,
+      "visual_cue": "What to include",
+      "visual_type": "text_overlay",
+      "spoken_text": "What should go in this file? Let me show you a template.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 19,
+      "start_time": 204.2,
+      "end_time": 212.5,
+      "visual_cue": "Template section - Project Overview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Start with a project overview. What is this project? What does it do? Who is it for?\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 20,
+      "start_time": 212.5,
+      "end_time": 223.2,
+      "visual_cue": "Template section - Tech Stack",
+      "visual_type": "text_overlay",
+      "spoken_text": "Then your tech stack. What programming languages, frameworks, and tools does this project use? Claude can then give suggestions that fit your stack.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 21,
+      "start_time": 223.2,
+      "end_time": 231.5,
+      "visual_cue": "Template section - Coding Standards",
+      "visual_type": "text_overlay",
+      "spoken_text": "Coding standards. Do you prefer certain naming conventions? Tab or spaces? Specific formatting rules? Document them here.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 22,
+      "start_time": 231.5,
+      "end_time": 243.4,
+      "visual_cue": "Template section - Project Structure",
+      "visual_type": "text_overlay",
+      "spoken_text": "Project structure. Describe how your files and folders are organized. This helps Claude know where to put new files or where to look for existing ones.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 23,
+      "start_time": 243.4,
+      "end_time": 252.9,
+      "visual_cue": "Template section - Common Tasks",
+      "visual_type": "text_overlay",
+      "spoken_text": "Common tasks. What do you frequently ask Claude to help with in this project? List them and any relevant details.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 24,
+      "start_time": 252.9,
+      "end_time": 266.4,
+      "visual_cue": "Template section - Important Notes",
+      "visual_type": "text_overlay",
+      "spoken_text": "Important notes. Any gotchas, warnings, or context that would prevent mistakes. \"Never modify the database schema directly\" or \"The production API key is stored in environment variables, not the code.\"\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 25,
+      "start_time": 266.4,
+      "end_time": 272.7,
+      "visual_cue": "Hands-on creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's create a CLAUDE.md file together. I'll demonstrate with a hypothetical project.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 26,
+      "start_time": 272.7,
+      "end_time": 281.0,
+      "visual_cue": "Example project setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's say you have a project called \"client-portal\" that's a Next.js (next-J-S) application for your consulting business.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 27,
+      "start_time": 281.0,
+      "end_time": 284.9,
+      "visual_cue": "Navigate to project",
+      "visual_type": "text_overlay",
+      "spoken_text": "Navigate to your project: cd ~/projects/client-portal\n\n[PAUSE]",
+      "word_count": 6
+    },
+    {
+      "segment_id": 28,
+      "start_time": 284.9,
+      "end_time": 298.0,
+      "visual_cue": "Create the file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Ask Claude: \"Create a CLAUDE.md file for this project. It's a Next.js application for my consulting business client portal. I use TypeScript, Tailwind CSS, and PostgreSQL for the database.\"\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 29,
+      "start_time": 298.0,
+      "end_time": 305.5,
+      "visual_cue": "Claude generates the file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude will generate a starting CLAUDE.md based on what you described. Review it, then customize.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 30,
+      "start_time": 305.5,
+      "end_time": 310.2,
+      "visual_cue": "Example CLAUDE.md content",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's what a good CLAUDE.md might look like:\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 31,
+      "start_time": 310.2,
+      "end_time": 353.3,
+      "visual_cue": "Show file content",
+      "visual_type": "text_overlay",
+      "spoken_text": "Heading: Client Portal Project. Description: Next.js app for consulting clients to view project status, invoices, and documents.\n\nTech stack section: Next.js 14 with App Router, TypeScript, Tailwind CSS, PostgreSQL with Prisma (PRIZ-ma) ORM (O-R-M), hosted on Vercel.\n\nCoding standards: use TypeScript strict mode, functional React components, Tailwind for styling, no inline styles, meaningful variable names.\n\nProject structure: app directory for routes, components directory for reusable UI, lib directory for utilities and database access.\n\nCommon tasks: adding new pages, updating Prisma schema, creating API routes, styling components.\n\nImportant notes: environment variables in dot env file, never commit secrets, run prisma migrate before testing schema changes.\n\n[PAUSE]",
+      "word_count": 104
+    },
+    {
+      "segment_id": 32,
+      "start_time": 353.3,
+      "end_time": 362.0,
+      "visual_cue": "Commit to version control",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once you've created your CLAUDE.md, commit it to your git repository. It becomes part of your project documentation.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 33,
+      "start_time": 362.0,
+      "end_time": 367.1,
+      "visual_cue": "Global vs project scope",
+      "visual_type": "comparison_table",
+      "spoken_text": "There are two levels of configuration: global and project-specific.\n\n[PAUSE]",
+      "word_count": 9
+    },
+    {
+      "segment_id": 34,
+      "start_time": 367.1,
+      "end_time": 377.4,
+      "visual_cue": "Global settings scope",
+      "visual_type": "screen_capture",
+      "spoken_text": "Global settings apply to Claude Code everywhere. These live in your home directory. Things like API keys, general preferences, and default behaviors.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 35,
+      "start_time": 377.4,
+      "end_time": 390.5,
+      "visual_cue": "Project settings scope",
+      "visual_type": "screen_capture",
+      "spoken_text": "Project settings apply to a specific project. These live in the project directory. CLAUDE.md is the primary example. It only affects Claude Code when you're working in that project.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 36,
+      "start_time": 390.5,
+      "end_time": 400.0,
+      "visual_cue": "Override behavior",
+      "visual_type": "screen_capture",
+      "spoken_text": "When both exist, project settings can override global settings. This lets you have general preferences but customize for specific projects.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 37,
+      "start_time": 400.0,
+      "end_time": 412.7,
+      "visual_cue": "Example scenario",
+      "visual_type": "text_overlay",
+      "spoken_text": "For example, your global setting might prefer tabs for indentation. But one project you inherited uses spaces. The project's CLAUDE.md can specify \"use spaces\" for that project only.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 38,
+      "start_time": 412.7,
+      "end_time": 418.2,
+      "visual_cue": "Advanced options header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's touch on some advanced customization options for power users.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 39,
+      "start_time": 418.2,
+      "end_time": 431.3,
+      "visual_cue": "Custom aliases",
+      "visual_type": "text_overlay",
+      "spoken_text": "Shell aliases. You can create command shortcuts. In your bash or zsh config, add something like: alias cc equals claude. Now you can just type cc instead of claude.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 40,
+      "start_time": 431.3,
+      "end_time": 441.6,
+      "visual_cue": "Project-specific startup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Project-specific startup commands. Some people create scripts that navigate to a project and launch Claude Code with specific options. Automates the workflow.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 41,
+      "start_time": 441.6,
+      "end_time": 452.7,
+      "visual_cue": "Integration with editor",
+      "visual_type": "text_overlay",
+      "spoken_text": "Editor integration. If you use VS Code, there are extensions that integrate with Claude Code. You can launch Claude sessions right from your editor.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 42,
+      "start_time": 452.7,
+      "end_time": 463.8,
+      "visual_cue": "Multiple API keys",
+      "visual_type": "text_overlay",
+      "spoken_text": "Multiple API keys. If you have different Anthropic accounts for work and personal use, you can configure different API keys and switch between them.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 43,
+      "start_time": 463.8,
+      "end_time": 472.5,
+      "visual_cue": "Environment-based config",
+      "visual_type": "text_overlay",
+      "spoken_text": "Environment-based configuration. Using environment variables, you can have different settings for development versus production environments. Useful for teams.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 44,
+      "start_time": 472.5,
+      "end_time": 477.2,
+      "visual_cue": "Configuration maintenance",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configuration isn't set-and-forget. Here's how to maintain it.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 45,
+      "start_time": 477.2,
+      "end_time": 488.7,
+      "visual_cue": "Regular updates",
+      "visual_type": "text_overlay",
+      "spoken_text": "Update CLAUDE.md as your project evolves. When you add a new feature, update the file. When you change conventions, update the file. Keep it current.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 46,
+      "start_time": 488.7,
+      "end_time": 497.8,
+      "visual_cue": "Version control",
+      "visual_type": "text_overlay",
+      "spoken_text": "Keep CLAUDE.md in version control. It's documentation. When new team members join, they benefit from the context you've built.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 47,
+      "start_time": 497.8,
+      "end_time": 507.3,
+      "visual_cue": "Backup global settings",
+      "visual_type": "screen_capture",
+      "spoken_text": "Backup your global settings periodically. If you get a new computer or need to reinstall, you'll want those preferences preserved.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 48,
+      "start_time": 507.3,
+      "end_time": 516.4,
+      "visual_cue": "Share with team",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're on a team, share configurations. Standardize on a CLAUDE.md template. Ensure everyone's Claude Code experience is consistent.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 49,
+      "start_time": 516.4,
+      "end_time": 519.1,
+      "visual_cue": "Exercise instructions",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's your exercise.\n\n[PAUSE]",
+      "word_count": 3
+    },
+    {
+      "segment_id": 50,
+      "start_time": 519.1,
+      "end_time": 529.4,
+      "visual_cue": "Step 1",
+      "visual_type": "text_overlay",
+      "spoken_text": "Step one: Navigate to a project you're working on. If you don't have one, create a practice project with a clear purpose.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 51,
+      "start_time": 529.4,
+      "end_time": 538.5,
+      "visual_cue": "Step 2",
+      "visual_type": "text_overlay",
+      "spoken_text": "Step two: Create a CLAUDE.md file. Include at least: project overview, tech stack, coding standards, and one important note.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 52,
+      "start_time": 538.5,
+      "end_time": 548.8,
+      "visual_cue": "Step 3",
+      "visual_type": "text_overlay",
+      "spoken_text": "Step three: Exit and relaunch Claude Code in that directory. Ask Claude something project-specific and notice how it references your CLAUDE.md context.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 53,
+      "start_time": 548.8,
+      "end_time": 559.5,
+      "visual_cue": "Step 4",
+      "visual_type": "text_overlay",
+      "spoken_text": "Step four: Check your global settings file. Understand what's configured there. Make one change, like adding a preference, and verify it takes effect.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 54,
+      "start_time": 559.5,
+      "end_time": 569.0,
+      "visual_cue": "Verification",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll know it worked when Claude's responses feel more tailored to your specific project without you having to explain context.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 55,
+      "start_time": 569.0,
+      "end_time": 580.5,
+      "visual_cue": "Configuration benefits summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "Proper configuration transforms Claude Code from a general-purpose tool into your personalized AI assistant. It knows your stack, follows your standards, and understands your projects.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 56,
+      "start_time": 580.5,
+      "end_time": 591.6,
+      "visual_cue": "Time investment payoff",
+      "visual_type": "text_overlay",
+      "spoken_text": "The time you spend on configuration pays off every single session. You'll spend less time explaining context and more time getting actual work done.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 57,
+      "start_time": 591.6,
+      "end_time": 609.0,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next up, the final lesson of Module 2: Advanced Features. We'll cover Git integration, working across multiple files, and using hooks to automate your workflow even further.\n\n[PAUSE]\n\nSet up your configuration, then I'll see you there.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 58,
+      "start_time": 609.0,
+      "end_time": 611.0,
+      "visual_cue": "Fade to \"Next: Advanced Features\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "CLAUDE.md introduction",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Advanced Features\" with Support Forge branding",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Global vs project scope",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Configuring Settings\" title",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Available settings categories",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Backup global settings",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Default settings content",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Default settings location by OS",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Editing settings",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Global settings scope",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Navigate to settings",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Override behavior",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Project settings scope",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Settings file location",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "settings.json file",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "API key configuration",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Advanced options header",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude generates the file",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Commit to version control",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Configuration benefits summary",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Configuration maintenance",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Configuration options overview",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Create the file",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Custom aliases",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Default behaviors",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Environment-based config",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example CLAUDE.md content",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example project setup",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example scenario",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise instructions",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Hands-on creation",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Integration with editor",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Model selection setting",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Multiple API keys",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Navigate to project",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Project-specific startup",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Regular updates",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Share with team",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Show file content",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 1",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 2",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 3",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Step 4",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Coding Standards",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Common Tasks",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Important Notes",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Project Overview",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Project Structure",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template section - Tech Stack",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Theme and display",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Time investment payoff",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Verification",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Version control",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Viewing the file",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What CLAUDE.md does",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What to include",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Where to place it",
+      "segment_ids": [
+        17
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes (~2250-2550 words)",
+    "lesson": "Module 2, Lesson 4",
+    "purpose": "Settings file configuration, CLAUDE.md setup, customization options",
+    "stated_word_count": "1,850",
+    "stated_runtime": "14:30-15:30"
+  },
+  "parsed_at": "2026-01-06T22:53:56.074162"
+}

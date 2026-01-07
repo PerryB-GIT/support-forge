@@ -1,0 +1,414 @@
+{
+  "script_id": "script-4.2-installing-superpowers",
+  "title": "Installing the Superpowers Plugin",
+  "total_duration_seconds": 392.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 21.5,
+      "visual_cue": "Lesson title with Superpowers branding/logo",
+      "visual_type": "animated_title",
+      "spoken_text": "The Superpowers plugin is one of the most popular Claude Code extensions out there. [PAUSE] It's a collection of carefully crafted skills that cover common development workflows.\n\nIn this lesson, we'll install Superpowers, take a tour of what's included, and demo some key skills so you can see them in action.",
+      "word_count": 50
+    },
+    {
+      "segment_id": 2,
+      "start_time": 21.5,
+      "end_time": 27.9,
+      "visual_cue": "Preview of skills included in Superpowers",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end, you'll have a toolkit of skills ready to use in your daily work.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 3,
+      "start_time": 27.9,
+      "end_time": 104.8,
+      "visual_cue": "Superpowers skill list appearing one by one",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we install, let's preview what you're getting.\n\n**superpowers:brainstorming** - Use this before any creative work. [PAUSE] Building a feature? Adding functionality? This skill helps you explore requirements and design before jumping into code.\n\n**superpowers:writing-plans** - When you have specs or requirements, this skill creates structured implementation plans. [PAUSE] Think before you build.\n\n**superpowers:executing-plans** - Takes a written plan and executes it methodically with review checkpoints.\n\n**superpowers:test-driven-development** - Guides you through TDD workflow. [PAUSE] Write tests first, then implement.\n\n**superpowers:systematic-debugging** - Hit a bug? [PAUSE] This skill walks you through diagnosis before proposing fixes.\n\n**superpowers:requesting-code-review** - Get Claude to review your work before merging.\n\n**superpowers:receiving-code-review** - When you get feedback, this skill helps you respond appropriately.\n\n**superpowers:verification-before-completion** - Prevents premature \"done\" claims. [PAUSE] Requires running verification commands before celebrating.\n\n**superpowers:using-git-worktrees** - Helps you work with Git worktrees for isolated feature development.\n\n**superpowers:dispatching-parallel-agents** - When you have independent tasks, this coordinates parallel work.\n\n[PAUSE]\n\nThese skills encode best practices. [PAUSE] Things like \"don't claim it's fixed until you've verified\" and \"explore requirements before implementing.\"",
+      "word_count": 166
+    },
+    {
+      "segment_id": 4,
+      "start_time": 104.8,
+      "end_time": 127.0,
+      "visual_cue": "Terminal ready for installation",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's install it. [PAUSE] Open Claude Code in your terminal.\n\nThe Superpowers plugin is hosted on GitHub. [PAUSE] To install a plugin, you typically add it to your Claude Code configuration, but the exact method depends on how the plugin is distributed.\n\nFor Superpowers, we'll use the plugin marketplace approach.",
+      "word_count": 48
+    },
+    {
+      "segment_id": 5,
+      "start_time": 127.0,
+      "end_time": 130.2,
+      "visual_cue": "Typing the installation command",
+      "visual_type": "screen_capture",
+      "spoken_text": "In Claude Code, type:\n\n```\n/install-plugin superpowers\n```",
+      "word_count": 8
+    },
+    {
+      "segment_id": 6,
+      "start_time": 130.2,
+      "end_time": 144.1,
+      "visual_cue": "Claude acknowledging and downloading",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude recognizes this command, finds the Superpowers plugin from the marketplace, and installs it. [PAUSE] You'll see it downloading and confirming successful installation.\n\nIf that command isn't available, here's the manual approach:",
+      "word_count": 31
+    },
+    {
+      "segment_id": 7,
+      "start_time": 144.1,
+      "end_time": 153.7,
+      "visual_cue": "Alternative installation steps",
+      "visual_type": "screen_capture",
+      "spoken_text": "First, find where your Claude Code plugins directory is:\n- Windows: `%APPDATA%\\Claude\\plugins\\`\n- Mac: `~/Library/Application Support/Claude/plugins/`\n\nCreate a folder called `superpowers` in that directory.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 8,
+      "start_time": 153.7,
+      "end_time": 171.6,
+      "visual_cue": "File browser showing directory creation",
+      "visual_type": "screen_capture",
+      "spoken_text": "Then, download the Superpowers plugin files from their GitHub repository and place them in that folder. [PAUSE] The key file is the plugin manifest that tells Claude Code what skills are available.\n\nAfter installation, restart Claude Code to load the new plugin.",
+      "word_count": 41
+    },
+    {
+      "segment_id": 9,
+      "start_time": 171.6,
+      "end_time": 182.8,
+      "visual_cue": "Claude Code restarting and showing Superpowers loaded",
+      "visual_type": "text_overlay",
+      "spoken_text": "When Claude Code starts, you should see Superpowers listed in the available plugins.\n\n### Verifying Installation\n\nType:\n\n```\nWhat skills do I have from the Superpowers plugin?\n```",
+      "word_count": 28
+    },
+    {
+      "segment_id": 10,
+      "start_time": 182.8,
+      "end_time": 190.7,
+      "visual_cue": "Claude listing Superpowers skills",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude should list all the skills we previewed earlier. [PAUSE] If you see them, installation was successful.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 11,
+      "start_time": 190.7,
+      "end_time": 194.7,
+      "visual_cue": "\"Skills Demo\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's see some of these in action.\n\n### Brainstorming Demo",
+      "word_count": 10
+    },
+    {
+      "segment_id": 12,
+      "start_time": 194.7,
+      "end_time": 207.8,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Say you're about to build a user authentication feature. [PAUSE] Instead of diving into code, invoke brainstorming:\n\n```\n/superpowers:brainstorming I need to add user authentication to my Next.js app\n```",
+      "word_count": 29
+    },
+    {
+      "segment_id": 13,
+      "start_time": 207.8,
+      "end_time": 226.1,
+      "visual_cue": "Claude entering brainstorming mode",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch what Claude does. [PAUSE] It doesn't immediately start coding. Instead, it asks questions:\n\n- What authentication method? Email/password, OAuth, magic links?\n- What's the user experience you want?\n- Are there existing users to migrate?\n- What security requirements do you have?",
+      "word_count": 42
+    },
+    {
+      "segment_id": 14,
+      "start_time": 226.1,
+      "end_time": 238.0,
+      "visual_cue": "Claude asking clarifying questions",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is the skill in action. [PAUSE] It's forcing the exploration phase before implementation. You'll catch missing requirements and make better design decisions.\n\n### Writing Plans Demo",
+      "word_count": 26
+    },
+    {
+      "segment_id": 15,
+      "start_time": 238.0,
+      "end_time": 247.6,
+      "visual_cue": "New prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Once you've brainstormed and have clarity, move to planning:\n\n```\n/superpowers:writing-plans Create a plan for implementing OAuth with Google for our Next.js app\n```",
+      "word_count": 24
+    },
+    {
+      "segment_id": 16,
+      "start_time": 247.6,
+      "end_time": 271.0,
+      "visual_cue": "Claude generating structured plan",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude produces a structured implementation plan:\n\n1. Install required packages (next-auth, etc.)\n2. Configure Google OAuth credentials\n3. Set up NextAuth API route\n4. Create sign-in/sign-out components\n5. Add protected route middleware\n6. Test authentication flow\n\n[PAUSE]\n\nEach step is specific and actionable. [PAUSE] This plan becomes your roadmap.\n\n### Systematic Debugging Demo",
+      "word_count": 51
+    },
+    {
+      "segment_id": 17,
+      "start_time": 271.0,
+      "end_time": 285.3,
+      "visual_cue": "Simulated bug scenario",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's one I use constantly. [PAUSE] You hit an error. Your instinct is to start changing things randomly. Don't.\n\n```\n/superpowers:systematic-debugging The login form submits but nothing happens, no errors in console\n```",
+      "word_count": 32
+    },
+    {
+      "segment_id": 18,
+      "start_time": 285.3,
+      "end_time": 300.1,
+      "visual_cue": "Claude in debugging mode",
+      "visual_type": "text_overlay",
+      "spoken_text": "The skill guides Claude to diagnose systematically:\n\n- What's the expected behavior?\n- What's the actual behavior?\n- Let's add logging to trace the request...\n- Let's check the network tab...\n- Let's verify the API endpoint...",
+      "word_count": 37
+    },
+    {
+      "segment_id": 19,
+      "start_time": 300.1,
+      "end_time": 311.2,
+      "visual_cue": "Claude working through diagnosis",
+      "visual_type": "text_overlay",
+      "spoken_text": "It's not guessing. [PAUSE] It's following a methodical process. This almost always finds the root cause faster than random debugging.\n\n### Verification Before Completion Demo",
+      "word_count": 24
+    },
+    {
+      "segment_id": 20,
+      "start_time": 311.2,
+      "end_time": 323.5,
+      "visual_cue": "Scenario - claiming something is fixed",
+      "visual_type": "text_overlay",
+      "spoken_text": "This skill has saved me from embarrassment multiple times. [PAUSE]\n\nWhen you're about to say \"it's done\" or \"it's fixed\":\n\n```\n/superpowers:verification-before-completion I've fixed the login bug\n```",
+      "word_count": 27
+    },
+    {
+      "segment_id": 21,
+      "start_time": 323.5,
+      "end_time": 338.6,
+      "visual_cue": "Claude requesting proof",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude doesn't just accept your claim. [PAUSE] It asks:\n\n- What command should we run to verify?\n- Show me the passing test output\n- Can we reproduce the original issue to confirm it's gone?",
+      "word_count": 34
+    },
+    {
+      "segment_id": 22,
+      "start_time": 338.6,
+      "end_time": 348.1,
+      "visual_cue": "Claude requiring evidence",
+      "visual_type": "screen_capture",
+      "spoken_text": "You're required to provide evidence before Claude lets you mark it complete. [PAUSE] No more \"oops, I thought I fixed it.\"",
+      "word_count": 20
+    },
+    {
+      "segment_id": 23,
+      "start_time": 348.1,
+      "end_time": 351.7,
+      "visual_cue": "Decision flowchart",
+      "visual_type": "flowchart",
+      "spoken_text": "Quick guide on when to reach for each skill:",
+      "word_count": 9
+    },
+    {
+      "segment_id": 24,
+      "start_time": 351.7,
+      "end_time": 375.7,
+      "visual_cue": "Flowchart appearing",
+      "visual_type": "flowchart",
+      "spoken_text": "**Starting something new?** → Brainstorming first\n\n**Have requirements, need a plan?** → Writing Plans\n\n**Have a plan, ready to build?** → Executing Plans or Test-Driven Development\n\n**Hit a bug or unexpected behavior?** → Systematic Debugging\n\n**Think you're done?** → Verification Before Completion\n\n**Want feedback on your code?** → Requesting Code Review\n\n**Got feedback from someone else?** → Receiving Code Review",
+      "word_count": 60
+    },
+    {
+      "segment_id": 25,
+      "start_time": 375.7,
+      "end_time": 392.0,
+      "visual_cue": "\"Next: Installing Industry Skills\" with arrow",
+      "visual_type": "screen_capture",
+      "spoken_text": "That's Superpowers installed and demoed. [PAUSE] These skills will become second nature once you start using them.\n\nNext, we'll look at finding and installing other skills from the community - industry-specific skills that might match your exact workflow.",
+      "word_count": 37
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title with Superpowers branding/logo",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Decision flowchart",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Flowchart appearing",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Next: Installing Industry Skills\" with arrow",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Alternative installation steps",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude requiring evidence",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "File browser showing directory creation",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "New prompt",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal ready for installation",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Typing the installation command",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Skills Demo\" header",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude Code restarting and showing Superpowers loaded",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude acknowledging and downloading",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude asking clarifying questions",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude entering brainstorming mode",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude generating structured plan",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude in debugging mode",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude listing Superpowers skills",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude requesting proof",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude working through diagnosis",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Preview of skills included in Superpowers",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Scenario - claiming something is fixed",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Simulated bug scenario",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Superpowers skill list appearing one by one",
+      "segment_ids": [
+        3
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes",
+    "lesson": "4.2 - Installing the Superpowers Plugin"
+  },
+  "parsed_at": "2026-01-06T22:53:56.106282"
+}

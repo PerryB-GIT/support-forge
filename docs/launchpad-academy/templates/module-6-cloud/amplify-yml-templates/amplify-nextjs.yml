@@ -1,0 +1,67 @@
+# AWS Amplify Build Configuration for Next.js
+# Place this file as amplify.yml in your repository root
+#
+# Supports: Next.js 13+ with App Router or Pages Router
+# Features: SSR, ISR, API Routes, Image Optimization
+
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Use specific Node version (adjust as needed)
+        - nvm use 20
+
+        # Install dependencies with clean install
+        - npm ci
+
+        # Optional: Run linting before build
+        # - npm run lint
+
+    build:
+      commands:
+        # Pass environment variables to Next.js build
+        # This ensures NEXT_PUBLIC_ vars are available at build time
+        - env | grep -e NEXT_PUBLIC_ >> .env.production
+
+        # Build the Next.js application
+        # Increase memory if needed for large apps
+        - npm run build
+
+    postBuild:
+      commands:
+        # Optional: Run post-build verification
+        # - npm run test:ci
+
+  artifacts:
+    # Next.js build output directory
+    baseDirectory: .next
+    files:
+      - '**/*'
+
+  cache:
+    paths:
+      # Cache node_modules for faster subsequent builds
+      - node_modules/**/*
+      # Cache Next.js build cache for incremental builds
+      - .next/cache/**/*
+
+# Custom headers for caching static assets
+customHeaders:
+  - pattern: '**/*.js'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.css'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.woff2'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+
+# Environment variables required (set in Amplify Console):
+# - NEXT_PUBLIC_API_URL: Your API endpoint
+# - NEXT_PUBLIC_SITE_URL: Your site URL for SEO
+# - Add any other NEXT_PUBLIC_ variables as needed

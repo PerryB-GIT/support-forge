@@ -1,0 +1,1105 @@
+{
+  "script_id": "script-2.2-first-session",
+  "title": "Your First Claude Code Session",
+  "total_duration_seconds": 685.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 5.5,
+      "visual_cue": "Terminal with Claude Code ready",
+      "visual_type": "screen_capture",
+      "spoken_text": "Alright, Claude Code is installed. Now let's actually use it.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 2,
+      "start_time": 5.5,
+      "end_time": 22.9,
+      "visual_cue": "\"Your First Claude Code Session\" title",
+      "visual_type": "text_overlay",
+      "spoken_text": "In this lesson, we're going to explore the interface, learn the commands you'll use every day, and complete some basic operations. By the end, you'll be comfortable having productive conversations with Claude Code.\n\n[PAUSE]\n\nLet's dive in.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 3,
+      "start_time": 22.9,
+      "end_time": 31.2,
+      "visual_cue": "Terminal navigation",
+      "visual_type": "screen_capture",
+      "spoken_text": "First, open your terminal. On Windows, that's Ubuntu through WSL. On Mac and Linux, your regular terminal.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 4,
+      "start_time": 31.2,
+      "end_time": 43.0,
+      "visual_cue": "Navigate to project directory",
+      "visual_type": "text_overlay",
+      "spoken_text": "Navigate to a folder where you want to work. For now, let's create a practice folder. Type: mkdir claude-practice\n\n[PAUSE]\n\nThen: cd claude-practice\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 5,
+      "start_time": 43.0,
+      "end_time": 47.7,
+      "visual_cue": "Launch command",
+      "visual_type": "screen_capture",
+      "spoken_text": "Now launch Claude Code by simply typing: claude\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 6,
+      "start_time": 47.7,
+      "end_time": 56.4,
+      "visual_cue": "Claude Code interface appears",
+      "visual_type": "screen_capture",
+      "spoken_text": "You'll see the Claude Code interface load. There's a prompt waiting for your input. This is your workspace.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 7,
+      "start_time": 56.4,
+      "end_time": 60.7,
+      "visual_cue": "Interface elements labeled",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's break down what you're looking at.\n\n[PAUSE]",
+      "word_count": 7
+    },
+    {
+      "segment_id": 8,
+      "start_time": 60.7,
+      "end_time": 71.8,
+      "visual_cue": "Input prompt highlighted",
+      "visual_type": "screen_capture",
+      "spoken_text": "At the bottom, you've got your input prompt. This is where you type your messages, questions, and instructions. Claude reads everything you type here.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 9,
+      "start_time": 71.8,
+      "end_time": 81.7,
+      "visual_cue": "Response area highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Above that, you'll see Claude's responses appear. The conversation flows from top to bottom, with your messages and Claude's replies alternating.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 10,
+      "start_time": 81.7,
+      "end_time": 94.8,
+      "visual_cue": "Context indicator",
+      "visual_type": "text_overlay",
+      "spoken_text": "You might notice some context information, like what directory you're in, or what files Claude is aware of. This helps you understand what Claude can \"see\" when you're working.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 11,
+      "start_time": 94.8,
+      "end_time": 107.5,
+      "visual_cue": "Status indicators",
+      "visual_type": "text_overlay",
+      "spoken_text": "Status indicators show when Claude is thinking, when it's writing a file, or when it's waiting for your input. Pay attention to these so you know what's happening.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 12,
+      "start_time": 107.5,
+      "end_time": 116.2,
+      "visual_cue": "Commands reference card",
+      "visual_type": "screen_capture",
+      "spoken_text": "Claude Code has built-in commands that start with a forward slash. These are your shortcuts for common operations.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 13,
+      "start_time": 116.2,
+      "end_time": 129.2,
+      "visual_cue": "/help command",
+      "visual_type": "screen_capture",
+      "spoken_text": "The most important command to remember: /help\n\n[PAUSE]\n\nType that now. You'll see a list of all available commands with brief descriptions. When in doubt, help.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 14,
+      "start_time": 129.2,
+      "end_time": 138.3,
+      "visual_cue": "/clear command",
+      "visual_type": "screen_capture",
+      "spoken_text": "/clear wipes the current conversation. Useful when you want to start fresh or when the context is getting cluttered.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 15,
+      "start_time": 138.3,
+      "end_time": 144.2,
+      "visual_cue": "/exit command",
+      "visual_type": "screen_capture",
+      "spoken_text": "/exit closes Claude Code and returns you to your regular terminal.\n\n[PAUSE]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 16,
+      "start_time": 144.2,
+      "end_time": 152.1,
+      "visual_cue": "/model command",
+      "visual_type": "screen_capture",
+      "spoken_text": "/model shows you which AI model you're using. Claude Code defaults to the latest Claude model.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 17,
+      "start_time": 152.1,
+      "end_time": 160.8,
+      "visual_cue": "/cost command",
+      "visual_type": "screen_capture",
+      "spoken_text": "/cost shows your current session cost and estimated API usage. Keep an eye on this while you're learning.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 18,
+      "start_time": 160.8,
+      "end_time": 169.1,
+      "visual_cue": "/memory command",
+      "visual_type": "screen_capture",
+      "spoken_text": "/memory lets you view what Claude remembers about your project. We'll explore this more in later lessons.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 19,
+      "start_time": 169.1,
+      "end_time": 175.0,
+      "visual_cue": "Ready for first prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's have a real conversation. Don't overthink it, just type naturally.\n\n[PAUSE]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 20,
+      "start_time": 175.0,
+      "end_time": 183.3,
+      "visual_cue": "Simple greeting example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Type: Hi Claude. I'm new to this. Can you tell me what you can help me with?\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 21,
+      "start_time": 183.3,
+      "end_time": 195.2,
+      "visual_cue": "Claude's response",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude will respond with an overview of its capabilities. Notice how it's conversational but informative. This is how interactions work: you ask or instruct, Claude responds.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 22,
+      "start_time": 195.2,
+      "end_time": 206.7,
+      "visual_cue": "Follow-up question",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now let's go deeper. Type: I'm trying to automate parts of my business. I do marketing consulting. What kinds of things could we build together?\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 23,
+      "start_time": 206.7,
+      "end_time": 228.1,
+      "visual_cue": "Claude's detailed response",
+      "visual_type": "text_overlay",
+      "spoken_text": "See how Claude adapts to your specific context? It's not giving generic advice. It's thinking about what makes sense for a marketing consultant.\n\n[PAUSE]\n\nThis is key: the more context you give, the better the responses. Claude doesn't read your mind. Tell it what you're working on.\n\n[PAUSE]",
+      "word_count": 46
+    },
+    {
+      "segment_id": 24,
+      "start_time": 228.1,
+      "end_time": 236.4,
+      "visual_cue": "File operations intro",
+      "visual_type": "animated_title",
+      "spoken_text": "Claude Code can read, create, and modify files. This is where it becomes more than a chatbot.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 25,
+      "start_time": 236.4,
+      "end_time": 241.9,
+      "visual_cue": "Create a file prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Type: Create a simple Python script that prints \"Hello, World!\"\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 26,
+      "start_time": 241.9,
+      "end_time": 254.6,
+      "visual_cue": "Claude creates the file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch what happens. Claude will create a file, usually hello.py (hello dot P-Y), and show you its contents. It'll ask for confirmation before actually writing to your filesystem.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 27,
+      "start_time": 254.6,
+      "end_time": 263.3,
+      "visual_cue": "Confirmation prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "This confirmation step is important. Always read what Claude's about to do before saying yes. It prevents accidents.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 28,
+      "start_time": 263.3,
+      "end_time": 277.1,
+      "visual_cue": "File created confirmation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once you confirm, the file exists in your directory. You can verify by typing: ls\n\n[PAUSE]\n\nThat's a Linux command that lists files. You should see hello.py there.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 29,
+      "start_time": 277.1,
+      "end_time": 283.0,
+      "visual_cue": "Read a file prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Now let's read it back. Type: Show me what's in hello.py\n\n[PAUSE]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 30,
+      "start_time": 283.0,
+      "end_time": 293.7,
+      "visual_cue": "Claude displays file contents",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude reads the file and shows you its contents. You can also ask it to explain the code, modify it, or add features.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 31,
+      "start_time": 293.7,
+      "end_time": 301.6,
+      "visual_cue": "Modify a file prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Try this: Modify the script to ask for the user's name and then greet them personally\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 32,
+      "start_time": 301.6,
+      "end_time": 311.9,
+      "visual_cue": "Claude shows modification plan",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude will show you the changes it wants to make. It'll typically show the new code and ask for confirmation before applying.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 33,
+      "start_time": 311.9,
+      "end_time": 321.8,
+      "visual_cue": "Confirming changes",
+      "visual_type": "text_overlay",
+      "spoken_text": "Confirm, and the file is updated. This workflow, ask, review, confirm, is how you'll work with Claude Code on real projects.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 34,
+      "start_time": 321.8,
+      "end_time": 326.9,
+      "visual_cue": "Learning mode",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude isn't just for doing. It's for learning too.\n\n[PAUSE]",
+      "word_count": 9
+    },
+    {
+      "segment_id": 35,
+      "start_time": 326.9,
+      "end_time": 334.0,
+      "visual_cue": "Explain prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Type: Explain what each line of that Python script does. I'm new to programming.\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 36,
+      "start_time": 334.0,
+      "end_time": 347.1,
+      "visual_cue": "Claude's explanation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude breaks down the code line by line, explaining concepts at the level you indicated. Notice I said \"I'm new to programming.\" That context helps Claude calibrate its explanation.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 37,
+      "start_time": 347.1,
+      "end_time": 356.6,
+      "visual_cue": "Follow-up for deeper understanding",
+      "visual_type": "text_overlay",
+      "spoken_text": "If something doesn't make sense, ask follow-ups: What does 'input()' mean exactly? Why do we use 'f' before the string?\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 38,
+      "start_time": 356.6,
+      "end_time": 364.5,
+      "visual_cue": "Interactive learning",
+      "visual_type": "calculator",
+      "spoken_text": "This back-and-forth is how you learn effectively. Don't just nod along. Ask questions until it clicks.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 39,
+      "start_time": 364.5,
+      "end_time": 370.0,
+      "visual_cue": "Context concept visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Here's something crucial to understand: Claude Code has context awareness.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 40,
+      "start_time": 370.0,
+      "end_time": 384.3,
+      "visual_cue": "Directory context",
+      "visual_type": "text_overlay",
+      "spoken_text": "It knows what directory you're in. It can see the files in that directory. When you reference \"the script\" or \"that file,\" it knows what you mean based on your recent conversation.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 41,
+      "start_time": 384.3,
+      "end_time": 394.2,
+      "visual_cue": "Conversation context",
+      "visual_type": "text_overlay",
+      "spoken_text": "It also remembers your conversation within the session. If you mentioned you're a marketing consultant earlier, it carries that context forward.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 42,
+      "start_time": 394.2,
+      "end_time": 409.7,
+      "visual_cue": "Context limitations",
+      "visual_type": "text_overlay",
+      "spoken_text": "But context has limits. If you exit and restart Claude Code, the conversation resets. If your project has hundreds of files, Claude might not be aware of all of them unless you specifically reference them.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 43,
+      "start_time": 409.7,
+      "end_time": 422.0,
+      "visual_cue": "Explicit context is best",
+      "visual_type": "text_overlay",
+      "spoken_text": "Best practice: be explicit about context. Instead of \"fix the bug,\" say \"in the hello.py file, there's an error on line 5. Fix it.\" Specific beats vague.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 44,
+      "start_time": 422.0,
+      "end_time": 426.7,
+      "visual_cue": "Code execution",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude Code can also run code for you.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 45,
+      "start_time": 426.7,
+      "end_time": 430.2,
+      "visual_cue": "Run command prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Type: Run the hello.py script\n\n[PAUSE]",
+      "word_count": 5
+    },
+    {
+      "segment_id": 46,
+      "start_time": 430.2,
+      "end_time": 442.1,
+      "visual_cue": "Execution output",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude executes the script and shows you the output. If it requires input, like our modified script asking for a name, you'll see that interactive prompt.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 47,
+      "start_time": 442.1,
+      "end_time": 454.4,
+      "visual_cue": "Error handling",
+      "visual_type": "text_overlay",
+      "spoken_text": "If there's an error, Claude shows you the error message and typically offers to help fix it. Try intentionally breaking the code and see how Claude responds.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 48,
+      "start_time": 454.4,
+      "end_time": 467.1,
+      "visual_cue": "Safety note",
+      "visual_type": "text_overlay",
+      "spoken_text": "Important safety note: Claude Code can execute code on your machine. That's powerful but requires trust. Always review what you're running, especially if it came from somewhere else.\n\n[PAUSE]",
+      "word_count": 28
+    },
+    {
+      "segment_id": 49,
+      "start_time": 467.1,
+      "end_time": 471.8,
+      "visual_cue": "Complex task example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's try something more complex. A multi-step task.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 50,
+      "start_time": 471.8,
+      "end_time": 485.3,
+      "visual_cue": "Multi-step prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Type: Create a simple web page that shows the current time. It should refresh automatically every second. Include an HTML file and a CSS file to make it look nice.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 51,
+      "start_time": 485.3,
+      "end_time": 496.8,
+      "visual_cue": "Claude's plan",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude will often break this down into steps. First, it'll create the HTML. Then the CSS. Then it might suggest JavaScript for the auto-refresh functionality.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 52,
+      "start_time": 496.8,
+      "end_time": 506.3,
+      "visual_cue": "Multiple file creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll confirm each file creation. Watch how Claude handles multiple files that need to work together. It understands the relationships.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 53,
+      "start_time": 506.3,
+      "end_time": 520.6,
+      "visual_cue": "Testing the result",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once the files are created, you can open the HTML file in a browser to see the result. On most systems: open index.html or just double-click the file in your file explorer.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 54,
+      "start_time": 520.6,
+      "end_time": 536.0,
+      "visual_cue": "Iteration",
+      "visual_type": "text_overlay",
+      "spoken_text": "If it's not quite right, iterate: Make the background darker and center the time on the page\n\n[PAUSE]\n\nClaude modifies the CSS. You confirm. The result updates. This is the development workflow.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 55,
+      "start_time": 536.0,
+      "end_time": 540.7,
+      "visual_cue": "Hands-on practice",
+      "visual_type": "text_overlay",
+      "spoken_text": "Time for you to practice. Here's your exercise.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 56,
+      "start_time": 540.7,
+      "end_time": 556.6,
+      "visual_cue": "Exercise instructions",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a new folder called \"practice-project.\" Navigate into it. Ask Claude to create a simple to-do list application that runs in the terminal. It should let you add tasks, list tasks, and mark tasks as complete.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 57,
+      "start_time": 556.6,
+      "end_time": 567.3,
+      "visual_cue": "Exercise goals",
+      "visual_type": "text_overlay",
+      "spoken_text": "Goals for this exercise: practice navigating and creating projects, experience multi-file creation, practice iterating on a solution, experience the confirm workflow multiple times.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 58,
+      "start_time": 567.3,
+      "end_time": 576.0,
+      "visual_cue": "Time estimate",
+      "visual_type": "text_overlay",
+      "spoken_text": "This should take about fifteen to twenty minutes. Take your time. Explore. Ask Claude questions when you're stuck.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 59,
+      "start_time": 576.0,
+      "end_time": 589.5,
+      "visual_cue": "Bonus challenge",
+      "visual_type": "text_overlay",
+      "spoken_text": "Bonus challenge: once it works, ask Claude to add a feature. Maybe saving tasks to a file so they persist between sessions. See how Claude handles adding to existing code.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 60,
+      "start_time": 589.5,
+      "end_time": 596.2,
+      "visual_cue": "Pro tips list",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we wrap up, here are some tips for effective Claude Code sessions.\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 61,
+      "start_time": 596.2,
+      "end_time": 605.3,
+      "visual_cue": "Tip 1 - Be specific",
+      "visual_type": "text_overlay",
+      "spoken_text": "Tip one: be specific. \"Make it better\" is weak. \"Reduce the code duplication in the validate function\" is strong.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 62,
+      "start_time": 605.3,
+      "end_time": 616.0,
+      "visual_cue": "Tip 2 - One thing at a time",
+      "visual_type": "text_overlay",
+      "spoken_text": "Tip two: tackle one thing at a time. Don't ask Claude to build an entire application in one prompt. Break it into pieces.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 63,
+      "start_time": 616.0,
+      "end_time": 627.9,
+      "visual_cue": "Tip 3 - Review before confirming",
+      "visual_type": "text_overlay",
+      "spoken_text": "Tip three: always review before confirming. Read the code Claude is about to write. Understand what it does. You're responsible for what runs on your machine.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 64,
+      "start_time": 627.9,
+      "end_time": 639.8,
+      "visual_cue": "Tip 4 - Use /clear strategically",
+      "visual_type": "text_overlay",
+      "spoken_text": "Tip four: use /clear when context gets confusing. If your conversation has gone in circles, sometimes a fresh start is faster than trying to correct course.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 65,
+      "start_time": 639.8,
+      "end_time": 651.3,
+      "visual_cue": "Tip 5 - Save good patterns",
+      "visual_type": "text_overlay",
+      "spoken_text": "Tip five: when Claude does something useful, save it somewhere. Copy interesting prompts or solutions to a notes file. Build your personal library of patterns.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 66,
+      "start_time": 651.3,
+      "end_time": 662.4,
+      "visual_cue": "Session summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've just had your first real Claude Code session. You know the interface, the essential commands, and the basic workflow: ask, review, confirm, iterate.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 67,
+      "start_time": 662.4,
+      "end_time": 683.0,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next up, we're going deeper into prompting. Not just asking questions, but crafting prompts that get exactly what you need for real business tasks. That's where the productivity gains really kick in.\n\n[PAUSE]\n\nComplete the practice exercise, then I'll see you in the next lesson.\n\n[PAUSE]",
+      "word_count": 44
+    },
+    {
+      "segment_id": 68,
+      "start_time": 683.0,
+      "end_time": 685.0,
+      "visual_cue": "Fade to \"Next: Prompting for Business Tasks\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Prompting for Business Tasks\" with Support Forge branding",
+      "segment_ids": [
+        68
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "File operations intro",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Interactive learning",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Context concept visualization",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/clear command",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/cost command",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/exit command",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/help command",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/memory command",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "/model command",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code interface appears",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Commands reference card",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Confirmation prompt",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Create a file prompt",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Explain prompt",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Input prompt highlighted",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Interface elements labeled",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Launch command",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Modify a file prompt",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Multi-step prompt",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Read a file prompt",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Ready for first prompt",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Run command prompt",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal navigation",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal with Claude Code ready",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your First Claude Code Session\" title",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Bonus challenge",
+      "segment_ids": [
+        59
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude creates the file",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude displays file contents",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude shows modification plan",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude's detailed response",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude's explanation",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude's plan",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude's response",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Code execution",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Complex task example",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Confirming changes",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Context indicator",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Context limitations",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Conversation context",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Directory context",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Error handling",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Execution output",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise goals",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise instructions",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Explicit context is best",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File created confirmation",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Follow-up for deeper understanding",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Follow-up question",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Hands-on practice",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Iteration",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Learning mode",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Multiple file creation",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Navigate to project directory",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        67
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pro tips list",
+      "segment_ids": [
+        60
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Response area highlighted",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Safety note",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Session summary",
+      "segment_ids": [
+        66
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Simple greeting example",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Status indicators",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing the result",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Time estimate",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tip 1 - Be specific",
+      "segment_ids": [
+        61
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tip 2 - One thing at a time",
+      "segment_ids": [
+        62
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tip 3 - Review before confirming",
+      "segment_ids": [
+        63
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tip 4 - Use /clear strategically",
+      "segment_ids": [
+        64
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tip 5 - Save good patterns",
+      "segment_ids": [
+        65
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "20 minutes (~3000-3400 words)",
+    "lesson": "Module 2, Lesson 2",
+    "purpose": "Interface overview, essential commands, basic operations",
+    "stated_word_count": "2,000",
+    "stated_runtime": "19:00-21:00"
+  },
+  "parsed_at": "2026-01-06T22:53:56.061805"
+}

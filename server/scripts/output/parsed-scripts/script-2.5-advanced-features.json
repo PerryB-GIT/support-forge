@@ -1,0 +1,929 @@
+{
+  "script_id": "script-2.5-advanced-features",
+  "title": "Advanced Features",
+  "total_duration_seconds": 653.7,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 9.1,
+      "visual_cue": "\"Advanced Features\" title",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've mastered the basics. Now let's unlock the advanced features that make Claude Code truly powerful for real-world development.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 2,
+      "start_time": 9.1,
+      "end_time": 23.7,
+      "visual_cue": "Topics overview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In this lesson, we're covering Git integration, multi-file operations, and hooks that automate your workflow. These are the features that separate casual users from power users.\n\n[PAUSE]\n\nLet's level up.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.7,
+      "end_time": 36.0,
+      "visual_cue": "Git logo with Claude Code",
+      "visual_type": "illustration",
+      "spoken_text": "Claude Code has deep integration with Git. If you're managing code, and even if you're just managing configuration files, Git tracking makes everything safer and more organized.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 4,
+      "start_time": 36.0,
+      "end_time": 52.3,
+      "visual_cue": "Why Git matters",
+      "visual_type": "text_overlay",
+      "spoken_text": "Why does this matter? Version control means you can always go back. If Claude makes a change that breaks something, you can revert. If you want to compare what changed, you can diff. It's your safety net.\n\n[PAUSE]",
+      "word_count": 37
+    },
+    {
+      "segment_id": 5,
+      "start_time": 52.3,
+      "end_time": 66.2,
+      "visual_cue": "Initializing Git with Claude",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's set up a project with Git. In your terminal, navigate to a project folder and ask Claude: \"Initialize a Git repository in this project and create a proper .gitignore file\"\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 6,
+      "start_time": 66.2,
+      "end_time": 77.7,
+      "visual_cue": "Claude sets up Git",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude will run git init, create a dot gitignore (dot git-ignore) file with sensible defaults, and maybe even create an initial commit. All through conversation.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 7,
+      "start_time": 77.7,
+      "end_time": 87.6,
+      "visual_cue": "Tracking changes",
+      "visual_type": "text_overlay",
+      "spoken_text": "As you work with Claude, it automatically stages and commits changes with meaningful commit messages. You can see this in action.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 8,
+      "start_time": 87.6,
+      "end_time": 105.7,
+      "visual_cue": "Example workflow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Make a change. Ask Claude: \"Create a new file called config.py with database connection settings\"\n\n[PAUSE]\n\nClaude creates the file. If you then type: git status\n\n[PAUSE]\n\nYou'll see the new file ready to be committed.\n\n[PAUSE]",
+      "word_count": 34
+    },
+    {
+      "segment_id": 9,
+      "start_time": 105.7,
+      "end_time": 121.9,
+      "visual_cue": "Asking for commits",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can also ask Claude to commit directly: \"Commit this change with a meaningful commit message\"\n\n[PAUSE]\n\nClaude will write a descriptive commit message based on what changed. No more \"fixed stuff\" commit messages.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 10,
+      "start_time": 121.9,
+      "end_time": 135.3,
+      "visual_cue": "Viewing history",
+      "visual_type": "text_overlay",
+      "spoken_text": "To see what's happened: \"Show me the recent commit history for this project\"\n\n[PAUSE]\n\nClaude will run git log and present the history in a readable format.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 11,
+      "start_time": 135.3,
+      "end_time": 147.9,
+      "visual_cue": "Reverting changes",
+      "visual_type": "text_overlay",
+      "spoken_text": "If something goes wrong: \"Revert the last commit, it broke the login feature\"\n\n[PAUSE]\n\nClaude understands Git operations and can help you undo changes safely.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 12,
+      "start_time": 147.9,
+      "end_time": 155.8,
+      "visual_cue": "Branching concept",
+      "visual_type": "text_overlay",
+      "spoken_text": "Branches let you work on features without affecting your main code. Claude Code handles branching naturally.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 13,
+      "start_time": 155.8,
+      "end_time": 162.1,
+      "visual_cue": "Creating a branch",
+      "visual_type": "text_overlay",
+      "spoken_text": "Ask: \"Create a new branch called feature-dashboard for adding a dashboard page\"\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 14,
+      "start_time": 162.1,
+      "end_time": 170.4,
+      "visual_cue": "Claude creates branch",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude runs git checkout dash b (git checkout dash B) feature-dashboard, switching you to a new branch.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 15,
+      "start_time": 170.4,
+      "end_time": 182.3,
+      "visual_cue": "Working on the branch",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now all changes happen on this branch. You can ask Claude to build the dashboard feature, make changes, commit them, all isolated from your main code.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 16,
+      "start_time": 182.3,
+      "end_time": 194.9,
+      "visual_cue": "Switching branches",
+      "visual_type": "text_overlay",
+      "spoken_text": "To go back: \"Switch to the main branch\"\n\n[PAUSE]\n\nClaude runs git checkout main. Your dashboard changes aren't there because they're on the other branch.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 17,
+      "start_time": 194.9,
+      "end_time": 208.3,
+      "visual_cue": "Merging branches",
+      "visual_type": "text_overlay",
+      "spoken_text": "When the feature is ready: \"Merge the feature-dashboard branch into main\"\n\n[PAUSE]\n\nClaude handles the merge. If there are conflicts, Claude can help you resolve them too.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 18,
+      "start_time": 208.3,
+      "end_time": 225.3,
+      "visual_cue": "Working with remotes",
+      "visual_type": "text_overlay",
+      "spoken_text": "For collaboration, you'll want to push to a remote repository like GitHub: \"Push this branch to GitHub\"\n\n[PAUSE]\n\nIf your remote is set up, Claude pushes the changes. Your team can then see and review them.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 19,
+      "start_time": 225.3,
+      "end_time": 231.6,
+      "visual_cue": "Multi-file work header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Real projects have many files. Claude Code handles complex, multi-file operations efficiently.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 20,
+      "start_time": 231.6,
+      "end_time": 244.6,
+      "visual_cue": "File awareness",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude can be aware of multiple files simultaneously. Ask: \"List all Python files in this project\"\n\n[PAUSE]\n\nClaude scans the directory and shows you the files.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 21,
+      "start_time": 244.6,
+      "end_time": 253.7,
+      "visual_cue": "Cross-file changes",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's where it gets powerful. Ask: \"I'm renaming the User class to Customer. Update all files where it's referenced.\"\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 22,
+      "start_time": 253.7,
+      "end_time": 264.4,
+      "visual_cue": "Claude refactors",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude identifies every file that references User, shows you the changes it wants to make, and with your confirmation, updates them all consistently.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 23,
+      "start_time": 264.4,
+      "end_time": 283.8,
+      "visual_cue": "Creating related files",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can also create multiple related files at once: \"Create a full CRUD (crud) API for a Product model. I need the model file, the route handlers, and the service layer.\"\n\n[PAUSE]\n\nClaude creates multiple files that work together, following consistent patterns.\n\n[PAUSE]",
+      "word_count": 41
+    },
+    {
+      "segment_id": 24,
+      "start_time": 283.8,
+      "end_time": 297.7,
+      "visual_cue": "Dependency awareness",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude understands dependencies between files. If file A imports from file B, Claude tracks that relationship. When you change file B, Claude can identify what in file A might be affected.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 25,
+      "start_time": 297.7,
+      "end_time": 310.3,
+      "visual_cue": "Project-wide search",
+      "visual_type": "screen_capture",
+      "spoken_text": "Need to find something? \"Find everywhere we use the sendEmail function in this project\"\n\n[PAUSE]\n\nClaude searches across all files and shows you the locations.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 26,
+      "start_time": 310.3,
+      "end_time": 317.8,
+      "visual_cue": "Code review capabilities",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude Code isn't just for writing code. It's excellent at reviewing and analyzing code too.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 27,
+      "start_time": 317.8,
+      "end_time": 322.5,
+      "visual_cue": "Requesting a review",
+      "visual_type": "text_overlay",
+      "spoken_text": "Ask: \"Review the auth.py file and suggest improvements\"\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 28,
+      "start_time": 322.5,
+      "end_time": 334.0,
+      "visual_cue": "Claude's analysis",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude reads the file and provides feedback. Security concerns, performance issues, code style suggestions, potential bugs. It's like having a senior developer review your work.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 29,
+      "start_time": 334.0,
+      "end_time": 349.4,
+      "visual_cue": "Specific review focus",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can focus the review: \"Review auth.py specifically for security vulnerabilities\"\n\n[PAUSE]\n\nNow Claude's analysis concentrates on security, checking for things like SQL injection (S-Q-L injection), insecure password handling, and authentication bypasses.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 30,
+      "start_time": 349.4,
+      "end_time": 364.0,
+      "visual_cue": "Comparing files",
+      "visual_type": "comparison_table",
+      "spoken_text": "Compare implementations: \"Compare how we handle errors in api/users.py versus api/products.py and suggest how to make them consistent\"\n\n[PAUSE]\n\nClaude analyzes both files and suggests a unified error handling approach.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 31,
+      "start_time": 364.0,
+      "end_time": 377.8,
+      "visual_cue": "Documentation generation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Generate documentation: \"Create documentation for the utils module, including function descriptions and usage examples\"\n\n[PAUSE]\n\nClaude reads the code and produces documentation you can include in your project.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 32,
+      "start_time": 377.8,
+      "end_time": 386.5,
+      "visual_cue": "Hooks concept",
+      "visual_type": "text_overlay",
+      "spoken_text": "Hooks are automated actions that run at specific times. Claude Code supports hooks that can transform your workflow.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 33,
+      "start_time": 386.5,
+      "end_time": 395.2,
+      "visual_cue": "Pre-commit hooks",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pre-commit hooks run before every commit. You might format code, run linters, or check for security issues automatically.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 34,
+      "start_time": 395.2,
+      "end_time": 402.3,
+      "visual_cue": "Setting up hooks",
+      "visual_type": "text_overlay",
+      "spoken_text": "Ask: \"Set up a pre-commit hook that formats Python files using Black before committing\"\n\n[PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 35,
+      "start_time": 402.3,
+      "end_time": 409.8,
+      "visual_cue": "Claude configures hook",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude creates the hook script, sets permissions, and now every commit automatically formats your code.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 36,
+      "start_time": 409.8,
+      "end_time": 426.4,
+      "visual_cue": "Custom automation",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can create custom automation too: \"Every time I create a new route file, automatically add it to the routes index\"\n\n[PAUSE]\n\nClaude can help build scripts that monitor for specific changes and respond automatically.\n\n[PAUSE]",
+      "word_count": 34
+    },
+    {
+      "segment_id": 37,
+      "start_time": 426.4,
+      "end_time": 436.7,
+      "visual_cue": "Integration with CI/CD",
+      "visual_type": "text_overlay",
+      "spoken_text": "For teams, this connects to CI/CD (C-I-C-D). Continuous Integration, Continuous Deployment. Your Git hooks can trigger automated testing, deployment pipelines, and more.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 38,
+      "start_time": 436.7,
+      "end_time": 448.2,
+      "visual_cue": "Example workflow automation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Example workflow: you write code, commit it, pre-commit hook formats and lints it, push to GitHub triggers automated tests, passing tests trigger deployment. All automated.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 39,
+      "start_time": 448.2,
+      "end_time": 453.7,
+      "visual_cue": "External tools integration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude Code can invoke external tools and incorporate their output.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 40,
+      "start_time": 453.7,
+      "end_time": 466.7,
+      "visual_cue": "Running tests",
+      "visual_type": "text_overlay",
+      "spoken_text": "Ask: \"Run the test suite and show me any failures\"\n\n[PAUSE]\n\nClaude runs pytest (pie-test) or your test framework, captures the output, and presents failures clearly.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 41,
+      "start_time": 466.7,
+      "end_time": 480.5,
+      "visual_cue": "Analyzing test failures",
+      "visual_type": "text_overlay",
+      "spoken_text": "Better yet: \"Run the tests. If any fail, analyze the failures and suggest fixes.\"\n\n[PAUSE]\n\nClaude runs tests, sees the failures, reads the relevant code, and proposes solutions.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 42,
+      "start_time": 480.5,
+      "end_time": 493.1,
+      "visual_cue": "Linting and formatting",
+      "visual_type": "text_overlay",
+      "spoken_text": "Integrate linters: \"Run ESLint (E-S-lint) on the JavaScript files and fix any issues automatically\"\n\n[PAUSE]\n\nClaude runs the linter and applies fixes where it can.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 43,
+      "start_time": 493.1,
+      "end_time": 504.9,
+      "visual_cue": "Database operations",
+      "visual_type": "text_overlay",
+      "spoken_text": "Database operations: \"Show me the current database schema from our Prisma models\"\n\n[PAUSE]\n\nClaude reads your Prisma files and explains the schema structure.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 44,
+      "start_time": 504.9,
+      "end_time": 520.3,
+      "visual_cue": "API testing",
+      "visual_type": "text_overlay",
+      "spoken_text": "API testing: \"Call our local API endpoint /api/users with a GET request and show me the response\"\n\n[PAUSE]\n\nClaude can use curl (curl) or similar tools to test your APIs during development.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 45,
+      "start_time": 520.3,
+      "end_time": 525.8,
+      "visual_cue": "Best practices header",
+      "visual_type": "text_overlay",
+      "spoken_text": "A few best practices as you use these advanced features.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 46,
+      "start_time": 525.8,
+      "end_time": 536.9,
+      "visual_cue": "Commit frequently",
+      "visual_type": "text_overlay",
+      "spoken_text": "Commit frequently. Small, focused commits are easier to understand and revert if needed. Ask Claude to commit after completing each logical piece of work.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 47,
+      "start_time": 536.9,
+      "end_time": 546.4,
+      "visual_cue": "Review before confirming",
+      "visual_type": "text_overlay",
+      "spoken_text": "For multi-file changes, review carefully. When Claude proposes changes across ten files, read what's changing. One mistake could propagate everywhere.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 48,
+      "start_time": 546.4,
+      "end_time": 557.1,
+      "visual_cue": "Use branches for experiments",
+      "visual_type": "text_overlay",
+      "spoken_text": "Use branches for experiments. \"Create a branch called experiment-new-auth\" lets you try things without risk. Delete the branch if it doesn't work out.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 49,
+      "start_time": 557.1,
+      "end_time": 566.2,
+      "visual_cue": "Keep hooks simple",
+      "visual_type": "text_overlay",
+      "spoken_text": "Keep hooks simple and fast. If your pre-commit hook takes thirty seconds, you'll start skipping it. Quick checks only.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 50,
+      "start_time": 566.2,
+      "end_time": 576.9,
+      "visual_cue": "Document your automation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Document your automation. If you set up complex hooks or scripts, add comments explaining what they do. Future you will thank present you.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 51,
+      "start_time": 576.9,
+      "end_time": 581.6,
+      "visual_cue": "Module 2 complete graphic",
+      "visual_type": "animated_title",
+      "spoken_text": "Congratulations. You've completed Module 2: Claude Code Mastery.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 52,
+      "start_time": 581.6,
+      "end_time": 597.1,
+      "visual_cue": "Skills acquired list",
+      "visual_type": "text_overlay",
+      "spoken_text": "You can now: install and configure Claude Code, have productive conversations using effective prompts, customize Claude for your specific projects, work with Git for version control, handle multi-file operations, and set up automation with hooks.\n\n[PAUSE]",
+      "word_count": 35
+    },
+    {
+      "segment_id": 53,
+      "start_time": 597.1,
+      "end_time": 610.6,
+      "visual_cue": "What's next preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the coming modules, we'll apply these skills to build real automation systems. You'll connect Claude Code with n8n, Zapier, and the cloud services you set up in Module 1.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 54,
+      "start_time": 610.6,
+      "end_time": 618.9,
+      "visual_cue": "Architect phase complete",
+      "visual_type": "text_overlay",
+      "spoken_text": "The Architect phase is complete. You've got the skills. Now we move to Unify, where everything connects.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 55,
+      "start_time": 618.9,
+      "end_time": 637.1,
+      "visual_cue": "Practice reminder",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before moving on, practice what you've learned. Pick a project, set up Git, create a CLAUDE.md file, make some changes across multiple files, commit them properly.\n\n[PAUSE]\n\nThe more you practice these advanced features, the more natural they'll become.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 56,
+      "start_time": 637.1,
+      "end_time": 649.0,
+      "visual_cue": "Community celebration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Share your progress in the community. Completing Module 2 is a real milestone. You're now ahead of most people who are just chatting with AI casually.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 57,
+      "start_time": 649.0,
+      "end_time": 653.7,
+      "visual_cue": "Fade to module completion with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "Great work. I'll see you in Module 3.\n\n[PAUSE]",
+      "word_count": 8
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to module completion with Support Forge branding",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 2 complete graphic",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparing files",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Git logo with Claude Code",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Project-wide search",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Advanced Features\" title",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "API testing",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Analyzing test failures",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Architect phase complete",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Asking for commits",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Best practices header",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Branching concept",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude configures hook",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude creates branch",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude refactors",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude sets up Git",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude's analysis",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Code review capabilities",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Commit frequently",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Community celebration",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating a branch",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating related files",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cross-file changes",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Custom automation",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Database operations",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Dependency awareness",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Document your automation",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Documentation generation",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example workflow",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example workflow automation",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "External tools integration",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File awareness",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Hooks concept",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Initializing Git with Claude",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Integration with CI/CD",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Keep hooks simple",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Linting and formatting",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Merging branches",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Multi-file work header",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practice reminder",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pre-commit hooks",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Requesting a review",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Reverting changes",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Review before confirming",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Running tests",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Setting up hooks",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Skills acquired list",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Specific review focus",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Switching branches",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Topics overview",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tracking changes",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Use branches for experiments",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Viewing history",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What's next preview",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Why Git matters",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Working on the branch",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Working with remotes",
+      "segment_ids": [
+        18
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes (~2250-2550 words)",
+    "lesson": "Module 2, Lesson 5",
+    "purpose": "Git integration, multi-file operations, hooks and automation",
+    "stated_word_count": "1,950",
+    "stated_runtime": "14:30-15:30"
+  },
+  "parsed_at": "2026-01-06T22:53:56.082675"
+}

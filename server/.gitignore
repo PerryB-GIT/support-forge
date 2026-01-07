@@ -5,6 +5,9 @@ yarn.lock
 
 # Environment variables
 .env
+.env.*
+.env.video
+.env.local
 
 # Data files
 data/submissions.json

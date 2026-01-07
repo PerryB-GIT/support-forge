@@ -1,0 +1,233 @@
+{
+  "name": "Daily Morning Briefing",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Weekdays 7AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "calendarId": "primary",
+        "timeMin": "={{ $now.toISO() }}",
+        "timeMax": "={{ $now.plus({ days: 1 }).toISO() }}",
+        "options": {
+          "singleEvents": true,
+          "orderBy": "startTime"
+        }
+      },
+      "id": "get-calendar-events",
+      "name": "Get Today's Calendar",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.2,
+      "position": [460, 180]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TASKS_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Tasks",
+          "mode": "name"
+        },
+        "filters": {
+          "filter": {
+            "filterType": "text",
+            "value": "In Progress,Todo"
+          },
+          "column": "Status"
+        },
+        "options": {}
+      },
+      "id": "get-open-tasks",
+      "name": "Get Open Tasks",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "query": "is:unread is:inbox newer_than:1d",
+        "maxResults": 20,
+        "options": {}
+      },
+      "id": "get-unread-emails",
+      "name": "Get Unread Emails",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [460, 420]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Compile all data into a daily briefing\nconst calendarEvents = $('Get Today\\'s Calendar').all().map(e => e.json);\nconst tasks = $('Get Open Tasks').all().map(e => e.json);\nconst emails = $('Get Unread Emails').all().map(e => e.json);\n\nconst today = new Date();\nconst dateStr = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });\n\n// Format calendar events\nlet calendarSection = '';\nif (calendarEvents.length > 0) {\n  calendarSection = calendarEvents.map(event => {\n    const startTime = new Date(event.start.dateTime || event.start.date);\n    const timeStr = event.start.dateTime \n      ? startTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })\n      : 'All Day';\n    return `• ${timeStr} - ${event.summary}`;\n  }).join('\\n');\n} else {\n  calendarSection = '• No meetings scheduled - great day for deep work!';\n}\n\n// Format tasks by priority\nconst highPriority = tasks.filter(t => t.Priority === 'High');\nconst otherTasks = tasks.filter(t => t.Priority !== 'High');\n\nlet taskSection = '';\nif (highPriority.length > 0) {\n  taskSection += '*High Priority:*\\n' + highPriority.map(t => `• ${t.Task} (${t.Status})`).join('\\n') + '\\n';\n}\nif (otherTasks.length > 0) {\n  taskSection += '*Other Tasks:*\\n' + otherTasks.slice(0, 5).map(t => `• ${t.Task}`).join('\\n');\n  if (otherTasks.length > 5) {\n    taskSection += `\\n_...and ${otherTasks.length - 5} more_`;\n  }\n}\nif (!taskSection) {\n  taskSection = '• All caught up!';\n}\n\n// Email summary\nlet emailSection = '';\nif (emails.length > 0) {\n  const importantSenders = emails.slice(0, 5).map(e => {\n    const from = e.from?.split('<')[0].trim() || 'Unknown';\n    const subject = e.subject?.substring(0, 40) || 'No subject';\n    return `• ${from}: ${subject}...`;\n  }).join('\\n');\n  emailSection = `${emails.length} unread emails\\n${importantSenders}`;\n} else {\n  emailSection = 'Inbox zero! 🎉';\n}\n\n// Compile briefing\nconst briefing = {\n  date: dateStr,\n  calendar_summary: calendarSection,\n  task_summary: taskSection,\n  email_summary: emailSection,\n  meeting_count: calendarEvents.length,\n  task_count: tasks.length,\n  email_count: emails.length\n};\n\nreturn briefing;"
+      },
+      "id": "compile-briefing",
+      "name": "Compile Briefing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "messages": {
+          "values": [
+            {
+              "content": "Based on the following daily briefing data, provide a brief motivational insight or productivity tip that's relevant to the day's workload. Keep it to 1-2 sentences.\n\nMeetings: {{ $json.meeting_count }}\nOpen Tasks: {{ $json.task_count }} (including high priority items)\nUnread Emails: {{ $json.email_count }}\n\nProvide a short, actionable insight."
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 100
+        }
+      },
+      "id": "generate-insight",
+      "name": "Generate Daily Insight",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.4,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "channel": "#YOUR_PERSONAL_CHANNEL",
+        "text": ":sunrise: *Good Morning! Here's Your Daily Briefing*\n:calendar: *{{ $('Compile Briefing').item.json.date }}*\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n:spiral_calendar_pad: *TODAY'S CALENDAR*\n{{ $('Compile Briefing').item.json.calendar_summary }}\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n:clipboard: *TASKS*\n{{ $('Compile Briefing').item.json.task_summary }}\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n:email: *INBOX*\n{{ $('Compile Briefing').item.json.email_summary }}\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n:bulb: *TODAY'S INSIGHT*\n{{ $json.message.content }}\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n_Have a productive day!_",
+        "otherOptions": {}
+      },
+      "id": "send-slack-briefing",
+      "name": "Send Slack Briefing",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "your-email@example.com",
+        "subject": "☀️ Your Daily Briefing - {{ $('Compile Briefing').item.json.date }}",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }\n    .container { max-width: 600px; margin: 20px auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }\n    .header { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: #333; padding: 30px 20px; text-align: center; }\n    .section { padding: 20px; border-bottom: 1px solid #eee; }\n    .section-title { font-size: 14px; text-transform: uppercase; color: #888; margin-bottom: 10px; letter-spacing: 1px; }\n    .section-content { white-space: pre-line; }\n    .insight { background: #f0f7ff; border-left: 4px solid #4a90d9; padding: 15px; margin: 10px 0; }\n    .stats { display: flex; justify-content: space-around; text-align: center; padding: 20px; background: #f8f9fa; }\n    .stat-item { }\n    .stat-number { font-size: 24px; font-weight: bold; color: #4a90d9; }\n    .stat-label { font-size: 12px; color: #888; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1 style=\"margin: 0;\">☀️ Good Morning!</h1>\n      <p style=\"margin: 10px 0 0 0;\">{{ $('Compile Briefing').item.json.date }}</p>\n    </div>\n    \n    <div class=\"stats\">\n      <div class=\"stat-item\">\n        <div class=\"stat-number\">{{ $('Compile Briefing').item.json.meeting_count }}</div>\n        <div class=\"stat-label\">Meetings</div>\n      </div>\n      <div class=\"stat-item\">\n        <div class=\"stat-number\">{{ $('Compile Briefing').item.json.task_count }}</div>\n        <div class=\"stat-label\">Tasks</div>\n      </div>\n      <div class=\"stat-item\">\n        <div class=\"stat-number\">{{ $('Compile Briefing').item.json.email_count }}</div>\n        <div class=\"stat-label\">Emails</div>\n      </div>\n    </div>\n    \n    <div class=\"section\">\n      <div class=\"section-title\">📅 Today's Calendar</div>\n      <div class=\"section-content\">{{ $('Compile Briefing').item.json.calendar_summary }}</div>\n    </div>\n    \n    <div class=\"section\">\n      <div class=\"section-title\">📋 Tasks</div>\n      <div class=\"section-content\">{{ $('Compile Briefing').item.json.task_summary }}</div>\n    </div>\n    \n    <div class=\"section\">\n      <div class=\"section-title\">📧 Inbox</div>\n      <div class=\"section-content\">{{ $('Compile Briefing').item.json.email_summary }}</div>\n    </div>\n    \n    <div class=\"section\">\n      <div class=\"section-title\">💡 Today's Insight</div>\n      <div class=\"insight\">{{ $json.message.content }}</div>\n    </div>\n  </div>\n</body>\n</html>"
+      },
+      "id": "send-email-briefing",
+      "name": "Send Email Briefing",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1120, 420]
+    }
+  ],
+  "connections": {
+    "Weekdays 7AM": {
+      "main": [
+        [
+          {
+            "node": "Get Today's Calendar",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Open Tasks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Unread Emails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Today's Calendar": {
+      "main": [
+        [
+          {
+            "node": "Compile Briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Open Tasks": {
+      "main": [
+        [
+          {
+            "node": "Compile Briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Unread Emails": {
+      "main": [
+        [
+          {
+            "node": "Compile Briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile Briefing": {
+      "main": [
+        [
+          {
+            "node": "Generate Daily Insight",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Daily Insight": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Briefing",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Email Briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "productivity",
+      "id": "1"
+    },
+    {
+      "name": "daily",
+      "id": "2"
+    }
+  ],
+  "pinData": {},
+  "_comment": "AI Launchpad Academy - Daily Briefing Workflow. Configure YOUR_TASKS_SHEET_ID, YOUR_PERSONAL_CHANNEL, and email address before use."
+}

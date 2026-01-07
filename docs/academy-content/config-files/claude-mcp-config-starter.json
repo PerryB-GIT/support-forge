@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/config-schema.json",
+  "_comment": "AI Launchpad Academy - Starter MCP Configuration",
+  "_instructions": "Save this file to: ~/.claude/claude_desktop_config.json (Mac/Linux) or %APPDATA%/Claude/claude_desktop_config.json (Windows)",
+
+  "mcpServers": {
+    "zapier": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://actions.zapier.com/mcp/YOUR_ZAPIER_MCP_URL/sse"],
+      "_setup": "Get your MCP URL from: https://actions.zapier.com/mcp/start"
+    }
+  },
+
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Read(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)"
+    ]
+  },
+
+  "settings": {
+    "theme": "system",
+    "verbose": false
+  }
+}

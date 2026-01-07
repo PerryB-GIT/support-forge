@@ -1,0 +1,350 @@
+{
+  "script_id": "script-4.1-understanding-skills",
+  "title": "Understanding Skills",
+  "total_duration_seconds": 355.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 10.7,
+      "visual_cue": "Module 4 title card \"Skills & Plugins - NETWORK Phase\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Welcome to Module 4. [PAUSE] We've unlocked MCP servers - Claude can now talk to external services. But there's another layer of extension: Skills.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 2,
+      "start_time": 10.7,
+      "end_time": 31.8,
+      "visual_cue": "Skills icon with neural network visual",
+      "visual_type": "illustration",
+      "spoken_text": "Skills are like pre-programmed expertise you can give Claude. [PAUSE] Instead of explaining how to do something every time, you define it once as a skill, and Claude just... knows how.\n\nIn this lesson, we'll understand what skills are, how they differ from MCP servers, and what's possible with them.",
+      "word_count": 49
+    },
+    {
+      "segment_id": 3,
+      "start_time": 31.8,
+      "end_time": 48.8,
+      "visual_cue": "\"Skills Explained\" header with simple diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Think about how you work with Claude normally. [PAUSE] You give instructions, context, maybe examples of what you want. Claude follows your guidance.\n\nNow imagine packaging all that guidance into a reusable file. [PAUSE] That's a skill.",
+      "word_count": 35
+    },
+    {
+      "segment_id": 4,
+      "start_time": 48.8,
+      "end_time": 80.2,
+      "visual_cue": "Comparison - Regular prompt vs Skill",
+      "visual_type": "comparison_table",
+      "spoken_text": "**Without a skill:**\n\"I want you to create a git commit. Use conventional commit format. The message should start with feat:, fix:, or docs: depending on the change type. Include a body explaining why the change was made. Add the co-author line at the end...\"\n\n**With a skill:**\n\"/commit\"\n\n[PAUSE]\n\nSame result. [PAUSE] But with a skill, all that instruction is pre-loaded. You invoke the skill, and Claude knows exactly what to do.",
+      "word_count": 71
+    },
+    {
+      "segment_id": 5,
+      "start_time": 80.2,
+      "end_time": 107.4,
+      "visual_cue": "Skill components diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Skills are defined in files - usually a SKILL.md file that contains:\n\n- A description of what the skill does [PAUSE]\n- Instructions for how Claude should behave [PAUSE]\n- Context about when to use it [PAUSE]\n- Sometimes, supporting files for reference [PAUSE]\n\nWhen you invoke a skill, Claude reads this file and follows its guidance.",
+      "word_count": 53
+    },
+    {
+      "segment_id": 6,
+      "start_time": 107.4,
+      "end_time": 113.4,
+      "visual_cue": "Side-by-side comparison table",
+      "visual_type": "comparison_table",
+      "spoken_text": "Let me clarify the difference between skills and MCP servers, because they complement each other.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 7,
+      "start_time": 113.4,
+      "end_time": 125.7,
+      "visual_cue": "MCP column highlighting",
+      "visual_type": "text_overlay",
+      "spoken_text": "**MCP servers** give Claude new capabilities - new tools to call. [PAUSE] Without the Zapier MCP, Claude literally cannot access your Google Calendar. The MCP provides that capability.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 8,
+      "start_time": 125.7,
+      "end_time": 142.8,
+      "visual_cue": "Skills column highlighting",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Skills** give Claude new knowledge and workflows - guidance on how to use its capabilities. [PAUSE] A skill might tell Claude how to structure a commit message, how to analyze code, or how to create a specific type of document.",
+      "word_count": 39
+    },
+    {
+      "segment_id": 9,
+      "start_time": 142.8,
+      "end_time": 163.9,
+      "visual_cue": "Combined workflow example",
+      "visual_type": "text_overlay",
+      "spoken_text": "The powerful combination is both together. [PAUSE]\n\nExample: You have Zapier MCP connected (capability). You create a skill called \"morning-briefing\" that tells Claude to check your calendar, scan your email for urgent items, and summarize your Drive activity (knowledge/workflow).\n\nOne skill invocation triggers a whole workflow using multiple MCP tools.",
+      "word_count": 49
+    },
+    {
+      "segment_id": 10,
+      "start_time": 163.9,
+      "end_time": 167.5,
+      "visual_cue": "\"Skill Types\" with three categories",
+      "visual_type": "text_overlay",
+      "spoken_text": "Skills come in a few flavors:\n\n### Built-in Skills",
+      "word_count": 9
+    },
+    {
+      "segment_id": 11,
+      "start_time": 167.5,
+      "end_time": 185.0,
+      "visual_cue": "Built-in skills examples",
+      "visual_type": "text_overlay",
+      "spoken_text": "Some skills come pre-packaged. [PAUSE] Depending on your Claude Code configuration, you might have access to skills for code review, debugging, or documentation right out of the box.\n\nThese are maintained by Anthropic or the Claude Code community.\n\n### Plugin Skills",
+      "word_count": 40
+    },
+    {
+      "segment_id": 12,
+      "start_time": 185.0,
+      "end_time": 207.3,
+      "visual_cue": "Plugin skills with superpowers logo",
+      "visual_type": "illustration",
+      "spoken_text": "Plugins are collections of skills bundled together. [PAUSE] The \"Superpowers\" plugin, which we'll install next lesson, includes skills for:\n\n- Brainstorming\n- Writing implementation plans\n- Systematic debugging\n- Code review workflows\n- And more\n\nPlugins are great because someone else has done the hard work of crafting well-designed skills.\n\n### Custom Skills",
+      "word_count": 52
+    },
+    {
+      "segment_id": 13,
+      "start_time": 207.3,
+      "end_time": 231.7,
+      "visual_cue": "Custom skill icon",
+      "visual_type": "illustration",
+      "spoken_text": "You can create your own skills. [PAUSE] This is where it gets really powerful.\n\nGot a specific workflow for your team? [PAUSE] Package it as a skill.\nAlways write proposals the same way? [PAUSE] Skill.\nHave a checklist before deploying? [PAUSE] Skill.\n\nWe'll build a custom skill in lesson 4.4.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 14,
+      "start_time": 231.7,
+      "end_time": 237.2,
+      "visual_cue": "Claude Code terminal with skill invocation",
+      "visual_type": "screen_capture",
+      "spoken_text": "Invoking a skill is simple. [PAUSE] You use a slash command.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 15,
+      "start_time": 237.2,
+      "end_time": 257.9,
+      "visual_cue": "Examples appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\n/commit\n/review-pr\n/brainstorm\n/morning\n```\n\nWhen you type one of these, Claude Code recognizes it as a skill invocation. [PAUSE] It loads the skill's instructions and Claude operates in that mode.\n\nSome skills take arguments:\n\n```\n/review-pr 123\n/deploy production\n```\n\nThe argument provides context the skill needs.",
+      "word_count": 48
+    },
+    {
+      "segment_id": 16,
+      "start_time": 257.9,
+      "end_time": 270.6,
+      "visual_cue": "Skill tool call example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Under the hood, when you invoke a skill, Claude Code calls a \"Skill\" tool, passing the skill name. [PAUSE] This loads the skill's SKILL.md file and any supporting context.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 17,
+      "start_time": 270.6,
+      "end_time": 277.7,
+      "visual_cue": "\"Good Skill Design\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Not all skills are created equal. [PAUSE] Here's what separates great skills from mediocre ones:",
+      "word_count": 14
+    },
+    {
+      "segment_id": 18,
+      "start_time": 277.7,
+      "end_time": 315.7,
+      "visual_cue": "Good skill characteristics",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Specific purpose.** [PAUSE] A skill should do one thing well. \"Code review\" is good. \"Do everything\" is not.\n\n**Clear instructions.** [PAUSE] The SKILL.md should tell Claude exactly how to behave - what to check, what format to use, what questions to ask.\n\n**Appropriate scope.** [PAUSE] Skills should be complex enough to be worth packaging, but not so complex they try to do too much.\n\n**Reusable.** [PAUSE] If you're only going to do something once, you don't need a skill. Skills shine for repeated workflows.",
+      "word_count": 80
+    },
+    {
+      "segment_id": 19,
+      "start_time": 315.7,
+      "end_time": 328.0,
+      "visual_cue": "Example of well-structured SKILL.md preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In lesson 4.4, we'll dissect the structure of a SKILL.md file and build one from scratch. [PAUSE] You'll see exactly how to craft instructions that produce consistent results.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 20,
+      "start_time": 328.0,
+      "end_time": 346.3,
+      "visual_cue": "Lesson recap",
+      "visual_type": "text_overlay",
+      "spoken_text": "So that's skills in a nutshell. [PAUSE]\n\n- Skills are packaged instructions that give Claude expertise\n- They're different from MCP servers, which provide capabilities\n- They come built-in, through plugins, or you create your own\n- You invoke them with slash commands",
+      "word_count": 42
+    },
+    {
+      "segment_id": 21,
+      "start_time": 346.3,
+      "end_time": 355.5,
+      "visual_cue": "\"Next: Installing the Superpowers Plugin\" with arrow",
+      "visual_type": "screen_capture",
+      "spoken_text": "Next up, we're installing the Superpowers plugin - a collection of battle-tested skills that'll immediately level up your Claude Code experience.\n\nLet's go.",
+      "word_count": 23
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Module 4 title card \"Skills & Plugins - NETWORK Phase\"",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparison - Regular prompt vs Skill",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Side-by-side comparison table",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "\"Skills Explained\" header with simple diagram",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Skill components diagram",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Custom skill icon",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Plugin skills with superpowers logo",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Skills icon with neural network visual",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Next: Installing the Superpowers Plugin\" with arrow",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal with skill invocation",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Good Skill Design\" header",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Skill Types\" with three categories",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Built-in skills examples",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Combined workflow example",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example of well-structured SKILL.md preview",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Examples appearing",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Good skill characteristics",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Lesson recap",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "MCP column highlighting",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Skill tool call example",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Skills column highlighting",
+      "segment_ids": [
+        8
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "10 minutes",
+    "lesson": "4.1 - Understanding Skills"
+  },
+  "parsed_at": "2026-01-06T22:53:56.103286"
+}

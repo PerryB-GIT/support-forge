@@ -1,0 +1,683 @@
+{
+  "script_id": "6.1-aws-fundamentals-for-ai",
+  "title": "Module 6.1: AWS Fundamentals for AI",
+  "total_duration_seconds": 463.9,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 9.1,
+      "visual_cue": "AWS logo with \"Fundamentals for AI\" subtitle",
+      "visual_type": "illustration",
+      "spoken_text": "Welcome to Module 6: Cloud Deployment. [PAUSE] This is where your AI business goes from local experiments to live production.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 2,
+      "start_time": 9.1,
+      "end_time": 21.8,
+      "visual_cue": "Cloud services floating graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Amazon Web Services - AWS - powers about a third of the internet. [PAUSE] Netflix, Airbnb, NASA, probably your bank. And it's going to power your AI applications too.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 3,
+      "start_time": 21.8,
+      "end_time": 33.0,
+      "visual_cue": "Module objectives",
+      "visual_type": "text_overlay",
+      "spoken_text": "In this lesson, we'll tour the AWS console, understand the key services you'll actually use, set up proper access controls, and talk about costs before they become surprises.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 4,
+      "start_time": 33.0,
+      "end_time": 45.3,
+      "visual_cue": "AWS Console login page",
+      "visual_type": "screen_capture",
+      "spoken_text": "Head to aws.amazon.com and sign in. [PAUSE] If you don't have an account, create one. The free tier gives you 12 months of limited access to most services.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 5,
+      "start_time": 45.3,
+      "end_time": 55.6,
+      "visual_cue": "AWS Console dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "This is the AWS Console. [PAUSE] First impression: overwhelming. Hundreds of services, acronyms everywhere. Don't panic. You'll use maybe six of them regularly.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 6,
+      "start_time": 55.6,
+      "end_time": 67.9,
+      "visual_cue": "Region selector highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "First thing: check your region. [PAUSE] See that dropdown in the top right? It says something like \"N. Virginia\" or \"us-east-1.\" This matters. Services and data are region-specific.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 7,
+      "start_time": 67.9,
+      "end_time": 78.6,
+      "visual_cue": "Region selection recommendation",
+      "visual_type": "text_overlay",
+      "spoken_text": "For most AI workloads, stick with us-east-1. [PAUSE] It's the oldest, most feature-complete region. New services launch there first, and pricing is usually lowest.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 8,
+      "start_time": 78.6,
+      "end_time": 90.1,
+      "visual_cue": "Search bar highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "The search bar is your best friend. [PAUSE] Type what you need - S3, Amplify, Lambda - and jump directly there. Don't try to navigate menus.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 9,
+      "start_time": 90.1,
+      "end_time": 98.8,
+      "visual_cue": "Services menu expanded",
+      "visual_type": "screen_capture",
+      "spoken_text": "If you want to browse, click \"Services.\" [PAUSE] Categories like Compute, Storage, Database, Machine Learning. But honestly, just search.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 10,
+      "start_time": 98.8,
+      "end_time": 107.5,
+      "visual_cue": "Recent services panel",
+      "visual_type": "text_overlay",
+      "spoken_text": "This panel shows recently visited services. [PAUSE] Once you find what you use regularly, star them for quick access.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 11,
+      "start_time": 107.5,
+      "end_time": 110.3,
+      "visual_cue": "Service icons grid",
+      "visual_type": "illustration",
+      "spoken_text": "Let's cover the services you'll actually touch.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 12,
+      "start_time": 110.3,
+      "end_time": 127.8,
+      "visual_cue": "S3 logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**S3 - Simple Storage Service** [PAUSE]\n\nThink of it as unlimited hard drive space in the cloud. Store files, host static websites, keep backups. You'll use this constantly.\n\nPricing: About 2 cents per gigabyte per month. Pennies for most use cases.",
+      "word_count": 40
+    },
+    {
+      "segment_id": 13,
+      "start_time": 127.8,
+      "end_time": 143.7,
+      "visual_cue": "Amplify logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**Amplify** [PAUSE]\n\nThis deploys full-stack web applications. Connect your GitHub repo, Amplify builds and hosts it. Automatic CI/CD, SSL certificates, custom domains. Perfect for Next.js, React, or any modern framework.\n\nWe'll do a deep dive next lesson.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 14,
+      "start_time": 143.7,
+      "end_time": 158.4,
+      "visual_cue": "Lambda logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**Lambda** [PAUSE]\n\nServerless functions. Write code that runs when triggered - API calls, file uploads, schedules. Pay only when it executes. Zero management.\n\nFor AI, Lambda often handles webhook endpoints and simple processing tasks.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 15,
+      "start_time": 158.4,
+      "end_time": 168.7,
+      "visual_cue": "API Gateway logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**API Gateway** [PAUSE]\n\nCreates REST or WebSocket APIs. Usually paired with Lambda. Your frontend calls API Gateway, Gateway triggers Lambda, Lambda returns data.",
+      "word_count": 22
+    },
+    {
+      "segment_id": 16,
+      "start_time": 168.7,
+      "end_time": 183.0,
+      "visual_cue": "CloudFront logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**CloudFront** [PAUSE]\n\nContent delivery network - CDN. Caches your content at edge locations worldwide. Makes your site fast everywhere.\n\nPair S3 with CloudFront for static site hosting that's blazing fast and incredibly cheap.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 17,
+      "start_time": 183.0,
+      "end_time": 195.7,
+      "visual_cue": "Bedrock logo and description",
+      "visual_type": "illustration",
+      "spoken_text": "**Bedrock** [PAUSE]\n\nAWS's AI service. Access Claude, Llama, and other models through AWS infrastructure. Enterprise-grade security and compliance. This is how you run Claude at scale with AWS's infrastructure.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 18,
+      "start_time": 195.7,
+      "end_time": 206.9,
+      "visual_cue": "Quick comparison table",
+      "visual_type": "comparison_table",
+      "spoken_text": "Quick mental model:\n- Store files: S3\n- Host apps: Amplify\n- Run code: Lambda\n- Create APIs: API Gateway\n- Go fast: CloudFront\n- Use AI: Bedrock",
+      "word_count": 28
+    },
+    {
+      "segment_id": 19,
+      "start_time": 206.9,
+      "end_time": 214.8,
+      "visual_cue": "IAM console",
+      "visual_type": "screen_capture",
+      "spoken_text": "IAM - Identity and Access Management. [PAUSE] This is security, and you need to get it right.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 20,
+      "start_time": 214.8,
+      "end_time": 227.1,
+      "visual_cue": "Root account warning",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your login email is the root account. [PAUSE] It has unlimited power. Never use it for daily work. Never share it. Enable MFA right now if you haven't.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 21,
+      "start_time": 227.1,
+      "end_time": 235.8,
+      "visual_cue": "MFA setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click your account name, Security credentials, then activate MFA. [PAUSE] Use an authenticator app like Google Authenticator or Authy.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 22,
+      "start_time": 235.8,
+      "end_time": 242.5,
+      "visual_cue": "Creating IAM user",
+      "visual_type": "text_overlay",
+      "spoken_text": "Instead of root, create IAM users. [PAUSE] Click \"Users\" in IAM, then \"Add users.\"",
+      "word_count": 13
+    },
+    {
+      "segment_id": 23,
+      "start_time": 242.5,
+      "end_time": 255.1,
+      "visual_cue": "User setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Name: something like \"jakeb-admin\" [PAUSE]\n\nEnable console access and programmatic access. [PAUSE] Console lets you log in to the web interface. Programmatic access creates API keys.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 24,
+      "start_time": 255.1,
+      "end_time": 265.8,
+      "visual_cue": "Permissions selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "For permissions, attach the \"AdministratorAccess\" policy for now. [PAUSE] Yes, this is broad. We'll tighten it later as you learn what you actually need.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 25,
+      "start_time": 265.8,
+      "end_time": 280.1,
+      "visual_cue": "Credential download",
+      "visual_type": "text_overlay",
+      "spoken_text": "Download those credentials. [PAUSE] Access Key ID and Secret Access Key. Store them somewhere secure - a password manager, not a text file. You cannot retrieve the secret key again after this screen.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 26,
+      "start_time": 280.1,
+      "end_time": 289.3,
+      "visual_cue": "Setting up AWS CLI",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're using AWS CLI, configure it with these credentials:\n\n```bash\naws configure\n```\n\nEnter the access key, secret key, and default region.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 27,
+      "start_time": 289.3,
+      "end_time": 303.7,
+      "visual_cue": "Best practices summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "IAM best practices:\n- Root account: MFA enabled, never used\n- Individual users: One per person\n- Least privilege: Start broad, narrow down\n- Rotate keys: At least annually\n- Never commit keys to code repositories",
+      "word_count": 36
+    },
+    {
+      "segment_id": 28,
+      "start_time": 303.7,
+      "end_time": 315.2,
+      "visual_cue": "Warning callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Seriously - never put AWS keys in code. [PAUSE] Bots scan GitHub constantly. Your account can be compromised and racking up thousands in charges within hours.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 29,
+      "start_time": 315.2,
+      "end_time": 321.9,
+      "visual_cue": "AWS Billing dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's talk money. [PAUSE] AWS billing surprises are legendary horror stories. Let's prevent that.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 30,
+      "start_time": 321.9,
+      "end_time": 325.5,
+      "visual_cue": "Cost Explorer",
+      "visual_type": "text_overlay",
+      "spoken_text": "Open \"Billing and Cost Management\" from the account menu.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 31,
+      "start_time": 325.5,
+      "end_time": 331.8,
+      "visual_cue": "Current charges view",
+      "visual_type": "text_overlay",
+      "spoken_text": "This shows your current month's charges. [PAUSE] Check this weekly while you're learning.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 32,
+      "start_time": 331.8,
+      "end_time": 333.8,
+      "visual_cue": "Setting up billing alerts",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Budgets\" then \"Create budget.\"",
+      "word_count": 5
+    },
+    {
+      "segment_id": 33,
+      "start_time": 333.8,
+      "end_time": 342.6,
+      "visual_cue": "Budget configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create a cost budget:\n- **Name:** Monthly Spending Alert\n- **Amount:** Start with $10-20 while learning\n- **Alert threshold:** 80% of budget",
+      "word_count": 22
+    },
+    {
+      "segment_id": 34,
+      "start_time": 342.6,
+      "end_time": 348.9,
+      "visual_cue": "Notification setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add your email for notifications. [PAUSE] Now you'll get warned before costs spiral.",
+      "word_count": 12
+    },
+    {
+      "segment_id": 35,
+      "start_time": 348.9,
+      "end_time": 358.5,
+      "visual_cue": "Free tier explanation",
+      "visual_type": "text_overlay",
+      "spoken_text": "The free tier is generous but limited:\n- S3: 5GB storage free\n- Lambda: 1 million requests free\n- Amplify: 1000 build minutes free",
+      "word_count": 24
+    },
+    {
+      "segment_id": 36,
+      "start_time": 358.5,
+      "end_time": 369.3,
+      "visual_cue": "What costs money",
+      "visual_type": "text_overlay",
+      "spoken_text": "What actually costs money:\n- Running EC2 instances 24/7\n- Large data transfers out of AWS\n- Unused resources you forgot about\n- AI model invocations (Bedrock)",
+      "word_count": 27
+    },
+    {
+      "segment_id": 37,
+      "start_time": 369.3,
+      "end_time": 384.1,
+      "visual_cue": "Cost-saving tips",
+      "visual_type": "text_overlay",
+      "spoken_text": "Cost survival tips:\n1. Delete what you're not using\n2. Use free tier services when possible\n3. Set billing alerts - multiple thresholds\n4. Check the billing dashboard weekly\n5. For testing, shut things down when done",
+      "word_count": 37
+    },
+    {
+      "segment_id": 38,
+      "start_time": 384.1,
+      "end_time": 397.7,
+      "visual_cue": "Real example",
+      "visual_type": "text_overlay",
+      "spoken_text": "A typical small AI app might cost:\n- Amplify hosting: $0-5/month\n- S3 storage: Under $1/month\n- Lambda executions: Usually free tier\n- Total: Under $10/month\n\nEnterprise is different, but starting out? Very affordable.",
+      "word_count": 34
+    },
+    {
+      "segment_id": 39,
+      "start_time": 397.7,
+      "end_time": 408.4,
+      "visual_cue": "Recap checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've got the AWS foundation. [PAUSE] You understand the console, know the key services, have secure access set up, and billing alerts in place.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 40,
+      "start_time": 408.4,
+      "end_time": 422.4,
+      "visual_cue": "Action items",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before moving on:\n- Create your IAM user if you haven't\n- Enable MFA on your root account\n- Set up at least one billing alert\n- Star the services we covered for quick access",
+      "word_count": 35
+    },
+    {
+      "segment_id": 41,
+      "start_time": 422.4,
+      "end_time": 433.1,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next lesson: AWS Amplify deep dive. [PAUSE] We'll connect your GitHub repo and deploy a real application with custom domain, SSL, and automatic deployments.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 42,
+      "start_time": 433.1,
+      "end_time": 463.9,
+      "visual_cue": "End card",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you there.\n\n**Total Runtime:** 15 minutes\n**Tone:** Practical orientation, security-conscious\n**Key Visuals:**\n- AWS Console screen recordings\n- Service icon animations\n- IAM security flow diagrams\n- Billing dashboard walkthrough\n\n**B-Roll Suggestions:**\n- Data center footage\n- Security lock imagery\n- Dollar signs and cost graphics\n\n**Security Emphasis:**\n- Multiple reminders about root account MFA\n- Never commit credentials warning\n- Billing alert importance\n\n**Viewer Prerequisites:**\n- AWS account created (free tier)\n- Email for notifications",
+      "word_count": 77
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "comparison_table",
+      "description": "Quick comparison table",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "API Gateway logo and description",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "AWS logo with \"Fundamentals for AI\" subtitle",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Amplify logo and description",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Bedrock logo and description",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Cloud services floating graphic",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "CloudFront logo and description",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Lambda logo and description",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "S3 logo and description",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Service icons grid",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Billing dashboard",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Console dashboard",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Console login page",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "IAM console",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Services menu expanded",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Action items",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Best practices summary",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Budget configuration",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost Explorer",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost-saving tips",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating IAM user",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Credential download",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Current charges view",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tier explanation",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "MFA setup",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Module objectives",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Notification setup",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Permissions selection",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Real example",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Recap checklist",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Recent services panel",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Region selection recommendation",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Region selector highlighted",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Root account warning",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Search bar highlighted",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Setting up AWS CLI",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Setting up billing alerts",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "User setup",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Warning callout",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What costs money",
+      "segment_ids": [
+        36
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.988669"
+}

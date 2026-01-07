@@ -1,0 +1,305 @@
+{
+  "name": "Content Pipeline - RSS to AI Summary to Slack",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule - Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://example.com/feed.xml",
+        "options": {}
+      },
+      "id": "rss-feed-read",
+      "name": "RSS Feed - Read",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "lookup",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TRACKING_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "ProcessedArticles",
+          "mode": "name"
+        },
+        "lookupColumn": "ArticleURL",
+        "lookupValue": "={{ $json.link }}",
+        "options": {}
+      },
+      "id": "check-if-processed",
+      "name": "Google Sheets - Check If Processed",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [650, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.ArticleURL }}",
+              "operation": "empty"
+            }
+          ]
+        }
+      },
+      "id": "filter-new-articles",
+      "name": "IF - Is New Article",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "model": "gpt-4o-mini",
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a content curator assistant. Summarize the following article in 2-3 concise bullet points. Focus on key takeaways that would be valuable for a professional audience. Keep it under 280 characters total.\n\nTitle: {{ $json.title }}\n\nContent:\n{{ $json.content || $json.contentSnippet || $json.description }}\n\nProvide your summary in this format:\n- Point 1\n- Point 2\n- Point 3 (optional)"
+            }
+          ]
+        },
+        "options": {
+          "maxTokens": 200,
+          "temperature": 0.7
+        }
+      },
+      "id": "openai-summarize",
+      "name": "OpenAI - Summarize Article",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.3,
+      "position": [1100, 200],
+      "credentials": {
+        "openAiApi": {
+          "id": "YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "channel": {
+          "__rl": true,
+          "value": "#content-updates",
+          "mode": "name"
+        },
+        "text": "=:newspaper: *New Article Alert*\n\n*{{ $('RSS Feed - Read').item.json.title }}*\n\n{{ $json.message.content }}\n\n:link: <{{ $('RSS Feed - Read').item.json.link }}|Read Full Article>\n:calendar: Published: {{ $('RSS Feed - Read').item.json.pubDate }}",
+        "otherOptions": {
+          "unfurl_links": false,
+          "unfurl_media": false
+        }
+      },
+      "id": "slack-post-message",
+      "name": "Slack - Post Summary",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [1350, 200],
+      "credentials": {
+        "slackApi": {
+          "id": "YOUR_SLACK_CREDENTIAL_ID",
+          "name": "Slack Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_TRACKING_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "ProcessedArticles",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ArticleURL": "={{ $('RSS Feed - Read').item.json.link }}",
+            "Title": "={{ $('RSS Feed - Read').item.json.title }}",
+            "ProcessedAt": "={{ $now.toISO() }}",
+            "Summary": "={{ $('OpenAI - Summarize Article').item.json.message.content }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "mark-as-processed",
+      "name": "Google Sheets - Mark Processed",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [1600, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "no-operation",
+      "name": "No Operation - Already Processed",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1100, 400]
+    }
+  ],
+  "connections": {
+    "Schedule - Every 6 Hours": {
+      "main": [
+        [
+          {
+            "node": "RSS Feed - Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Feed - Read": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Check If Processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets - Check If Processed": {
+      "main": [
+        [
+          {
+            "node": "IF - Is New Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Is New Article": {
+      "main": [
+        [
+          {
+            "node": "OpenAI - Summarize Article",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation - Already Processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI - Summarize Article": {
+      "main": [
+        [
+          {
+            "node": "Slack - Post Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack - Post Summary": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets - Mark Processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "launchpad-academy-template"
+  },
+  "tags": [
+    {
+      "id": "3",
+      "name": "Content"
+    },
+    {
+      "id": "4",
+      "name": "AI"
+    },
+    {
+      "id": "5",
+      "name": "Slack"
+    }
+  ],
+  "pinData": {},
+  "__README__": {
+    "description": "Content Pipeline Workflow - Monitors RSS feed, uses AI to summarize new articles, posts to Slack",
+    "setup_instructions": [
+      "1. Import this workflow into n8n",
+      "2. Update the RSS Feed URL to your target feed",
+      "3. Create a Google Sheet with 'ProcessedArticles' tab and columns: ArticleURL, Title, ProcessedAt, Summary",
+      "4. Replace YOUR_TRACKING_SHEET_ID with your Sheet ID",
+      "5. Set up Google Sheets OAuth2 credentials",
+      "6. Set up OpenAI API credentials",
+      "7. Set up Slack API credentials",
+      "8. Update the Slack channel name",
+      "9. Adjust the schedule interval as needed",
+      "10. Activate the workflow"
+    ],
+    "features": [
+      "Deduplication - tracks processed articles to avoid duplicates",
+      "AI summarization - uses GPT-4o-mini for cost-effective summaries",
+      "Configurable schedule - runs every 6 hours by default",
+      "Audit trail - logs all processed articles to spreadsheet"
+    ],
+    "customization_tips": [
+      "Add multiple RSS feeds by duplicating the RSS node",
+      "Change AI model for different summary quality/cost",
+      "Add error handling with try/catch for production use",
+      "Filter articles by keywords before summarizing"
+    ]
+  }
+}

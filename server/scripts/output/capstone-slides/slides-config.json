@@ -1,0 +1,328 @@
+{
+  "slides": [
+    {
+      "slide_number": 1,
+      "duration": 8.7,
+      "layout": "title",
+      "title": "CAPSTONE PROJECT",
+      "subtitle": "Everything comes together"
+    },
+    {
+      "slide_number": 2,
+      "duration": 13.9,
+      "layout": "title",
+      "title": "MODULE 8.1: Your First Agent Workflow",
+      "subtitle": "Build something real. Deploy tomorrow."
+    },
+    {
+      "slide_number": 3,
+      "duration": 37.8,
+      "layout": "split_left",
+      "title": "Client Onboarding Agent",
+      "content": [
+        "Send welcome email",
+        "Set up Google Drive folder",
+        "Add to CRM",
+        "Notify the team",
+        "Schedule kickoff call",
+        ">> A lot of manual steps. A lot of room for errors."
+      ]
+    },
+    {
+      "slide_number": 4,
+      "duration": 8.4,
+      "layout": "highlight",
+      "main_text": "From Manual Chaos...",
+      "highlight_text": "To Smooth Automation!",
+      "subtitle": "Automatic. Professional. Consistent."
+    },
+    {
+      "slide_number": 5,
+      "duration": 3.2,
+      "layout": "title",
+      "title": "The Complete System",
+      "subtitle": "Here's what you're building"
+    },
+    {
+      "slide_number": 6,
+      "duration": 7.2,
+      "layout": "steps",
+      "title": "Step 1: TRIGGER",
+      "steps": [
+        {
+          "number": 1,
+          "title": "TRIGGER",
+          "description": "Webhook connected to client intake form"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "duration": 16.8,
+      "layout": "content",
+      "title": "Step 2: AI PROCESSING",
+      "steps": [
+        {
+          "number": 2,
+          "title": "AI PROCESSING",
+          "description": "Claude analyzes client, generates personalized content"
+        }
+      ],
+      "bullets": [
+        "Analyzes new client data",
+        "Determines their needs",
+        "Generates personalized welcome email",
+        ">> Not a template. A thoughtfully crafted message."
+      ]
+    },
+    {
+      "slide_number": 8,
+      "duration": 16.8,
+      "layout": "content",
+      "title": "Step 3: AUTOMATED ACTIONS",
+      "steps": [
+        {
+          "number": 3,
+          "title": "AUTOMATED ACTIONS",
+          "description": "System creates resources automatically"
+        }
+      ],
+      "bullets": [
+        "Create folder structure",
+        "Add to CRM/Sheet",
+        "Schedule welcome call"
+      ]
+    },
+    {
+      "slide_number": 9,
+      "duration": 13.5,
+      "layout": "content",
+      "title": "Step 4: NOTIFICATIONS",
+      "steps": [
+        {
+          "number": 4,
+          "title": "NOTIFICATIONS",
+          "description": "Keep everyone informed"
+        }
+      ],
+      "bullets": [
+        "Send welcome email to client",
+        "Notify team in Slack"
+      ]
+    },
+    {
+      "slide_number": 10,
+      "duration": 8.0,
+      "layout": "architecture",
+      "title": "Complete Agent Workflow",
+      "elements": [
+        {
+          "text": "Trigger"
+        },
+        {
+          "text": "AI Processing"
+        },
+        {
+          "text": "Automated Actions"
+        },
+        {
+          "text": "Notifications"
+        }
+      ]
+    },
+    {
+      "slide_number": 11,
+      "duration": 4.0,
+      "layout": "title",
+      "title": "Why Client Onboarding?",
+      "subtitle": "Three reasons this is your capstone"
+    },
+    {
+      "slide_number": 12,
+      "duration": 12.4,
+      "layout": "content",
+      "main_text": "Reason 01",
+      "highlight_text": "Universally Valuable",
+      "title": "01. Universally Valuable",
+      "bullets": [
+        "Every business onboards clients",
+        ">> Use it yourself or sell it as a service"
+      ]
+    },
+    {
+      "slide_number": 13,
+      "duration": 10.4,
+      "layout": "content",
+      "main_text": "Reason 02",
+      "highlight_text": "Uses Everything You've Learned",
+      "title": "02. Uses Everything You've Learned",
+      "bullets": [
+        "Webhooks & Triggers",
+        "Claude AI",
+        "API Integrations",
+        "Conditional Logic",
+        "Error Handling"
+      ]
+    },
+    {
+      "slide_number": 14,
+      "duration": 17.2,
+      "layout": "content",
+      "main_text": "Reason 03",
+      "highlight_text": "It's Impressive",
+      "title": "03. It's Impressive",
+      "bullets": [
+        "Form submission \u2192 Fully configured client setup in seconds",
+        ">> This is what AI agents can do."
+      ]
+    },
+    {
+      "slide_number": 15,
+      "duration": 3.6,
+      "layout": "title",
+      "title": "What You'll Build",
+      "subtitle": "By the end of this capstone"
+    },
+    {
+      "slide_number": 16,
+      "duration": 32.7,
+      "layout": "checklist",
+      "title": "Your Deliverables",
+      "items": [
+        {
+          "text": "Working webhook for form submissions",
+          "checked": true
+        },
+        {
+          "text": "Claude AI processing & personalization",
+          "checked": true
+        },
+        {
+          "text": "Google Drive folder structure automation",
+          "checked": true
+        },
+        {
+          "text": "Google Sheets/CRM data logging",
+          "checked": true
+        },
+        {
+          "text": "Calendar event scheduling",
+          "checked": true
+        },
+        {
+          "text": "Welcome email automation",
+          "checked": true
+        },
+        {
+          "text": "Slack team notifications",
+          "checked": true
+        },
+        {
+          "text": "Complete system documentation",
+          "checked": true
+        },
+        {
+          "text": "= That's a production-grade automation system.",
+          "checked": false
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "duration": 3.6,
+      "layout": "title",
+      "title": "Prerequisites",
+      "subtitle": "Before we dive in"
+    },
+    {
+      "slide_number": 18,
+      "duration": 35.1,
+      "layout": "checklist",
+      "title": "What You'll Need",
+      "items": [
+        {
+          "text": "n8n or Zapier access",
+          "checked": false
+        },
+        {
+          "text": "Claude API key with credits",
+          "checked": false
+        },
+        {
+          "text": "Google account (Drive, Sheets, Calendar)",
+          "checked": false
+        },
+        {
+          "text": "Slack workspace",
+          "checked": false
+        },
+        {
+          "text": "Email account for sending",
+          "checked": false
+        },
+        {
+          "text": "!! Pause here if any aren't ready. We're moving fast.",
+          "checked": false
+        }
+      ]
+    },
+    {
+      "slide_number": 19,
+      "duration": 2.8,
+      "layout": "title",
+      "title": "What's Next",
+      "subtitle": "Your capstone journey"
+    },
+    {
+      "slide_number": 20,
+      "duration": 10.0,
+      "layout": "content",
+      "title": "Module 8.2: Building the Client Onboarding Agent",
+      "bullets": [
+        "40 minutes of hands-on building",
+        ">> Step by step through every component"
+      ]
+    },
+    {
+      "slide_number": 21,
+      "duration": 6.8,
+      "layout": "content",
+      "title": "Module 8.3: Testing and Refinement",
+      "bullets": [
+        "End-to-end tests, edge cases, iteration"
+      ]
+    },
+    {
+      "slide_number": 22,
+      "duration": 8.4,
+      "layout": "content",
+      "title": "Module 8.4: Certification & Next Steps",
+      "bullets": [
+        "Quiz, badges, and your future path"
+      ]
+    },
+    {
+      "slide_number": 23,
+      "duration": 14.7,
+      "layout": "highlight",
+      "quote": "You walked in curious about AI automation.",
+      "highlight": "You're walking out with a complete agent system.",
+      "main_text": "You walked in curious about AI automation.",
+      "highlight_text": "You're walking out with a complete agent system."
+    },
+    {
+      "slide_number": 24,
+      "duration": 2.0,
+      "layout": "title",
+      "title": "Let's Build.",
+      "subtitle": "8.2 - Building the Client Onboarding Agent"
+    },
+    {
+      "slide_number": 25,
+      "duration": 31.6,
+      "layout": "title",
+      "title": "AI Launchpad Academy",
+      "subtitle": "CAPSTONE | Your AI Operations Journey"
+    }
+  ]
+}

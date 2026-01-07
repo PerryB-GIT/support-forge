@@ -1,0 +1,251 @@
+{
+  "script_id": "7.4-documentation-handoff",
+  "title": "Module 7.4: Documentation & Handoff",
+  "total_duration_seconds": 358.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 10.7,
+      "visual_cue": "Transition graphic - \"Final Module: HARDEN Phase\"",
+      "visual_type": "illustration",
+      "spoken_text": "You've built it. You've secured it. You've thought carefully about responsible use. [PAUSE] Now, how do you make sure someone else can understand it?",
+      "word_count": 23
+    },
+    {
+      "segment_id": 2,
+      "start_time": 10.7,
+      "end_time": 23.1,
+      "visual_cue": "Title card - \"Module 7.4: Documentation & Handoff\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Documentation isn't glamorous. But it's the difference between a system that can be maintained and one that becomes a mystery box nobody wants to touch.\n\nFive minutes. Let's make it count.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.1,
+      "end_time": 60.2,
+      "visual_cue": "Timeline showing \"You build\" -> \"Time passes\" -> \"You forget\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's a truth that experienced developers know: you will forget how your automation works.\n\nNot tomorrow. Maybe not next month. But six months from now, when something breaks at 2 AM and you need to fix it? You won't remember why you structured it that way. You won't remember what that weird edge case was that you handled. You won't remember which API credentials it needs.\n\n[PAUSE]\n\nDocumentation is a letter to your future self. It's also a letter to whoever takes over when you move on to other projects.",
+      "word_count": 89
+    },
+    {
+      "segment_id": 4,
+      "start_time": 60.2,
+      "end_time": 85.7,
+      "visual_cue": "Two scenarios",
+      "visual_type": "text_overlay",
+      "spoken_text": "Scenario one: no documentation. \"I think this automation does something with customer emails? Let me dig through the workflow and figure it out.\"\n\nScenario two: good documentation. \"Okay, it processes support tickets, sends them to Claude for categorization, and logs to the CRM. Credentials are in the vault. Here's the troubleshooting section.\"\n\n[PAUSE]\n\nWhich version of the future do you want?",
+      "word_count": 60
+    },
+    {
+      "segment_id": 5,
+      "start_time": 85.7,
+      "end_time": 89.3,
+      "visual_cue": "Documentation checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's what your documentation should cover for each automation.",
+      "word_count": 9
+    },
+    {
+      "segment_id": 6,
+      "start_time": 89.3,
+      "end_time": 165.7,
+      "visual_cue": "Items appearing one at a time",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Purpose**: What does this automation do? One to two sentences. \"Processes incoming support emails, categorizes them using Claude, and routes to the appropriate team member.\"\n\n**Trigger**: What starts this automation? \"Triggered when email arrives in support@company.com with subject containing 'ticket'.\"\n\n**Data flow**: What data does it use? Where does it come from? Where does it go? \"Reads email content, sends to Claude API, writes category and summary to CRM, sends Slack notification to assigned team.\"\n\n**Credentials required**: What API keys and connections does it need? \"Claude API key (in vault as CLAUDE_SUPPORT_KEY), Zapier Gmail connection (connected as support@company.com), CRM API token (in vault as CRM_TOKEN).\"\n\n**Dependencies**: What external services must be working for this to function? \"Requires Claude API, Gmail API, CRM API, and Slack API availability.\"\n\n**Error handling**: What happens when things go wrong? \"If Claude API fails, email is logged to fallback spreadsheet for manual review. Error notification sent to #automation-alerts Slack channel.\"\n\n**Known limitations**: What doesn't this handle? \"Does not process emails with attachments over 5MB. Does not handle non-English emails.\"\n\n**Maintenance schedule**: What regular upkeep does this need? \"Credential rotation every 90 days. Review error logs weekly.\"",
+      "word_count": 191
+    },
+    {
+      "segment_id": 7,
+      "start_time": 165.7,
+      "end_time": 178.5,
+      "visual_cue": "Runbook template visual",
+      "visual_type": "illustration",
+      "spoken_text": "A runbook is a specific type of documentation designed for operational use. It answers the question: how do I run and troubleshoot this thing?\n\nHere's a simple runbook format you can use:",
+      "word_count": 32
+    },
+    {
+      "segment_id": 8,
+      "start_time": 178.5,
+      "end_time": 209.2,
+      "visual_cue": "Runbook template",
+      "visual_type": "text_overlay",
+      "spoken_text": "```markdown\n# [Automation Name] Runbook\n\nBrief description of what this automation does.\n\n- Trigger: [what starts it]\n- Platform: [Zapier/n8n/etc.]\n- Owner: [who to contact]\n- Last Updated: [date]\n\n[Simple diagram or description of data flow]\n\n- [List credentials needed and where they're stored]\n\n- Expected frequency: [how often it runs]\n- Success indicators: [how to know it's working]\n- Output location: [where results go]\n\n### Issue: [Common problem 1]\nSymptoms: [what you see]\nCause: [why it happens]\nResolution: [how to fix it]\n\n### Issue: [Common problem 2]\n...\n\n- How to pause: [steps to stop the automation]\n- How to reprocess: [steps to run missed items]\n- Who to contact: [escalation path]\n\n- [Date]: [What changed and why]\n```\n\n[PAUSE]\n\nYou don't need to fill out every section for every automation. But having the structure helps you think through what's important.",
+      "word_count": 73
+    },
+    {
+      "segment_id": 9,
+      "start_time": 209.2,
+      "end_time": 225.2,
+      "visual_cue": "Documentation storage options",
+      "visual_type": "text_overlay",
+      "spoken_text": "Documentation that nobody can find is useless. Here's where to keep it:\n\nOption one: alongside the automation. Many platforms let you add descriptions and notes directly to workflows. Use them. When someone opens the automation, the documentation is right there.",
+      "word_count": 40
+    },
+    {
+      "segment_id": 10,
+      "start_time": 225.2,
+      "end_time": 255.9,
+      "visual_cue": "Zapier description field example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Option two: dedicated documentation system. Notion, Confluence, GitHub wiki, a shared folder with markdown files. Doesn't matter which, as long as it's searchable and accessible to everyone who might need it.\n\nOption three: both. Summary and quick reference in the automation itself. Detailed runbook in your documentation system.\n\n[PAUSE]\n\nWhatever you choose, make sure there's a clear convention. \"All runbooks are in the Automation Runbooks folder in Notion.\" Everyone should know where to look.",
+      "word_count": 73
+    },
+    {
+      "segment_id": 11,
+      "start_time": 255.9,
+      "end_time": 263.9,
+      "visual_cue": "Handoff checklist graphic",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you're handing off an automation to someone else, whether a teammate, a successor, or a client, use this checklist:",
+      "word_count": 20
+    },
+    {
+      "segment_id": 12,
+      "start_time": 263.9,
+      "end_time": 294.6,
+      "visual_cue": "Checklist items appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Documentation is complete and current.\n\nAll credentials are in the shared secrets manager, not personal accounts.\n\nAccess has been granted to all required platforms.\n\nWalk-through session has been scheduled. Don't just throw docs over the wall.\n\nTest run has been performed with the new owner watching.\n\nPoint of contact established for questions during transition period.\n\n[PAUSE]\n\nA good handoff takes an hour or two upfront. A bad handoff takes weeks of back-and-forth questions later.",
+      "word_count": 73
+    },
+    {
+      "segment_id": 13,
+      "start_time": 294.6,
+      "end_time": 315.6,
+      "visual_cue": "HARDEN Phase complete badge graphic",
+      "visual_type": "illustration",
+      "spoken_text": "That's the HARDEN phase complete.\n\n[PAUSE]\n\nYou've learned to secure your credentials, control access, think responsibly about AI use, and document your work for the future.\n\nThese aren't the exciting parts of building AI automations. But they're what separate amateur side projects from professional, reliable systems.\n\n[PAUSE]",
+      "word_count": 45
+    },
+    {
+      "segment_id": 14,
+      "start_time": 315.6,
+      "end_time": 329.6,
+      "visual_cue": "\"Coming Up: The Capstone Project\" with exciting graphic treatment",
+      "visual_type": "illustration",
+      "spoken_text": "And now, the exciting part. Everything you've learned in this course comes together in the capstone project. You're going to build a complete client onboarding agent, from trigger to notification, using every skill you've developed.",
+      "word_count": 35
+    },
+    {
+      "segment_id": 15,
+      "start_time": 329.6,
+      "end_time": 358.0,
+      "visual_cue": "End card with AI Launchpad Academy logo",
+      "visual_type": "animated_title",
+      "spoken_text": "See you in Module 8.\n\n- Pacing: Quick and practical. This is a short module with actionable content.\n- Visuals: Clean, organized layouts. Checklists and templates should be clear enough to screenshot.\n- Tone: Encouraging about the capstone ahead. This is the final push before the fun finale.\n- Consider: Making the runbook template available as a downloadable resource.\n\n- runbook: \"RUN-book\"\n- n8n: \"en-eight-en\"\n- Confluence: \"CON-flu-ence\"\n- markdown: \"MARK-down\"",
+      "word_count": 71
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 7.4: Documentation & Handoff\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Coming Up: The Capstone Project\" with exciting graphic treatment",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "HARDEN Phase complete badge graphic",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Runbook template visual",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Transition graphic - \"Final Module: HARDEN Phase\"",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist items appearing",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Documentation checklist",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Documentation storage options",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Handoff checklist graphic",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Items appearing one at a time",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Runbook template",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Timeline showing \"You build\" -> \"Time passes\" -> \"You forget\"",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Two scenarios",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zapier description field example",
+      "segment_ids": [
+        10
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.017393"
+}

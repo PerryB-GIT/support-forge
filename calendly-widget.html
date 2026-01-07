@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendly Widget Integration - Support Forge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <style>
+        /* Additional styles for Calendly widget integration */
+        .calendly-section {
+            padding: 80px 0;
+            background: #0c0c0f;
+        }
+
+        .calendly-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .calendly-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .calendly-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #f9fafb;
+            margin-bottom: 16px;
+        }
+
+        .calendly-header p {
+            font-size: 1.125rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calendly-widget-wrapper {
+            background: #141419;
+            border: 1px solid #2a2a35;
+            border-radius: 12px;
+            padding: 32px;
+            min-height: 700px;
+        }
+
+        /* Customize Calendly widget appearance */
+        .calendly-inline-widget {
+            min-width: 320px;
+            height: 700px;
+        }
+
+        /* Alternative: Popup Button Style */
+        .calendly-popup-button {
+            background: #dc2626;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .calendly-popup-button:hover {
+            background: #ef4444;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(220, 38, 38, 0.3);
+        }
+
+        .integration-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .integration-card {
+            background: #141419;
+            border: 1px solid #2a2a35;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .integration-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #f9fafb;
+            margin-bottom: 12px;
+        }
+
+        .integration-card p {
+            color: #9ca3af;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .integration-card code {
+            background: #0c0c0f;
+            padding: 12px;
+            border-radius: 6px;
+            display: block;
+            font-size: 0.875rem;
+            color: #10b981;
+            overflow-x: auto;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="anvilBody" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4a4a52"/><stop offset="50%" stop-color="#2d2d35"/><stop offset="100%" stop-color="#3d3d45"/></linearGradient>
+                        <linearGradient id="anvilTop" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#6a6a75"/><stop offset="50%" stop-color="#35353f"/><stop offset="100%" stop-color="#25252d"/></linearGradient>
+                        <linearGradient id="hammerHead" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8a8a95"/><stop offset="50%" stop-color="#4a4a55"/><stop offset="100%" stop-color="#2a2a32"/></linearGradient>
+                        <linearGradient id="hammerHandle" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#5c4a3a"/><stop offset="50%" stop-color="#a08878"/><stop offset="100%" stop-color="#5c4a3a"/></linearGradient>
+                        <radialGradient id="hotGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff6b35"/><stop offset="70%" stop-color="#cc2200"/><stop offset="100%" stop-color="#440000" stop-opacity="0"/></radialGradient>
+                        <filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    </defs>
+                    <path d="M70 240 L85 200 L195 200 L210 240 Z" fill="url(#anvilBody)" stroke="#1a1a20" stroke-width="1"/>
+                    <path d="M60 200 L60 170 L220 170 L220 200 Z" fill="url(#anvilBody)" stroke="#1a1a20" stroke-width="1"/>
+                    <path d="M75 170 L75 150 L205 150 L205 170 Z" fill="#3a3a42" stroke="#1a1a20" stroke-width="1"/>
+                    <rect x="55" y="130" width="170" height="20" rx="2" fill="url(#anvilTop)" stroke="#1a1a20" stroke-width="1"/>
+                    <path d="M225 140 L270 135 L270 145 L225 150 Z" fill="#3a3a42" stroke="#1a1a20" stroke-width="1"/>
+                    <path d="M55 135 L30 138 L30 147 L55 145 Z" fill="#3a3a42" stroke="#1a1a20" stroke-width="1"/>
+                    <rect x="180" y="133" width="12" height="12" fill="#0a0a0f"/>
+                    <ellipse cx="140" cy="128" rx="25" ry="6" fill="url(#hotGlow)" filter="url(#glow)"/>
+                    <rect x="132" y="40" width="16" height="75" rx="3" fill="url(#hammerHandle)"/>
+                    <rect x="105" y="20" width="70" height="30" rx="4" fill="url(#hammerHead)" stroke="#2a2a32" stroke-width="1"/>
+                    <rect x="105" y="20" width="12" height="30" rx="2" fill="#5a5a65"/>
+                    <rect x="163" y="20" width="12" height="30" rx="2" fill="#3a3a42"/>
+                </svg>
+                <span class="logo-text">Support<span class="accent">Forge</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calendly-section">
+            <div class="calendly-container">
+                <div class="calendly-header">
+                    <span class="section-tag">Calendly Integration Options</span>
+                    <h2>Schedule Your Consultation</h2>
+                    <p>Choose from multiple integration methods to provide the best booking experience for your clients.</p>
+                </div>
+
+                <!-- Option 1: Inline Widget (Recommended) -->
+                <div class="integration-card" style="margin-bottom: 48px;">
+                    <span class="badge">RECOMMENDED</span>
+                    <h3>Option 1: Inline Widget</h3>
+                    <p>Embed Calendly directly into your page for a seamless booking experience. No redirects needed.</p>
+
+                    <div class="calendly-widget-wrapper">
+                        <!-- Calendly inline widget begins -->
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/perry-bailes?hide_gdpr_banner=1&primary_color=dc2626">
+                        </div>
+                        <!-- Calendly inline widget ends -->
+                    </div>
+                </div>
+
+                <!-- Alternative Integration Options -->
+                <div class="integration-options">
+                    <!-- Option 2: Popup Button -->
+                    <div class="integration-card">
+                        <h3>Option 2: Popup Button</h3>
+                        <p>Open Calendly in a popup overlay when users click a button.</p>
+                        <button class="calendly-popup-button"
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/perry-bailes?hide_gdpr_banner=1&primary_color=dc2626'});return false;">
+                            Book a Meeting
+                        </button>
+                        <code>&lt;button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/perry-bailes'});return false;"&gt;Book a Meeting&lt;/button&gt;</code>
+                    </div>
+
+                    <!-- Option 3: Direct Link -->
+                    <div class="integration-card">
+                        <h3>Option 3: Direct Link</h3>
+                        <p>Simple link that opens Calendly in a new tab or current page.</p>
+                        <a href="https://calendly.com/perry-bailes" target="_blank" class="btn btn-primary">
+                            Open Calendly
+                        </a>
+                        <code>&lt;a href="https://calendly.com/perry-bailes" target="_blank"&gt;Schedule&lt;/a&gt;</code>
+                    </div>
+
+                    <!-- Option 4: API Integration -->
+                    <div class="integration-card">
+                        <h3>Option 4: Custom API Integration</h3>
+                        <p>Use the Calendly API for complete control over the booking experience.</p>
+                        <code>GET /api/calendly/event-types</code>
+                        <code>GET /api/calendly/availability</code>
+                        <code>POST /api/calendly/book</code>
+                        <p style="margin-top: 12px; font-size: 0.875rem;">
+                            <strong>Note:</strong> Requires backend server (Express.js setup included in this project).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Implementation Guide -->
+                <div class="integration-card" style="margin-top: 48px;">
+                    <h3>Implementation Guide</h3>
+                    <p><strong>Step 1:</strong> Add Calendly JavaScript to your HTML (before closing &lt;/body&gt; tag):</p>
+                    <code>&lt;script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async&gt;&lt;/script&gt;</code>
+
+                    <p style="margin-top: 16px;"><strong>Step 2:</strong> Add Calendly CSS to your &lt;head&gt; section:</p>
+                    <code>&lt;link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"&gt;</code>
+
+                    <p style="margin-top: 16px;"><strong>Step 3:</strong> Customize the appearance using URL parameters:</p>
+                    <code>?hide_gdpr_banner=1&primary_color=dc2626&text_color=f9fafb&background_color=141419</code>
+
+                    <p style="margin-top: 16px;"><strong>Step 4:</strong> Replace the custom form in index.html with your chosen integration method.</p>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="integration-card" style="margin-top: 24px;">
+                    <h3>Why Use Calendly Integration?</h3>
+                    <ul style="color: #9ca3af; line-height: 1.8; margin-left: 20px;">
+                        <li><strong style="color: #f9fafb;">Real-time Availability:</strong> Automatically syncs with your calendar to show only available slots</li>
+                        <li><strong style="color: #f9fafb;">Automatic Reminders:</strong> Sends email and SMS reminders to reduce no-shows</li>
+                        <li><strong style="color: #f9fafb;">Time Zone Detection:</strong> Automatically detects and converts to user's local time zone</li>
+                        <li><strong style="color: #f9fafb;">Calendar Integration:</strong> Syncs with Google Calendar, Outlook, iCloud, and more</li>
+                        <li><strong style="color: #f9fafb;">Professional Experience:</strong> Branded, mobile-responsive booking flow</li>
+                        <li><strong style="color: #f9fafb;">No Double Bookings:</strong> Prevents scheduling conflicts automatically</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2025 Support Forge. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendly JavaScript -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="script.js"></script>
+</body>
+</html>

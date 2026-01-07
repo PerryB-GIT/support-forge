@@ -1,0 +1,396 @@
+{
+  "script_id": "8.2-building-client-onboarding-agent",
+  "title": "Module 8.2: Building the Client Onboarding Agent",
+  "total_duration_seconds": 179.989,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 3.1439126637554584,
+      "visual_cue": "\"Let's Build\" text with construction/building animation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alright. Sleeves rolled up. Coffee poured. Let's build this thing.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 2,
+      "start_time": 3.1439126637554584,
+      "end_time": 18.156095633187775,
+      "visual_cue": "Title card - \"Module 8.2: Building the Client Onboarding Agent\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Over the next forty minutes, we're going step by step through every component of your client onboarding agent. Follow along in your own n8n instance. Pause when you need to. By the end, you'll have a complete, working system.\n\n[PAUSE]\n\nLet's start with the foundation.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 3,
+      "start_time": 18.156095633187775,
+      "end_time": 24.129529694323143,
+      "visual_cue": "\"Part 1: The Trigger\" with webhook icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Setting Up the Webhook\n\nEvery automation needs a starting point. Ours is a webhook that receives form submissions.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 4,
+      "start_time": 24.129529694323143,
+      "end_time": 31.98931135371179,
+      "visual_cue": "n8n interface - adding a new workflow",
+      "visual_type": "screen_capture",
+      "spoken_text": "Open n8n and create a new workflow. Name it \"Client Onboarding Agent.\"\n\nNow, add your first node. Search for \"webhook\" and add the Webhook node.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 5,
+      "start_time": 31.98931135371179,
+      "end_time": 51.40297205240175,
+      "visual_cue": "Webhook node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it like this:\n\nHTTP Method: POST. Forms typically send data as POST requests.\n\nPath: something memorable like \"client-onboarding\". This becomes part of your webhook URL.\n\nResponse Mode: \"Respond immediately\". We'll send a confirmation right away while processing happens in the background.\n\n[PAUSE]\n\nClick the node to open its settings. You'll see a URL that looks something like this:",
+      "word_count": 58
+    },
+    {
+      "segment_id": 6,
+      "start_time": 51.40297205240175,
+      "end_time": 57.062014847161564,
+      "visual_cue": "Example webhook URL",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\nhttps://your-n8n-instance.com/webhook/client-onboarding\n```\n\nCopy that URL. We'll need it for the form.\n\n### Creating a Simple Test Form",
+      "word_count": 18
+    },
+    {
+      "segment_id": 7,
+      "start_time": 57.062014847161564,
+      "end_time": 65.86497030567685,
+      "visual_cue": "Google Forms or Typeform interface",
+      "visual_type": "screen_capture",
+      "spoken_text": "For testing, let's create a quick intake form. I'll use Google Forms, but any form builder that can send webhooks works.\n\nCreate a new form with these fields:",
+      "word_count": 28
+    },
+    {
+      "segment_id": 8,
+      "start_time": 65.86497030567685,
+      "end_time": 92.19523886462882,
+      "visual_cue": "Form fields appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "- Business Name (short text)\n- Contact Name (short text)\n- Email (email field)\n- Phone (phone field)\n- What services are you interested in? (paragraph text)\n- Preferred meeting day (dropdown: Monday through Friday)\n- Preferred meeting time (dropdown: Morning, Afternoon, Evening)\n\n[PAUSE]\n\nNow, connect the form to your webhook. In Google Forms, you'll need a third-party add-on like \"Form Publisher\" or use Zapier to forward submissions. For our capstone, we can also test directly by sending a POST request.",
+      "word_count": 80
+    },
+    {
+      "segment_id": 9,
+      "start_time": 92.19523886462882,
+      "end_time": 118.83989868995631,
+      "visual_cue": "Postman or curl example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's a quick test you can run. Open a terminal or use a tool like Postman:\n\n```bash\ncurl -X POST https://your-n8n-instance.com/webhook/client-onboarding \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"businessName\": \"Sunrise Coffee Roasters\",\n    \"contactName\": \"Maria Santos\",\n    \"email\": \"maria@sunrisecoffee.com\",\n    \"phone\": \"555-123-4567\",\n    \"services\": \"We are a specialty coffee roaster looking to expand our B2B wholesale operations. Interested in marketing automation and CRM setup.\",\n    \"preferredDay\": \"Tuesday\",\n    \"preferredTime\": \"Morning\"\n  }'\n```\n\n[PAUSE]\n\nRun that. If your webhook is set up correctly, n8n should show the data received.",
+      "word_count": 81
+    },
+    {
+      "segment_id": 10,
+      "start_time": 118.83989868995631,
+      "end_time": 122.29820262008732,
+      "visual_cue": "n8n showing received webhook data",
+      "visual_type": "text_overlay",
+      "spoken_text": "Excellent. The trigger is working. We have client data flowing in.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 11,
+      "start_time": 122.29820262008732,
+      "end_time": 129.84359301310042,
+      "visual_cue": "\"Part 2: AI Processing\" with brain/AI icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Analyzing the Client\n\nNow comes the intelligence. We're going to send this client information to Claude and ask it to do three things:",
+      "word_count": 24
+    },
+    {
+      "segment_id": 12,
+      "start_time": 129.84359301310042,
+      "end_time": 138.96093973799128,
+      "visual_cue": "Three tasks appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "1. Analyze the client and their needs\n2. Generate a personalized welcome email\n3. Suggest a folder structure for their project\n\nAdd an HTTP Request node after your webhook.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 13,
+      "start_time": 138.96093973799128,
+      "end_time": 157.43142663755458,
+      "visual_cue": "HTTP Request node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it for the Claude API:\n\nMethod: POST\n\nURL: `https://api.anthropic.com/v1/messages`\n\nHeaders:\n```\nx-api-key: {{ $env.CLAUDE_API_KEY }}\nanthropic-version: 2023-06-01\nContent-Type: application/json\n```\n\n[PAUSE]\n\nNotice we're pulling the API key from an environment variable. Set that up in your n8n settings under \"Variables\" if you haven't already.\n\nNow for the body. This is where we craft our prompt:",
+      "word_count": 55
+    },
+    {
+      "segment_id": 14,
+      "start_time": 157.43142663755458,
+      "end_time": 179.989,
+      "visual_cue": "JSON body configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "```json\n{\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2000,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"You are an expert client onboarding specialist. A new client has just signed up. Analyze their information and provide three things:\\n\\n1. CLIENT ANALYSIS: A brief analysis of who they are, what industry they're in, and what their key needs appear to be.\\n\\n2. WELCOME EMAIL: A warm, personalized welcome email that acknowledges their specific business and needs. Keep it professional but friendly. Include that we'll be scheduling a call to discuss their goals.\\n\\n3. FOLDER STRUCTURE: Suggest a folder structure for their Google Drive project folder. Include 4-6 relevant subfolders based on the services they need.\\n\\nFormat your response as JSON with keys: clientAnalysis, welcomeEmail, folderStructure (array of folder names).\\n\\nClient Information:\\nBusiness Name: {{ $json.businessName }}\\nContact Name: {{ $json.contactName }}\\nServices Interested In: {{ $json.services }}\"\n    }\n  ]\n}\n```\n\n[PAUSE]\n\nLet's break down what we're asking Claude to do.\n\nFirst, we're giving it a clear role: client onboarding specialist. This focuses its responses.\n\nSecond, we're requesting structured output. By asking for JSON with specific keys, we can easily use Claude's response in subsequent nodes.\n\nThird, we're providing all the relevant context from our form submission using n8n's expression syntax.",
+      "word_count": 68
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 8.2: Building the Client Onboarding Agent\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 1: The Trigger\" with webhook icon",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 2: AI Processing\" with brain/AI icon",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 3: Google Drive Setup\" with folder icon",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 4: CRM Logging\" with spreadsheet icon",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 5: Calendar Integration\" with calendar icon",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 6: Welcome Email\" with envelope icon",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 7: Team Notification\" with Slack icon",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Achievement unlocked graphic",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Complete workflow visualization",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Loop visualization in n8n",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Google Forms or Typeform interface",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n interface - adding a new workflow",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Activate Your Workflow\" button",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Let's Build\" text with construction/building animation",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: 8.3 - Testing & Refinement\"",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude response example",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Code node",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example webhook URL",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Form fields appearing",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gmail node configuration",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Calendar node configuration",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Drive node - Create Folder",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Sheets node configuration",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "HTTP Request node configuration",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "JSON body configuration",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Postman or curl example",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Second Google Drive node",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Set node configuration",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack node configuration",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Split In Batches configuration",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Spreadsheet headers",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three tasks appearing",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Webhook node configuration",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Workflow zooming out to show full picture",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n showing received webhook data",
+      "segment_ids": [
+        10
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.024434"
+}

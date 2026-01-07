@@ -1,0 +1,128 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/config-schema.json",
+  "_comment": "AI Launchpad Academy - Complete MCP Configuration with All Integrations",
+  "_instructions": "Save this file to: ~/.claude/claude_desktop_config.json (Mac/Linux) or %APPDATA%/Claude/claude_desktop_config.json (Windows)",
+
+  "mcpServers": {
+    "zapier": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://actions.zapier.com/mcp/YOUR_ZAPIER_MCP_URL/sse"],
+      "_setup": "Get your MCP URL from: https://actions.zapier.com/mcp/start",
+      "_integrations": [
+        "Google Calendar - Schedule meetings, find events",
+        "Google Sheets - Read/write spreadsheet data",
+        "Google Drive - File management",
+        "Gmail - Send emails, search inbox",
+        "GitHub - Manage repos, issues, PRs",
+        "Slack - Send messages (if configured)"
+      ]
+    },
+
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"],
+      "_setup": "Replace /path/to/allowed/directory with your project folder"
+    },
+
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
+      },
+      "_setup": "Create token at: https://github.com/settings/tokens with repo, read:user scopes"
+    },
+
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://user:password@localhost:5432/database"],
+      "_setup": "Replace connection string with your database credentials"
+    },
+
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      },
+      "_setup": "Get API key from: https://brave.com/search/api/"
+    },
+
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "_setup": "No configuration needed - provides persistent memory across sessions"
+    },
+
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "_setup": "No configuration needed - enables web scraping and browser automation"
+    },
+
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-YOUR-BOT-TOKEN",
+        "SLACK_TEAM_ID": "YOUR_TEAM_ID"
+      },
+      "_setup": "Create Slack app at: https://api.slack.com/apps"
+    },
+
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-notion"],
+      "env": {
+        "NOTION_API_KEY": "YOUR_NOTION_API_KEY"
+      },
+      "_setup": "Create integration at: https://www.notion.so/my-integrations"
+    },
+
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "mcp-linear"],
+      "env": {
+        "LINEAR_API_KEY": "YOUR_LINEAR_API_KEY"
+      },
+      "_setup": "Get API key from: Linear Settings > API"
+    },
+
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "@n8n/mcp-server"],
+      "env": {
+        "N8N_BASE_URL": "https://your-n8n-instance.com",
+        "N8N_API_KEY": "YOUR_N8N_API_KEY"
+      },
+      "_setup": "Get API key from: n8n Settings > API"
+    }
+  },
+
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(python:*)",
+      "Bash(pip:*)",
+      "Bash(docker:*)",
+      "Bash(aws:*)",
+      "Bash(gh:*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(sudo rm:*)",
+      "Bash(format:*)"
+    ]
+  },
+
+  "settings": {
+    "theme": "system",
+    "verbose": false,
+    "autoApprove": false
+  }
+}

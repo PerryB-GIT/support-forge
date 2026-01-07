@@ -1,0 +1,459 @@
+{
+  "script_id": "7.3-responsible-ai-principles",
+  "title": "Module 7.3: Responsible AI Principles",
+  "total_duration_seconds": 684.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 8.3,
+      "visual_cue": "Contemplative visual - human and AI working together, balanced scales imagery",
+      "visual_type": "illustration",
+      "spoken_text": "We've spent this course teaching you how to build powerful AI automations. [PAUSE] Now let's talk about restraint.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 2,
+      "start_time": 8.3,
+      "end_time": 23.1,
+      "visual_cue": "Title card - \"Module 7.3: Responsible AI Principles\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Just because AI can do something doesn't mean it should. And as the person building these systems, you're the one making those decisions.\n\nThis isn't about being afraid of AI. It's about being thoughtful. Let's dig in.",
+      "word_count": 37
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.1,
+      "end_time": 31.1,
+      "visual_cue": "Red \"no\" symbol with AI icon",
+      "visual_type": "illustration",
+      "spoken_text": "Let me be direct. There are things you should never automate with AI, no matter how capable the technology becomes.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 4,
+      "start_time": 31.1,
+      "end_time": 64.9,
+      "visual_cue": "List appearing one at a time",
+      "visual_type": "text_overlay",
+      "spoken_text": "Final decisions that significantly impact people's lives. Hiring and firing. Loan approvals. Medical diagnoses. Criminal sentencing. [PAUSE] AI can inform these decisions. AI can surface relevant information. But a human needs to make the call.\n\n[PAUSE]\n\nWhy? Because AI doesn't understand context the way humans do. It doesn't understand that this loan applicant's credit score dropped because of a medical emergency. It doesn't understand that this job candidate's career gap was for caregiving. AI sees patterns. Humans see people.",
+      "word_count": 77
+    },
+    {
+      "segment_id": 5,
+      "start_time": 64.9,
+      "end_time": 94.0,
+      "visual_cue": "Second category appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Emotional support in crisis situations. If someone reaches out in distress, expecting a human connection, an AI chatbot is not an appropriate response. This is especially true for mental health, grief, or emergency situations.\n\n[PAUSE]\n\nYour automation might be able to detect when someone needs help. It can route them to a human. It can provide resources. But pretending to be the support itself? That's a line you don't cross.",
+      "word_count": 69
+    },
+    {
+      "segment_id": 6,
+      "start_time": 94.0,
+      "end_time": 115.1,
+      "visual_cue": "Third category appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Legal, medical, or financial advice. AI can provide general information. It can answer questions about policies. But specific advice that someone might rely on for important decisions needs a qualified human.\n\n[PAUSE]\n\nThe common thread here: when the stakes are high and the situation is personal, human judgment is irreplaceable.",
+      "word_count": 49
+    },
+    {
+      "segment_id": 7,
+      "start_time": 115.1,
+      "end_time": 130.3,
+      "visual_cue": "Diagram showing human review checkpoint in automation flow",
+      "visual_type": "flowchart",
+      "spoken_text": "Human oversight doesn't mean humans do all the work. It means humans remain in control.\n\nThe concept you'll hear is \"human in the loop.\" This means building checkpoints into your automations where humans can review, approve, or intervene.",
+      "word_count": 38
+    },
+    {
+      "segment_id": 8,
+      "start_time": 130.3,
+      "end_time": 159.8,
+      "visual_cue": "Three levels of human oversight",
+      "visual_type": "text_overlay",
+      "spoken_text": "Level one: full automation with human audit. The automation runs independently. Humans review logs and outputs periodically to ensure quality.\n\nLevel two: automation with approval gates. The automation does the work but pauses before taking action. A human reviews and approves before execution.\n\nLevel three: automation as assistant. AI surfaces recommendations. Humans make the decision. AI executes based on human direction.\n\n[PAUSE]\n\nWhich level is right? It depends on the stakes.",
+      "word_count": 70
+    },
+    {
+      "segment_id": 9,
+      "start_time": 159.8,
+      "end_time": 191.3,
+      "visual_cue": "Risk matrix - stakes vs. volume",
+      "visual_type": "comparison_table",
+      "spoken_text": "Low stakes, high volume? Level one. Think email categorization, data entry, routine responses.\n\nMedium stakes or new automations? Level two. You want to watch the system until you trust it.\n\nHigh stakes or customer-facing decisions? Level three. AI assists but doesn't decide.\n\n[PAUSE]\n\nHere's a practical implementation. In Zapier, you can add an approval step that pauses the workflow and sends a notification. Someone reviews, clicks approve or reject, and the workflow continues or stops accordingly.",
+      "word_count": 75
+    },
+    {
+      "segment_id": 10,
+      "start_time": 191.3,
+      "end_time": 203.7,
+      "visual_cue": "Zapier approval step mockup",
+      "visual_type": "text_overlay",
+      "spoken_text": "In n8n, you can use wait nodes with external webhooks to pause for human input.\n\nThe key: don't just build the automation. Build the oversight mechanism into it from the start.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 11,
+      "start_time": 203.7,
+      "end_time": 215.2,
+      "visual_cue": "Balance scales slightly tilted",
+      "visual_type": "text_overlay",
+      "spoken_text": "AI systems learn from data. And data reflects the world that created it, including its biases.\n\n[PAUSE]\n\nThis isn't theoretical. This shows up in real systems.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 12,
+      "start_time": 215.2,
+      "end_time": 242.3,
+      "visual_cue": "Examples appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Resume screening AI that penalizes women's names because it learned from historically male-dominated hiring data.\n\nFacial recognition that works less accurately on darker skin tones because training data was predominantly lighter-skinned faces.\n\nLanguage models that associate certain professions with certain genders because that's what appears in the text they learned from.\n\n[PAUSE]\n\nAs someone building automations, you need to be aware of this. Here's how:",
+      "word_count": 64
+    },
+    {
+      "segment_id": 13,
+      "start_time": 242.3,
+      "end_time": 294.6,
+      "visual_cue": "Bias mitigation strategies",
+      "visual_type": "text_overlay",
+      "spoken_text": "Strategy one: diverse testing. Don't just test that your automation works. Test it with diverse inputs. Different names. Different backgrounds. Different scenarios. Look for patterns in how it responds.\n\nStrategy two: review the training data. If you're fine-tuning or training anything custom, examine your dataset. Is it representative? Is it balanced?\n\nStrategy three: monitor outputs over time. Bias might not be obvious in one output. It might only become visible in aggregate. Periodically review patterns in your automation's decisions.\n\nStrategy four: get external perspectives. Have someone outside your team review your system. They might catch assumptions you've internalized.\n\n[PAUSE]\n\nHere's the mindset shift. Don't ask \"is my AI biased?\" Ask \"where might my AI be biased, and how would I know?\" That second question leads to actual investigation.",
+      "word_count": 127
+    },
+    {
+      "segment_id": 14,
+      "start_time": 294.6,
+      "end_time": 319.3,
+      "visual_cue": "Speech bubble with AI label",
+      "visual_type": "text_overlay",
+      "spoken_text": "When someone interacts with your AI automation, do they know they're interacting with AI?\n\n[PAUSE]\n\nThis is both an ethical question and increasingly a legal one.\n\nThe ethical case: people have a right to know when they're talking to a machine. It affects how they interpret responses, what trust they place in the interaction, and what recourse they expect.",
+      "word_count": 58
+    },
+    {
+      "segment_id": 15,
+      "start_time": 319.3,
+      "end_time": 350.8,
+      "visual_cue": "Good vs. bad disclosure examples",
+      "visual_type": "comparison_table",
+      "spoken_text": "Bad: an email that sounds like it's from a person but is entirely AI-generated.\n\nGood: \"This is an automated response. A team member will follow up within 24 hours.\"\n\nBetter: \"This response was drafted by AI and reviewed by our support team.\"\n\n[PAUSE]\n\nThe legal case: regulations are catching up. The EU AI Act requires disclosure when AI is used in ways that interact with people. California has disclosure requirements for bots. More jurisdictions are following.",
+      "word_count": 75
+    },
+    {
+      "segment_id": 16,
+      "start_time": 350.8,
+      "end_time": 361.6,
+      "visual_cue": "Brief mention of regulations with flags",
+      "visual_type": "text_overlay",
+      "spoken_text": "Even if you're not legally required to disclose, it's good practice. It builds trust. It sets appropriate expectations. And it protects you from claims of deception later.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 17,
+      "start_time": 361.6,
+      "end_time": 381.9,
+      "visual_cue": "Privacy shield icons with EU and US flags",
+      "visual_type": "illustration",
+      "spoken_text": "Let's talk briefly about data privacy regulations. I'm not going to make you a lawyer, but you need to know the basics.\n\n[PAUSE]\n\nGDPR - the General Data Protection Regulation. This is European law, but it applies to you if you handle data from anyone in the EU.",
+      "word_count": 47
+    },
+    {
+      "segment_id": 18,
+      "start_time": 381.9,
+      "end_time": 413.8,
+      "visual_cue": "GDPR key points",
+      "visual_type": "text_overlay",
+      "spoken_text": "Key points:\n\nYou need a legal basis to process personal data. Consent is the most common, but there are others.\n\nPeople have rights over their data. Right to access it. Right to delete it. Right to know how it's used.\n\nYou must protect personal data with appropriate security measures.\n\nIf you have a data breach, you may need to report it within 72 hours.\n\n[PAUSE]\n\nCCPA - the California Consumer Privacy Act. Similar idea for California residents.",
+      "word_count": 76
+    },
+    {
+      "segment_id": 19,
+      "start_time": 413.8,
+      "end_time": 434.1,
+      "visual_cue": "CCPA key points",
+      "visual_type": "text_overlay",
+      "spoken_text": "Key points:\n\nPeople can opt out of having their data sold.\n\nPeople can request to see what data you have about them.\n\nPeople can request deletion of their data.\n\nYou need to disclose what data you collect and why.\n\n[PAUSE]\n\nWhat does this mean for your AI automations?",
+      "word_count": 47
+    },
+    {
+      "segment_id": 20,
+      "start_time": 434.1,
+      "end_time": 480.0,
+      "visual_cue": "Practical implications for AI",
+      "visual_type": "text_overlay",
+      "spoken_text": "First: be careful what data you send to AI services. When you send customer data to Claude for processing, that data is going to a third party. Make sure your privacy policy covers this.\n\nSecond: honor data deletion requests. If someone asks to be deleted from your systems, that includes data in your automation logs, sheets, CRMs, everywhere.\n\nThird: know your data flows. Document what personal data your automations touch, where it goes, and how long it's kept.\n\n[PAUSE]\n\nI recommend creating a simple data flow diagram for each automation that handles personal data. Where does data come from? Where does it go? Who can access it? How long is it kept?",
+      "word_count": 111
+    },
+    {
+      "segment_id": 21,
+      "start_time": 480.0,
+      "end_time": 482.0,
+      "visual_cue": "Simple data flow diagram example",
+      "visual_type": "flowchart",
+      "spoken_text": "",
+      "word_count": 0
+    },
+    {
+      "segment_id": 22,
+      "start_time": 482.0,
+      "end_time": 488.8,
+      "visual_cue": "Framework diagram - THINK BEFORE YOU BUILD",
+      "visual_type": "flowchart",
+      "spoken_text": "Let me give you a practical framework. Before you build any AI automation, run through these questions.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 23,
+      "start_time": 488.8,
+      "end_time": 543.5,
+      "visual_cue": "Framework questions appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Question one: what could go wrong? Spend five minutes imagining failures. Bad outputs. Misunderstandings. Edge cases. What's the worst case if this automation makes a mistake?\n\nQuestion two: who is affected? Think beyond your immediate user. Who else does this automation impact? Customers? Employees? Third parties?\n\nQuestion three: what oversight exists? Who reviews this automation's work? How would you catch a problem? Is there a way to intervene?\n\nQuestion four: is there appropriate disclosure? Do people interacting with this know it's AI? Do they know how their data is being used?\n\nQuestion five: have I tested for bias? Have I run diverse scenarios through this? Have I looked for patterns in the outputs?\n\n[PAUSE]\n\nThis takes maybe ten minutes at the start of a project. It can save you from building something you regret.",
+      "word_count": 133
+    },
+    {
+      "segment_id": 24,
+      "start_time": 543.5,
+      "end_time": 552.7,
+      "visual_cue": "Emergency response graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Despite your best efforts, something might go wrong. AI might produce harmful output. Make a biased decision. Expose something it shouldn't. What then?",
+      "word_count": 23
+    },
+    {
+      "segment_id": 25,
+      "start_time": 552.7,
+      "end_time": 608.2,
+      "visual_cue": "Response steps",
+      "visual_type": "text_overlay",
+      "spoken_text": "Step one: stop the automation. Don't let it continue doing harm while you figure out what happened.\n\nStep two: assess the damage. What happened? Who was affected? What data was involved?\n\nStep three: notify affected parties. If customer data was exposed, or if someone received incorrect information, they need to know.\n\nStep four: document everything. What happened, when, what you did in response. This is important for learning and potentially for legal reasons.\n\nStep five: fix and prevent. Understand the root cause. Put controls in place so it can't happen again.\n\nStep six: consider whether to report. Depending on the nature of the incident and your jurisdiction, you may have legal obligations to report to regulators.\n\n[PAUSE]\n\nHaving an incident response plan before something goes wrong is much better than making it up in the moment.",
+      "word_count": 135
+    },
+    {
+      "segment_id": 26,
+      "start_time": 608.2,
+      "end_time": 637.6,
+      "visual_cue": "Balanced visual - AI and human hands working together",
+      "visual_type": "illustration",
+      "spoken_text": "Responsible AI isn't about limiting what you can build. It's about building things that work for people, not against them.\n\n[PAUSE]\n\nRemember:\n\nSome things shouldn't be automated, no matter how technically possible.\n\nHuman oversight should be built in, not bolted on.\n\nBias is real, and catching it requires active effort.\n\nTransparency builds trust.\n\nPrivacy regulations apply to your automations.\n\nHave a plan for when things go wrong.\n\n[PAUSE]",
+      "word_count": 66
+    },
+    {
+      "segment_id": 27,
+      "start_time": 637.6,
+      "end_time": 648.4,
+      "visual_cue": "\"Next: 7.4 - Documentation & Handoff\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "In our final module of the HARDEN phase, we'll talk about documentation. How do you capture what you've built so others can understand, maintain, and extend it?",
+      "word_count": 27
+    },
+    {
+      "segment_id": 28,
+      "start_time": 648.4,
+      "end_time": 684.8,
+      "visual_cue": "End card with AI Launchpad Academy logo",
+      "visual_type": "animated_title",
+      "spoken_text": "See you in module seven point four.\n\n- Pacing: Thoughtful and measured. This content requires reflection.\n- Visuals: Balance imagery - human and AI together, not in opposition.\n- Tone: Serious but not preachy. Present this as professional responsibility, not moral lecturing.\n- Examples: Use real-world examples where possible (without naming specific companies in litigation).\n- Legal disclaimers: Consider adding a visual disclaimer that this is educational, not legal advice.\n\n- GDPR: \"G-D-P-R\" (spelled out)\n- CCPA: \"C-C-P-A\" (spelled out)\n- EU: \"E-U\" (spelled out)\n- n8n: \"en-eight-en\"\n- bias: \"BY-us\"",
+      "word_count": 91
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 7.3: Responsible AI Principles\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Good vs. bad disclosure examples",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Risk matrix - stakes vs. volume",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Diagram showing human review checkpoint in automation flow",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Framework diagram - THINK BEFORE YOU BUILD",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Simple data flow diagram example",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Balanced visual - AI and human hands working together",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Contemplative visual - human and AI working together, balanced scales imagery",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Emergency response graphic",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Privacy shield icons with EU and US flags",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Red \"no\" symbol with AI icon",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: 7.4 - Documentation & Handoff\"",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Balance scales slightly tilted",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Bias mitigation strategies",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Brief mention of regulations with flags",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "CCPA key points",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Examples appearing",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Framework questions appearing",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GDPR key points",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "List appearing one at a time",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practical implications for AI",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Response steps",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Second category appearing",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Speech bubble with AI label",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Third category appearing",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three levels of human oversight",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zapier approval step mockup",
+      "segment_ids": [
+        10
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.014423"
+}

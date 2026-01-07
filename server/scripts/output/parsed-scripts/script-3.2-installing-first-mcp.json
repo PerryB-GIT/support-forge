@@ -1,0 +1,414 @@
+{
+  "script_id": "script-3.2-installing-first-mcp",
+  "title": "Installing Your First MCP Server",
+  "total_duration_seconds": 442.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 24.2,
+      "visual_cue": "Lesson title \"Installing Your First MCP Server\" with Zapier logo",
+      "visual_type": "animated_title",
+      "spoken_text": "Alright, time to get our hands dirty. [PAUSE] In this lesson, we're installing your first MCP server - the Zapier MCP.\n\nWhy Zapier? [PAUSE] Because it gives you access to a ton of services through a single connection. Google Sheets, Calendar, Drive, Gmail, GitHub, Canva, Google Ads, LinkedIn, Figma - all through one MCP server.",
+      "word_count": 53
+    },
+    {
+      "segment_id": 2,
+      "start_time": 24.2,
+      "end_time": 34.2,
+      "visual_cue": "Grid of service logos that Zapier MCP supports",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end of this lesson, you'll have Zapier MCP running and Claude will be able to interact with all these services.\n\nLet's do it.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 3,
+      "start_time": 34.2,
+      "end_time": 75.1,
+      "visual_cue": "Checklist appearing item by item",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we start, let's make sure you've got everything ready.\n\nFirst, you need Claude Code installed and working. [PAUSE] If you're watching this in order, you did that in Module 1. If not, go back and complete that first.\n\nSecond, you'll need a Zapier account. [PAUSE] The free tier works fine for getting started. Head to zapier.com and sign up if you haven't already.\n\nThird - and this is important - you'll need to enable Zapier's MCP integration. [PAUSE] This is done through Zapier's interface, and I'll walk you through it step by step.",
+      "word_count": 91
+    },
+    {
+      "segment_id": 4,
+      "start_time": 75.1,
+      "end_time": 98.5,
+      "visual_cue": "Browser showing zapier.com homepage",
+      "visual_type": "screen_capture",
+      "spoken_text": "One thing to know: Zapier MCP requires you to authorize specific \"actions\" for each service. [PAUSE] So we're not just connecting \"Google\" - we're connecting specific capabilities like \"find calendar events\" or \"create spreadsheet row.\"\n\nThis is actually a nice security feature. [PAUSE] You have granular control over exactly what Claude can do.",
+      "word_count": 51
+    },
+    {
+      "segment_id": 5,
+      "start_time": 98.5,
+      "end_time": 120.3,
+      "visual_cue": "Browser navigating to Zapier MCP setup",
+      "visual_type": "screen_capture",
+      "spoken_text": "Okay, let's set this up. Open your browser and go to zapier.com. [PAUSE] Log into your account.\n\nNow, Zapier has a dedicated MCP feature. [PAUSE] Navigate to your account settings - click your profile icon in the top right, then look for \"MCP\" or \"AI Actions\" in the menu.",
+      "word_count": 47
+    },
+    {
+      "segment_id": 6,
+      "start_time": 120.3,
+      "end_time": 132.2,
+      "visual_cue": "Zapier interface showing MCP/AI Actions section",
+      "visual_type": "screen_capture",
+      "spoken_text": "When you first open this, you'll see an option to enable MCP access. [PAUSE] Click that, and Zapier will generate your MCP server URL and authentication token.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 7,
+      "start_time": 132.2,
+      "end_time": 159.1,
+      "visual_cue": "Zapier showing generated MCP credentials with parts redacted",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll see two things here:\n\nFirst is your MCP server URL. [PAUSE] This is the endpoint Claude Code will connect to. It looks something like: mcp.zapier.com/api/mcp/your-unique-id.\n\nSecond is your authentication. [PAUSE] Zapier handles this through the URL itself - there's a unique identifier that authenticates your requests.\n\nCopy that URL. [PAUSE] You're gonna need it for the config file.",
+      "word_count": 56
+    },
+    {
+      "segment_id": 8,
+      "start_time": 159.1,
+      "end_time": 175.7,
+      "visual_cue": "Highlighting the \"Add Actions\" button",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we leave Zapier, we need to add some actions. [PAUSE] Click \"Add Actions\" or \"Edit Actions.\"\n\nThis is where you tell Zapier what Claude's allowed to do. [PAUSE] Start by adding a few basic ones:",
+      "word_count": 34
+    },
+    {
+      "segment_id": 9,
+      "start_time": 175.7,
+      "end_time": 204.5,
+      "visual_cue": "Adding actions one by one",
+      "visual_type": "text_overlay",
+      "spoken_text": "Search for \"Google Sheets\" and add \"Lookup Spreadsheet Row\" [PAUSE]\nSearch for \"Google Calendar\" and add \"Find Events\" [PAUSE]\nSearch for \"Google Drive\" and add \"Find a File\" [PAUSE]\n\nEach time you add an action, Zapier will ask you to connect the relevant account. [PAUSE] Click through the OAuth flow for Google - you've probably done this before with other apps.",
+      "word_count": 57
+    },
+    {
+      "segment_id": 10,
+      "start_time": 204.5,
+      "end_time": 210.9,
+      "visual_cue": "Google OAuth consent screen",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once you've added a few actions and connected your accounts, you're ready to configure Claude Code.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 11,
+      "start_time": 210.9,
+      "end_time": 222.4,
+      "visual_cue": "VS Code or text editor opening config file location",
+      "visual_type": "comparison_table",
+      "spoken_text": "Now we need to tell Claude Code about this MCP server. [PAUSE] This happens in a configuration file.\n\nOn Windows, open File Explorer and navigate to:",
+      "word_count": 25
+    },
+    {
+      "segment_id": 12,
+      "start_time": 222.4,
+      "end_time": 233.5,
+      "visual_cue": "File path displayed prominently",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\n%APPDATA%\\Claude\\\n```\n\nType that right into the address bar. [PAUSE] You should see a Claude folder. If there's no claude_desktop_config.json file, we'll create one.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 13,
+      "start_time": 233.5,
+      "end_time": 238.6,
+      "visual_cue": "Creating/opening the config file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Open or create claude_desktop_config.json. [PAUSE] Here's the structure you need:",
+      "word_count": 9
+    },
+    {
+      "segment_id": 14,
+      "start_time": 238.6,
+      "end_time": 251.7,
+      "visual_cue": "JSON configuration appearing with syntax highlighting",
+      "visual_type": "text_overlay",
+      "spoken_text": "```json\n{\n  \"mcpServers\": {\n    \"zapier\": {\n      \"url\": \"YOUR_ZAPIER_MCP_URL_HERE\"\n    }\n  }\n}\n```\n\nReplace YOUR_ZAPIER_MCP_URL_HERE with the URL you copied from Zapier. [PAUSE] Make sure you keep the quotes around it.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 15,
+      "start_time": 251.7,
+      "end_time": 291.7,
+      "visual_cue": "Completed config file with redacted URL",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let me break down what's happening here.\n\nThe mcpServers object contains all your MCP connections. [PAUSE] Each key - like \"zapier\" - is a name you choose. It's just a label.\n\nInside each server config, the url field tells Claude Code where to find that MCP server. [PAUSE] For Zapier's hosted MCP, that's all you need.\n\nSome MCP servers need more config - like a command to run locally, or environment variables. [PAUSE] We'll see that with other servers later. But Zapier keeps it simple.\n\nSave the file. [PAUSE]",
+      "word_count": 85
+    },
+    {
+      "segment_id": 16,
+      "start_time": 291.7,
+      "end_time": 306.4,
+      "visual_cue": "Terminal showing Claude Code",
+      "visual_type": "screen_capture",
+      "spoken_text": "Important step: Claude Code needs to restart to pick up the new configuration. [PAUSE]\n\nIf you've got Claude Code running in a terminal, exit it by typing /exit or just close the terminal window.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 17,
+      "start_time": 306.4,
+      "end_time": 312.0,
+      "visual_cue": "Closing and reopening terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Now open a fresh terminal and start Claude Code again with the `claude` command.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 18,
+      "start_time": 312.0,
+      "end_time": 333.0,
+      "visual_cue": "Claude Code starting up, watching for MCP connection messages",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch the startup output. [PAUSE] You should see a message indicating that MCP servers are being connected. Something like \"Connected to MCP server: zapier.\"\n\nIf you see errors instead, don't worry - we've got a whole troubleshooting lesson coming up. [PAUSE] For now, let's assume it connected.",
+      "word_count": 45
+    },
+    {
+      "segment_id": 19,
+      "start_time": 333.0,
+      "end_time": 339.7,
+      "visual_cue": "Claude Code terminal ready for input",
+      "visual_type": "screen_capture",
+      "spoken_text": "Moment of truth. [PAUSE] Let's test that Zapier MCP is actually working.\n\nType this:",
+      "word_count": 13
+    },
+    {
+      "segment_id": 20,
+      "start_time": 339.7,
+      "end_time": 344.5,
+      "visual_cue": "User typing the test prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "```\nWhat MCP tools do you have access to from Zapier?\n```",
+      "word_count": 12
+    },
+    {
+      "segment_id": 21,
+      "start_time": 344.5,
+      "end_time": 366.6,
+      "visual_cue": "Claude responding with a list of available tools",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude should respond with a list of the actions you added in Zapier. [PAUSE] You'll see things like google_sheets_lookup_spreadsheet_row, google_calendar_find_events, and whatever else you configured.\n\nIf you see this list, congratulations - you've successfully connected your first MCP server. [PAUSE]\n\nLet's try an actual query. [PAUSE] Type:",
+      "word_count": 44
+    },
+    {
+      "segment_id": 22,
+      "start_time": 366.6,
+      "end_time": 371.0,
+      "visual_cue": "User typing a real test",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\nWhat events do I have on my calendar tomorrow?\n```",
+      "word_count": 11
+    },
+    {
+      "segment_id": 23,
+      "start_time": 371.0,
+      "end_time": 393.1,
+      "visual_cue": "Claude calling the MCP tool and returning calendar data",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch what happens. [PAUSE] Claude recognizes this needs calendar access, calls the google_calendar_find_events tool through Zapier, gets your actual calendar data, and presents it to you.\n\n[PAUSE]\n\nThat's it. [PAUSE] Claude is now connected to your Google Calendar. Not a demo. Not a simulation. Your real calendar.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 24,
+      "start_time": 393.1,
+      "end_time": 429.8,
+      "visual_cue": "Back to Zapier interface showing \"Add Actions\"",
+      "visual_type": "screen_capture",
+      "spoken_text": "Quick note before we wrap up. [PAUSE] You can always go back to Zapier and add more actions.\n\nWant Claude to send emails? Add Gmail actions. [PAUSE]\nWant to create GitHub issues? Add GitHub actions. [PAUSE]\nWant to post to LinkedIn? Add LinkedIn actions. [PAUSE]\n\nEvery action you add in Zapier becomes a new tool Claude can use. [PAUSE] You don't need to change your Claude Code config - just add actions in Zapier and they're automatically available.",
+      "word_count": 73
+    },
+    {
+      "segment_id": 25,
+      "start_time": 429.8,
+      "end_time": 442.5,
+      "visual_cue": "\"Next: Connecting Google Services\" with arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next lesson, we'll go deeper on Google services. [PAUSE] We'll connect Calendar, Drive, and Gmail, and you'll see how powerful this integration really is.\n\nSee you there.",
+      "word_count": 28
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title \"Installing Your First MCP Server\" with Zapier logo",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "VS Code or text editor opening config file location",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Back to Zapier interface showing \"Add Actions\"",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Browser navigating to Zapier MCP setup",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Browser showing zapier.com homepage",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal ready for input",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Closing and reopening terminal",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal showing Claude Code",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "User typing the test prompt",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface showing MCP/AI Actions section",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: Connecting Google Services\" with arrow",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding actions one by one",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Checklist appearing item by item",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude Code starting up, watching for MCP connection messages",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling the MCP tool and returning calendar data",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude responding with a list of available tools",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Completed config file with redacted URL",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating/opening the config file",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File path displayed prominently",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google OAuth consent screen",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Grid of service logos that Zapier MCP supports",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting the \"Add Actions\" button",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "JSON configuration appearing with syntax highlighting",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "User typing a real test",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Zapier showing generated MCP credentials with parts redacted",
+      "segment_ids": [
+        7
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "20 minutes",
+    "lesson": "3.2 - Installing Your First MCP Server"
+  },
+  "parsed_at": "2026-01-06T22:53:56.088748"
+}

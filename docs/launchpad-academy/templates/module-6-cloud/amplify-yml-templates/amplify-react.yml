@@ -1,0 +1,79 @@
+# AWS Amplify Build Configuration for React (Create React App / Vite)
+# Place this file as amplify.yml in your repository root
+#
+# Supports: Create React App, Vite, or any React SPA
+# Note: For Vite, change baseDirectory to 'dist'
+
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Use specific Node version (adjust as needed)
+        - nvm use 20
+
+        # Install dependencies with clean install
+        - npm ci
+
+        # Optional: Run linting before build
+        # - npm run lint
+
+    build:
+      commands:
+        # Build the React application
+        - npm run build
+
+    postBuild:
+      commands:
+        # Optional: Run tests after build
+        # - npm run test -- --coverage --watchAll=false
+
+  artifacts:
+    # Create React App output directory
+    # Change to 'dist' for Vite projects
+    baseDirectory: build
+    files:
+      - '**/*'
+
+  cache:
+    paths:
+      # Cache node_modules for faster subsequent builds
+      - node_modules/**/*
+
+# Rewrites for Single Page Application routing
+# This ensures client-side routing works correctly
+customRules:
+  - source: '</^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json|webp)$)([^.]+$)/>'
+    target: '/index.html'
+    status: '200'
+    condition: null
+
+# Custom headers for caching and security
+customHeaders:
+  - pattern: '**/*.js'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: '**/*.css'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+  - pattern: 'index.html'
+    headers:
+      - key: 'Cache-Control'
+        value: 'no-cache, no-store, must-revalidate'
+  - pattern: '**/*'
+    headers:
+      - key: 'X-Frame-Options'
+        value: 'DENY'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+
+# Environment variables required (set in Amplify Console):
+# For Create React App, prefix with REACT_APP_
+# - REACT_APP_API_URL: Your API endpoint
+# - REACT_APP_ENV: Environment identifier
+#
+# For Vite, prefix with VITE_
+# - VITE_API_URL: Your API endpoint
+# - VITE_ENV: Environment identifier

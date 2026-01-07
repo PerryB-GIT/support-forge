@@ -1,0 +1,1053 @@
+{
+  "script_id": "script-2.3-prompting-business-tasks",
+  "title": "Prompting for Business Tasks",
+  "total_duration_seconds": 809.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 9.5,
+      "visual_cue": "\"Prompting for Business Tasks\" title",
+      "visual_type": "screen_capture",
+      "spoken_text": "You know how to have a conversation with Claude Code. Now let's make those conversations actually productive for your business.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 2,
+      "start_time": 9.5,
+      "end_time": 41.2,
+      "visual_cue": "Prompt quality spectrum",
+      "visual_type": "screen_capture",
+      "spoken_text": "Here's the reality: the quality of what you get from AI is directly proportional to the quality of what you put in. Vague prompts give vague results. Precise prompts give useful results.\n\n[PAUSE]\n\nIn this lesson, I'll teach you to prompt like a pro. We're covering context-building, multi-step instructions, and we'll work through real business examples you can adapt to your own needs.\n\n[PAUSE]\n\nLet's level up your prompting game.\n\n[PAUSE]",
+      "word_count": 68
+    },
+    {
+      "segment_id": 3,
+      "start_time": 41.2,
+      "end_time": 46.7,
+      "visual_cue": "Prompt structure diagram",
+      "visual_type": "flowchart",
+      "spoken_text": "Every effective prompt has three components: context, instruction, and constraints.\n\n[PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 4,
+      "start_time": 46.7,
+      "end_time": 58.6,
+      "visual_cue": "Context component highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Context tells Claude what it needs to know to help you. Who you are, what you're working on, what's already been done, what the situation is.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 5,
+      "start_time": 58.6,
+      "end_time": 66.9,
+      "visual_cue": "Instruction component highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Instruction tells Claude what you want it to do. This is the action, the task, the deliverable.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 6,
+      "start_time": 66.9,
+      "end_time": 75.6,
+      "visual_cue": "Constraints component highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Constraints tell Claude how to do it. Formatting requirements, length limits, things to include or avoid, style preferences.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 7,
+      "start_time": 75.6,
+      "end_time": 81.5,
+      "visual_cue": "Full prompt example",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let me show you a bad prompt versus a good prompt.\n\n[PAUSE]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 8,
+      "start_time": 81.5,
+      "end_time": 96.9,
+      "visual_cue": "Bad prompt example",
+      "visual_type": "screen_capture",
+      "spoken_text": "Bad prompt: \"Write me an email.\"\n\n[PAUSE]\n\nWhat email? To who? About what? In what tone? Claude could write anything. You'll spend more time fixing it than if you'd started from scratch.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 9,
+      "start_time": 96.9,
+      "end_time": 125.9,
+      "visual_cue": "Good prompt example",
+      "visual_type": "screen_capture",
+      "spoken_text": "Good prompt: \"I run a web design agency. A potential client named Sarah inquired about redesigning her bakery website. Write a professional but warm follow-up email confirming our discovery call tomorrow at 2pm EST. Keep it under 150 words.\"\n\n[PAUSE]\n\nContext: web design agency, potential client Sarah, bakery website inquiry. Instruction: write follow-up email confirming call at 2pm EST. Constraints: professional but warm, under 150 words.\n\n[PAUSE]",
+      "word_count": 65
+    },
+    {
+      "segment_id": 10,
+      "start_time": 125.9,
+      "end_time": 134.2,
+      "visual_cue": "Comparison of outputs",
+      "visual_type": "comparison_table",
+      "spoken_text": "The difference in output quality is night and day. Context plus instruction plus constraints equals useful results.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 11,
+      "start_time": 134.2,
+      "end_time": 142.1,
+      "visual_cue": "Context loading header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's dive deeper into context. There are several ways to give Claude the information it needs.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 12,
+      "start_time": 142.1,
+      "end_time": 162.3,
+      "visual_cue": "Technique 1 - Direct context in prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Technique one: direct context in your prompt. Just tell Claude what it needs to know. \"I'm a financial advisor. My client is retiring in 5 years with a $500,000 portfolio...\"\n\n[PAUSE]\n\nThis works for one-off tasks where the context fits in a few sentences.\n\n[PAUSE]",
+      "word_count": 43
+    },
+    {
+      "segment_id": 13,
+      "start_time": 162.3,
+      "end_time": 179.7,
+      "visual_cue": "Technique 2 - Reference files",
+      "visual_type": "text_overlay",
+      "spoken_text": "Technique two: reference files. Claude Code can read files in your project. You might say: \"Read the client-brief.txt file and summarize the key requirements.\"\n\n[PAUSE]\n\nThis is powerful when you have existing documentation, emails, specifications, or data.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 14,
+      "start_time": 179.7,
+      "end_time": 197.9,
+      "visual_cue": "Technique 3 - Role assignment",
+      "visual_type": "text_overlay",
+      "spoken_text": "Technique three: role assignment. Tell Claude to adopt a specific perspective. \"Act as an experienced copywriter who specializes in luxury brands.\"\n\n[PAUSE]\n\nThis shapes how Claude thinks about the task, what vocabulary it uses, and what standards it applies.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 15,
+      "start_time": 197.9,
+      "end_time": 216.1,
+      "visual_cue": "Technique 4 - Example-driven context",
+      "visual_type": "text_overlay",
+      "spoken_text": "Technique four: example-driven context. Show Claude what good looks like. \"Here's an example of how we format proposals at my company: [example]. Now create a similar proposal for...\"\n\n[PAUSE]\n\nExamples are incredibly effective for matching specific styles or formats.\n\n[PAUSE]",
+      "word_count": 38
+    },
+    {
+      "segment_id": 16,
+      "start_time": 216.1,
+      "end_time": 226.4,
+      "visual_cue": "Combining techniques",
+      "visual_type": "text_overlay",
+      "spoken_text": "The best prompts often combine these techniques. Reference a file for data, assign a role for perspective, and give examples for formatting.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 17,
+      "start_time": 226.4,
+      "end_time": 233.9,
+      "visual_cue": "Multi-step workflow concept",
+      "visual_type": "text_overlay",
+      "spoken_text": "Some tasks are too complex for a single instruction. That's where multi-step prompting comes in.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 18,
+      "start_time": 233.9,
+      "end_time": 241.8,
+      "visual_cue": "Option 1 - Sequential prompts",
+      "visual_type": "screen_capture",
+      "spoken_text": "Option one: sequential prompts. Break the task into steps and execute them one at a time.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 19,
+      "start_time": 241.8,
+      "end_time": 267.2,
+      "visual_cue": "Sequential example",
+      "visual_type": "text_overlay",
+      "spoken_text": "For example: First prompt, \"Analyze this competitor website and list their key features.\" Review the output. Second prompt, \"Now compare those features to our current offering and identify gaps.\" Review. Third prompt, \"Suggest three features we could add to address the biggest gaps.\"\n\n[PAUSE]\n\nEach step builds on the previous. You can review and redirect between steps.\n\n[PAUSE]",
+      "word_count": 56
+    },
+    {
+      "segment_id": 20,
+      "start_time": 267.2,
+      "end_time": 275.1,
+      "visual_cue": "Option 2 - Numbered instructions",
+      "visual_type": "calculator",
+      "spoken_text": "Option two: numbered instructions in a single prompt. Tell Claude to do multiple things in sequence.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 21,
+      "start_time": 275.1,
+      "end_time": 301.3,
+      "visual_cue": "Numbered example",
+      "visual_type": "calculator",
+      "spoken_text": "\"Help me create a content calendar. 1) First, brainstorm 12 blog post topics relevant to small business marketing. 2) For each topic, suggest a catchy title. 3) Organize them by month, putting seasonal topics in appropriate months. 4) Output as a simple table I can paste into a spreadsheet.\"\n\n[PAUSE]\n\nClaude executes each step, building toward the final output.\n\n[PAUSE]",
+      "word_count": 58
+    },
+    {
+      "segment_id": 22,
+      "start_time": 301.3,
+      "end_time": 314.8,
+      "visual_cue": "When to use which",
+      "visual_type": "text_overlay",
+      "spoken_text": "When to use which? Sequential prompts when you want to review and adjust between steps. Numbered instructions when the steps are straightforward and you trust Claude to chain them together.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 23,
+      "start_time": 314.8,
+      "end_time": 323.9,
+      "visual_cue": "Practical examples header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's work through some real business examples. I'll show you the prompt and explain why each element is there.\n\n[PAUSE]",
+      "word_count": 19
+    },
+    {
+      "segment_id": 24,
+      "start_time": 323.9,
+      "end_time": 328.2,
+      "visual_cue": "Example 1 - Client Email Response",
+      "visual_type": "text_overlay",
+      "spoken_text": "Example one: responding to a client email.\n\n[PAUSE]",
+      "word_count": 7
+    },
+    {
+      "segment_id": 25,
+      "start_time": 328.2,
+      "end_time": 358.1,
+      "visual_cue": "The prompt text",
+      "visual_type": "screen_capture",
+      "spoken_text": "\"I'm a freelance graphic designer. A client named Tom just emailed asking why the logo revisions are taking so long. The reality is he keeps changing requirements, and that's caused delays. Write a professional email that: 1) acknowledges his frustration, 2) diplomatically explains that scope changes have extended the timeline, 3) proposes a brief call to align on final direction, 4) maintains a positive, solution-focused tone. Keep it under 200 words.\"\n\n[PAUSE]",
+      "word_count": 71
+    },
+    {
+      "segment_id": 26,
+      "start_time": 358.1,
+      "end_time": 370.4,
+      "visual_cue": "Prompt breakdown",
+      "visual_type": "screen_capture",
+      "spoken_text": "Context: freelance designer, client Tom, frustration about delays, real cause is changing requirements. Instruction: write email covering four specific points. Constraints: professional, diplomatic, solution-focused, under 200 words.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 27,
+      "start_time": 370.4,
+      "end_time": 380.3,
+      "visual_cue": "Why this works",
+      "visual_type": "text_overlay",
+      "spoken_text": "This prompt gives Claude everything it needs to write an email you could actually send. No guessing about tone or content.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 28,
+      "start_time": 380.3,
+      "end_time": 383.8,
+      "visual_cue": "Example 2 - Process Documentation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Example two: creating process documentation.\n\n[PAUSE]",
+      "word_count": 5
+    },
+    {
+      "segment_id": 29,
+      "start_time": 383.8,
+      "end_time": 407.7,
+      "visual_cue": "The prompt text",
+      "visual_type": "screen_capture",
+      "spoken_text": "\"I manage a small e-commerce business. We just hired our first employee who'll handle order fulfillment. Create a step-by-step process document for shipping orders. Include: checking the order queue, printing packing slips, packaging standards, label printing using ShipStation, and end-of-day reporting. Format it as a numbered checklist with brief explanations. Assume they have no prior experience.\"\n\n[PAUSE]",
+      "word_count": 56
+    },
+    {
+      "segment_id": 30,
+      "start_time": 407.7,
+      "end_time": 419.2,
+      "visual_cue": "Prompt breakdown",
+      "visual_type": "screen_capture",
+      "spoken_text": "Context: e-commerce business, new employee, order fulfillment role. Instruction: create process document for shipping. Constraints: numbered checklist, brief explanations, assumes no experience, covers specific steps.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 31,
+      "start_time": 419.2,
+      "end_time": 427.1,
+      "visual_cue": "The output potential",
+      "visual_type": "text_overlay",
+      "spoken_text": "This produces documentation you can hand to a new hire. It's actionable, specific, and properly formatted.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 32,
+      "start_time": 427.1,
+      "end_time": 430.2,
+      "visual_cue": "Example 3 - Data Analysis Request",
+      "visual_type": "text_overlay",
+      "spoken_text": "Example three: analyzing data.\n\n[PAUSE]",
+      "word_count": 4
+    },
+    {
+      "segment_id": 33,
+      "start_time": 430.2,
+      "end_time": 452.5,
+      "visual_cue": "The prompt text",
+      "visual_type": "screen_capture",
+      "spoken_text": "\"Read the sales-report.csv file in this directory. Analyze the data and provide: 1) Total revenue for each month, 2) Top 5 best-selling products, 3) Any noticeable trends or patterns, 4) Two actionable recommendations based on what you find. Present the findings in a clear, executive-summary format suitable for a non-technical business owner.\"\n\n[PAUSE]",
+      "word_count": 52
+    },
+    {
+      "segment_id": 34,
+      "start_time": 452.5,
+      "end_time": 462.0,
+      "visual_cue": "Prompt breakdown",
+      "visual_type": "screen_capture",
+      "spoken_text": "Context: file reference provides the data. Instruction: analyze and provide four specific outputs. Constraints: executive-summary format, suitable for non-technical audience.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 35,
+      "start_time": 462.0,
+      "end_time": 469.5,
+      "visual_cue": "File integration power",
+      "visual_type": "text_overlay",
+      "spoken_text": "Notice how referencing the file gives Claude direct access to the data. No copy-pasting needed.\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 36,
+      "start_time": 469.5,
+      "end_time": 474.2,
+      "visual_cue": "Example 4 - Technical Task with Business Context",
+      "visual_type": "text_overlay",
+      "spoken_text": "Example four: a technical task with business context.\n\n[PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 37,
+      "start_time": 474.2,
+      "end_time": 508.1,
+      "visual_cue": "The prompt text",
+      "visual_type": "screen_capture",
+      "spoken_text": "\"I run a small marketing agency. We send weekly email newsletters to about 2,000 subscribers using Mailchimp. We also use Airtable to track client projects. Create a Python script that: 1) Connects to the Airtable API to fetch projects completed this week, 2) Formats them as a 'Recent Wins' section with client name and project description, 3) Outputs HTML that I can paste into our Mailchimp newsletter template. Include comments explaining each section of the code since I'm not a developer.\"\n\n[PAUSE]",
+      "word_count": 81
+    },
+    {
+      "segment_id": 38,
+      "start_time": 508.1,
+      "end_time": 519.6,
+      "visual_cue": "Prompt breakdown",
+      "visual_type": "screen_capture",
+      "spoken_text": "Context: marketing agency, Mailchimp, Airtable, weekly newsletter to 2,000 subscribers. Instruction: create Python script doing three specific things. Constraints: include explanatory comments, output pasteable HTML.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 39,
+      "start_time": 519.6,
+      "end_time": 531.5,
+      "visual_cue": "Technical + accessible",
+      "visual_type": "text_overlay",
+      "spoken_text": "Even though this is a coding task, the business context helps Claude understand the purpose. The constraint about comments makes the code accessible to a non-developer.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 40,
+      "start_time": 531.5,
+      "end_time": 539.4,
+      "visual_cue": "Iteration concept",
+      "visual_type": "text_overlay",
+      "spoken_text": "Getting a perfect result on the first try is rare. Iteration is part of the process.\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 41,
+      "start_time": 539.4,
+      "end_time": 546.1,
+      "visual_cue": "Refinement prompts",
+      "visual_type": "screen_capture",
+      "spoken_text": "When the output isn't quite right, refine it. Here are some refinement patterns:\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 42,
+      "start_time": 546.1,
+      "end_time": 552.4,
+      "visual_cue": "Pattern 1 - More specific",
+      "visual_type": "text_overlay",
+      "spoken_text": "\"Make the tone more casual. This feels too formal for our brand.\"\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 43,
+      "start_time": 552.4,
+      "end_time": 559.9,
+      "visual_cue": "Pattern 2 - Add or remove",
+      "visual_type": "text_overlay",
+      "spoken_text": "\"Add a section about pricing. Remove the part about enterprise features, we don't offer that.\"\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 44,
+      "start_time": 559.9,
+      "end_time": 567.8,
+      "visual_cue": "Pattern 3 - Restructure",
+      "visual_type": "text_overlay",
+      "spoken_text": "\"Reorganize this with the most important points first. Busy readers might not finish the whole thing.\"\n\n[PAUSE]",
+      "word_count": 16
+    },
+    {
+      "segment_id": 45,
+      "start_time": 567.8,
+      "end_time": 575.3,
+      "visual_cue": "Pattern 4 - Match a reference",
+      "visual_type": "text_overlay",
+      "spoken_text": "\"Make this match the style of the email I showed you earlier. It's too different.\"\n\n[PAUSE]",
+      "word_count": 15
+    },
+    {
+      "segment_id": 46,
+      "start_time": 575.3,
+      "end_time": 587.6,
+      "visual_cue": "Iteration is normal",
+      "visual_type": "text_overlay",
+      "spoken_text": "Don't feel like you've failed if the first output isn't perfect. Two or three rounds of refinement is normal. It's still way faster than starting from scratch.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 47,
+      "start_time": 587.6,
+      "end_time": 593.5,
+      "visual_cue": "Mistakes to avoid",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's cover some common prompting mistakes so you can avoid them.\n\n[PAUSE]",
+      "word_count": 11
+    },
+    {
+      "segment_id": 48,
+      "start_time": 593.5,
+      "end_time": 605.0,
+      "visual_cue": "Mistake 1 - Too vague",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake one: being too vague. \"Help me with marketing\" tells Claude almost nothing. What aspect of marketing? For what business? What format do you need?\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 49,
+      "start_time": 605.0,
+      "end_time": 616.5,
+      "visual_cue": "Mistake 2 - Assuming knowledge",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake two: assuming Claude knows your specifics. Claude doesn't know your business, your clients, your products, or your preferences unless you tell it. Provide context.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 50,
+      "start_time": 616.5,
+      "end_time": 627.6,
+      "visual_cue": "Mistake 3 - Asking too much at once",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake three: asking too much at once. \"Create my entire business plan, marketing strategy, and financial projections\" is overwhelming. Break it into focused tasks.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 51,
+      "start_time": 627.6,
+      "end_time": 640.7,
+      "visual_cue": "Mistake 4 - No constraints",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake four: no constraints. Without constraints, Claude makes its own choices about length, format, tone, and depth. You might not like those choices. Be specific about what you want.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 52,
+      "start_time": 640.7,
+      "end_time": 654.6,
+      "visual_cue": "Mistake 5 - Not reviewing output",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake five: not reviewing output before using it. Claude is good, but it's not perfect. Always read what it produces. Check facts. Verify that code works. Ensure the tone is right.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 53,
+      "start_time": 654.6,
+      "end_time": 659.7,
+      "visual_cue": "Prompt library concept",
+      "visual_type": "screen_capture",
+      "spoken_text": "Here's a productivity hack: build a personal prompt library.\n\n[PAUSE]",
+      "word_count": 9
+    },
+    {
+      "segment_id": 54,
+      "start_time": 659.7,
+      "end_time": 669.6,
+      "visual_cue": "Saving effective prompts",
+      "visual_type": "screen_capture",
+      "spoken_text": "When you craft a prompt that works well, save it. Create a document or folder where you keep your best prompts.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 55,
+      "start_time": 669.6,
+      "end_time": 679.9,
+      "visual_cue": "Template with blanks",
+      "visual_type": "text_overlay",
+      "spoken_text": "Turn them into templates with blanks. \"I run a [type of business]. A client named [name] just [situation]. Write a [format] that [accomplishes goal]. Keep it [constraint].\"\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 56,
+      "start_time": 679.9,
+      "end_time": 686.6,
+      "visual_cue": "Categories",
+      "visual_type": "text_overlay",
+      "spoken_text": "Organize by category. Client communication. Content creation. Data analysis. Process documentation. Technical tasks.\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 57,
+      "start_time": 686.6,
+      "end_time": 700.1,
+      "visual_cue": "Reuse and refine",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next time you need something similar, grab the template, fill in the blanks, and you're ready. Over time, you'll develop a collection of proven prompts that consistently deliver good results.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 58,
+      "start_time": 700.1,
+      "end_time": 704.0,
+      "visual_cue": "Exercise instructions",
+      "visual_type": "text_overlay",
+      "spoken_text": "Time for practice. Here's your exercise.\n\n[PAUSE]",
+      "word_count": 6
+    },
+    {
+      "segment_id": 59,
+      "start_time": 704.0,
+      "end_time": 717.5,
+      "visual_cue": "Exercise scenario",
+      "visual_type": "text_overlay",
+      "spoken_text": "Scenario: You run a consulting business. A potential client named Jennifer reached out interested in your services. You had an initial call and want to send a follow-up proposal outline.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 60,
+      "start_time": 717.5,
+      "end_time": 733.4,
+      "visual_cue": "Your task",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your task: Write a prompt that asks Claude to create this proposal outline. Include context about your consulting business, make it a fictional one if needed, details about Jennifer's needs, and constraints about format and tone.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 61,
+      "start_time": 733.4,
+      "end_time": 744.9,
+      "visual_cue": "Quality criteria",
+      "visual_type": "text_overlay",
+      "spoken_text": "A good prompt will include: who you are, who Jennifer is and what she needs, what the proposal should cover, format preferences, and tone guidance.\n\n[PAUSE]",
+      "word_count": 25
+    },
+    {
+      "segment_id": 62,
+      "start_time": 744.9,
+      "end_time": 754.4,
+      "visual_cue": "Test your prompt",
+      "visual_type": "screen_capture",
+      "spoken_text": "Then run your prompt in Claude Code and see the result. Iterate if needed until you're happy with the output.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 63,
+      "start_time": 754.4,
+      "end_time": 760.7,
+      "visual_cue": "Bonus challenge",
+      "visual_type": "text_overlay",
+      "spoken_text": "Bonus: Save your polished prompt as a template for future proposal outlines.\n\n[PAUSE]",
+      "word_count": 12
+    },
+    {
+      "segment_id": 64,
+      "start_time": 760.7,
+      "end_time": 778.2,
+      "visual_cue": "Key takeaways",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's recap. Effective prompts have context, instruction, and constraints. Load context through direct statements, file references, role assignment, or examples. Use multi-step approaches for complex tasks. Iterate, it's part of the process. Build a prompt library to reuse what works.\n\n[PAUSE]",
+      "word_count": 40
+    },
+    {
+      "segment_id": 65,
+      "start_time": 778.2,
+      "end_time": 788.1,
+      "visual_cue": "Practice makes permanent",
+      "visual_type": "text_overlay",
+      "spoken_text": "The more you prompt, the better you'll get. It becomes second nature to think in terms of context, instruction, and constraints.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 66,
+      "start_time": 788.1,
+      "end_time": 807.5,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "Next up, we're going to configure Claude Code to work even better for you. Custom settings, your personal CLAUDE.md file, and other configurations that make Claude feel like it actually knows your business.\n\n[PAUSE]\n\nComplete the exercise, then I'll see you there.\n\n[PAUSE]",
+      "word_count": 41
+    },
+    {
+      "segment_id": 67,
+      "start_time": 807.5,
+      "end_time": 809.5,
+      "visual_cue": "Fade to \"Next: Configuring Settings\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Configuring Settings\" with Support Forge branding",
+      "segment_ids": [
+        67
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Numbered example",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Option 2 - Numbered instructions",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparison of outputs",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Prompt structure diagram",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Prompting for Business Tasks\" title",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Bad prompt example",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Full prompt example",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Good prompt example",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Option 1 - Sequential prompts",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Prompt breakdown",
+      "segment_ids": [
+        26,
+        30,
+        34,
+        38
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Prompt library concept",
+      "segment_ids": [
+        53
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Prompt quality spectrum",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Refinement prompts",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Saving effective prompts",
+      "segment_ids": [
+        54
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Technique 1 - Direct context in prompt",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Test your prompt",
+      "segment_ids": [
+        62
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "The prompt text",
+      "segment_ids": [
+        25,
+        29,
+        33,
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Bonus challenge",
+      "segment_ids": [
+        63
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Categories",
+      "segment_ids": [
+        56
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Combining techniques",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Constraints component highlighted",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Context component highlighted",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Context loading header",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 1 - Client Email Response",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 2 - Process Documentation",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 3 - Data Analysis Request",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 4 - Technical Task with Business Context",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise instructions",
+      "segment_ids": [
+        58
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise scenario",
+      "segment_ids": [
+        59
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "File integration power",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Instruction component highlighted",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Iteration concept",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Iteration is normal",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Key takeaways",
+      "segment_ids": [
+        64
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 1 - Too vague",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 2 - Assuming knowledge",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 3 - Asking too much at once",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 4 - No constraints",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 5 - Not reviewing output",
+      "segment_ids": [
+        52
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistakes to avoid",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Multi-step workflow concept",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        66
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 1 - More specific",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 2 - Add or remove",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 3 - Restructure",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Pattern 4 - Match a reference",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practical examples header",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Practice makes permanent",
+      "segment_ids": [
+        65
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Quality criteria",
+      "segment_ids": [
+        61
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Reuse and refine",
+      "segment_ids": [
+        57
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Sequential example",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Technical + accessible",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Technique 2 - Reference files",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Technique 3 - Role assignment",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Technique 4 - Example-driven context",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Template with blanks",
+      "segment_ids": [
+        55
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "The output potential",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "When to use which",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Why this works",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Your task",
+      "segment_ids": [
+        60
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "25 minutes (~3750-4250 words)",
+    "lesson": "Module 2, Lesson 3",
+    "purpose": "Context-rich prompting, multi-step workflows, practical business examples",
+    "stated_word_count": "2,450",
+    "stated_runtime": "24:00-26:00"
+  },
+  "parsed_at": "2026-01-06T22:53:56.068739"
+}

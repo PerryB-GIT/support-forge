@@ -1,0 +1,222 @@
+{
+  "script_id": "script-3.1-what-are-mcp",
+  "title": "What Are MCP Servers?",
+  "total_duration_seconds": 272.9,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 17.9,
+      "visual_cue": "Module 3 title card with \"MCP Server Deep Dive\" and unlock icon",
+      "visual_type": "animated_title",
+      "spoken_text": "Alright, welcome to Module 3. [PAUSE] This is where things get really exciting.\n\nYou've got Claude Code installed. You've run some commands. But right now, Claude's kind of... isolated. It can see your files and run terminal commands, but that's about it.",
+      "word_count": 41
+    },
+    {
+      "segment_id": 2,
+      "start_time": 17.9,
+      "end_time": 32.0,
+      "visual_cue": "Simple graphic showing Claude in a \"bubble\" disconnected from external services",
+      "visual_type": "illustration",
+      "spoken_text": "What if Claude could check your calendar? [PAUSE] Read your emails? [PAUSE] Update a Google Sheet? [PAUSE] Create issues on GitHub?\n\nThat's exactly what MCP servers unlock.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 3,
+      "start_time": 32.0,
+      "end_time": 56.2,
+      "visual_cue": "MCP logo and \"Model Context Protocol\" text",
+      "visual_type": "illustration",
+      "spoken_text": "MCP stands for Model Context Protocol. [PAUSE] It's an open standard that Anthropic created to let AI assistants connect to external tools and data sources.\n\nThink of it like this. [PAUSE] Your phone can do a lot on its own, right? But apps make it way more powerful. MCP servers are like apps for Claude.",
+      "word_count": 53
+    },
+    {
+      "segment_id": 4,
+      "start_time": 56.2,
+      "end_time": 90.3,
+      "visual_cue": "Diagram showing Claude in center, with arrows pointing to icons for Calendar, Email, GitHub, Sheets, etc.",
+      "visual_type": "flowchart",
+      "spoken_text": "Each MCP server gives Claude new capabilities. [PAUSE] A Zapier MCP server lets Claude work with Google services, Canva, LinkedIn, and dozens of other tools. [PAUSE] An n8n (en-eight-en) MCP server lets Claude trigger automation workflows.\n\nThe key thing to understand is that MCP servers run locally on your machine. [PAUSE] Claude doesn't connect directly to these services. Instead, it talks to the MCP server running on your computer, and that server handles the actual API calls.",
+      "word_count": 74
+    },
+    {
+      "segment_id": 5,
+      "start_time": 90.3,
+      "end_time": 95.5,
+      "visual_cue": "Flow diagram - Claude → MCP Server (local) → External API",
+      "visual_type": "flowchart",
+      "spoken_text": "This architecture matters for a few reasons we'll get into, especially around security.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 6,
+      "start_time": 95.5,
+      "end_time": 112.6,
+      "visual_cue": "Split view - Claude Code terminal on left, MCP tools list on right",
+      "visual_type": "screen_capture",
+      "spoken_text": "When you connect an MCP server, Claude gains new tools. [PAUSE] Real, callable functions that it can use during a conversation.\n\nLet me show you what I mean. When I have the Zapier MCP connected, Claude can see tools like:",
+      "word_count": 39
+    },
+    {
+      "segment_id": 7,
+      "start_time": 112.6,
+      "end_time": 131.7,
+      "visual_cue": "Scrolling list of actual Zapier MCP tools",
+      "visual_type": "text_overlay",
+      "spoken_text": "- google_calendar_find_events\n- google_sheets_create_spreadsheet_row\n- gmail_send_email\n- github_create_issue\n- canva_create_design\n\nThese aren't just suggestions. [PAUSE] These are actual functions Claude can call. When you say \"check my calendar for tomorrow,\" Claude looks at its available tools, sees google_calendar_find_events, and calls it with the right parameters.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 8,
+      "start_time": 131.7,
+      "end_time": 150.0,
+      "visual_cue": "Example showing Claude calling a tool and receiving structured data back",
+      "visual_type": "text_overlay",
+      "spoken_text": "The response comes back as structured data. Claude reads it, processes it, and gives you a human-readable answer.\n\nThis is the magic of MCP. [PAUSE] You're not copy-pasting data between apps anymore. You're not manually checking three different services. Claude handles the coordination.",
+      "word_count": 42
+    },
+    {
+      "segment_id": 9,
+      "start_time": 150.0,
+      "end_time": 166.7,
+      "visual_cue": "Security shield icon with \"MCP Security Model\" header",
+      "visual_type": "illustration",
+      "spoken_text": "Now let's talk security, because this is important.\n\nWhen you set up an MCP server, you're giving Claude the ability to take real actions. [PAUSE] Send emails. Modify files. Create calendar events. This is powerful, but it requires trust.",
+      "word_count": 38
+    },
+    {
+      "segment_id": 10,
+      "start_time": 166.7,
+      "end_time": 200.8,
+      "visual_cue": "Bullet points appearing one by one",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's how the security model works:\n\nFirst, MCP servers run locally. [PAUSE] Your credentials stay on your machine. Claude Code talks to the local server, not directly to Google or GitHub.\n\nSecond, you control what's connected. [PAUSE] You explicitly add each MCP server to your configuration. Nothing connects automatically.\n\nThird, most actions require confirmation. [PAUSE] When Claude wants to do something significant, it'll ask you first. You'll see exactly what it's about to do before it happens.",
+      "word_count": 74
+    },
+    {
+      "segment_id": 11,
+      "start_time": 200.8,
+      "end_time": 222.2,
+      "visual_cue": "Example of Claude asking for confirmation before sending an email",
+      "visual_type": "text_overlay",
+      "spoken_text": "Fourth, you can revoke access anytime. [PAUSE] Remove an MCP server from your config, and Claude loses those capabilities instantly.\n\nThe general rule is: only connect services you're comfortable Claude having access to. [PAUSE] And always review what Claude's about to do, especially when you're first getting started.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 12,
+      "start_time": 222.2,
+      "end_time": 266.6,
+      "visual_cue": "Module 3 roadmap showing all lessons",
+      "visual_type": "animated_title",
+      "spoken_text": "Over the next few lessons, we're gonna get hands-on.\n\nIn lesson 3.2, you'll install your first MCP server using Zapier. [PAUSE] We'll walk through the config file and test that it's working.\n\nLesson 3.3 connects Google services - Calendar, Drive, and Gmail. [PAUSE] You'll see Claude actually read your calendar and interact with your files.\n\nLesson 3.4 covers GitHub integration. [PAUSE] We'll set up a Personal Access Token and give Claude access to your repos.\n\nAnd lesson 3.5 is troubleshooting. [PAUSE] Because things don't always work the first time, and knowing how to debug MCP issues will save you hours.",
+      "word_count": 96
+    },
+    {
+      "segment_id": 13,
+      "start_time": 266.6,
+      "end_time": 272.9,
+      "visual_cue": "\"Next: Installing Your First MCP Server\" with arrow",
+      "visual_type": "screen_capture",
+      "spoken_text": "Ready to unlock Claude's full potential? [PAUSE] Let's install your first MCP server.",
+      "word_count": 12
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Module 3 roadmap showing all lessons",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 3 title card with \"MCP Server Deep Dive\" and unlock icon",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Diagram showing Claude in center, with arrows pointing to icons for Calendar, Em...",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Flow diagram - Claude → MCP Server (local) → External API",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "MCP logo and \"Model Context Protocol\" text",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Security shield icon with \"MCP Security Model\" header",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Simple graphic showing Claude in a \"bubble\" disconnected from external services",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "\"Next: Installing Your First MCP Server\" with arrow",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Split view - Claude Code terminal on left, MCP tools list on right",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Bullet points appearing one by one",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example of Claude asking for confirmation before sending an email",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example showing Claude calling a tool and receiving structured data back",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Scrolling list of actual Zapier MCP tools",
+      "segment_ids": [
+        7
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "10 minutes",
+    "lesson": "3.1 - What Are MCP Servers?"
+  },
+  "parsed_at": "2026-01-06T22:53:56.085765"
+}

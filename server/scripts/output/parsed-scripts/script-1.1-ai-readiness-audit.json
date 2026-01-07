@@ -1,0 +1,577 @@
+{
+  "script_id": "script-1.1-ai-readiness-audit",
+  "title": "The AI Readiness Audit",
+  "total_duration_seconds": 645.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 11.9,
+      "visual_cue": "\"Module 1: LANDSCAPE Phase\" title card with purple accent",
+      "visual_type": "animated_title",
+      "spoken_text": "Welcome to Module 1. This is the Landscape phase, and we're starting with something most people skip: actually understanding where you are before you start building.\n\n[PAUSE]",
+      "word_count": 26
+    },
+    {
+      "segment_id": 2,
+      "start_time": 11.9,
+      "end_time": 35.7,
+      "visual_cue": "\"The AI Readiness Audit\" lesson title",
+      "visual_type": "animated_title",
+      "spoken_text": "Over the next fifteen minutes, I'm going to walk you through the AI Readiness Audit. This is the foundation that everything else builds on. Skip this, and you'll end up like the ninety percent of businesses whose AI projects fail to deliver real value.\n\n[PAUSE]\n\nLet's make sure you're in the ten percent.\n\n[PAUSE]",
+      "word_count": 52
+    },
+    {
+      "segment_id": 3,
+      "start_time": 35.7,
+      "end_time": 52.8,
+      "visual_cue": "Statistics graphic - \"70% of AI projects fail to move past pilot phase\"",
+      "visual_type": "illustration",
+      "spoken_text": "Here's a reality check. Studies consistently show that somewhere between sixty and eighty percent of AI projects never make it past the pilot phase. They start with excitement, burn through time and sometimes money, and then just... fizzle out.\n\n[PAUSE]",
+      "word_count": 39
+    },
+    {
+      "segment_id": 4,
+      "start_time": 52.8,
+      "end_time": 62.3,
+      "visual_cue": "\"The Three Failure Modes\" heading",
+      "visual_type": "text_overlay",
+      "spoken_text": "After working with dozens of businesses, I've identified three main reasons this happens. Understanding these will help you avoid them.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 5,
+      "start_time": 62.3,
+      "end_time": 90.9,
+      "visual_cue": "Failure Mode 1 - \"Solution Looking for a Problem\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Failure mode one: solution looking for a problem. This is when someone sees a cool AI tool, gets excited, and tries to force it into their business. \"We should use AI for... something!\" Sound familiar?\n\n[PAUSE]\n\nThe problem is, technology should serve your business needs, not the other way around. If you can't clearly articulate what problem you're solving, you're already on the wrong path.\n\n[PAUSE]",
+      "word_count": 64
+    },
+    {
+      "segment_id": 6,
+      "start_time": 90.9,
+      "end_time": 114.7,
+      "visual_cue": "Failure Mode 2 - \"Boiling the Ocean\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Failure mode two: boiling the ocean. This is trying to automate everything at once. People see the potential and want to transform their entire operation overnight. The result? Overwhelm, half-finished projects, and burnout.\n\n[PAUSE]\n\nSuccessful AI implementation is incremental. You start small, prove value, then expand. We'll get to how in a moment.\n\n[PAUSE]",
+      "word_count": 52
+    },
+    {
+      "segment_id": 7,
+      "start_time": 114.7,
+      "end_time": 121.4,
+      "visual_cue": "Failure Mode 3 - \"The Tool Collector Trap\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Failure mode three, and this is the big one: the Tool Collector trap.\n\n[PAUSE]",
+      "word_count": 13
+    },
+    {
+      "segment_id": 8,
+      "start_time": 121.4,
+      "end_time": 140.1,
+      "visual_cue": "Visual of scattered app icons, subscriptions, unused tools",
+      "visual_type": "illustration",
+      "spoken_text": "Let me describe the Tool Collector. They've got subscriptions to ChatGPT Plus, Claude Pro, Jasper (JAS-per), Copy.ai (copy-A-I), Notion AI, and five automation platforms they barely touch. Their browser has a hundred bookmarks to AI tools they signed up for and forgot about.\n\n[PAUSE]",
+      "word_count": 43
+    },
+    {
+      "segment_id": 9,
+      "start_time": 140.1,
+      "end_time": 170.7,
+      "visual_cue": "\"Collecting tools is not the same as building systems\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Every week there's a new tool that promises to be the one that finally makes everything click. So they sign up. They play with it for an hour. Then it joins the graveyard of unused subscriptions.\n\n[PAUSE]\n\nThe Tool Collector feels productive because they're always learning about new AI capabilities. But here's the truth: they're not actually getting more done. They're just procrastinating in a way that feels like progress.\n\n[PAUSE]",
+      "word_count": 69
+    },
+    {
+      "segment_id": 10,
+      "start_time": 170.7,
+      "end_time": 185.0,
+      "visual_cue": "\"Knowledge without implementation is just entertainment\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Knowledge without implementation is just entertainment. Watching videos about AI tools, reading about new capabilities, that's consumption. It's not the same as building a system that saves you four hours every week.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 11,
+      "start_time": 185.0,
+      "end_time": 205.6,
+      "visual_cue": "\"The Antidote: Intentional Implementation\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "The antidote is intentional implementation. That means starting with a clear problem, selecting the right tool for that specific problem, building a complete solution, measuring the results, then moving on to the next problem.\n\n[PAUSE]\n\nThat's exactly what the AI Readiness Audit helps you do.\n\n[PAUSE]",
+      "word_count": 44
+    },
+    {
+      "segment_id": 12,
+      "start_time": 205.6,
+      "end_time": 219.5,
+      "visual_cue": "AI Readiness Audit worksheet/template",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alright, let's walk through the audit together. You'll find a downloadable template in the resources section for this lesson. I want you to pause and complete each section as we go.\n\n[PAUSE]",
+      "word_count": 31
+    },
+    {
+      "segment_id": 13,
+      "start_time": 219.5,
+      "end_time": 243.3,
+      "visual_cue": "Section 1 - \"Current State Analysis\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Section one: Current State Analysis. This is about honestly assessing where you are right now.\n\n[PAUSE]\n\nFirst question: What tools are you currently using? List everything. Your project management tool, your CRM (C-R-M), your email platform, your calendar, your spreadsheets. Don't just list AI tools, list everything you use to run your business.\n\n[PAUSE]",
+      "word_count": 52
+    },
+    {
+      "segment_id": 14,
+      "start_time": 243.3,
+      "end_time": 274.7,
+      "visual_cue": "Example list of common business tools",
+      "visual_type": "text_overlay",
+      "spoken_text": "Second question: Which of these tools talk to each other? Draw lines between them if they're connected. Most people find they have a lot of isolated tools that require manual data transfer between them. That's where automation opportunities live.\n\n[PAUSE]\n\nThird question: What manual processes are you doing repeatedly? Think about your last week. What tasks did you do more than twice that followed a predictable pattern? These are your automation candidates.\n\n[PAUSE]",
+      "word_count": 71
+    },
+    {
+      "segment_id": 15,
+      "start_time": 274.7,
+      "end_time": 293.3,
+      "visual_cue": "Section 2 - \"Pain Point Identification\"",
+      "visual_type": "screen_capture",
+      "spoken_text": "Section two: Pain Point Identification. This is where we get specific about problems.\n\n[PAUSE]\n\nWrite down your top five time wasters. Not things you don't enjoy, though there's overlap, but specifically tasks that consume disproportionate time relative to their value.\n\n[PAUSE]",
+      "word_count": 39
+    },
+    {
+      "segment_id": 16,
+      "start_time": 293.3,
+      "end_time": 317.5,
+      "visual_cue": "Example pain points list",
+      "visual_type": "text_overlay",
+      "spoken_text": "Common examples I see: responding to similar emails over and over, manually entering data between systems, scheduling and rescheduling meetings, creating similar documents from scratch, searching through information to answer questions.\n\n[PAUSE]\n\nFor each pain point, estimate how many hours per week it consumes. Be honest. We're going to prioritize based on these numbers.\n\n[PAUSE]",
+      "word_count": 53
+    },
+    {
+      "segment_id": 17,
+      "start_time": 317.5,
+      "end_time": 332.1,
+      "visual_cue": "Section 3 - \"Opportunity Scoring\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Section three: Opportunity Scoring. Now we figure out what to tackle first.\n\n[PAUSE]\n\nFor each pain point, we're going to score three factors on a scale of one to five.\n\n[PAUSE]",
+      "word_count": 29
+    },
+    {
+      "segment_id": 18,
+      "start_time": 332.1,
+      "end_time": 355.6,
+      "visual_cue": "Factor 1 - \"Time Impact\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Factor one: Time Impact. How many hours would you save if this was automated? Give it a five if it's more than five hours per week, four if it's three to five hours, three if it's one to three hours, two if it's thirty minutes to an hour, one if it's less than thirty minutes.\n\n[PAUSE]",
+      "word_count": 55
+    },
+    {
+      "segment_id": 19,
+      "start_time": 355.6,
+      "end_time": 369.1,
+      "visual_cue": "Factor 2 - \"Feasibility\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Factor two: Feasibility. How realistic is it to automate this with current AI tools? Five means it's definitely possible with off-the-shelf solutions. One means it would require custom AI development.\n\n[PAUSE]",
+      "word_count": 30
+    },
+    {
+      "segment_id": 20,
+      "start_time": 369.1,
+      "end_time": 385.0,
+      "visual_cue": "Factor 3 - \"Data Availability\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Factor three: Data Availability. Does the information needed for this task exist in a structured, accessible format? Five means it's all in connected digital systems. One means it's in people's heads or scattered across paper files.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 21,
+      "start_time": 385.0,
+      "end_time": 394.9,
+      "visual_cue": "Scoring calculation example",
+      "visual_type": "calculator",
+      "spoken_text": "Add up your scores for each pain point. The highest total is your first automation target. This is where we'll focus.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 22,
+      "start_time": 394.9,
+      "end_time": 419.9,
+      "visual_cue": "Section 4 - \"Quick Wins Identification\"",
+      "visual_type": "screen_capture",
+      "spoken_text": "Section four: Quick Wins Identification. Look at your scored list. Are there any items that scored high on feasibility but maybe lower on time impact? These are your quick wins.\n\n[PAUSE]\n\nQuick wins matter because they build momentum. Completing a small automation successfully gives you the confidence and skills to tackle bigger projects. Don't underestimate them.\n\n[PAUSE]",
+      "word_count": 55
+    },
+    {
+      "segment_id": 23,
+      "start_time": 419.9,
+      "end_time": 462.7,
+      "visual_cue": "Section 5 - \"Resource Assessment\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Section five: Resource Assessment. Let's be realistic about what you've got to work with.\n\n[PAUSE]\n\nHow many hours per week can you dedicate to building AI systems? Not learning about them, actually building them. Be conservative. If you say ten hours but realistically have three, you'll set yourself up for frustration.\n\n[PAUSE]\n\nWhat's your budget for AI tools? Many have free tiers, but some paid tools accelerate results significantly. Know your number.\n\n[PAUSE]\n\nDo you have anyone who can help? A tech-savvy team member, a virtual assistant, a freelancer? AI implementation gets easier with collaboration.\n\n[PAUSE]",
+      "word_count": 92
+    },
+    {
+      "segment_id": 24,
+      "start_time": 462.7,
+      "end_time": 472.2,
+      "visual_cue": "Completed audit example with highlights",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once you've completed your audit, you should have a clear picture emerging. Let me show you how to interpret it.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 25,
+      "start_time": 472.2,
+      "end_time": 487.3,
+      "visual_cue": "\"Your First Project\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your first project is the pain point with the highest opportunity score. This is where you'll apply everything you learn in this course. We're going to build a real solution for this specific problem.\n\n[PAUSE]",
+      "word_count": 34
+    },
+    {
+      "segment_id": 26,
+      "start_time": 487.3,
+      "end_time": 501.6,
+      "visual_cue": "\"Your Quick Win Queue\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your quick win queue is your list of smaller opportunities. When you need a break from your main project, or when you want to practice a new skill, pull from this list.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 27,
+      "start_time": 501.6,
+      "end_time": 516.3,
+      "visual_cue": "\"Your Integration Map\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your integration map shows you where data flows in your business and where it doesn't. The gaps in this map are your automation opportunities. As you build skills, you'll start connecting these dots.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 28,
+      "start_time": 516.3,
+      "end_time": 531.0,
+      "visual_cue": "\"Your Constraints\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "And your constraints, the time and budget you've allocated, these keep you realistic. A constraint isn't a limitation, it's a focusing tool. Work within what you've got, and expand as you prove value.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 29,
+      "start_time": 531.0,
+      "end_time": 539.3,
+      "visual_cue": "Warning icons with tips",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before we wrap up, let me call out some common mistakes I see in this audit process.\n\n[PAUSE]",
+      "word_count": 17
+    },
+    {
+      "segment_id": 30,
+      "start_time": 539.3,
+      "end_time": 554.0,
+      "visual_cue": "Mistake 1 - \"Being too vague\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake one: being too vague. \"I waste time on admin stuff\" isn't actionable. \"I spend three hours per week manually copying customer orders from email into our inventory spreadsheet\" is actionable. Get specific.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 31,
+      "start_time": 554.0,
+      "end_time": 569.1,
+      "visual_cue": "Mistake 2 - \"Underestimating time spent\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake two: underestimating time spent. We're terrible at estimating our own time. If you think a task takes fifteen minutes, it probably takes forty-five. Track your time for a week if you're not sure.\n\n[PAUSE]",
+      "word_count": 34
+    },
+    {
+      "segment_id": 32,
+      "start_time": 569.1,
+      "end_time": 590.2,
+      "visual_cue": "Mistake 3 - \"Skipping the scoring\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "Mistake three: skipping the scoring. I know it feels like extra work, but the scoring system forces you to think objectively. Your gut will tell you to automate the thing that annoys you most. But the thing that annoys you most might not be the best place to start.\n\n[PAUSE]",
+      "word_count": 49
+    },
+    {
+      "segment_id": 33,
+      "start_time": 590.2,
+      "end_time": 619.2,
+      "visual_cue": "Completed audit template with \"Your First Step\" callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alright, here's what I need you to do. Download the AI Readiness Audit template from the resources section. Set aside thirty minutes, forty-five if you want to be thorough. Complete every section.\n\n[PAUSE]\n\nWhen you're done, you'll have something incredibly valuable: a strategic roadmap for your AI implementation. Not random tools you hope will help, but a prioritized list of specific problems you're going to solve.\n\n[PAUSE]",
+      "word_count": 65
+    },
+    {
+      "segment_id": 34,
+      "start_time": 619.2,
+      "end_time": 643.8,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next lesson, we're doing the Account Setup Marathon. We'll get you signed up for all the platforms you'll need. It's not the most exciting work, but it's essential. Get it done once, and you'll never have to think about it again.\n\n[PAUSE]\n\nComplete your audit, then I'll see you in the next lesson.\n\n[PAUSE]",
+      "word_count": 54
+    },
+    {
+      "segment_id": 35,
+      "start_time": 643.8,
+      "end_time": 645.8,
+      "visual_cue": "Fade to \"Next: Account Setup Marathon\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "\"Module 1: LANDSCAPE Phase\" title card with purple accent",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "\"The AI Readiness Audit\" lesson title",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Account Setup Marathon\" with Support Forge branding",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Scoring calculation example",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Statistics graphic - \"70% of AI projects fail to move past pilot phase\"",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Visual of scattered app icons, subscriptions, unused tools",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Section 2 - \"Pain Point Identification\"",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Section 4 - \"Quick Wins Identification\"",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Collecting tools is not the same as building systems\"",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Knowledge without implementation is just entertainment\"",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"The Antidote: Intentional Implementation\"",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"The Three Failure Modes\" heading",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Constraints\"",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your First Project\" highlighted",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Integration Map\"",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Quick Win Queue\"",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "AI Readiness Audit worksheet/template",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Completed audit example with highlights",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Completed audit template with \"Your First Step\" callout",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example list of common business tools",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example pain points list",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Factor 1 - \"Time Impact\"",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Factor 2 - \"Feasibility\"",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Factor 3 - \"Data Availability\"",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Failure Mode 1 - \"Solution Looking for a Problem\"",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Failure Mode 2 - \"Boiling the Ocean\"",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Failure Mode 3 - \"The Tool Collector Trap\"",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 1 - \"Being too vague\"",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 2 - \"Underestimating time spent\"",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Mistake 3 - \"Skipping the scoring\"",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Section 1 - \"Current State Analysis\"",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Section 3 - \"Opportunity Scoring\"",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Section 5 - \"Resource Assessment\"",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Warning icons with tips",
+      "segment_ids": [
+        29
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes (~2250-2550 words)",
+    "lesson": "Module 1, Lesson 1",
+    "purpose": "Why AI implementations fail, the Tool Collector trap, complete audit walkthrough",
+    "stated_word_count": "2,050",
+    "stated_runtime": "14:30-15:00"
+  },
+  "parsed_at": "2026-01-06T22:53:56.042425"
+}

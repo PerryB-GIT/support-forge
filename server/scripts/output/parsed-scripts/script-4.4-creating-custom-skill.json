@@ -1,0 +1,526 @@
+{
+  "script_id": "script-4.4-creating-custom-skill",
+  "title": "Creating Your First Custom Skill",
+  "total_duration_seconds": 568.2,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 21.0,
+      "visual_cue": "Lesson title \"Creating Your First Custom Skill\"",
+      "visual_type": "animated_title",
+      "spoken_text": "This is where everything comes together. [PAUSE] You've seen what skills can do. You've installed skills from others. Now you're building your own.\n\nCustom skills let you encode your exact workflows. [PAUSE] The way you like commits formatted. Your team's code review checklist. Your personal morning routine.",
+      "word_count": 45
+    },
+    {
+      "segment_id": 2,
+      "start_time": 21.0,
+      "end_time": 31.0,
+      "visual_cue": "\"Your Workflow, Automated\" tagline",
+      "visual_type": "text_overlay",
+      "spoken_text": "By the end of this lesson, you'll have a working custom skill and the knowledge to build as many more as you need.\n\nLet's build.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 3,
+      "start_time": 31.0,
+      "end_time": 39.3,
+      "visual_cue": "\"SKILL.md Structure\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Every skill starts with a SKILL.md file. [PAUSE] Let me break down the structure.\n\n### The Basic Template",
+      "word_count": 17
+    },
+    {
+      "segment_id": 4,
+      "start_time": 39.3,
+      "end_time": 64.0,
+      "visual_cue": "Full SKILL.md template appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "```markdown\n# Skill Name\n\nOne-line description of what this skill does.\n\nTrigger conditions - when should Claude suggest or use this skill?\n\nStep-by-step guidance for Claude when this skill is invoked.\n\nWhat arguments or context does this skill expect?\n\nWhat should the final result look like?\n\nSample invocations and expected behavior.\n```\n\n[PAUSE]\n\nLet's understand each section.\n\n### Description",
+      "word_count": 58
+    },
+    {
+      "segment_id": 5,
+      "start_time": 64.0,
+      "end_time": 76.3,
+      "visual_cue": "Highlighting Description section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Keep it brief. [PAUSE] This shows up when listing available skills. \"Generate morning briefing from calendar and email\" tells you exactly what it does.\n\n### When to Use",
+      "word_count": 27
+    },
+    {
+      "segment_id": 6,
+      "start_time": 76.3,
+      "end_time": 94.6,
+      "visual_cue": "Highlighting When to Use section",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is optional but powerful. [PAUSE] It tells Claude when to proactively suggest this skill.\n\n\"Use when the user asks about their schedule for the day\" means Claude might say \"Would you like me to run your morning briefing?\" when relevant.\n\n### Instructions",
+      "word_count": 42
+    },
+    {
+      "segment_id": 7,
+      "start_time": 94.6,
+      "end_time": 124.7,
+      "visual_cue": "Highlighting Instructions section",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is the heart of your skill. [PAUSE] Write this like you're training a new team member.\n\nBe specific. [PAUSE] Don't say \"format it nicely\" - say \"use markdown headers, bullet points for lists, and code blocks for any commands.\"\n\nInclude decision trees. [PAUSE] \"If the user hasn't specified a branch, ask which branch. If they say 'main' or 'master', confirm before proceeding.\"\n\n### Input and Output",
+      "word_count": 64
+    },
+    {
+      "segment_id": 8,
+      "start_time": 124.7,
+      "end_time": 138.5,
+      "visual_cue": "Highlighting Input/Output sections",
+      "visual_type": "text_overlay",
+      "spoken_text": "Input defines what the skill expects. [PAUSE] Arguments, context, files to read.\n\nOutput defines what success looks like. [PAUSE] A file created? A message displayed? Data returned?\n\n### Examples",
+      "word_count": 27
+    },
+    {
+      "segment_id": 9,
+      "start_time": 138.5,
+      "end_time": 147.6,
+      "visual_cue": "Highlighting Examples section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Concrete examples help Claude understand edge cases. [PAUSE] Show a few different invocation patterns and what should happen for each.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 10,
+      "start_time": 147.6,
+      "end_time": 159.5,
+      "visual_cue": "\"Project: Morning Briefing Skill\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build something practical. [PAUSE] A morning briefing skill that checks your calendar, looks for important emails, and summarizes your day.\n\n### Step 1: Create the Folder",
+      "word_count": 26
+    },
+    {
+      "segment_id": 11,
+      "start_time": 159.5,
+      "end_time": 167.1,
+      "visual_cue": "File browser creating folder",
+      "visual_type": "screen_capture",
+      "spoken_text": "Navigate to your skills directory and create a new folder:\n\n```\nskills/\n  morning-briefing/\n```\n\n### Step 2: Create SKILL.md",
+      "word_count": 19
+    },
+    {
+      "segment_id": 12,
+      "start_time": 167.1,
+      "end_time": 169.1,
+      "visual_cue": "Creating the file in editor",
+      "visual_type": "text_overlay",
+      "spoken_text": "Inside that folder, create SKILL.md:",
+      "word_count": 5
+    },
+    {
+      "segment_id": 13,
+      "start_time": 169.1,
+      "end_time": 308.7,
+      "visual_cue": "Writing the skill content",
+      "visual_type": "text_overlay",
+      "spoken_text": "```markdown\n# Morning Briefing\n\nGenerate a comprehensive morning briefing including calendar events,\nimportant emails, and daily priorities.\n\n- When user types /morning or /morning-briefing\n- When user asks \"what's on my schedule today\"\n- When user asks for a daily summary\n\nWhen this skill is invoked, follow these steps in order:\n\n### 1. Get Today's Date Context\nNote the current date and day of week. Consider if it's a\nMonday (include weekend context) or Friday (note upcoming weekend).\n\n### 2. Calendar Review\nUse the Google Calendar MCP tools to:\n- Fetch all events for today\n- Fetch events for tomorrow (preview)\n- Identify any conflicts or back-to-back meetings\n\nPresent calendar as a timeline format:\n```\nTODAY'S SCHEDULE\n\n9:00 AM - Team standup (30 min)\n10:00 AM - Client call with Acme (1 hr)\n[2 hour gap]\n1:00 PM - Lunch with Sarah (1 hr)\n```\n\n### 3. Email Scan\nUse Gmail MCP tools to:\n- Find unread emails from the last 24 hours\n- Prioritize emails from known important contacts\n- Flag any emails with \"urgent\" or \"asap\" in subject\n\nSummarize as:\n```\nEMAIL SUMMARY\n\n- 3 unread emails\n- 1 flagged as urgent: \"Q4 Budget Review\" from CFO\n- Notable: Response needed on Project Alpha proposal\n```\n\n### 4. Daily Priorities\nBased on calendar and email analysis, suggest top 3 priorities\nfor the day. Consider:\n- Meetings that need prep\n- Deadlines mentioned in emails\n- Gaps in schedule for deep work\n\n### 5. Delivery Format\nPresent everything in a clean, scannable format. Start with\na one-line summary: \"You have X meetings today, Y urgent items.\"\n\nKeep total briefing under 500 words unless the day is unusually complex.\n\n- No arguments required for basic briefing\n- Optional: \"tomorrow\" or specific date for different day\n- Optional: \"detailed\" for expanded email summaries\n\nA formatted briefing in the terminal, ready to read in under 2 minutes.\n\n### Basic Invocation\nUser: /morning\nResponse: Full briefing for today\n\n### Specific Date\nUser: /morning tomorrow\nResponse: Briefing for tomorrow's schedule\n\n### Detailed Mode\nUser: /morning detailed\nResponse: Briefing with full email previews instead of summaries\n```",
+      "word_count": 349
+    },
+    {
+      "segment_id": 14,
+      "start_time": 308.7,
+      "end_time": 311.1,
+      "visual_cue": "Completed SKILL.md file",
+      "visual_type": "text_overlay",
+      "spoken_text": "### Step 3: Save and Test",
+      "word_count": 6
+    },
+    {
+      "segment_id": 15,
+      "start_time": 311.1,
+      "end_time": 315.4,
+      "visual_cue": "Saving the file",
+      "visual_type": "text_overlay",
+      "spoken_text": "Save the file. [PAUSE] Now let's test it.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 16,
+      "start_time": 315.4,
+      "end_time": 321.0,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Restart Claude Code to pick up the new skill, then type:\n\n```\n/morning-briefing\n```",
+      "word_count": 14
+    },
+    {
+      "segment_id": 17,
+      "start_time": 321.0,
+      "end_time": 328.1,
+      "visual_cue": "Claude executing the skill",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch Claude work. [PAUSE] It follows your instructions - checking calendar, scanning emails, synthesizing priorities.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 18,
+      "start_time": 328.1,
+      "end_time": 337.6,
+      "visual_cue": "Morning briefing output appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "The output follows your specified format. [PAUSE] Timeline view for calendar, summary for emails, prioritized action items.\n\n### Step 4: Refine",
+      "word_count": 20
+    },
+    {
+      "segment_id": 19,
+      "start_time": 337.6,
+      "end_time": 359.0,
+      "visual_cue": "Iterating on the skill",
+      "visual_type": "text_overlay",
+      "spoken_text": "First run probably isn't perfect. [PAUSE] Maybe the email section is too verbose. Maybe you want a different calendar format.\n\nEdit the SKILL.md, save, and run again. [PAUSE] Skills load fresh each time, so changes apply immediately.\n\nThis refinement loop is how you dial in the perfect skill.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 20,
+      "start_time": 359.0,
+      "end_time": 364.6,
+      "visual_cue": "\"Skill Writing Best Practices\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "After building a few skills, here's what I've learned:\n\n### Be Specific, Not Vague",
+      "word_count": 14
+    },
+    {
+      "segment_id": 21,
+      "start_time": 364.6,
+      "end_time": 380.6,
+      "visual_cue": "Good vs bad instruction examples",
+      "visual_type": "comparison_table",
+      "spoken_text": "**Bad:** \"Format the output nicely.\"\n\n**Good:** \"Use H2 headers for each section. Bullet points for lists of 3+ items. Bold for emphasis on key terms.\"\n\nClaude can interpret vague instructions, but specific ones give consistent results.\n\n### Include Edge Cases",
+      "word_count": 40
+    },
+    {
+      "segment_id": 22,
+      "start_time": 380.6,
+      "end_time": 408.9,
+      "visual_cue": "Edge case handling",
+      "visual_type": "text_overlay",
+      "spoken_text": "What if there are no calendar events? [PAUSE] What if the email API fails? Your skill should handle these:\n\n```markdown\nIf no calendar events are found, say \"Your calendar is clear today -\ngreat opportunity for deep work!\" rather than just \"No events.\"\n\nIf email tools are unavailable, note \"Email summary unavailable -\nMCP connection may need refresh\" and continue with other sections.\n```\n\n### Use Conditional Logic",
+      "word_count": 67
+    },
+    {
+      "segment_id": 23,
+      "start_time": 408.9,
+      "end_time": 429.3,
+      "visual_cue": "Conditional instruction example",
+      "visual_type": "text_overlay",
+      "spoken_text": "```markdown\nIf today is Monday:\n- Include \"Weekend email catchup\" as a suggested priority\n- Note any events from Friday that may need follow-up\n\nIf today is Friday:\n- Preview Monday's first meeting\n- Suggest reviewing weekly goals\n```\n\nThis makes your skill smarter and more contextual.\n\n### Test Multiple Scenarios",
+      "word_count": 51
+    },
+    {
+      "segment_id": 24,
+      "start_time": 429.3,
+      "end_time": 445.3,
+      "visual_cue": "Testing checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before considering a skill \"done,\" test:\n- Normal case (typical day with events and emails)\n- Empty case (no events, no emails)\n- Heavy case (packed calendar, overflowing inbox)\n- Edge case (weekend, holiday, unusual situation)\n\n### Keep Skills Focused",
+      "word_count": 40
+    },
+    {
+      "segment_id": 25,
+      "start_time": 445.3,
+      "end_time": 465.2,
+      "visual_cue": "Single responsibility principle",
+      "visual_type": "text_overlay",
+      "spoken_text": "One skill, one job. [PAUSE]\n\nIf your skill is trying to do morning briefing AND plan your week AND summarize your projects... break it up.\n\n```\n/morning - daily briefing\n/weekly-plan - week planning\n/project-status - project summaries\n```\n\nSmall, focused skills compose better than one mega-skill.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 26,
+      "start_time": 465.2,
+      "end_time": 471.9,
+      "visual_cue": "\"Sharing Skills\" with GitHub icon",
+      "visual_type": "illustration",
+      "spoken_text": "Built something great? [PAUSE] Share it with the community.\n\n### Create a GitHub Repository",
+      "word_count": 13
+    },
+    {
+      "segment_id": 27,
+      "start_time": 471.9,
+      "end_time": 486.2,
+      "visual_cue": "GitHub repo creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Make a repository for your skills. [PAUSE] Structure it clearly:\n\n```\nmy-claude-skills/\n  README.md          (overview of all skills)\n  morning-briefing/\n    SKILL.md\n    README.md        (specific skill docs)\n  code-review/\n    SKILL.md\n    checklist.md     (supporting file)\n```\n\n### Write Good Documentation",
+      "word_count": 32
+    },
+    {
+      "segment_id": 28,
+      "start_time": 486.2,
+      "end_time": 498.2,
+      "visual_cue": "README example",
+      "visual_type": "text_overlay",
+      "spoken_text": "For each skill, explain:\n- What it does\n- What MCP servers it requires (if any)\n- How to customize it for their needs\n- Example output\n\n### License It",
+      "word_count": 30
+    },
+    {
+      "segment_id": 29,
+      "start_time": 498.2,
+      "end_time": 508.1,
+      "visual_cue": "License choice",
+      "visual_type": "text_overlay",
+      "spoken_text": "Add a license so people know they can use it. [PAUSE] MIT is common for skills - use it freely, no warranty.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 30,
+      "start_time": 508.1,
+      "end_time": 526.8,
+      "visual_cue": "Module 4 completion graphic",
+      "visual_type": "animated_title",
+      "spoken_text": "Congratulations. [PAUSE] You've completed Module 4.\n\nYou now understand:\n- What skills are and how they extend Claude\n- How to install and use the Superpowers plugin\n- How to find and customize community skills\n- How to build your own skills from scratch",
+      "word_count": 43
+    },
+    {
+      "segment_id": 31,
+      "start_time": 526.8,
+      "end_time": 545.2,
+      "visual_cue": "Skills you can now create - list appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "The skills you can create are limited only by your imagination:\n- Code generation with your team's patterns\n- Deployment workflows for your infrastructure\n- Documentation generation in your format\n- Meeting notes that extract action items\n- Client communication templates\n- Whatever your workflow demands",
+      "word_count": 46
+    },
+    {
+      "segment_id": 32,
+      "start_time": 545.2,
+      "end_time": 568.2,
+      "visual_cue": "Course progress - Modules 1-4 complete, future modules teased",
+      "visual_type": "text_overlay",
+      "spoken_text": "You've come a long way from installation. [PAUSE] Claude Code is no longer just a coding assistant - it's an integrated system connected to your services, extended with powerful skills, and customized for how you work.\n\nIn the next module, we'll put everything together with real project workflows. [PAUSE] See you there.",
+      "word_count": 50
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title \"Creating Your First Custom Skill\"",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 4 completion graphic",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Good vs bad instruction examples",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Sharing Skills\" with GitHub icon",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "File browser creating folder",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Project: Morning Briefing Skill\" header",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"SKILL.md Structure\" header",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Skill Writing Best Practices\" header",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Workflow, Automated\" tagline",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude executing the skill",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Completed SKILL.md file",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Conditional instruction example",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Course progress - Modules 1-4 complete, future modules teased",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating the file in editor",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Edge case handling",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Full SKILL.md template appearing",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GitHub repo creation",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting Description section",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting Examples section",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting Input/Output sections",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting Instructions section",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting When to Use section",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Iterating on the skill",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "License choice",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Morning briefing output appearing",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "README example",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Saving the file",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Single responsibility principle",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Skills you can now create - list appearing",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Testing checklist",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Writing the skill content",
+      "segment_ids": [
+        13
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "20 minutes",
+    "lesson": "4.4 - Creating Your First Custom Skill"
+  },
+  "parsed_at": "2026-01-06T22:53:56.113690"
+}

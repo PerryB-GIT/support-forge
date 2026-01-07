@@ -1,0 +1,127 @@
+[
+  {
+    "slide_number": 1,
+    "duration": 8.7,
+    "file": "slide_001.png"
+  },
+  {
+    "slide_number": 2,
+    "duration": 13.9,
+    "file": "slide_002.png"
+  },
+  {
+    "slide_number": 3,
+    "duration": 37.8,
+    "file": "slide_003.png"
+  },
+  {
+    "slide_number": 4,
+    "duration": 8.4,
+    "file": "slide_004.png"
+  },
+  {
+    "slide_number": 5,
+    "duration": 3.2,
+    "file": "slide_005.png"
+  },
+  {
+    "slide_number": 6,
+    "duration": 7.2,
+    "file": "slide_006.png"
+  },
+  {
+    "slide_number": 7,
+    "duration": 16.8,
+    "file": "slide_007.png"
+  },
+  {
+    "slide_number": 8,
+    "duration": 16.8,
+    "file": "slide_008.png"
+  },
+  {
+    "slide_number": 9,
+    "duration": 13.5,
+    "file": "slide_009.png"
+  },
+  {
+    "slide_number": 10,
+    "duration": 8.0,
+    "file": "slide_010.png"
+  },
+  {
+    "slide_number": 11,
+    "duration": 4.0,
+    "file": "slide_011.png"
+  },
+  {
+    "slide_number": 12,
+    "duration": 12.4,
+    "file": "slide_012.png"
+  },
+  {
+    "slide_number": 13,
+    "duration": 10.4,
+    "file": "slide_013.png"
+  },
+  {
+    "slide_number": 14,
+    "duration": 17.2,
+    "file": "slide_014.png"
+  },
+  {
+    "slide_number": 15,
+    "duration": 3.6,
+    "file": "slide_015.png"
+  },
+  {
+    "slide_number": 16,
+    "duration": 32.7,
+    "file": "slide_016.png"
+  },
+  {
+    "slide_number": 17,
+    "duration": 3.6,
+    "file": "slide_017.png"
+  },
+  {
+    "slide_number": 18,
+    "duration": 35.1,
+    "file": "slide_018.png"
+  },
+  {
+    "slide_number": 19,
+    "duration": 2.8,
+    "file": "slide_019.png"
+  },
+  {
+    "slide_number": 20,
+    "duration": 10.0,
+    "file": "slide_020.png"
+  },
+  {
+    "slide_number": 21,
+    "duration": 6.8,
+    "file": "slide_021.png"
+  },
+  {
+    "slide_number": 22,
+    "duration": 8.4,
+    "file": "slide_022.png"
+  },
+  {
+    "slide_number": 23,
+    "duration": 14.7,
+    "file": "slide_023.png"
+  },
+  {
+    "slide_number": 24,
+    "duration": 2.0,
+    "file": "slide_024.png"
+  },
+  {
+    "slide_number": 25,
+    "duration": 31.6,
+    "file": "slide_025.png"
+  }
+]

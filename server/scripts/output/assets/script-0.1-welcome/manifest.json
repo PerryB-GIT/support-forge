@@ -1,0 +1,427 @@
+{
+  "script_id": "script-0.1-welcome",
+  "created_at": "2026-01-06T22:55:53.370033",
+  "updated_at": "2026-01-06T22:59:36.785913",
+  "total_assets": 30,
+  "assets": [
+    {
+      "index": 1,
+      "filename": "segment_001_title_card_ai_launchpad_academy_logo_animation_with.png",
+      "asset_type": "title_card",
+      "description": "AI Launchpad Academy logo animation with purple accent (#8B5CF6) on dark background",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card_ai_launchpad_academy_logo_animation_with.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "AI Launchpad Academy logo animation",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card_ai_launchpad_academy_logo_animation_with.png"
+      }
+    },
+    {
+      "index": 2,
+      "filename": "segment_002_bullet_points_who_this_course_is_for_heading_with_bull.png",
+      "asset_type": "bullet_points",
+      "description": "\"Who This Course Is For\" heading with bullet points appearing",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_002_bullet_points_who_this_course_is_for_heading_with_bull.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"Who This Course Is For\" heading with bullet points"
+      }
+    },
+    {
+      "index": 3,
+      "filename": "segment_003_illustration_crossed-out_tech_expert_required_icon.png",
+      "asset_type": "illustration",
+      "description": "Crossed-out \"Tech Expert Required\" icon",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_003_illustration_crossed-out_tech_expert_required_icon.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 4,
+      "filename": "segment_004_flowchart_visual_showing_connected_ai_workflow_sys.png",
+      "asset_type": "flowchart",
+      "description": "Visual showing connected AI workflow system",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_004_flowchart_visual_showing_connected_ai_workflow_sys.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 5,
+      "filename": "segment_005_illustration_roi_visualization_hours_saved_per_week.png",
+      "asset_type": "illustration",
+      "description": "ROI visualization, hours saved per week",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_005_illustration_roi_visualization_hours_saved_per_week.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 6,
+      "filename": "segment_006_quote_callout_launch_acronym_displayed_vertically_with.png",
+      "asset_type": "quote_callout",
+      "description": "LAUNCH acronym displayed vertically with each letter highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_006_quote_callout_launch_acronym_displayed_vertically_with.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "LAUNCH acronym displayed vertically with each letter highlighted"
+      }
+    },
+    {
+      "index": 7,
+      "filename": "segment_007_quote_callout_l_-_landscape_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"L - LANDSCAPE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_007_quote_callout_l_-_landscape_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"L - LANDSCAPE\" highlighted"
+      }
+    },
+    {
+      "index": 8,
+      "filename": "segment_008_quote_callout_a_-_architect_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"A - ARCHITECT\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_008_quote_callout_a_-_architect_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"A - ARCHITECT\" highlighted"
+      }
+    },
+    {
+      "index": 9,
+      "filename": "segment_009_quote_callout_u_-_unify_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"U - UNIFY\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_009_quote_callout_u_-_unify_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"U - UNIFY\" highlighted"
+      }
+    },
+    {
+      "index": 10,
+      "filename": "segment_010_quote_callout_n_-_navigate_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"N - NAVIGATE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_010_quote_callout_n_-_navigate_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"N - NAVIGATE\" highlighted"
+      }
+    },
+    {
+      "index": 11,
+      "filename": "segment_011_quote_callout_c_-_customize_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"C - CUSTOMIZE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_011_quote_callout_c_-_customize_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"C - CUSTOMIZE\" highlighted"
+      }
+    },
+    {
+      "index": 12,
+      "filename": "segment_012_quote_callout_h_-_harvest_highlighted.png",
+      "asset_type": "quote_callout",
+      "description": "\"H - HARVEST\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_012_quote_callout_h_-_harvest_highlighted.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"H - HARVEST\" highlighted"
+      }
+    },
+    {
+      "index": 13,
+      "filename": "segment_013_title_card_course_roadmap_showing_all_modules.png",
+      "asset_type": "title_card",
+      "description": "Course roadmap showing all modules",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_013_title_card_course_roadmap_showing_all_modules.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "Course roadmap showing all modules",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_013_title_card_course_roadmap_showing_all_modules.png"
+      }
+    },
+    {
+      "index": 14,
+      "filename": "segment_014_end_card_fade_to_next_your_learning_environment_w.png",
+      "asset_type": "end_card",
+      "description": "Fade to \"Next: Your Learning Environment\" with Support Forge branding",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_014_end_card_fade_to_next_your_learning_environment_w.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 1,
+      "filename": "segment_001_title_card_ai_launchpad_academy_logo_animation_with.png",
+      "asset_type": "title_card",
+      "description": "AI Launchpad Academy logo animation with purple accent (#8B5CF6) on dark background",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card_ai_launchpad_academy_logo_animation_with.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "AI Launchpad Academy logo animation",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card_ai_launchpad_academy_logo_animation_with.png"
+      }
+    },
+    {
+      "index": 13,
+      "filename": "segment_013_title_card_course_roadmap_showing_all_modules.png",
+      "asset_type": "title_card",
+      "description": "Course roadmap showing all modules",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_013_title_card_course_roadmap_showing_all_modules.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "Course roadmap showing all modules",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_013_title_card_course_roadmap_showing_all_modules.png"
+      }
+    },
+    {
+      "index": 1,
+      "filename": "segment_001_title_card.png",
+      "asset_type": "title_card",
+      "description": "AI Launchpad Academy logo animation with purple accent (#8B5CF6) on dark background",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "AI Launchpad Academy logo animation",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_001_title_card.png"
+      }
+    },
+    {
+      "index": 2,
+      "filename": "segment_002_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"Who This Course Is For\" heading with bullet points appearing",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_002_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"Who This Course Is For\" heading with bullet points"
+      }
+    },
+    {
+      "index": 3,
+      "filename": "segment_003_illustration.png",
+      "asset_type": "illustration",
+      "description": "Crossed-out \"Tech Expert Required\" icon",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_003_illustration.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 4,
+      "filename": "segment_004_illustration.png",
+      "asset_type": "illustration",
+      "description": "Visual showing connected AI workflow system",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_004_illustration.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 5,
+      "filename": "segment_005_illustration.png",
+      "asset_type": "illustration",
+      "description": "ROI visualization, hours saved per week",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_005_illustration.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 6,
+      "filename": "segment_006_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "LAUNCH acronym displayed vertically with each letter highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_006_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "LAUNCH acronym displayed vertically with each letter highlighted"
+      }
+    },
+    {
+      "index": 7,
+      "filename": "segment_007_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"L - LANDSCAPE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_007_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"L - LANDSCAPE\" highlighted"
+      }
+    },
+    {
+      "index": 8,
+      "filename": "segment_008_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"A - ARCHITECT\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_008_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"A - ARCHITECT\" highlighted"
+      }
+    },
+    {
+      "index": 9,
+      "filename": "segment_009_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"U - UNIFY\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_009_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"U - UNIFY\" highlighted"
+      }
+    },
+    {
+      "index": 10,
+      "filename": "segment_010_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"N - NAVIGATE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_010_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"N - NAVIGATE\" highlighted"
+      }
+    },
+    {
+      "index": 11,
+      "filename": "segment_011_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"C - CUSTOMIZE\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_011_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"C - CUSTOMIZE\" highlighted"
+      }
+    },
+    {
+      "index": 12,
+      "filename": "segment_012_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "\"H - HARVEST\" highlighted",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_012_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "\"H - HARVEST\" highlighted"
+      }
+    },
+    {
+      "index": 13,
+      "filename": "segment_013_content_slide.png",
+      "asset_type": "content_slide",
+      "description": "Course roadmap showing all modules",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_013_content_slide.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Course roadmap showing all modules"
+      }
+    },
+    {
+      "index": 14,
+      "filename": "segment_014_title_card.png",
+      "asset_type": "title_card",
+      "description": "Fade to \"Next: Your Learning Environment\" with Support Forge branding",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_014_title_card.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "Fade to \"Next: Your Learning Environment\"",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-0.1-welcome\\segment_014_title_card.png"
+      }
+    }
+  ],
+  "recording_required": [],
+  "statistics": {
+    "completed": 0,
+    "pending": 30,
+    "failed": 0,
+    "needs_recording": 0
+  }
+}

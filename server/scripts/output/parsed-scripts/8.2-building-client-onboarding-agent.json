@@ -1,0 +1,603 @@
+{
+  "script_id": "8.2-building-client-onboarding-agent",
+  "title": "Module 8.2: Building the Client Onboarding Agent",
+  "total_duration_seconds": 801.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 4.0,
+      "visual_cue": "\"Let's Build\" text with construction/building animation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alright. Sleeves rolled up. Coffee poured. Let's build this thing.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 2,
+      "start_time": 4.0,
+      "end_time": 23.1,
+      "visual_cue": "Title card - \"Module 8.2: Building the Client Onboarding Agent\"",
+      "visual_type": "animated_title",
+      "spoken_text": "Over the next forty minutes, we're going step by step through every component of your client onboarding agent. Follow along in your own n8n instance. Pause when you need to. By the end, you'll have a complete, working system.\n\n[PAUSE]\n\nLet's start with the foundation.",
+      "word_count": 44
+    },
+    {
+      "segment_id": 3,
+      "start_time": 23.1,
+      "end_time": 30.7,
+      "visual_cue": "\"Part 1: The Trigger\" with webhook icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Setting Up the Webhook\n\nEvery automation needs a starting point. Ours is a webhook that receives form submissions.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 4,
+      "start_time": 30.7,
+      "end_time": 40.7,
+      "visual_cue": "n8n interface - adding a new workflow",
+      "visual_type": "screen_capture",
+      "spoken_text": "Open n8n and create a new workflow. Name it \"Client Onboarding Agent.\"\n\nNow, add your first node. Search for \"webhook\" and add the Webhook node.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 5,
+      "start_time": 40.7,
+      "end_time": 65.4,
+      "visual_cue": "Webhook node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it like this:\n\nHTTP Method: POST. Forms typically send data as POST requests.\n\nPath: something memorable like \"client-onboarding\". This becomes part of your webhook URL.\n\nResponse Mode: \"Respond immediately\". We'll send a confirmation right away while processing happens in the background.\n\n[PAUSE]\n\nClick the node to open its settings. You'll see a URL that looks something like this:",
+      "word_count": 58
+    },
+    {
+      "segment_id": 6,
+      "start_time": 65.4,
+      "end_time": 72.6,
+      "visual_cue": "Example webhook URL",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\nhttps://your-n8n-instance.com/webhook/client-onboarding\n```\n\nCopy that URL. We'll need it for the form.\n\n### Creating a Simple Test Form",
+      "word_count": 18
+    },
+    {
+      "segment_id": 7,
+      "start_time": 72.6,
+      "end_time": 83.8,
+      "visual_cue": "Google Forms or Typeform interface",
+      "visual_type": "screen_capture",
+      "spoken_text": "For testing, let's create a quick intake form. I'll use Google Forms, but any form builder that can send webhooks works.\n\nCreate a new form with these fields:",
+      "word_count": 28
+    },
+    {
+      "segment_id": 8,
+      "start_time": 83.8,
+      "end_time": 117.3,
+      "visual_cue": "Form fields appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "- Business Name (short text)\n- Contact Name (short text)\n- Email (email field)\n- Phone (phone field)\n- What services are you interested in? (paragraph text)\n- Preferred meeting day (dropdown: Monday through Friday)\n- Preferred meeting time (dropdown: Morning, Afternoon, Evening)\n\n[PAUSE]\n\nNow, connect the form to your webhook. In Google Forms, you'll need a third-party add-on like \"Form Publisher\" or use Zapier to forward submissions. For our capstone, we can also test directly by sending a POST request.",
+      "word_count": 80
+    },
+    {
+      "segment_id": 9,
+      "start_time": 117.3,
+      "end_time": 151.2,
+      "visual_cue": "Postman or curl example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's a quick test you can run. Open a terminal or use a tool like Postman:\n\n```bash\ncurl -X POST https://your-n8n-instance.com/webhook/client-onboarding \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"businessName\": \"Sunrise Coffee Roasters\",\n    \"contactName\": \"Maria Santos\",\n    \"email\": \"maria@sunrisecoffee.com\",\n    \"phone\": \"555-123-4567\",\n    \"services\": \"We are a specialty coffee roaster looking to expand our B2B wholesale operations. Interested in marketing automation and CRM setup.\",\n    \"preferredDay\": \"Tuesday\",\n    \"preferredTime\": \"Morning\"\n  }'\n```\n\n[PAUSE]\n\nRun that. If your webhook is set up correctly, n8n should show the data received.",
+      "word_count": 81
+    },
+    {
+      "segment_id": 10,
+      "start_time": 151.2,
+      "end_time": 155.6,
+      "visual_cue": "n8n showing received webhook data",
+      "visual_type": "text_overlay",
+      "spoken_text": "Excellent. The trigger is working. We have client data flowing in.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 11,
+      "start_time": 155.6,
+      "end_time": 165.2,
+      "visual_cue": "\"Part 2: AI Processing\" with brain/AI icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Analyzing the Client\n\nNow comes the intelligence. We're going to send this client information to Claude and ask it to do three things:",
+      "word_count": 24
+    },
+    {
+      "segment_id": 12,
+      "start_time": 165.2,
+      "end_time": 176.8,
+      "visual_cue": "Three tasks appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "1. Analyze the client and their needs\n2. Generate a personalized welcome email\n3. Suggest a folder structure for their project\n\nAdd an HTTP Request node after your webhook.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 13,
+      "start_time": 176.8,
+      "end_time": 200.3,
+      "visual_cue": "HTTP Request node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it for the Claude API:\n\nMethod: POST\n\nURL: `https://api.anthropic.com/v1/messages`\n\nHeaders:\n```\nx-api-key: {{ $env.CLAUDE_API_KEY }}\nanthropic-version: 2023-06-01\nContent-Type: application/json\n```\n\n[PAUSE]\n\nNotice we're pulling the API key from an environment variable. Set that up in your n8n settings under \"Variables\" if you haven't already.\n\nNow for the body. This is where we craft our prompt:",
+      "word_count": 55
+    },
+    {
+      "segment_id": 14,
+      "start_time": 200.3,
+      "end_time": 229.0,
+      "visual_cue": "JSON body configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "```json\n{\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2000,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"You are an expert client onboarding specialist. A new client has just signed up. Analyze their information and provide three things:\\n\\n1. CLIENT ANALYSIS: A brief analysis of who they are, what industry they're in, and what their key needs appear to be.\\n\\n2. WELCOME EMAIL: A warm, personalized welcome email that acknowledges their specific business and needs. Keep it professional but friendly. Include that we'll be scheduling a call to discuss their goals.\\n\\n3. FOLDER STRUCTURE: Suggest a folder structure for their Google Drive project folder. Include 4-6 relevant subfolders based on the services they need.\\n\\nFormat your response as JSON with keys: clientAnalysis, welcomeEmail, folderStructure (array of folder names).\\n\\nClient Information:\\nBusiness Name: {{ $json.businessName }}\\nContact Name: {{ $json.contactName }}\\nServices Interested In: {{ $json.services }}\"\n    }\n  ]\n}\n```\n\n[PAUSE]\n\nLet's break down what we're asking Claude to do.\n\nFirst, we're giving it a clear role: client onboarding specialist. This focuses its responses.\n\nSecond, we're requesting structured output. By asking for JSON with specific keys, we can easily use Claude's response in subsequent nodes.\n\nThird, we're providing all the relevant context from our form submission using n8n's expression syntax.",
+      "word_count": 68
+    },
+    {
+      "segment_id": 15,
+      "start_time": 229.0,
+      "end_time": 311.7,
+      "visual_cue": "Claude response example",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you run this, Claude returns something like:\n\n```json\n{\n  \"clientAnalysis\": \"Sunrise Coffee Roasters is a specialty coffee business focused on B2B wholesale expansion. Their primary needs center on scaling their operations through marketing automation to reach potential wholesale clients and CRM implementation to manage growing business relationships.\",\n  \"welcomeEmail\": \"Dear Maria,\\n\\nThank you for choosing to partner with us! We're thrilled to welcome Sunrise Coffee Roasters to our client family.\\n\\nYour focus on expanding B2B wholesale operations is an exciting growth phase, and we're here to help you build the systems to support that growth. Marketing automation and CRM are exactly the right tools for scaling a wholesale business like yours.\\n\\nWe'll be reaching out shortly to schedule a discovery call where we can dive deeper into your goals and create a roadmap tailored to Sunrise Coffee Roasters.\\n\\nLooking forward to helping your business reach new heights!\\n\\nWarm regards,\\n[Your Team]\",\n  \"folderStructure\": [\n    \"00 - Onboarding & Contracts\",\n    \"01 - Brand Assets & Marketing Materials\",\n    \"02 - CRM Documentation\",\n    \"03 - Automation Workflows\",\n    \"04 - Analytics & Reports\",\n    \"05 - Meeting Notes & Correspondence\"\n  ]\n}\n```\n\n[PAUSE]\n\nThat's remarkable. Claude didn't just fill in blanks. It understood that a coffee roaster expanding wholesale has different needs than, say, a retail shop. The email acknowledges their specific situation. The folder structure is tailored to marketing and CRM work.\n\n### Parsing Claude's Response\n\nAdd a \"Set\" node after the HTTP Request to parse Claude's response.",
+      "word_count": 203
+    },
+    {
+      "segment_id": 16,
+      "start_time": 311.7,
+      "end_time": 326.1,
+      "visual_cue": "Set node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the Set node, we'll extract the data we need:\n\n```javascript\nclientAnalysis: {{ JSON.parse($json.content[0].text).clientAnalysis }}\nwelcomeEmail: {{ JSON.parse($json.content[0].text).welcomeEmail }}\nfolderStructure: {{ JSON.parse($json.content[0].text).folderStructure }}\n```\n\nNow we have clean, usable data for the rest of our workflow.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 17,
+      "start_time": 326.1,
+      "end_time": 334.5,
+      "visual_cue": "\"Part 3: Google Drive Setup\" with folder icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Creating the Parent Folder\n\nTime to create the client's folder structure in Google Drive.\n\nFirst, add a Google Drive node.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 18,
+      "start_time": 334.5,
+      "end_time": 370.8,
+      "visual_cue": "Google Drive node - Create Folder",
+      "visual_type": "text_overlay",
+      "spoken_text": "Configure it:\n\nOperation: Create Folder\nName: `{{ $('Webhook').item.json.businessName }} - Client Folder`\nParent Folder: Select your \"Clients\" folder or wherever you keep client folders\n\n[PAUSE]\n\nThis creates the parent folder. But we also need to create the subfolders that Claude suggested.\n\n### Creating Subfolders with a Loop\n\nHere's where it gets clever. We have an array of folder names from Claude. We need to create each one as a subfolder.\n\nAdd a \"Split In Batches\" node. This takes our array and processes each item one at a time.",
+      "word_count": 87
+    },
+    {
+      "segment_id": 19,
+      "start_time": 370.8,
+      "end_time": 381.2,
+      "visual_cue": "Split In Batches configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set the batch size to 1. The input is the folderStructure array from Claude's response.\n\nAfter the Split In Batches node, add another Google Drive node:",
+      "word_count": 26
+    },
+    {
+      "segment_id": 20,
+      "start_time": 381.2,
+      "end_time": 405.1,
+      "visual_cue": "Second Google Drive node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Operation: Create Folder\nName: `{{ $json.folderName }}`\nParent Folder: `{{ $('Google Drive - Create Parent Folder').item.json.id }}`\n\nThis creates each subfolder inside the parent folder we just made.\n\n[PAUSE]\n\nConnect the output of this back to the Split In Batches node to complete the loop. When all items are processed, the workflow continues to the next step.",
+      "word_count": 56
+    },
+    {
+      "segment_id": 21,
+      "start_time": 405.1,
+      "end_time": 430.7,
+      "visual_cue": "Loop visualization in n8n",
+      "visual_type": "illustration",
+      "spoken_text": "When this runs, you get a beautiful folder structure:\n\n```\nSunrise Coffee Roasters - Client Folder/\n├── 00 - Onboarding & Contracts/\n├── 01 - Brand Assets & Marketing Materials/\n├── 02 - CRM Documentation/\n├── 03 - Automation Workflows/\n├── 04 - Analytics & Reports/\n└── 05 - Meeting Notes & Correspondence/\n```\n\nAll created automatically. All customized to this specific client's needs.",
+      "word_count": 64
+    },
+    {
+      "segment_id": 22,
+      "start_time": 430.7,
+      "end_time": 445.5,
+      "visual_cue": "\"Part 4: CRM Logging\" with spreadsheet icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Setting Up the Client Tracker Sheet\n\nEvery new client should be logged somewhere you can track them. Let's use Google Sheets as a simple CRM.\n\nFirst, create a Google Sheet called \"Client Tracker\" with these columns:",
+      "word_count": 37
+    },
+    {
+      "segment_id": 23,
+      "start_time": 445.5,
+      "end_time": 460.2,
+      "visual_cue": "Spreadsheet headers",
+      "visual_type": "text_overlay",
+      "spoken_text": "- Date Added\n- Business Name\n- Contact Name\n- Email\n- Phone\n- Services Requested\n- Drive Folder Link\n- Status\n- Notes\n\n[PAUSE]\n\nNow add a Google Sheets node to your workflow.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 24,
+      "start_time": 460.2,
+      "end_time": 497.3,
+      "visual_cue": "Google Sheets node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Operation: Append Row\nSpreadsheet: Client Tracker\nSheet: Sheet1\n\nMap the fields:\n\n```\nDate Added: {{ $now.toISO() }}\nBusiness Name: {{ $('Webhook').item.json.businessName }}\nContact Name: {{ $('Webhook').item.json.contactName }}\nEmail: {{ $('Webhook').item.json.email }}\nPhone: {{ $('Webhook').item.json.phone }}\nServices Requested: {{ $('Webhook').item.json.services }}\nDrive Folder Link: {{ $('Google Drive - Create Parent Folder').item.json.webViewLink }}\nStatus: New\nNotes: {{ $('Set Claude Response').item.json.clientAnalysis }}\n```\n\n[PAUSE]\n\nLook at that \"Notes\" field. We're using Claude's client analysis as the initial notes. Your team sees a pre-populated understanding of who this client is and what they need.",
+      "word_count": 89
+    },
+    {
+      "segment_id": 25,
+      "start_time": 497.3,
+      "end_time": 506.5,
+      "visual_cue": "\"Part 5: Calendar Integration\" with calendar icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Scheduling the Welcome Call\n\nThe client indicated their preferred day and time. Let's schedule a welcome call.\n\nAdd a Google Calendar node.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 26,
+      "start_time": 506.5,
+      "end_time": 529.6,
+      "visual_cue": "Google Calendar node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Operation: Create Event\nCalendar: Select your calendar\nTitle: `Welcome Call - {{ $('Webhook').item.json.businessName }}`\nDescription: Include the client analysis and contact info\nStart: This requires some logic\n\n[PAUSE]\n\nFor the start time, we need to convert \"Tuesday\" and \"Morning\" into an actual date and time. Here's how:\n\nAdd a \"Code\" node before the calendar node:",
+      "word_count": 54
+    },
+    {
+      "segment_id": 27,
+      "start_time": 529.6,
+      "end_time": 584.3,
+      "visual_cue": "Code node",
+      "visual_type": "text_overlay",
+      "spoken_text": "```javascript\nconst dayMap = {\n  'Monday': 1, 'Tuesday': 2, 'Wednesday': 3,\n  'Thursday': 4, 'Friday': 5\n};\n\nconst timeMap = {\n  'Morning': '09:00',\n  'Afternoon': '14:00',\n  'Evening': '16:00'\n};\n\nconst preferredDay = $('Webhook').item.json.preferredDay;\nconst preferredTime = $('Webhook').item.json.preferredTime;\n\n// Find the next occurrence of the preferred day\nconst today = new Date();\nconst targetDay = dayMap[preferredDay];\nlet daysUntilTarget = targetDay - today.getDay();\nif (daysUntilTarget <= 0) daysUntilTarget += 7;\n\nconst meetingDate = new Date(today);\nmeetingDate.setDate(today.getDate() + daysUntilTarget);\n\nconst [hours, minutes] = timeMap[preferredTime].split(':');\nmeetingDate.setHours(parseInt(hours), parseInt(minutes), 0, 0);\n\nconst endDate = new Date(meetingDate);\nendDate.setMinutes(endDate.getMinutes() + 30);\n\nreturn {\n  startTime: meetingDate.toISOString(),\n  endTime: endDate.toISOString()\n};\n```\n\n[PAUSE]\n\nNow use those values in your Calendar node:\n\nStart Time: `{{ $json.startTime }}`\nEnd Time: `{{ $json.endTime }}`\nAdd attendee: `{{ $('Webhook').item.json.email }}`\n\nThe client gets a calendar invite for their preferred time. Automatic and thoughtful.",
+      "word_count": 133
+    },
+    {
+      "segment_id": 28,
+      "start_time": 584.3,
+      "end_time": 591.1,
+      "visual_cue": "\"Part 6: Welcome Email\" with envelope icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Sending via Gmail\n\nTime to send that personalized welcome email Claude wrote.\n\nAdd a Gmail node.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 29,
+      "start_time": 591.1,
+      "end_time": 625.0,
+      "visual_cue": "Gmail node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Operation: Send Email\nTo: `{{ $('Webhook').item.json.email }}`\nSubject: `Welcome to [Your Company], {{ $('Webhook').item.json.contactName }}!`\nBody: `{{ $('Set Claude Response').item.json.welcomeEmail }}`\n\n[PAUSE]\n\nWant to make it even better? Change the body format to HTML and add some simple formatting:\n\n```html\n<div style=\"font-family: Arial, sans-serif; line-height: 1.6;\">\n{{ $('Set Claude Response').item.json.welcomeEmail.replace(/\\n/g, '<br>') }}\n</div>\n```\n\nThe client receives a warm, personalized welcome that acknowledges their specific business and needs. Not a generic template. A thoughtful message that makes them feel valued from day one.",
+      "word_count": 81
+    },
+    {
+      "segment_id": 30,
+      "start_time": 625.0,
+      "end_time": 633.4,
+      "visual_cue": "\"Part 7: Team Notification\" with Slack icon",
+      "visual_type": "illustration",
+      "spoken_text": "### Alerting the Team\n\nFinally, let's make sure your team knows a new client just came aboard.\n\nAdd a Slack node.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 31,
+      "start_time": 633.4,
+      "end_time": 676.5,
+      "visual_cue": "Slack node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Operation: Send Message\nChannel: #new-clients (or wherever you want notifications)\nMessage:\n\n```\n:tada: *New Client Alert!*\n\n*Business:* {{ $('Webhook').item.json.businessName }}\n*Contact:* {{ $('Webhook').item.json.contactName }}\n*Email:* {{ $('Webhook').item.json.email }}\n\n*Services Requested:*\n{{ $('Webhook').item.json.services }}\n\n*Quick Analysis:*\n{{ $('Set Claude Response').item.json.clientAnalysis }}\n\n*Welcome call scheduled for:* {{ $('Calculate Meeting Time').item.json.startTime }}\n*Drive folder:* {{ $('Google Drive - Create Parent Folder').item.json.webViewLink }}\n\n<@account-manager-id> You've got a new one!\n```\n\n[PAUSE]\n\nYour team sees all the relevant info at a glance. They know what the client needs, when the call is, and where the files are. No digging. No asking around. Everything they need to hit the ground running.",
+      "word_count": 104
+    },
+    {
+      "segment_id": 32,
+      "start_time": 676.5,
+      "end_time": 678.9,
+      "visual_cue": "Complete workflow visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Let's look at what we've built.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 33,
+      "start_time": 678.9,
+      "end_time": 714.0,
+      "visual_cue": "Workflow zooming out to show full picture",
+      "visual_type": "text_overlay",
+      "spoken_text": "Starting from the left:\n\n1. **Webhook** receives the form submission\n2. **Claude AI** analyzes the client and generates personalized content\n3. **Set** node parses Claude's response\n4. **Google Drive** creates the parent folder\n5. **Loop** creates each subfolder\n6. **Google Sheets** logs the client data\n7. **Code** node calculates meeting time\n8. **Google Calendar** schedules the welcome call\n9. **Gmail** sends the personalized welcome email\n10. **Slack** notifies the team\n\n[PAUSE]\n\nThat's ten nodes working together as one intelligent system. A complete client onboarding agent.",
+      "word_count": 84
+    },
+    {
+      "segment_id": 34,
+      "start_time": 714.0,
+      "end_time": 719.6,
+      "visual_cue": "\"Activate Your Workflow\" button",
+      "visual_type": "text_overlay",
+      "spoken_text": "One more thing: toggle your workflow to \"Active\" so it runs automatically when triggered.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 35,
+      "start_time": 719.6,
+      "end_time": 751.0,
+      "visual_cue": "Achievement unlocked graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Take a breath. Seriously.\n\n[PAUSE]\n\nYou just built an AI agent that:\n\n- Receives client data in real-time\n- Uses Claude to intelligently analyze and respond\n- Creates organized infrastructure automatically\n- Logs everything to a central tracker\n- Schedules meetings based on preferences\n- Sends personalized communications\n- Keeps your team informed\n\n[PAUSE]\n\nThis isn't a demo. This is a production-grade system. Businesses pay good money for exactly this kind of automation.",
+      "word_count": 71
+    },
+    {
+      "segment_id": 36,
+      "start_time": 751.0,
+      "end_time": 757.4,
+      "visual_cue": "\"Next: 8.3 - Testing & Refinement\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next module, we'll test this thoroughly. We'll find edge cases. We'll make it bulletproof.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 37,
+      "start_time": 757.4,
+      "end_time": 801.8,
+      "visual_cue": "End card with AI Launchpad Academy logo",
+      "visual_type": "animated_title",
+      "spoken_text": "See you in module eight point three.\n\n- Pacing: Instructional but not slow. Keep energy up.\n- Screen recordings: Heavy screen recording for this module. Show every click.\n- Pauses: Build in natural pause points for viewers to catch up.\n- Split consideration: This 40-minute module could be split into two parts for viewer comfort.\n- Code blocks: Display code clearly with syntax highlighting.\n- Checkpoints: Consider adding visual \"checkpoint\" markers where viewers can test their progress.\n\n- n8n: \"en-eight-en\"\n- webhook: \"WEB-hook\"\n- JSON: \"JAY-son\"\n- API: \"A-P-I\" (spelled out)\n- OAuth: \"oh-auth\"\n- anthropic-version: \"an-THROP-ic version\"\n- toISOString: \"to I-S-O string\"\n- parseInt: \"parse-int\"\n- webViewLink: \"web view link\"",
+      "word_count": 111
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 8.2: Building the Client Onboarding Agent\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 1: The Trigger\" with webhook icon",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 2: AI Processing\" with brain/AI icon",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 3: Google Drive Setup\" with folder icon",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 4: CRM Logging\" with spreadsheet icon",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 5: Calendar Integration\" with calendar icon",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 6: Welcome Email\" with envelope icon",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "\"Part 7: Team Notification\" with Slack icon",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Achievement unlocked graphic",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Complete workflow visualization",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Loop visualization in n8n",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Google Forms or Typeform interface",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n interface - adding a new workflow",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Activate Your Workflow\" button",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Let's Build\" text with construction/building animation",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: 8.3 - Testing & Refinement\"",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude response example",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Code node",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example webhook URL",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Form fields appearing",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Gmail node configuration",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Calendar node configuration",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Drive node - Create Folder",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Google Sheets node configuration",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "HTTP Request node configuration",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "JSON body configuration",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Postman or curl example",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Second Google Drive node",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Set node configuration",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack node configuration",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Split In Batches configuration",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Spreadsheet headers",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three tasks appearing",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Webhook node configuration",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Workflow zooming out to show full picture",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "n8n showing received webhook data",
+      "segment_ids": [
+        10
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.024434"
+}

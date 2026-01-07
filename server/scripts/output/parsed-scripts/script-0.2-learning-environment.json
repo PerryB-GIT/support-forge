@@ -1,0 +1,305 @@
+{
+  "script_id": "script-0.2-learning-environment",
+  "title": "Your Learning Environment",
+  "total_duration_seconds": 288.1,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 21.8,
+      "visual_cue": "Platform dashboard view with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "Alright, let's get you comfortable with where you'll be spending your time. The last thing I want is for you to waste energy hunting for resources when you should be building.\n\n[PAUSE]\n\nThis quick tour will show you everything you need to navigate the AI Launchpad platform efficiently.\n\n[PAUSE]",
+      "word_count": 47
+    },
+    {
+      "segment_id": 2,
+      "start_time": 21.8,
+      "end_time": 36.5,
+      "visual_cue": "Highlight dashboard main navigation",
+      "visual_type": "screen_capture",
+      "spoken_text": "When you log in, this is your home base. The dashboard. On the left, you've got your main navigation. Modules are listed in order, and you can see your progress at a glance.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 3,
+      "start_time": 36.5,
+      "end_time": 55.2,
+      "visual_cue": "Progress bar and completion indicators",
+      "visual_type": "text_overlay",
+      "spoken_text": "Those checkmarks and progress bars aren't just for show. The platform tracks where you left off, so you can jump right back in. If you need to revisit something from an earlier module, just click it. Everything stays unlocked once you've accessed it.\n\n[PAUSE]",
+      "word_count": 43
+    },
+    {
+      "segment_id": 4,
+      "start_time": 55.2,
+      "end_time": 64.7,
+      "visual_cue": "Current lesson highlighted with \"Continue\" button",
+      "visual_type": "text_overlay",
+      "spoken_text": "See that Continue button? That's your fastest path back to wherever you stopped. One click and you're back in action.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 5,
+      "start_time": 64.7,
+      "end_time": 86.9,
+      "visual_cue": "Example lesson page showing video, resources, and exercises",
+      "visual_type": "screen_capture",
+      "spoken_text": "Every lesson follows the same structure, so you'll always know what to expect.\n\n[PAUSE]\n\nFirst, you've got the video. That's where I walk you through concepts and demonstrations. Below the video, you'll find the lesson resources. These include written summaries, code snippets, configuration files, and anything else you'll need.\n\n[PAUSE]",
+      "word_count": 48
+    },
+    {
+      "segment_id": 6,
+      "start_time": 86.9,
+      "end_time": 102.8,
+      "visual_cue": "Highlight downloadable resources section",
+      "visual_type": "text_overlay",
+      "spoken_text": "And here's the key part. Everything's downloadable. I know you might want to follow along on a second monitor, or reference something while you're working. Grab the PDFs (P-D-Fs), grab the templates, whatever helps you learn.\n\n[PAUSE]",
+      "word_count": 36
+    },
+    {
+      "segment_id": 7,
+      "start_time": 102.8,
+      "end_time": 120.3,
+      "visual_cue": "Exercise/practice section of lesson",
+      "visual_type": "text_overlay",
+      "spoken_text": "At the bottom of most lessons, you'll find a hands-on exercise. These aren't optional. This is where the real learning happens. Reading about AI automation is one thing. Actually building it with your own hands? That's what makes it stick.\n\n[PAUSE]",
+      "word_count": 40
+    },
+    {
+      "segment_id": 8,
+      "start_time": 120.3,
+      "end_time": 129.0,
+      "visual_cue": "Navigate to Resource Library section",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's talk about the Resource Library. This is your one-stop shop for everything you'll need throughout the course.\n\n[PAUSE]",
+      "word_count": 18
+    },
+    {
+      "segment_id": 9,
+      "start_time": 129.0,
+      "end_time": 149.3,
+      "visual_cue": "Show folder structure - Templates, Cheat Sheets, Code Snippets, Workflows",
+      "visual_type": "text_overlay",
+      "spoken_text": "It's organized into categories. Templates are your starting points for common workflows. Cheat sheets give you quick reference guides you can print out or keep on your desktop. Code snippets are copy-paste ready solutions for common tasks. And workflows are complete automation recipes you can import directly.\n\n[PAUSE]",
+      "word_count": 47
+    },
+    {
+      "segment_id": 10,
+      "start_time": 149.3,
+      "end_time": 161.6,
+      "visual_cue": "Highlight search functionality",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pro tip: use the search bar. If you remember seeing something about, say, API authentication (A-P-I authentication), just search for it. Way faster than clicking through folders.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 11,
+      "start_time": 161.6,
+      "end_time": 171.1,
+      "visual_cue": "Community forum or discussion area",
+      "visual_type": "text_overlay",
+      "spoken_text": "You're not doing this alone. The AI Launchpad community is where students help each other, share wins, and troubleshoot problems.\n\n[PAUSE]",
+      "word_count": 20
+    },
+    {
+      "segment_id": 12,
+      "start_time": 171.1,
+      "end_time": 195.7,
+      "visual_cue": "Community guidelines and categories",
+      "visual_type": "screen_capture",
+      "spoken_text": "We've got channels organized by topic. General discussion, module-specific questions, workflow showcases, and a troubleshooting channel where you can get help when you're stuck.\n\n[PAUSE]\n\nHere's my ask: don't be a lurker. When you figure something out, share it. When you build something cool, post it. The best communities are the ones where everyone contributes.\n\n[PAUSE]",
+      "word_count": 54
+    },
+    {
+      "segment_id": 13,
+      "start_time": 195.7,
+      "end_time": 210.4,
+      "visual_cue": "Community profile setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Take a minute after this video to set up your community profile. Add a quick bio, mention what business you're in. It helps when people are trying to help you with context-specific questions.\n\n[PAUSE]",
+      "word_count": 33
+    },
+    {
+      "segment_id": 14,
+      "start_time": 210.4,
+      "end_time": 220.3,
+      "visual_cue": "Show downloads section with installer files",
+      "visual_type": "screen_capture",
+      "spoken_text": "Before we dive into the technical modules, you'll need some software installed. The Downloads section has everything organized by operating system.\n\n[PAUSE]",
+      "word_count": 21
+    },
+    {
+      "segment_id": 15,
+      "start_time": 220.3,
+      "end_time": 240.9,
+      "visual_cue": "Highlight Windows, Mac, Linux tabs",
+      "visual_type": "screen_capture",
+      "spoken_text": "Windows users, Mac users, Linux users, you're all covered. Each section has step-by-step instructions along with the actual files you'll need.\n\n[PAUSE]\n\nDon't download everything right now. We'll go through setup in the next lesson, and I'll tell you exactly what to grab and when.\n\n[PAUSE]",
+      "word_count": 44
+    },
+    {
+      "segment_id": 16,
+      "start_time": 240.9,
+      "end_time": 266.7,
+      "visual_cue": "Support contact options",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you run into technical issues with the platform itself, not the course content, but the platform, there's a support link in the footer. Response time is typically within twenty-four hours on business days.\n\n[PAUSE]\n\nFor course content questions, hit the community first. Chances are someone else has had the same question, or I've already answered it there.\n\n[PAUSE]",
+      "word_count": 57
+    },
+    {
+      "segment_id": 17,
+      "start_time": 266.7,
+      "end_time": 286.1,
+      "visual_cue": "Dashboard with all sections briefly highlighted",
+      "visual_type": "screen_capture",
+      "spoken_text": "That's your learning environment. Dashboard for navigation, lessons for content, resource library for materials, community for support.\n\n[PAUSE]\n\nNext up, we'll make sure you've got everything ready to go before we start building. Quick prerequisites check, then we're into the real work.\n\n[PAUSE]",
+      "word_count": 41
+    },
+    {
+      "segment_id": 18,
+      "start_time": 286.1,
+      "end_time": 288.1,
+      "visual_cue": "Fade to \"Next: Prerequisites Check\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Prerequisites Check\" with Support Forge branding",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Platform dashboard view with Support Forge branding",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Community guidelines and categories",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Dashboard with all sections briefly highlighted",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Example lesson page showing video, resources, and exercises",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Highlight Windows, Mac, Linux tabs",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Highlight dashboard main navigation",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Show downloads section with installer files",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Community forum or discussion area",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Community profile setup",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Current lesson highlighted with \"Continue\" button",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exercise/practice section of lesson",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlight downloadable resources section",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlight search functionality",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Navigate to Resource Library section",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Progress bar and completion indicators",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Show folder structure - Templates, Cheat Sheets, Code Snippets, Workflows",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Support contact options",
+      "segment_ids": [
+        16
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "5 minutes (~750-850 words)",
+    "lesson": "Module 0, Lesson 2",
+    "purpose": "Platform navigation, course materials, downloads, community access",
+    "stated_word_count": "790",
+    "stated_runtime": "4:45-5:00"
+  },
+  "parsed_at": "2026-01-06T22:53:56.036337"
+}

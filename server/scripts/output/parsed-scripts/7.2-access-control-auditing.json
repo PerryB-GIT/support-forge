@@ -1,0 +1,411 @@
+{
+  "script_id": "7.2-access-control-auditing",
+  "title": "Module 7.2: Access Control & Auditing",
+  "total_duration_seconds": 506.8,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 9.5,
+      "visual_cue": "Continuation from Module 7.1 - \"HARDEN PHASE\" graphic with access control icons",
+      "visual_type": "animated_title",
+      "spoken_text": "Your credentials are locked down. Good. [PAUSE] But there's another question we need to answer: who should have access to what?",
+      "word_count": 20
+    },
+    {
+      "segment_id": 2,
+      "start_time": 9.5,
+      "end_time": 19.9,
+      "visual_cue": "Title card - \"Module 7.2: Access Control & Auditing\"",
+      "visual_type": "animated_title",
+      "spoken_text": "This module is about boundaries. Not everyone needs access to everything. And you need to know what's happening in your systems even when you're not watching.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 3,
+      "start_time": 19.9,
+      "end_time": 49.0,
+      "visual_cue": "Pyramid diagram showing access levels",
+      "visual_type": "flowchart",
+      "spoken_text": "There's a concept in security called the Principle of Least Privilege. It sounds academic, but the idea is simple: give people only the access they need to do their job. Nothing more.\n\n[PAUSE]\n\nThink about your house. You probably don't give every visitor a copy of your key. The mail carrier can access your mailbox. A house sitter might get the front door key. Only family has the alarm code.",
+      "word_count": 69
+    },
+    {
+      "segment_id": 4,
+      "start_time": 49.0,
+      "end_time": 76.1,
+      "visual_cue": "House analogy illustration",
+      "visual_type": "illustration",
+      "spoken_text": "Your AI automations should work the same way.\n\nLet me give you a practical example. Say you've built an automation that reads customer emails and logs them to a spreadsheet. [PAUSE] Does that automation need access to delete files from your Google Drive? No. Does it need access to your calendar? No. It needs read access to one inbox and write access to one spreadsheet.",
+      "word_count": 64
+    },
+    {
+      "segment_id": 5,
+      "start_time": 76.1,
+      "end_time": 92.0,
+      "visual_cue": "Diagram showing narrow vs. broad permissions",
+      "visual_type": "comparison_table",
+      "spoken_text": "But here's what often happens. When you connect Google to Zapier, it asks for a bunch of permissions. Calendar access. Drive access. Contacts access. It's easier to click \"allow all\" and move on. [PAUSE] Resist that urge.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 6,
+      "start_time": 92.0,
+      "end_time": 106.0,
+      "visual_cue": "Step-by-step process graphic",
+      "visual_type": "illustration",
+      "spoken_text": "Here's how to implement least privilege in your automations.\n\nStep one: before building, write down exactly what access your automation needs. Be specific. Not \"Google access\" but \"read access to the inbox labeled Support Tickets.\"",
+      "word_count": 35
+    },
+    {
+      "segment_id": 7,
+      "start_time": 106.0,
+      "end_time": 147.9,
+      "visual_cue": "Example access requirements list",
+      "visual_type": "text_overlay",
+      "spoken_text": "```\nAutomation: Customer Support Logger\nNeeds:\n- Read: Gmail inbox (Support Tickets label only)\n- Write: Google Sheets (Support Log spreadsheet)\nDoes NOT need:\n- Calendar access\n- Drive file management\n- Contact access\n- Send email permission\n```\n\nStep two: when connecting services, review the permission scopes. Most platforms let you customize what access you grant. Look for options like \"limited access\" or \"selected folders only.\"\n\n[PAUSE]\n\nStep three: use dedicated service accounts where possible. Instead of connecting your personal Google account with all its permissions, create a service account that only has access to the specific resources your automation needs.",
+      "word_count": 101
+    },
+    {
+      "segment_id": 8,
+      "start_time": 147.9,
+      "end_time": 157.9,
+      "visual_cue": "Service account creation example",
+      "visual_type": "text_overlay",
+      "spoken_text": "For Google, this means creating a Google Cloud service account. For other services, look for API-specific credentials rather than OAuth connections to your main account.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 9,
+      "start_time": 157.9,
+      "end_time": 170.3,
+      "visual_cue": "Team hierarchy diagram with roles",
+      "visual_type": "flowchart",
+      "spoken_text": "If you're working with a team, you need role-based access control. RBAC for short.\n\nThe concept: instead of granting permissions to individuals, you define roles. Then you assign people to roles.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 10,
+      "start_time": 170.3,
+      "end_time": 209.8,
+      "visual_cue": "Example roles",
+      "visual_type": "text_overlay",
+      "spoken_text": "Role: Admin\n- Full access to all automations\n- Can create, modify, delete workflows\n- Can manage credentials and connections\n\nRole: Developer\n- Can create and modify workflows\n- Can view credentials but not modify them\n- Cannot delete production automations\n\nRole: Viewer\n- Can see workflow status and logs\n- Cannot modify anything\n- Useful for stakeholders who need visibility\n\n[PAUSE]\n\nZapier, n8n (en-eight-en), and most automation platforms support some form of role-based access. In Zapier, this is handled through team members and folder permissions. In n8n, you can set user roles and workflow-level access.",
+      "word_count": 95
+    },
+    {
+      "segment_id": 11,
+      "start_time": 209.8,
+      "end_time": 221.4,
+      "visual_cue": "Zapier team settings interface mockup",
+      "visual_type": "screen_capture",
+      "spoken_text": "The benefit of roles: when someone's responsibilities change, you just move them to a different role. When they leave, you remove their role assignment. No hunting through individual permissions.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 12,
+      "start_time": 221.4,
+      "end_time": 234.5,
+      "visual_cue": "Audit log visualization - timeline of events",
+      "visual_type": "illustration",
+      "spoken_text": "Audit logs are the black box recorder of your automations. They tell you what happened, when it happened, and who or what caused it.\n\n[PAUSE]\n\nWhy do you need them?",
+      "word_count": 29
+    },
+    {
+      "segment_id": 13,
+      "start_time": 234.5,
+      "end_time": 277.6,
+      "visual_cue": "Three scenarios appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Scenario one: something breaks. Your automation stopped working at 3 AM. The audit log tells you exactly what happened at 3 AM. Maybe an API call failed. Maybe a connected service went down. Maybe someone modified the workflow.\n\nScenario two: unexpected behavior. Your automation sent an email it shouldn't have. The audit log shows you the trigger, the data that flowed through, and every step that executed.\n\nScenario three: security investigation. You suspect unauthorized access. The audit log shows every login, every modification, every execution.\n\n[PAUSE]\n\nMost platforms maintain audit logs automatically. Your job is to know where they are and how to read them.",
+      "word_count": 104
+    },
+    {
+      "segment_id": 14,
+      "start_time": 277.6,
+      "end_time": 298.4,
+      "visual_cue": "Where to find audit logs in common platforms",
+      "visual_type": "text_overlay",
+      "spoken_text": "In Zapier, check the Task History for individual Zaps and the Audit Log in your account settings for administrative actions.\n\nIn n8n, execution logs are available for each workflow, and the admin panel shows user activity.\n\nIn Claude's console, you can view API usage logs showing every request made with your key.",
+      "word_count": 52
+    },
+    {
+      "segment_id": 15,
+      "start_time": 298.4,
+      "end_time": 304.0,
+      "visual_cue": "Logging requirements checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Not all logs are created equal. Here's what you should ensure is being captured:",
+      "word_count": 14
+    },
+    {
+      "segment_id": 16,
+      "start_time": 304.0,
+      "end_time": 325.5,
+      "visual_cue": "Essential log items appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Authentication events: who logged in, when, from where.\n\nWorkflow modifications: what changed, who changed it, what was the previous state.\n\nExecution logs: when automations ran, what data they processed, what the outcome was.\n\nError logs: what failed and why. These are gold for debugging.\n\n[PAUSE]\n\nHow long should you keep logs?",
+      "word_count": 50
+    },
+    {
+      "segment_id": 17,
+      "start_time": 325.5,
+      "end_time": 350.3,
+      "visual_cue": "Retention recommendations",
+      "visual_type": "text_overlay",
+      "spoken_text": "For most businesses, ninety days of detailed logs is sufficient for operational purposes. Keep summary logs for a year. If you're in a regulated industry, you may have legal requirements for longer retention.\n\nThe key is finding the balance. Too little logging and you're flying blind. Too much and you're drowning in data and potentially storing sensitive information longer than you should.",
+      "word_count": 62
+    },
+    {
+      "segment_id": 18,
+      "start_time": 350.3,
+      "end_time": 357.9,
+      "visual_cue": "Alert notification icons",
+      "visual_type": "illustration",
+      "spoken_text": "Logs are reactive. You look at them after something happens. Alerts are proactive. They tell you when something happens.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 19,
+      "start_time": 357.9,
+      "end_time": 397.0,
+      "visual_cue": "Alert types",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set up alerts for:\n\nUnusual activity. If your automation normally runs ten times a day and suddenly runs a thousand times, you want to know.\n\nFailures. If an automation fails, get notified immediately. Don't find out days later when a customer complains.\n\nSecurity events. Failed login attempts. Permission changes. New API keys created.\n\nSpending thresholds. We covered this in the previous module, but it bears repeating. Set spending alerts on all your API services.\n\n[PAUSE]\n\nMost platforms have built-in alerting. Use it. The few minutes spent configuring alerts can save hours of crisis management later.",
+      "word_count": 94
+    },
+    {
+      "segment_id": 20,
+      "start_time": 397.0,
+      "end_time": 399.0,
+      "visual_cue": "Alert configuration example in Zapier",
+      "visual_type": "text_overlay",
+      "spoken_text": "",
+      "word_count": 0
+    },
+    {
+      "segment_id": 21,
+      "start_time": 399.0,
+      "end_time": 407.0,
+      "visual_cue": "Calendar with quarterly review marked",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's something that often gets forgotten: access review.\n\nEvery quarter, take thirty minutes to review who has access to what.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 22,
+      "start_time": 407.0,
+      "end_time": 434.1,
+      "visual_cue": "Review checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "Are all team members still current? Remove anyone who's left.\n\nAre permission levels still appropriate? Maybe someone was promoted or changed roles.\n\nAre there any service connections you're no longer using? Disconnect them.\n\nAre there any API keys that should be rotated based on your schedule?\n\n[PAUSE]\n\nThis isn't exciting work. But it's the kind of maintenance that prevents the slow accumulation of security debt.",
+      "word_count": 64
+    },
+    {
+      "segment_id": 23,
+      "start_time": 434.1,
+      "end_time": 458.8,
+      "visual_cue": "Summary with key icons",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's bring it together.\n\nLeast privilege: give only the access needed, nothing more.\n\nRole-based access: define roles, assign people to roles, manage at the role level.\n\nAudit logs: know where they are, how to read them, how long to keep them.\n\nAlerts: get notified when something unusual happens.\n\nRegular reviews: quarterly check-ins on who has access to what.\n\n[PAUSE]",
+      "word_count": 58
+    },
+    {
+      "segment_id": 24,
+      "start_time": 458.8,
+      "end_time": 476.0,
+      "visual_cue": "\"Next: 7.3 - Responsible AI Principles\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "With your credentials secured and your access controlled, we're ready to tackle the bigger picture. In the next module, we'll discuss responsible AI principles. What should AI not do? How do you maintain human oversight? And what regulations should be on your radar?",
+      "word_count": 43
+    },
+    {
+      "segment_id": 25,
+      "start_time": 476.0,
+      "end_time": 506.8,
+      "visual_cue": "End card with AI Launchpad Academy logo",
+      "visual_type": "animated_title",
+      "spoken_text": "See you there.\n\n- Pacing: Slightly faster than 7.1 since concepts are more straightforward.\n- Visuals: Use organizational diagrams, role hierarchies, and log visualizations.\n- Practical examples: Show actual UI screenshots where possible for audit logs and team settings.\n- Keep the house key analogy relatable and simple.\n\n- RBAC: \"R-B-A-C\" (spelled out) or \"are-back\"\n- n8n: \"en-eight-en\"\n- OAuth: \"oh-auth\"\n- API: \"A-P-I\" (spelled out)\n- GDPR: \"G-D-P-R\" (spelled out, mentioned briefly for next module preview)",
+      "word_count": 77
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Continuation from Module 7.1 - \"HARDEN PHASE\" graphic with access control icons",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "End card with AI Launchpad Academy logo",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Title card - \"Module 7.2: Access Control & Auditing\"",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Diagram showing narrow vs. broad permissions",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Pyramid diagram showing access levels",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Team hierarchy diagram with roles",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Alert notification icons",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Audit log visualization - timeline of events",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "House analogy illustration",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Step-by-step process graphic",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier team settings interface mockup",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: 7.3 - Responsible AI Principles\"",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Alert configuration example in Zapier",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Alert types",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Calendar with quarterly review marked",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Essential log items appearing",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example access requirements list",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example roles",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Logging requirements checklist",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Retention recommendations",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Review checklist",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Service account creation example",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Summary with key icons",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Three scenarios appearing",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Where to find audit logs in common platforms",
+      "segment_ids": [
+        14
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.010655"
+}

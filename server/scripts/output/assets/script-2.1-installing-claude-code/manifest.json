@@ -1,0 +1,1112 @@
+{
+  "script_id": "script-2.1-installing-claude-code",
+  "created_at": "2026-01-06T22:56:06.018132",
+  "updated_at": "2026-01-06T22:56:12.707067",
+  "total_assets": 60,
+  "assets": [
+    {
+      "index": 1,
+      "filename": "segment_001_title_card_module_2_architect_phase_title_card.png",
+      "asset_type": "title_card",
+      "description": "\"Module 2: ARCHITECT Phase\" title card",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_001_title_card_module_2_architect_phase_title_card.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "\"Module 2: ARCHITECT Phase\" title card",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_001_title_card_module_2_architect_phase_title_card.png"
+      }
+    },
+    {
+      "index": 2,
+      "filename": "segment_002_title_card_installing_claude_code_lesson_title.png",
+      "asset_type": "title_card",
+      "description": "\"Installing Claude Code\" lesson title",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_002_title_card_installing_claude_code_lesson_title.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "\"Installing Claude Code\" lesson title",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_002_title_card_installing_claude_code_lesson_title.png"
+      }
+    },
+    {
+      "index": 3,
+      "filename": "segment_003_bullet_points_prerequisites_checklist.png",
+      "asset_type": "bullet_points",
+      "description": "Prerequisites checklist",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_003_bullet_points_prerequisites_checklist.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Prerequisites checklist"
+      }
+    },
+    {
+      "index": 4,
+      "filename": "segment_004_ui_mockup_nodejs_requirement.png",
+      "asset_type": "ui_mockup",
+      "description": "Node.js requirement",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_004_ui_mockup_nodejs_requirement.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 6,
+      "filename": "segment_006_content_slide_anthropic_account_reminder.png",
+      "asset_type": "content_slide",
+      "description": "Anthropic account reminder",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_006_content_slide_anthropic_account_reminder.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Anthropic account reminder"
+      }
+    },
+    {
+      "index": 10,
+      "filename": "segment_010_content_slide_restart_prompt.png",
+      "asset_type": "content_slide",
+      "description": "Restart prompt",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_010_content_slide_restart_prompt.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Restart prompt"
+      }
+    },
+    {
+      "index": 11,
+      "filename": "segment_011_content_slide_ubuntu_first-time_setup.png",
+      "asset_type": "content_slide",
+      "description": "Ubuntu first-time setup",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_011_content_slide_ubuntu_first-time_setup.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Ubuntu first-time setup"
+      }
+    },
+    {
+      "index": 19,
+      "filename": "segment_019_ui_mockup_quick_test.png",
+      "asset_type": "ui_mockup",
+      "description": "Quick test",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_019_ui_mockup_quick_test.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 20,
+      "filename": "segment_020_content_slide_apple_logo.png",
+      "asset_type": "content_slide",
+      "description": "Apple logo",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_020_content_slide_apple_logo.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Apple logo"
+      }
+    },
+    {
+      "index": 24,
+      "filename": "segment_024_content_slide_node_install_via_homebrew.png",
+      "asset_type": "content_slide",
+      "description": "Node install via Homebrew",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_024_content_slide_node_install_via_homebrew.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Node install via Homebrew"
+      }
+    },
+    {
+      "index": 26,
+      "filename": "segment_026_content_slide_possible_permission_error.png",
+      "asset_type": "content_slide",
+      "description": "Possible permission error",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_026_content_slide_possible_permission_error.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Possible permission error"
+      }
+    },
+    {
+      "index": 27,
+      "filename": "segment_027_content_slide_authentication.png",
+      "asset_type": "content_slide",
+      "description": "Authentication",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_027_content_slide_authentication.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Authentication"
+      }
+    },
+    {
+      "index": 29,
+      "filename": "segment_029_content_slide_verification.png",
+      "asset_type": "content_slide",
+      "description": "Verification",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_029_content_slide_verification.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Verification"
+      }
+    },
+    {
+      "index": 30,
+      "filename": "segment_030_ui_mockup_linux_penguin_logo.png",
+      "asset_type": "ui_mockup",
+      "description": "Linux penguin logo",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_030_ui_mockup_linux_penguin_logo.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 32,
+      "filename": "segment_032_content_slide_installing_node_on_linux.png",
+      "asset_type": "content_slide",
+      "description": "Installing Node on Linux",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_032_content_slide_installing_node_on_linux.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Installing Node on Linux"
+      }
+    },
+    {
+      "index": 34,
+      "filename": "segment_034_content_slide_authentication.png",
+      "asset_type": "content_slide",
+      "description": "Authentication",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_034_content_slide_authentication.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Authentication"
+      }
+    },
+    {
+      "index": 37,
+      "filename": "segment_037_content_slide_verification.png",
+      "asset_type": "content_slide",
+      "description": "Verification",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_037_content_slide_verification.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Verification"
+      }
+    },
+    {
+      "index": 38,
+      "filename": "segment_038_quote_callout_api_key_option_callout.png",
+      "asset_type": "quote_callout",
+      "description": "API Key option callout",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_038_quote_callout_api_key_option_callout.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "API Key option callout"
+      }
+    },
+    {
+      "index": 39,
+      "filename": "segment_039_content_slide_anthropic_console_api_keys_section.png",
+      "asset_type": "content_slide",
+      "description": "Anthropic Console API Keys section",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_039_content_slide_anthropic_console_api_keys_section.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Anthropic Console API Keys section"
+      }
+    },
+    {
+      "index": 40,
+      "filename": "segment_040_content_slide_key_creation.png",
+      "asset_type": "content_slide",
+      "description": "Key creation",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_040_content_slide_key_creation.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Key creation"
+      }
+    },
+    {
+      "index": 41,
+      "filename": "segment_041_content_slide_environment_variable_setup.png",
+      "asset_type": "content_slide",
+      "description": "Environment variable setup",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_041_content_slide_environment_variable_setup.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Environment variable setup"
+      }
+    },
+    {
+      "index": 43,
+      "filename": "segment_043_content_slide_troubleshooting_header.png",
+      "asset_type": "content_slide",
+      "description": "Troubleshooting header",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_043_content_slide_troubleshooting_header.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Troubleshooting header"
+      }
+    },
+    {
+      "index": 45,
+      "filename": "segment_045_content_slide_issue_2_-_permission_denied.png",
+      "asset_type": "content_slide",
+      "description": "Issue 2 - Permission denied",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_045_content_slide_issue_2_-_permission_denied.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 2 - Permission denied"
+      }
+    },
+    {
+      "index": 47,
+      "filename": "segment_047_content_slide_issue_4_-_authentication_fails.png",
+      "asset_type": "content_slide",
+      "description": "Issue 4 - Authentication fails",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_047_content_slide_issue_4_-_authentication_fails.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 4 - Authentication fails"
+      }
+    },
+    {
+      "index": 48,
+      "filename": "segment_048_content_slide_issue_5_-_wsl_specific_issues.png",
+      "asset_type": "content_slide",
+      "description": "Issue 5 - WSL specific issues",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_048_content_slide_issue_5_-_wsl_specific_issues.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 5 - WSL specific issues"
+      }
+    },
+    {
+      "index": 49,
+      "filename": "segment_049_quote_callout_community_support_callout.png",
+      "asset_type": "quote_callout",
+      "description": "Community support callout",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_049_quote_callout_community_support_callout.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Community support callout"
+      }
+    },
+    {
+      "index": 50,
+      "filename": "segment_050_content_slide_all_platforms_checkmark_graphic.png",
+      "asset_type": "content_slide",
+      "description": "All platforms checkmark graphic",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_050_content_slide_all_platforms_checkmark_graphic.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "All platforms checkmark graphic"
+      }
+    },
+    {
+      "index": 51,
+      "filename": "segment_051_ui_mockup_quick_verification_command.png",
+      "asset_type": "ui_mockup",
+      "description": "Quick verification command",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_051_ui_mockup_quick_verification_command.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 52,
+      "filename": "segment_052_end_card_next_lesson_preview.png",
+      "asset_type": "end_card",
+      "description": "Next lesson preview",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_052_end_card_next_lesson_preview.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 53,
+      "filename": "segment_053_end_card_fade_to_next_your_first_claude_code_sess.png",
+      "asset_type": "end_card",
+      "description": "Fade to \"Next: Your First Claude Code Session\" with Support Forge branding",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_053_end_card_fade_to_next_your_first_claude_code_sess.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 1,
+      "filename": "segment_001_title_card_module_2_architect_phase_title_card.png",
+      "asset_type": "title_card",
+      "description": "\"Module 2: ARCHITECT Phase\" title card",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_001_title_card_module_2_architect_phase_title_card.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "\"Module 2: ARCHITECT Phase\" title card",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_001_title_card_module_2_architect_phase_title_card.png"
+      }
+    },
+    {
+      "index": 2,
+      "filename": "segment_002_title_card_installing_claude_code_lesson_title.png",
+      "asset_type": "title_card",
+      "description": "\"Installing Claude Code\" lesson title",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_002_title_card_installing_claude_code_lesson_title.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "title_card",
+        "title": "\"Installing Claude Code\" lesson title",
+        "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_002_title_card_installing_claude_code_lesson_title.png"
+      }
+    },
+    {
+      "index": 3,
+      "filename": "segment_003_bullet_points_prerequisites_checklist.png",
+      "asset_type": "bullet_points",
+      "description": "Prerequisites checklist",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_003_bullet_points_prerequisites_checklist.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Prerequisites checklist"
+      }
+    },
+    {
+      "index": 4,
+      "filename": "segment_004_ui_mockup_nodejs_requirement.png",
+      "asset_type": "ui_mockup",
+      "description": "Node.js requirement",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_004_ui_mockup_nodejs_requirement.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 6,
+      "filename": "segment_006_content_slide_anthropic_account_reminder.png",
+      "asset_type": "content_slide",
+      "description": "Anthropic account reminder",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_006_content_slide_anthropic_account_reminder.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Anthropic account reminder"
+      }
+    },
+    {
+      "index": 10,
+      "filename": "segment_010_content_slide_restart_prompt.png",
+      "asset_type": "content_slide",
+      "description": "Restart prompt",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_010_content_slide_restart_prompt.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Restart prompt"
+      }
+    },
+    {
+      "index": 11,
+      "filename": "segment_011_content_slide_ubuntu_first-time_setup.png",
+      "asset_type": "content_slide",
+      "description": "Ubuntu first-time setup",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_011_content_slide_ubuntu_first-time_setup.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Ubuntu first-time setup"
+      }
+    },
+    {
+      "index": 19,
+      "filename": "segment_019_ui_mockup_quick_test.png",
+      "asset_type": "ui_mockup",
+      "description": "Quick test",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_019_ui_mockup_quick_test.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 20,
+      "filename": "segment_020_content_slide_apple_logo.png",
+      "asset_type": "content_slide",
+      "description": "Apple logo",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_020_content_slide_apple_logo.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Apple logo"
+      }
+    },
+    {
+      "index": 24,
+      "filename": "segment_024_content_slide_node_install_via_homebrew.png",
+      "asset_type": "content_slide",
+      "description": "Node install via Homebrew",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_024_content_slide_node_install_via_homebrew.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Node install via Homebrew"
+      }
+    },
+    {
+      "index": 26,
+      "filename": "segment_026_content_slide_possible_permission_error.png",
+      "asset_type": "content_slide",
+      "description": "Possible permission error",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_026_content_slide_possible_permission_error.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Possible permission error"
+      }
+    },
+    {
+      "index": 27,
+      "filename": "segment_027_content_slide_authentication.png",
+      "asset_type": "content_slide",
+      "description": "Authentication",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_027_content_slide_authentication.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Authentication"
+      }
+    },
+    {
+      "index": 29,
+      "filename": "segment_029_content_slide_verification.png",
+      "asset_type": "content_slide",
+      "description": "Verification",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_029_content_slide_verification.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Verification"
+      }
+    },
+    {
+      "index": 30,
+      "filename": "segment_030_ui_mockup_linux_penguin_logo.png",
+      "asset_type": "ui_mockup",
+      "description": "Linux penguin logo",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_030_ui_mockup_linux_penguin_logo.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 32,
+      "filename": "segment_032_content_slide_installing_node_on_linux.png",
+      "asset_type": "content_slide",
+      "description": "Installing Node on Linux",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_032_content_slide_installing_node_on_linux.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Installing Node on Linux"
+      }
+    },
+    {
+      "index": 34,
+      "filename": "segment_034_content_slide_authentication.png",
+      "asset_type": "content_slide",
+      "description": "Authentication",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_034_content_slide_authentication.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Authentication"
+      }
+    },
+    {
+      "index": 37,
+      "filename": "segment_037_content_slide_verification.png",
+      "asset_type": "content_slide",
+      "description": "Verification",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_037_content_slide_verification.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Verification"
+      }
+    },
+    {
+      "index": 38,
+      "filename": "segment_038_quote_callout_api_key_option_callout.png",
+      "asset_type": "quote_callout",
+      "description": "API Key option callout",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_038_quote_callout_api_key_option_callout.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "API Key option callout"
+      }
+    },
+    {
+      "index": 39,
+      "filename": "segment_039_content_slide_anthropic_console_api_keys_section.png",
+      "asset_type": "content_slide",
+      "description": "Anthropic Console API Keys section",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_039_content_slide_anthropic_console_api_keys_section.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Anthropic Console API Keys section"
+      }
+    },
+    {
+      "index": 40,
+      "filename": "segment_040_content_slide_key_creation.png",
+      "asset_type": "content_slide",
+      "description": "Key creation",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_040_content_slide_key_creation.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Key creation"
+      }
+    },
+    {
+      "index": 41,
+      "filename": "segment_041_content_slide_environment_variable_setup.png",
+      "asset_type": "content_slide",
+      "description": "Environment variable setup",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_041_content_slide_environment_variable_setup.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Environment variable setup"
+      }
+    },
+    {
+      "index": 43,
+      "filename": "segment_043_content_slide_troubleshooting_header.png",
+      "asset_type": "content_slide",
+      "description": "Troubleshooting header",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_043_content_slide_troubleshooting_header.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Troubleshooting header"
+      }
+    },
+    {
+      "index": 45,
+      "filename": "segment_045_content_slide_issue_2_-_permission_denied.png",
+      "asset_type": "content_slide",
+      "description": "Issue 2 - Permission denied",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_045_content_slide_issue_2_-_permission_denied.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 2 - Permission denied"
+      }
+    },
+    {
+      "index": 47,
+      "filename": "segment_047_content_slide_issue_4_-_authentication_fails.png",
+      "asset_type": "content_slide",
+      "description": "Issue 4 - Authentication fails",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_047_content_slide_issue_4_-_authentication_fails.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 4 - Authentication fails"
+      }
+    },
+    {
+      "index": 48,
+      "filename": "segment_048_content_slide_issue_5_-_wsl_specific_issues.png",
+      "asset_type": "content_slide",
+      "description": "Issue 5 - WSL specific issues",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_048_content_slide_issue_5_-_wsl_specific_issues.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Issue 5 - WSL specific issues"
+      }
+    },
+    {
+      "index": 49,
+      "filename": "segment_049_quote_callout_community_support_callout.png",
+      "asset_type": "quote_callout",
+      "description": "Community support callout",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_049_quote_callout_community_support_callout.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "Community support callout"
+      }
+    },
+    {
+      "index": 50,
+      "filename": "segment_050_content_slide_all_platforms_checkmark_graphic.png",
+      "asset_type": "content_slide",
+      "description": "All platforms checkmark graphic",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_050_content_slide_all_platforms_checkmark_graphic.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true,
+        "asset_type": "content_slide",
+        "header": "All platforms checkmark graphic"
+      }
+    },
+    {
+      "index": 51,
+      "filename": "segment_051_ui_mockup_quick_verification_command.png",
+      "asset_type": "ui_mockup",
+      "description": "Quick verification command",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_051_ui_mockup_quick_verification_command.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 52,
+      "filename": "segment_052_end_card_next_lesson_preview.png",
+      "asset_type": "end_card",
+      "description": "Next lesson preview",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_052_end_card_next_lesson_preview.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    },
+    {
+      "index": 53,
+      "filename": "segment_053_end_card_fade_to_next_your_first_claude_code_sess.png",
+      "asset_type": "end_card",
+      "description": "Fade to \"Next: Your First Claude Code Session\" with Support Forge branding",
+      "status": "pending",
+      "output_path": "C:\\Users\\Jakeb\\support-forge\\server\\scripts\\output\\assets\\script-2.1-installing-claude-code\\segment_053_end_card_fade_to_next_your_first_claude_code_sess.png",
+      "generation_result": {
+        "success": true,
+        "dry_run": true
+      }
+    }
+  ],
+  "recording_required": [
+    {
+      "index": 5,
+      "filename": "segment_005_screen_capture_nodejs_installation_page.png",
+      "description": "Node.js installation page",
+      "section": "PREREQUISITES CHECK"
+    },
+    {
+      "index": 7,
+      "filename": "segment_007_screen_capture_windows_logo_with_wsl_callout.png",
+      "description": "Windows logo with WSL callout",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 8,
+      "filename": "segment_008_screen_capture_powershell_admin_window.png",
+      "description": "PowerShell admin window",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 9,
+      "filename": "segment_009_screen_capture_wsl_install_command.png",
+      "description": "WSL install command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 12,
+      "filename": "segment_012_screen_capture_ubuntu_terminal_ready.png",
+      "description": "Ubuntu terminal ready",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 13,
+      "filename": "segment_013_screen_capture_npm_install_command.png",
+      "description": "npm install command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 14,
+      "filename": "segment_014_screen_capture_installation_progress.png",
+      "description": "Installation progress",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 15,
+      "filename": "segment_015_screen_capture_authentication_command.png",
+      "description": "Authentication command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 16,
+      "filename": "segment_016_screen_capture_browser_authentication_flow.png",
+      "description": "Browser authentication flow",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 17,
+      "filename": "segment_017_screen_capture_anthropic_login.png",
+      "description": "Anthropic login",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 18,
+      "filename": "segment_018_screen_capture_success_message_in_terminal.png",
+      "description": "Success message in terminal",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 21,
+      "filename": "segment_021_screen_capture_terminal_application.png",
+      "description": "Terminal application",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 22,
+      "filename": "segment_022_screen_capture_check_node_version_command.png",
+      "description": "Check Node version command",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 23,
+      "filename": "segment_023_screen_capture_homebrew_installation_option.png",
+      "description": "Homebrew installation option",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 25,
+      "filename": "segment_025_screen_capture_npm_install_command_for_mac.png",
+      "description": "npm install command for Mac",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 28,
+      "filename": "segment_028_screen_capture_browser_authentication_flow.png",
+      "description": "Browser authentication flow",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 31,
+      "filename": "segment_031_screen_capture_terminal_prompt.png",
+      "description": "Terminal prompt",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 33,
+      "filename": "segment_033_screen_capture_npm_install_command.png",
+      "description": "npm install command",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 35,
+      "filename": "segment_035_screen_capture_browser_may_not_open_automatically.png",
+      "description": "Browser may not open automatically",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 36,
+      "filename": "segment_036_screen_capture_login_and_authorize.png",
+      "description": "Login and authorize",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 42,
+      "filename": "segment_042_screen_capture_windows_environment_variable.png",
+      "description": "Windows environment variable",
+      "section": "API KEY SETUP (ALTERNATIVE METHOD)"
+    },
+    {
+      "index": 44,
+      "filename": "segment_044_screen_capture_issue_1_-_npm_not_found.png",
+      "description": "Issue 1 - npm not found",
+      "section": "TROUBLESHOOTING COMMON ISSUES"
+    },
+    {
+      "index": 46,
+      "filename": "segment_046_screen_capture_issue_3_-_browser_doesnt_open.png",
+      "description": "Issue 3 - Browser doesn't open",
+      "section": "TROUBLESHOOTING COMMON ISSUES"
+    },
+    {
+      "index": 5,
+      "filename": "segment_005_screen_capture_nodejs_installation_page.png",
+      "description": "Node.js installation page",
+      "section": "PREREQUISITES CHECK"
+    },
+    {
+      "index": 7,
+      "filename": "segment_007_screen_capture_windows_logo_with_wsl_callout.png",
+      "description": "Windows logo with WSL callout",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 8,
+      "filename": "segment_008_screen_capture_powershell_admin_window.png",
+      "description": "PowerShell admin window",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 9,
+      "filename": "segment_009_screen_capture_wsl_install_command.png",
+      "description": "WSL install command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 12,
+      "filename": "segment_012_screen_capture_ubuntu_terminal_ready.png",
+      "description": "Ubuntu terminal ready",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 13,
+      "filename": "segment_013_screen_capture_npm_install_command.png",
+      "description": "npm install command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 14,
+      "filename": "segment_014_screen_capture_installation_progress.png",
+      "description": "Installation progress",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 15,
+      "filename": "segment_015_screen_capture_authentication_command.png",
+      "description": "Authentication command",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 16,
+      "filename": "segment_016_screen_capture_browser_authentication_flow.png",
+      "description": "Browser authentication flow",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 17,
+      "filename": "segment_017_screen_capture_anthropic_login.png",
+      "description": "Anthropic login",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 18,
+      "filename": "segment_018_screen_capture_success_message_in_terminal.png",
+      "description": "Success message in terminal",
+      "section": "WINDOWS INSTALLATION (WITH WSL)"
+    },
+    {
+      "index": 21,
+      "filename": "segment_021_screen_capture_terminal_application.png",
+      "description": "Terminal application",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 22,
+      "filename": "segment_022_screen_capture_check_node_version_command.png",
+      "description": "Check Node version command",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 23,
+      "filename": "segment_023_screen_capture_homebrew_installation_option.png",
+      "description": "Homebrew installation option",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 25,
+      "filename": "segment_025_screen_capture_npm_install_command_for_mac.png",
+      "description": "npm install command for Mac",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 28,
+      "filename": "segment_028_screen_capture_browser_authentication_flow.png",
+      "description": "Browser authentication flow",
+      "section": "MAC INSTALLATION"
+    },
+    {
+      "index": 31,
+      "filename": "segment_031_screen_capture_terminal_prompt.png",
+      "description": "Terminal prompt",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 33,
+      "filename": "segment_033_screen_capture_npm_install_command.png",
+      "description": "npm install command",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 35,
+      "filename": "segment_035_screen_capture_browser_may_not_open_automatically.png",
+      "description": "Browser may not open automatically",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 36,
+      "filename": "segment_036_screen_capture_login_and_authorize.png",
+      "description": "Login and authorize",
+      "section": "LINUX INSTALLATION"
+    },
+    {
+      "index": 42,
+      "filename": "segment_042_screen_capture_windows_environment_variable.png",
+      "description": "Windows environment variable",
+      "section": "API KEY SETUP (ALTERNATIVE METHOD)"
+    },
+    {
+      "index": 44,
+      "filename": "segment_044_screen_capture_issue_1_-_npm_not_found.png",
+      "description": "Issue 1 - npm not found",
+      "section": "TROUBLESHOOTING COMMON ISSUES"
+    },
+    {
+      "index": 46,
+      "filename": "segment_046_screen_capture_issue_3_-_browser_doesnt_open.png",
+      "description": "Issue 3 - Browser doesn't open",
+      "section": "TROUBLESHOOTING COMMON ISSUES"
+    }
+  ],
+  "statistics": {
+    "completed": 0,
+    "pending": 60,
+    "failed": 0,
+    "needs_recording": 46
+  }
+}

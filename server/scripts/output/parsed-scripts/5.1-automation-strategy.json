@@ -1,0 +1,491 @@
+{
+  "script_id": "5.1-automation-strategy",
+  "title": "Module 5.1: Automation Strategy",
+  "total_duration_seconds": 390.3,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 15.5,
+      "visual_cue": "Animated title \"Automation Strategy\" with gear icons transforming into workflow diagrams",
+      "visual_type": "animated_title",
+      "spoken_text": "Welcome to Module 5, where we enter the Configure phase of your AI business journey. [PAUSE] Over the next 90 minutes, we're going to build the automation engines that will run your business while you sleep.",
+      "word_count": 35
+    },
+    {
+      "segment_id": 2,
+      "start_time": 15.5,
+      "end_time": 32.5,
+      "visual_cue": "Split view - left side shows person working manually, right side shows automated workflows running",
+      "visual_type": "screen_capture",
+      "spoken_text": "But here's the thing. [PAUSE] Before we touch a single tool, we need to talk strategy. Because the biggest mistake I see new automation builders make? [PAUSE] They automate everything. And that's actually worse than automating nothing.",
+      "word_count": 35
+    },
+    {
+      "segment_id": 3,
+      "start_time": 32.5,
+      "end_time": 34.5,
+      "visual_cue": "Text overlay \"The Automation Paradox\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "",
+      "word_count": 0
+    },
+    {
+      "segment_id": 4,
+      "start_time": 34.5,
+      "end_time": 42.8,
+      "visual_cue": "Two platform logos side by side - n8n and Zapier",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's start with the big question everyone asks: n8n (pronounced \"n-eight-n\") versus Zapier. [PAUSE] Here's my honest take.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 5,
+      "start_time": 42.8,
+      "end_time": 73.8,
+      "visual_cue": "Comparison table building out",
+      "visual_type": "comparison_table",
+      "spoken_text": "**Zapier** is like a luxury sedan. [PAUSE] It's polished, reliable, gets you where you need to go with minimal fuss. You pay a premium, but everything just works. Great for business owners who want results without technical headaches.\n\n**n8n** is like a project car. [PAUSE] More powerful, completely customizable, you can make it do things Zapier can't dream of. But you need to get your hands dirty, understand what's under the hood.",
+      "word_count": 70
+    },
+    {
+      "segment_id": 6,
+      "start_time": 73.8,
+      "end_time": 77.0,
+      "visual_cue": "Decision flowchart appearing",
+      "visual_type": "flowchart",
+      "spoken_text": "Here's my decision framework. Ask yourself three questions:",
+      "word_count": 8
+    },
+    {
+      "segment_id": 7,
+      "start_time": 77.0,
+      "end_time": 86.9,
+      "visual_cue": "Question 1 highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**One:** How technical am I, honestly? [PAUSE] If Docker and self-hosting sound like foreign languages, start with Zapier. No shame in that.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 8,
+      "start_time": 86.9,
+      "end_time": 96.4,
+      "visual_cue": "Question 2 highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Two:** What's my budget versus time situation? [PAUSE] Zapier costs more in dollars but less in hours. n8n flips that equation.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 9,
+      "start_time": 96.4,
+      "end_time": 107.9,
+      "visual_cue": "Question 3 highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Three:** How complex are my workflows? [PAUSE] Simple triggers and actions? Zapier handles that beautifully. Complex logic with loops, conditionals, and custom code? That's n8n territory.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 10,
+      "start_time": 107.9,
+      "end_time": 121.4,
+      "visual_cue": "Recommendation summary",
+      "visual_type": "text_overlay",
+      "spoken_text": "My recommendation for most students? [PAUSE] Start with Zapier to get quick wins and understand automation concepts. Then graduate to n8n when you hit Zapier's limits or your bill gets uncomfortable.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 11,
+      "start_time": 121.4,
+      "end_time": 130.5,
+      "visual_cue": "Calculator interface appearing",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's get practical. Not everything should be automated. [PAUSE] Here's how to calculate if a task is worth the effort.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 12,
+      "start_time": 130.5,
+      "end_time": 138.1,
+      "visual_cue": "Formula appearing step by step",
+      "visual_type": "calculator",
+      "spoken_text": "Take any repetitive task and run these numbers:\n\n**Time per occurrence** times **frequency per month** equals **total monthly time**.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 13,
+      "start_time": 138.1,
+      "end_time": 151.6,
+      "visual_cue": "Example calculation",
+      "visual_type": "calculator",
+      "spoken_text": "Let's say you manually add new leads from your website to a spreadsheet. [PAUSE] Takes 3 minutes each time, happens 40 times a month. That's 120 minutes, or 2 hours monthly.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 14,
+      "start_time": 151.6,
+      "end_time": 161.5,
+      "visual_cue": "Automation build time estimate",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now, how long to automate it? [PAUSE] For a simple form-to-spreadsheet workflow, about 30 minutes to build, maybe an hour with testing.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 15,
+      "start_time": 161.5,
+      "end_time": 174.2,
+      "visual_cue": "ROI visualization",
+      "visual_type": "illustration",
+      "spoken_text": "So you invest 1 hour to save 2 hours every month. [PAUSE] Break-even in 2 weeks. After a year? You've saved 23 hours. That's nearly three full workdays recovered.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 16,
+      "start_time": 174.2,
+      "end_time": 192.8,
+      "visual_cue": "\"Worth It\" threshold highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "My rule of thumb: if automation saves you more than 2 hours per month and takes less than 4 hours to build, [PAUSE] do it. If it takes longer to build than you'll save in 6 months, [PAUSE] probably skip it.",
+      "word_count": 39
+    },
+    {
+      "segment_id": 17,
+      "start_time": 192.8,
+      "end_time": 204.7,
+      "visual_cue": "Exception callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "The exception? Error-prone tasks. [PAUSE] If manual execution causes mistakes that cost you money or reputation, automate it even if the time math doesn't quite work out.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 18,
+      "start_time": 204.7,
+      "end_time": 213.0,
+      "visual_cue": "Warning icon with \"Automation Traps\" text",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now let's talk about the dark side. [PAUSE] Over-automation is real, and it can actually hurt your business.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 19,
+      "start_time": 213.0,
+      "end_time": 226.5,
+      "visual_cue": "Example 1 appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Trap one: Automating broken processes.** [PAUSE] If your manual workflow is a mess, automating it just creates an automated mess. Faster garbage is still garbage. Fix the process first, then automate.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 20,
+      "start_time": 226.5,
+      "end_time": 242.4,
+      "visual_cue": "Example 2 appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Trap two: Removing the human touch.** [PAUSE] Some things shouldn't be automated. A genuine \"thank you\" email after a big purchase? That should come from you, personally. Automate the reminder to send it, not the message itself.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 21,
+      "start_time": 242.4,
+      "end_time": 258.6,
+      "visual_cue": "Example 3 appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Trap three: Complexity creep.** [PAUSE] You build one automation, then another, then you connect them, add conditions, exceptions, edge cases. [PAUSE] Six months later, you have a Rube Goldberg machine that nobody understands, including you.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 22,
+      "start_time": 258.6,
+      "end_time": 273.3,
+      "visual_cue": "Maintenance cost visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Every automation has maintenance cost. Updates break things. APIs change. What worked yesterday might fail tomorrow. [PAUSE] Keep it simple, keep it documented, and resist the urge to automate everything just because you can.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 23,
+      "start_time": 273.3,
+      "end_time": 285.6,
+      "visual_cue": "Notepad with task list",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's identify what you should automate first. [PAUSE] Grab a piece of paper or open a note and write down every repetitive task you do in your business.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 24,
+      "start_time": 285.6,
+      "end_time": 296.8,
+      "visual_cue": "Common tasks list appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "Common candidates:\n\n- Lead capture and organization\n- Invoice reminders\n- Client onboarding emails\n- Social media posting\n- Report generation\n- Meeting scheduling follow-ups\n- Data backup",
+      "word_count": 28
+    },
+    {
+      "segment_id": 25,
+      "start_time": 296.8,
+      "end_time": 305.5,
+      "visual_cue": "Priority matrix - Impact vs Effort",
+      "visual_type": "comparison_table",
+      "spoken_text": "Now plot them on a simple matrix. [PAUSE] High impact, low effort? Those are your quick wins. Start there.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 26,
+      "start_time": 305.5,
+      "end_time": 321.4,
+      "visual_cue": "\"Start Here\" arrow pointing to high-impact, low-effort quadrant",
+      "visual_type": "text_overlay",
+      "spoken_text": "For most service businesses, lead capture is the winner. [PAUSE] Someone fills out your contact form, and within 60 seconds they're in your CRM, you've got a notification, and they've received an acknowledgment email. Zero manual work.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 27,
+      "start_time": 321.4,
+      "end_time": 324.2,
+      "visual_cue": "Module 5 roadmap graphic",
+      "visual_type": "animated_title",
+      "spoken_text": "Here's what we're building in Module 5:",
+      "word_count": 7
+    },
+    {
+      "segment_id": 28,
+      "start_time": 324.2,
+      "end_time": 350.4,
+      "visual_cue": "Lesson list appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next lesson, we'll install n8n and get it running. [PAUSE] Then we'll build three complete n8n workflows from scratch: a lead capture system, a content pipeline, and a client onboarding flow.\n\nAfter that, we'll cover Zapier essentials with two practical examples. [PAUSE] Finally, we'll connect everything to Claude, creating a full loop where AI and automation work together.",
+      "word_count": 58
+    },
+    {
+      "segment_id": 29,
+      "start_time": 350.4,
+      "end_time": 364.7,
+      "visual_cue": "\"Your Turn\" callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before you move on, take 5 minutes right now. [PAUSE] Write down your top 3 automation candidates using that ROI framework we discussed. You'll be building these by the end of this module.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 30,
+      "start_time": 364.7,
+      "end_time": 390.3,
+      "visual_cue": "End card with \"Next: n8n Installation & Setup\"",
+      "visual_type": "screen_capture",
+      "spoken_text": "Alright, strategy session complete. Next up, we get our hands dirty with n8n. See you there.\n\n**Total Runtime:** 10 minutes\n**Tone:** Strategic, practical, slightly cautionary\n**Key Visuals:**\n- n8n vs Zapier comparison graphics\n- ROI calculator animations\n- Priority matrix diagram\n- Warning icons for automation traps\n\n**B-Roll Suggestions:**\n- Workflow diagrams animating\n- Clock/calendar time-saving visuals\n- Before/after comparison of manual vs automated",
+      "word_count": 64
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Animated title \"Automation Strategy\" with gear icons transforming into workflow ...",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 5 roadmap graphic",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Example calculation",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Formula appearing step by step",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparison table building out",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Priority matrix - Impact vs Effort",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "flowchart",
+      "description": "Decision flowchart appearing",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Maintenance cost visualization",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "ROI visualization",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Calculator interface appearing",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "End card with \"Next: n8n Installation & Setup\"",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Split view - left side shows person working manually, right side shows automated...",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Two platform logos side by side - n8n and Zapier",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Start Here\" arrow pointing to high-impact, low-effort quadrant",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Worth It\" threshold highlighted",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Your Turn\" callout",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Automation build time estimate",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Common tasks list appearing",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 1 appearing",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 2 appearing",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Example 3 appearing",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Exception callout",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Lesson list appearing",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Notepad with task list",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Question 1 highlighted",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Question 2 highlighted",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Question 3 highlighted",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Recommendation summary",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Text overlay \"The Automation Paradox\"",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Warning icon with \"Automation Traps\" text",
+      "segment_ids": [
+        18
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.961595"
+}

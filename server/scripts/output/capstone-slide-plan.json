@@ -1,0 +1,330 @@
+{
+  "video_id": "8.1-capstone-project-overview",
+  "title": "Module 8.1: Capstone Project Overview",
+  "style": {
+    "background_color": "#1E1B4B",
+    "accent_color": "#8B5CF6",
+    "text_color": "#FFFFFF",
+    "font_family": "Inter, Arial"
+  },
+  "slides": [
+    {
+      "segment_id": 1,
+      "duration": 8.7,
+      "layout": "hero_title",
+      "content": {
+        "title": "CAPSTONE PROJECT",
+        "subtitle": "Everything comes together",
+        "icon": "graduation_cap"
+      },
+      "visual_note": "Dramatic dark background with glowing purple accents, graduation cap transforming into workflow nodes"
+    },
+    {
+      "segment_id": 2,
+      "duration": 13.9,
+      "layout": "title_card",
+      "content": {
+        "module": "MODULE 8.1",
+        "title": "Your First Agent Workflow",
+        "tagline": "Build something real. Deploy tomorrow."
+      },
+      "visual_note": "Clean module title card with AI Launchpad Academy branding"
+    },
+    {
+      "segment_id": 3,
+      "duration": 37.8,
+      "layout": "split_image_text",
+      "content": {
+        "title": "Client Onboarding Agent",
+        "image_description": "Collage showing: welcome email, Google Drive folder, CRM entry, calendar invite, Slack notification",
+        "bullets": [
+          "Send welcome email",
+          "Set up Google Drive folder",
+          "Add to CRM",
+          "Notify the team",
+          "Schedule kickoff call"
+        ],
+        "emphasis": "A lot of manual steps. A lot of room for errors."
+      },
+      "visual_note": "Show the chaos of manual onboarding - multiple browser tabs, sticky notes, overwhelmed person"
+    },
+    {
+      "segment_id": 4,
+      "duration": 8.4,
+      "layout": "transformation",
+      "content": {
+        "before": "Manual Chaos",
+        "after": "Smooth Automation",
+        "arrow": true,
+        "tagline": "Automatic. Professional. Consistent."
+      },
+      "visual_note": "Split screen showing messy desk vs clean automated workflow"
+    },
+    {
+      "segment_id": 5,
+      "duration": 3.2,
+      "layout": "section_intro",
+      "content": {
+        "title": "The Complete System",
+        "subtitle": "Here's what you're building"
+      },
+      "visual_note": "Intro to architecture section"
+    },
+    {
+      "segment_id": 6,
+      "duration": 7.2,
+      "layout": "architecture_step",
+      "content": {
+        "step_number": 1,
+        "step_name": "TRIGGER",
+        "description": "Webhook connected to client intake form",
+        "icon": "webhook",
+        "highlight": true
+      },
+      "image_needed": "Form submission / webhook icon",
+      "visual_note": "Show a form being submitted, arrow to webhook endpoint"
+    },
+    {
+      "segment_id": 7,
+      "duration": 16.8,
+      "layout": "architecture_step",
+      "content": {
+        "step_number": 2,
+        "step_name": "AI PROCESSING",
+        "description": "Claude analyzes client, generates personalized content",
+        "icon": "brain",
+        "bullets": [
+          "Analyzes new client data",
+          "Determines their needs",
+          "Generates personalized welcome email"
+        ],
+        "emphasis": "Not a template. A thoughtfully crafted message."
+      },
+      "image_needed": "Claude AI interface or brain/AI icon",
+      "visual_note": "Show Claude logo or AI brain processing data"
+    },
+    {
+      "segment_id": 8,
+      "duration": 16.8,
+      "layout": "architecture_step",
+      "content": {
+        "step_number": 3,
+        "step_name": "AUTOMATED ACTIONS",
+        "description": "System creates resources automatically",
+        "actions": [
+          {"icon": "google_drive", "text": "Create folder structure"},
+          {"icon": "google_sheets", "text": "Add to CRM/Sheet"},
+          {"icon": "google_calendar", "text": "Schedule welcome call"}
+        ]
+      },
+      "image_needed": "Google Workspace icons (Drive, Sheets, Calendar)",
+      "visual_note": "Show Google app icons with checkmarks appearing"
+    },
+    {
+      "segment_id": 9,
+      "duration": 13.5,
+      "layout": "architecture_step",
+      "content": {
+        "step_number": 4,
+        "step_name": "NOTIFICATIONS",
+        "description": "Keep everyone informed",
+        "actions": [
+          {"icon": "gmail", "text": "Send welcome email to client"},
+          {"icon": "slack", "text": "Notify team in Slack"}
+        ]
+      },
+      "image_needed": "Gmail and Slack icons/interfaces",
+      "visual_note": "Show email being sent and Slack notification appearing"
+    },
+    {
+      "segment_id": 10,
+      "duration": 8.0,
+      "layout": "full_architecture",
+      "content": {
+        "title": "Complete Agent Workflow",
+        "flow": ["Trigger", "AI Processing", "Automated Actions", "Notifications"],
+        "tagline": "You're going to build every piece of it."
+      },
+      "visual_note": "Full architecture diagram with all 4 components connected"
+    },
+    {
+      "segment_id": 11,
+      "duration": 4.0,
+      "layout": "section_intro",
+      "content": {
+        "title": "Why Client Onboarding?",
+        "subtitle": "Three reasons this is your capstone"
+      },
+      "visual_note": "Three pillars/columns graphic teaser"
+    },
+    {
+      "segment_id": 12,
+      "duration": 12.4,
+      "layout": "reason_card",
+      "content": {
+        "number": "01",
+        "title": "Universally Valuable",
+        "description": "Every business onboards clients",
+        "emphasis": "Use it yourself or sell it as a service"
+      },
+      "visual_note": "Globe or universal symbol, business handshake imagery"
+    },
+    {
+      "segment_id": 13,
+      "duration": 10.4,
+      "layout": "reason_card",
+      "content": {
+        "number": "02",
+        "title": "Uses Everything You've Learned",
+        "skills": ["Webhooks & Triggers", "Claude AI", "API Integrations", "Conditional Logic", "Error Handling"]
+      },
+      "visual_note": "Skills coming together like puzzle pieces"
+    },
+    {
+      "segment_id": 14,
+      "duration": 17.2,
+      "layout": "reason_card",
+      "content": {
+        "number": "03",
+        "title": "It's Impressive",
+        "description": "Form submission → Fully configured client setup in seconds",
+        "emphasis": "This is what AI agents can do."
+      },
+      "visual_note": "Wow factor - stopwatch showing seconds, impressed person"
+    },
+    {
+      "segment_id": 15,
+      "duration": 3.6,
+      "layout": "section_intro",
+      "content": {
+        "title": "What You'll Build",
+        "subtitle": "By the end of this capstone"
+      },
+      "visual_note": "Checklist intro"
+    },
+    {
+      "segment_id": 16,
+      "duration": 32.7,
+      "layout": "checklist",
+      "content": {
+        "title": "Your Deliverables",
+        "items": [
+          "Working webhook for form submissions",
+          "Claude AI processing & personalization",
+          "Google Drive folder structure automation",
+          "Google Sheets/CRM data logging",
+          "Calendar event scheduling",
+          "Welcome email automation",
+          "Slack team notifications",
+          "Complete system documentation"
+        ],
+        "footer": "That's a production-grade automation system."
+      },
+      "visual_note": "Animated checklist with items appearing with checkmarks"
+    },
+    {
+      "segment_id": 17,
+      "duration": 3.6,
+      "layout": "section_intro",
+      "content": {
+        "title": "Prerequisites",
+        "subtitle": "Before we dive in"
+      },
+      "visual_note": "Requirements section intro"
+    },
+    {
+      "segment_id": 18,
+      "duration": 35.1,
+      "layout": "requirements",
+      "content": {
+        "title": "What You'll Need",
+        "requirements": [
+          {"icon": "n8n", "text": "n8n or Zapier access"},
+          {"icon": "claude", "text": "Claude API key with credits"},
+          {"icon": "google", "text": "Google account (Drive, Sheets, Calendar)"},
+          {"icon": "slack", "text": "Slack workspace"},
+          {"icon": "email", "text": "Email account for sending"}
+        ],
+        "warning": "Pause here if any aren't ready. We're moving fast."
+      },
+      "image_needed": "Tool logos: n8n, Claude, Google, Slack",
+      "visual_note": "Tool icons/logos in a grid"
+    },
+    {
+      "segment_id": 19,
+      "duration": 2.8,
+      "layout": "section_intro",
+      "content": {
+        "title": "What's Next",
+        "subtitle": "Your capstone journey"
+      },
+      "visual_note": "Roadmap intro"
+    },
+    {
+      "segment_id": 20,
+      "duration": 10.0,
+      "layout": "module_card",
+      "content": {
+        "module": "8.2",
+        "title": "Building the Client Onboarding Agent",
+        "description": "40 minutes of hands-on building",
+        "highlight": "Step by step through every component"
+      },
+      "visual_note": "Module card with building/construction imagery"
+    },
+    {
+      "segment_id": 21,
+      "duration": 6.8,
+      "layout": "module_card",
+      "content": {
+        "module": "8.3",
+        "title": "Testing and Refinement",
+        "description": "End-to-end tests, edge cases, iteration"
+      },
+      "visual_note": "Module card with testing/QA imagery"
+    },
+    {
+      "segment_id": 22,
+      "duration": 8.4,
+      "layout": "module_card",
+      "content": {
+        "module": "8.4",
+        "title": "Certification & Next Steps",
+        "description": "Quiz, badges, and your future path"
+      },
+      "visual_note": "Module card with certificate/badge imagery"
+    },
+    {
+      "segment_id": 23,
+      "duration": 14.7,
+      "layout": "motivation",
+      "content": {
+        "title": "Ready to Build?",
+        "quote": "You walked in curious about AI automation.",
+        "emphasis": "You're walking out with a complete agent system."
+      },
+      "visual_note": "Energetic, inspiring visual with upward momentum"
+    },
+    {
+      "segment_id": 24,
+      "duration": 2.0,
+      "layout": "call_to_action",
+      "content": {
+        "title": "Let's Build.",
+        "next_module": "8.2 - Building the Client Onboarding Agent"
+      },
+      "visual_note": "Bold CTA with play button"
+    },
+    {
+      "segment_id": 25,
+      "duration": 31.6,
+      "layout": "end_card",
+      "content": {
+        "logo": "AI Launchpad Academy",
+        "badge": "CAPSTONE",
+        "tagline": "Your AI Operations Journey"
+      },
+      "visual_note": "End card with branding, fade to logo"
+    }
+  ]
+}

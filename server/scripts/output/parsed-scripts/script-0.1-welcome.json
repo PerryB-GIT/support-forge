@@ -1,0 +1,241 @@
+{
+  "script_id": "script-0.1-welcome",
+  "title": "Welcome to AI Launchpad",
+  "total_duration_seconds": 257.5,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 24.6,
+      "visual_cue": "AI Launchpad Academy logo animation with purple accent (#8B5CF6) on dark background",
+      "visual_type": "animated_title",
+      "spoken_text": "Hey, welcome to AI Launchpad Academy. I'm glad you're here.\n\n[PAUSE]\n\nLet's get straight to it. You're probably here because you've seen what AI can do, and you're wondering how to actually make it work for your business. Not just playing around with ChatGPT (chat-G-P-T), but building real systems that save you hours every week.\n\n[PAUSE]",
+      "word_count": 54
+    },
+    {
+      "segment_id": 2,
+      "start_time": 24.6,
+      "end_time": 66.4,
+      "visual_cue": "\"Who This Course Is For\" heading with bullet points appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "This course is built for a specific type of person. You're running a small business, maybe you're a freelancer, a consultant, or you're managing a team of under fifty people. You've got real work to do, and you don't have time to become a full-time AI researcher.\n\n[PAUSE]\n\nYou've probably already tried some AI tools. Maybe you've used ChatGPT for writing, or you've signed up for a few automation platforms. But here's the thing, it all feels disconnected. You've got tools scattered everywhere, nothing really talks to each other, and you're not seeing the transformation everyone keeps promising.\n\n[PAUSE]",
+      "word_count": 97
+    },
+    {
+      "segment_id": 3,
+      "start_time": 66.4,
+      "end_time": 85.1,
+      "visual_cue": "Crossed-out \"Tech Expert Required\" icon",
+      "visual_type": "illustration",
+      "spoken_text": "Here's what you don't need to be. You don't need to be a developer. You don't need to understand machine learning. You don't need a computer science degree. If you can use email and spreadsheets, you've got everything you need to succeed here.\n\n[PAUSE]",
+      "word_count": 43
+    },
+    {
+      "segment_id": 4,
+      "start_time": 85.1,
+      "end_time": 122.1,
+      "visual_cue": "Visual showing connected AI workflow system",
+      "visual_type": "illustration",
+      "spoken_text": "By the end of this program, you'll have something most businesses don't: a connected AI operations system. We're talking about automated workflows that handle your repetitive tasks. AI assistants that understand your business context. Systems that work together instead of creating more chaos.\n\n[PAUSE]\n\nLet me give you a concrete example. One of the workflows you'll build can take a customer inquiry, analyze what they need, draft a personalized response, check your calendar for availability, and schedule a follow-up, all before you've finished your morning coffee.\n\n[PAUSE]",
+      "word_count": 85
+    },
+    {
+      "segment_id": 5,
+      "start_time": 122.1,
+      "end_time": 138.4,
+      "visual_cue": "ROI visualization, hours saved per week",
+      "visual_type": "illustration",
+      "spoken_text": "The goal here isn't to make you an AI expert. The goal is to get you ten, maybe twenty hours back every week. That's real time you can spend on the work that actually grows your business.\n\n[PAUSE]",
+      "word_count": 37
+    },
+    {
+      "segment_id": 6,
+      "start_time": 138.4,
+      "end_time": 155.5,
+      "visual_cue": "LAUNCH acronym displayed vertically with each letter highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Everything in this course follows what I call the LAUNCH Method. It's a framework that makes sure you're building AI systems that actually stick, not just shiny tools you'll forget about in two weeks.\n\n[PAUSE]\n\nHere's what LAUNCH stands for.",
+      "word_count": 39
+    },
+    {
+      "segment_id": 7,
+      "start_time": 155.5,
+      "end_time": 172.6,
+      "visual_cue": "\"L - LANDSCAPE\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "L is for Landscape. Before we build anything, we audit where you are right now. What's working, what's broken, where AI can actually help. This prevents the biggest mistake I see: people grabbing tools before they understand their problems.\n\n[PAUSE]",
+      "word_count": 39
+    },
+    {
+      "segment_id": 8,
+      "start_time": 172.6,
+      "end_time": 186.9,
+      "visual_cue": "\"A - ARCHITECT\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "A is for Architect. This is where we master Claude Code (klod code), your AI development partner. You'll learn to work with AI at a level most people don't even know exists.\n\n[PAUSE]",
+      "word_count": 32
+    },
+    {
+      "segment_id": 9,
+      "start_time": 186.9,
+      "end_time": 198.0,
+      "visual_cue": "\"U - UNIFY\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "U is for Unify. We connect everything. Your databases, your APIs (A-P-Is), your services. This is where the magic of automation really kicks in.\n\n[PAUSE]",
+      "word_count": 24
+    },
+    {
+      "segment_id": 10,
+      "start_time": 198.0,
+      "end_time": 210.3,
+      "visual_cue": "\"N - NAVIGATE\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "N is for Navigate. Building workflows is one thing. Troubleshooting them when something breaks? That's a different skill. You'll learn to debug and optimize like a pro.\n\n[PAUSE]",
+      "word_count": 27
+    },
+    {
+      "segment_id": 11,
+      "start_time": 210.3,
+      "end_time": 221.0,
+      "visual_cue": "\"C - CUSTOMIZE\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "C is for Customize. Every business is different. You'll learn to adapt these systems to your specific needs, not just follow cookie-cutter templates.\n\n[PAUSE]",
+      "word_count": 23
+    },
+    {
+      "segment_id": 12,
+      "start_time": 221.0,
+      "end_time": 231.3,
+      "visual_cue": "\"H - HARVEST\" highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "And H is for Harvest. This is about measuring results, tracking ROI (R-O-I), and continuously improving. Because what gets measured gets managed.\n\n[PAUSE]",
+      "word_count": 22
+    },
+    {
+      "segment_id": 13,
+      "start_time": 231.3,
+      "end_time": 255.5,
+      "visual_cue": "Course roadmap showing all modules",
+      "visual_type": "text_overlay",
+      "spoken_text": "Over the next several modules, we'll work through each phase together. You'll go from AI-curious to AI-capable. And more importantly, you'll have the systems to prove it.\n\n[PAUSE]\n\nIn the next lesson, we'll get you familiar with this learning platform and make sure you've got everything set up to succeed.\n\n[PAUSE]\n\nLet's get to work.",
+      "word_count": 53
+    },
+    {
+      "segment_id": 14,
+      "start_time": 255.5,
+      "end_time": 257.5,
+      "visual_cue": "Fade to \"Next: Your Learning Environment\" with Support Forge branding",
+      "visual_type": "animated_title",
+      "spoken_text": "",
+      "word_count": 0
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "AI Launchpad Academy logo animation with purple accent (#8B5CF6) on dark backgro...",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Fade to \"Next: Your Learning Environment\" with Support Forge branding",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Crossed-out \"Tech Expert Required\" icon",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "ROI visualization, hours saved per week",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Visual showing connected AI workflow system",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"A - ARCHITECT\" highlighted",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"C - CUSTOMIZE\" highlighted",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"H - HARVEST\" highlighted",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"L - LANDSCAPE\" highlighted",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"N - NAVIGATE\" highlighted",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"U - UNIFY\" highlighted",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Who This Course Is For\" heading with bullet points appearing",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Course roadmap showing all modules",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "LAUNCH acronym displayed vertically with each letter highlighted",
+      "segment_ids": [
+        6
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "5 minutes (~750-850 words)",
+    "lesson": "Module 0, Lesson 1",
+    "purpose": "Introduce the course, establish who it's for, preview outcomes, introduce LAUNCH Method",
+    "stated_word_count": "780",
+    "stated_runtime": "4:45-5:00"
+  },
+  "parsed_at": "2026-01-06T22:57:33.078929"
+}

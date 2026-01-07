@@ -1,0 +1,827 @@
+{
+  "script_id": "5.2-n8n-installation-setup",
+  "title": "Module 5.2: n8n Installation & Setup",
+  "total_duration_seconds": 476.2,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 11.9,
+      "visual_cue": "n8n logo with \"Installation & Setup\" subtitle",
+      "visual_type": "screen_capture",
+      "spoken_text": "Alright, let's get n8n (pronounced \"n-eight-n\") up and running. [PAUSE] By the end of this lesson, you'll have a fully functional automation platform ready to build workflows.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 2,
+      "start_time": 11.9,
+      "end_time": 26.2,
+      "visual_cue": "Two paths visualization - Cloud vs Self-Hosted",
+      "visual_type": "comparison_table",
+      "spoken_text": "We've got two paths here: n8n Cloud, which is the easy button, and self-hosted, which gives you complete control. [PAUSE] I'm going to walk you through both, but here's my honest recommendation upfront.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 3,
+      "start_time": 26.2,
+      "end_time": 39.4,
+      "visual_cue": "Recommendation callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "If you're new to this, start with n8n Cloud. It's free to try, takes 30 seconds to set up, and you can always migrate to self-hosted later when you understand what you're doing.",
+      "word_count": 33
+    },
+    {
+      "segment_id": 4,
+      "start_time": 39.4,
+      "end_time": 45.0,
+      "visual_cue": "Browser navigating to n8n.io",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's start with the cloud option. Head to n8n.io and click \"Get Started Free.\"",
+      "word_count": 14
+    },
+    {
+      "segment_id": 5,
+      "start_time": 45.0,
+      "end_time": 52.9,
+      "visual_cue": "Sign-up page",
+      "visual_type": "text_overlay",
+      "spoken_text": "Create your account. You can use Google, GitHub, or email. [PAUSE] I'll use email for this demo.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 6,
+      "start_time": 52.9,
+      "end_time": 62.4,
+      "visual_cue": "Account creation flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Fill in your details. [PAUSE] They'll ask about your use case - pick whatever fits, this is just for their analytics.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 7,
+      "start_time": 62.4,
+      "end_time": 74.7,
+      "visual_cue": "Workspace creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now you're creating your workspace. Give it a name that makes sense - your business name works fine. [PAUSE] Select your region. Pick whatever's closest to you geographically.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 8,
+      "start_time": 74.7,
+      "end_time": 82.6,
+      "visual_cue": "Dashboard appearing",
+      "visual_type": "screen_capture",
+      "spoken_text": "And just like that, you're in. [PAUSE] This is your n8n dashboard. Clean, simple, ready to go.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 9,
+      "start_time": 82.6,
+      "end_time": 98.5,
+      "visual_cue": "Free tier limitations callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Quick note on the free tier. [PAUSE] You get 5 active workflows and limited executions per month. That's plenty to learn and build your first automations. When you outgrow it, paid plans start around $20 per month.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 10,
+      "start_time": 98.5,
+      "end_time": 112.8,
+      "visual_cue": "Cloud vs Self-Hosted comparison",
+      "visual_type": "comparison_table",
+      "spoken_text": "The cloud version handles updates, backups, and uptime for you. Trade-off is you're paying for convenience and your data lives on their servers. [PAUSE] For most people starting out, that's a fair trade.",
+      "word_count": 32
+    },
+    {
+      "segment_id": 11,
+      "start_time": 112.8,
+      "end_time": 121.1,
+      "visual_cue": "Terminal window opening",
+      "visual_type": "screen_capture",
+      "spoken_text": "Now let's cover the self-hosted route. [PAUSE] This is where things get more technical, but also more powerful.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 12,
+      "start_time": 121.1,
+      "end_time": 133.9,
+      "visual_cue": "Prerequisites checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "You'll need a few things:\n- A server or VPS - DigitalOcean, AWS EC2, or even a local machine\n- Docker and Docker Compose installed\n- Basic comfort with the command line",
+      "word_count": 32
+    },
+    {
+      "segment_id": 13,
+      "start_time": 133.9,
+      "end_time": 144.6,
+      "visual_cue": "Docker logo",
+      "visual_type": "illustration",
+      "spoken_text": "If you don't have Docker, pause here and install it. [PAUSE] On Ubuntu, it's:\n\n```bash\nsudo apt update\nsudo apt install docker.io docker-compose\n```",
+      "word_count": 23
+    },
+    {
+      "segment_id": 14,
+      "start_time": 144.6,
+      "end_time": 151.7,
+      "visual_cue": "Terminal commands",
+      "visual_type": "screen_capture",
+      "spoken_text": "For Mac or Windows, download Docker Desktop from docker.com. [PAUSE] Once that's running, we're ready.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 15,
+      "start_time": 151.7,
+      "end_time": 156.9,
+      "visual_cue": "Creating directory structure",
+      "visual_type": "text_overlay",
+      "spoken_text": "First, let's create a directory for n8n:\n\n```bash\nmkdir n8n-docker\ncd n8n-docker\n```",
+      "word_count": 13
+    },
+    {
+      "segment_id": 16,
+      "start_time": 156.9,
+      "end_time": 175.7,
+      "visual_cue": "docker-compose.yml file opening",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now we create our Docker Compose file. This tells Docker how to run n8n:\n\n```yaml\nversion: '3.8'\n\nservices:\n  n8n:\n    image: n8nio/n8n\n    restart: always\n    ports:\n      - \"5678:5678\"\n    environment:\n      - N8N_BASIC_AUTH_ACTIVE=true\n      - N8N_BASIC_AUTH_USER=admin\n      - N8N_BASIC_AUTH_PASSWORD=your-secure-password\n      - N8N_HOST=localhost\n      - N8N_PORT=5678\n      - N8N_PROTOCOL=http\n      - GENERIC_TIMEZONE=America/New_York\n    volumes:\n      - n8n_data:/home/node/.n8n\n\nvolumes:\n  n8n_data:\n```",
+      "word_count": 47
+    },
+    {
+      "segment_id": 17,
+      "start_time": 175.7,
+      "end_time": 197.0,
+      "visual_cue": "Highlighting important sections",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let me break this down. [PAUSE]\n\nPort 5678 is where n8n runs. [PAUSE] The environment variables set up basic authentication - change that password to something secure. [PAUSE] The volume at the bottom persists your data, so you don't lose workflows when the container restarts.",
+      "word_count": 42
+    },
+    {
+      "segment_id": 18,
+      "start_time": 197.0,
+      "end_time": 201.8,
+      "visual_cue": "Terminal running docker-compose",
+      "visual_type": "screen_capture",
+      "spoken_text": "Save that file as `docker-compose.yml`, then run:\n\n```bash\ndocker-compose up -d\n```",
+      "word_count": 12
+    },
+    {
+      "segment_id": 19,
+      "start_time": 201.8,
+      "end_time": 210.1,
+      "visual_cue": "Container starting up",
+      "visual_type": "text_overlay",
+      "spoken_text": "The `-d` flag runs it in the background. [PAUSE] First time takes a minute to download the image.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 20,
+      "start_time": 210.1,
+      "end_time": 221.6,
+      "visual_cue": "Browser opening localhost:5678",
+      "visual_type": "screen_capture",
+      "spoken_text": "Once it's running, open your browser and go to `localhost:5678`. [PAUSE] You'll see a login prompt. Use the username and password from your Docker Compose file.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 21,
+      "start_time": 221.6,
+      "end_time": 231.1,
+      "visual_cue": "n8n interface loading",
+      "visual_type": "screen_capture",
+      "spoken_text": "And there it is. [PAUSE] Your own self-hosted n8n instance. Same interface as the cloud version, but running on your hardware.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 22,
+      "start_time": 231.1,
+      "end_time": 235.5,
+      "visual_cue": "n8n settings panel",
+      "visual_type": "screen_capture",
+      "spoken_text": "Whether you're on cloud or self-hosted, let's configure a few essentials.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 23,
+      "start_time": 235.5,
+      "end_time": 239.5,
+      "visual_cue": "Settings menu opening",
+      "visual_type": "screen_capture",
+      "spoken_text": "Click your profile icon in the bottom left, then Settings.",
+      "word_count": 10
+    },
+    {
+      "segment_id": 24,
+      "start_time": 239.5,
+      "end_time": 247.8,
+      "visual_cue": "Personal settings section",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Personal Settings:** Update your name and email. [PAUSE] This matters when you're collaborating or n8n sends you notifications.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 25,
+      "start_time": 247.8,
+      "end_time": 258.5,
+      "visual_cue": "Credentials section highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Credentials:** This is where the magic happens. [PAUSE] Credentials are how n8n connects to other services - Gmail, Google Sheets, Slack, whatever you need.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 26,
+      "start_time": 258.5,
+      "end_time": 263.3,
+      "visual_cue": "Adding a credential example",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's add one right now. Click \"Add Credential,\" search for \"Google Sheets.\"",
+      "word_count": 12
+    },
+    {
+      "segment_id": 27,
+      "start_time": 263.3,
+      "end_time": 273.2,
+      "visual_cue": "OAuth flow",
+      "visual_type": "text_overlay",
+      "spoken_text": "For Google services, you'll connect via OAuth (pronounced \"oh-auth\"). [PAUSE] Click the button, sign in with your Google account, grant permissions. Done.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 28,
+      "start_time": 273.2,
+      "end_time": 281.1,
+      "visual_cue": "Credential saved confirmation",
+      "visual_type": "text_overlay",
+      "spoken_text": "That credential is now saved and encrypted. [PAUSE] Any workflow can use it without you re-entering passwords.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 29,
+      "start_time": 281.1,
+      "end_time": 292.6,
+      "visual_cue": "Variables section",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Variables:** These are reusable values across workflows. [PAUSE] Think of things like your business name, default email addresses, API endpoints. Set them once, use them everywhere.",
+      "word_count": 25
+    },
+    {
+      "segment_id": 30,
+      "start_time": 292.6,
+      "end_time": 300.5,
+      "visual_cue": "New workflow creation",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's build something simple to make sure everything works. [PAUSE] Click \"New Workflow\" in the top right.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 31,
+      "start_time": 300.5,
+      "end_time": 308.8,
+      "visual_cue": "Empty canvas",
+      "visual_type": "text_overlay",
+      "spoken_text": "You're looking at the workflow canvas. [PAUSE] This is where you'll spend most of your time in n8n.",
+      "word_count": 17
+    },
+    {
+      "segment_id": 32,
+      "start_time": 308.8,
+      "end_time": 314.8,
+      "visual_cue": "Trigger node panel",
+      "visual_type": "text_overlay",
+      "spoken_text": "Every workflow starts with a trigger. Click the plus sign and search for \"Manual Trigger.\"",
+      "word_count": 15
+    },
+    {
+      "segment_id": 33,
+      "start_time": 314.8,
+      "end_time": 321.5,
+      "visual_cue": "Manual trigger node placed",
+      "visual_type": "text_overlay",
+      "spoken_text": "This creates a workflow you run by clicking a button. [PAUSE] Perfect for testing.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 34,
+      "start_time": 321.5,
+      "end_time": 327.5,
+      "visual_cue": "Adding second node",
+      "visual_type": "text_overlay",
+      "spoken_text": "Now click the plus on the right side of that node. Search for \"HTTP Request.\"",
+      "word_count": 15
+    },
+    {
+      "segment_id": 35,
+      "start_time": 327.5,
+      "end_time": 333.1,
+      "visual_cue": "HTTP Request node configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "We'll make a simple API call. In the URL field, enter:\n\n```\nhttps://api.quotable.io/random\n```",
+      "word_count": 14
+    },
+    {
+      "segment_id": 36,
+      "start_time": 333.1,
+      "end_time": 340.2,
+      "visual_cue": "Configuration options",
+      "visual_type": "text_overlay",
+      "spoken_text": "This is a free API that returns random quotes. [PAUSE] Leave everything else at defaults.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 37,
+      "start_time": 340.2,
+      "end_time": 347.7,
+      "visual_cue": "Connecting nodes",
+      "visual_type": "text_overlay",
+      "spoken_text": "The nodes are already connected by that line. [PAUSE] Data flows left to right in n8n.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 38,
+      "start_time": 347.7,
+      "end_time": 350.5,
+      "visual_cue": "Test workflow button highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "Click \"Test Workflow\" in the top right.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 39,
+      "start_time": 350.5,
+      "end_time": 357.6,
+      "visual_cue": "Execution running",
+      "visual_type": "text_overlay",
+      "spoken_text": "Watch it run. [PAUSE] The Manual Trigger fires, data flows to the HTTP Request node...",
+      "word_count": 14
+    },
+    {
+      "segment_id": 40,
+      "start_time": 357.6,
+      "end_time": 366.7,
+      "visual_cue": "Output data appearing",
+      "visual_type": "text_overlay",
+      "spoken_text": "And there's your output. [PAUSE] A random quote pulled from the internet. You can see the JSON response right there.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 41,
+      "start_time": 366.7,
+      "end_time": 370.6,
+      "visual_cue": "Successful execution indicator",
+      "visual_type": "text_overlay",
+      "spoken_text": "Congratulations. [PAUSE] Your first n8n workflow works.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 42,
+      "start_time": 370.6,
+      "end_time": 373.4,
+      "visual_cue": "Full n8n interface with callouts",
+      "visual_type": "screen_capture",
+      "spoken_text": "Quick tour of what you're looking at.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 43,
+      "start_time": 373.4,
+      "end_time": 379.3,
+      "visual_cue": "Left sidebar highlighted",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Left sidebar:** Your workflows list, credentials, and settings. [PAUSE] The home base.",
+      "word_count": 11
+    },
+    {
+      "segment_id": 44,
+      "start_time": 379.3,
+      "end_time": 387.2,
+      "visual_cue": "Top bar highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Top bar:** Workflow name, test button, and activation toggle. [PAUSE] Inactive workflows don't run on their own.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 45,
+      "start_time": 387.2,
+      "end_time": 395.1,
+      "visual_cue": "Canvas area highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Canvas:** Where you build. [PAUSE] Drag to move around, scroll to zoom. Nodes snap to a grid.",
+      "word_count": 16
+    },
+    {
+      "segment_id": 46,
+      "start_time": 395.1,
+      "end_time": 402.6,
+      "visual_cue": "Execution panel highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Execution panel:** Shows past runs and their data. [PAUSE] Essential for debugging when things go wrong.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 47,
+      "start_time": 402.6,
+      "end_time": 412.5,
+      "visual_cue": "Node output view highlighted",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Node output:** Click any node to see what data went through it. [PAUSE] This is how you understand and troubleshoot your automations.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 48,
+      "start_time": 412.5,
+      "end_time": 419.6,
+      "visual_cue": "Recap slide",
+      "visual_type": "screen_capture",
+      "spoken_text": "You've got n8n running, you understand the interface, and you've built your first workflow. [PAUSE]",
+      "word_count": 14
+    },
+    {
+      "segment_id": 49,
+      "start_time": 419.6,
+      "end_time": 431.9,
+      "visual_cue": "Next lesson preview",
+      "visual_type": "text_overlay",
+      "spoken_text": "In the next lesson, we go deep. [PAUSE] We'll build three real workflows that actually do something useful for your business: lead capture, content pipelines, and client onboarding.",
+      "word_count": 27
+    },
+    {
+      "segment_id": 50,
+      "start_time": 431.9,
+      "end_time": 443.0,
+      "visual_cue": "Homework callout",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before you move on, add at least two credentials - Google and one other service you use. [PAUSE] You'll need them ready for what's coming.",
+      "word_count": 24
+    },
+    {
+      "segment_id": 51,
+      "start_time": 443.0,
+      "end_time": 476.2,
+      "visual_cue": "End card with \"Next: Building n8n Workflows\"",
+      "visual_type": "text_overlay",
+      "spoken_text": "See you in the next one.\n\n**Total Runtime:** 20 minutes\n**Tone:** Technical but accessible, step-by-step\n**Key Visuals:**\n- Screen recordings of both cloud signup and Docker setup\n- Terminal commands with syntax highlighting\n- n8n interface callouts and annotations\n- First workflow build in real-time\n\n**B-Roll Suggestions:**\n- Server rack / cloud infrastructure imagery\n- Docker whale logo animation\n- Code scrolling on terminal\n\n**Technical Verification:**\n- Docker commands tested on Ubuntu 22.04\n- docker-compose.yml syntax validated\n- Quote API endpoint confirmed active",
+      "word_count": 83
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "comparison_table",
+      "description": "Cloud vs Self-Hosted comparison",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Two paths visualization - Cloud vs Self-Hosted",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Docker logo",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Browser navigating to n8n.io",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Browser opening localhost:5678",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Dashboard appearing",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Full n8n interface with callouts",
+      "segment_ids": [
+        42
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Left sidebar highlighted",
+      "segment_ids": [
+        43
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Personal settings section",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Recap slide",
+      "segment_ids": [
+        48
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Settings menu opening",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal commands",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal running docker-compose",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Terminal window opening",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n interface loading",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n logo with \"Installation & Setup\" subtitle",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "n8n settings panel",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Account creation flow",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding a credential example",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Adding second node",
+      "segment_ids": [
+        34
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Canvas area highlighted",
+      "segment_ids": [
+        45
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Configuration options",
+      "segment_ids": [
+        36
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Connecting nodes",
+      "segment_ids": [
+        37
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Container starting up",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Creating directory structure",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Credential saved confirmation",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Credentials section highlighted",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Empty canvas",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "End card with \"Next: Building n8n Workflows\"",
+      "segment_ids": [
+        51
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Execution panel highlighted",
+      "segment_ids": [
+        46
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Execution running",
+      "segment_ids": [
+        39
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Free tier limitations callout",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "HTTP Request node configuration",
+      "segment_ids": [
+        35
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Highlighting important sections",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Homework callout",
+      "segment_ids": [
+        50
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Manual trigger node placed",
+      "segment_ids": [
+        33
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "New workflow creation",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Next lesson preview",
+      "segment_ids": [
+        49
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Node output view highlighted",
+      "segment_ids": [
+        47
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "OAuth flow",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Output data appearing",
+      "segment_ids": [
+        40
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Prerequisites checklist",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Recommendation callout",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Sign-up page",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Successful execution indicator",
+      "segment_ids": [
+        41
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Test workflow button highlighted",
+      "segment_ids": [
+        38
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Top bar highlighted",
+      "segment_ids": [
+        44
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Trigger node panel",
+      "segment_ids": [
+        32
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Variables section",
+      "segment_ids": [
+        29
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Workspace creation",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "docker-compose.yml file opening",
+      "segment_ids": [
+        16
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:55.966024"
+}

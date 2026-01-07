@@ -1,0 +1,507 @@
+{
+  "script_id": "6.4-cost-management-optimization",
+  "title": "Module 6.4: Cost Management & Optimization",
+  "total_duration_seconds": 375.1,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 12.7,
+      "visual_cue": "Dollar signs with cloud icons, \"Cost Management\" title",
+      "visual_type": "illustration",
+      "spoken_text": "Cloud costs can be a silent business killer. [PAUSE] I've seen startups burn through thousands on forgotten resources. I've seen freelancers shocked by bills ten times what they expected.",
+      "word_count": 28
+    },
+    {
+      "segment_id": 2,
+      "start_time": 12.7,
+      "end_time": 24.6,
+      "visual_cue": "Prevention mindset graphic",
+      "visual_type": "illustration",
+      "spoken_text": "This lesson is about prevention. [PAUSE] Set up the right guardrails now, understand what costs money, and you'll sleep better knowing your cloud bill won't surprise you.",
+      "word_count": 26
+    },
+    {
+      "segment_id": 3,
+      "start_time": 24.6,
+      "end_time": 33.3,
+      "visual_cue": "AWS Billing dashboard",
+      "visual_type": "screen_capture",
+      "spoken_text": "First line of defense: billing alerts. [PAUSE] We touched on this in the AWS lesson, but let's go deeper.",
+      "word_count": 18
+    },
+    {
+      "segment_id": 4,
+      "start_time": 33.3,
+      "end_time": 40.0,
+      "visual_cue": "AWS Budgets section",
+      "visual_type": "text_overlay",
+      "spoken_text": "In AWS, go to Billing, then Budgets. [PAUSE] Create multiple budgets at different thresholds.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 5,
+      "start_time": 40.0,
+      "end_time": 52.4,
+      "visual_cue": "Tiered alert configuration",
+      "visual_type": "text_overlay",
+      "spoken_text": "I recommend:\n- **$10 alert:** Catches unexpected activity early\n- **$50 alert:** Something's actually being used\n- **$100 alert:** Time to investigate closely\n- **Monthly cap alert:** Whatever your maximum is",
+      "word_count": 31
+    },
+    {
+      "segment_id": 6,
+      "start_time": 52.4,
+      "end_time": 61.5,
+      "visual_cue": "Alert notification setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set up email AND SMS alerts for higher thresholds. [PAUSE] Email is easy to miss. A text message gets attention.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 7,
+      "start_time": 61.5,
+      "end_time": 70.6,
+      "visual_cue": "GCP budget setup",
+      "visual_type": "text_overlay",
+      "spoken_text": "In Google Cloud, go to Billing, then Budgets & alerts. [PAUSE] Same concept - set multiple thresholds, choose notification channels.",
+      "word_count": 19
+    },
+    {
+      "segment_id": 8,
+      "start_time": 70.6,
+      "end_time": 83.7,
+      "visual_cue": "Slack/webhook integration",
+      "visual_type": "text_overlay",
+      "spoken_text": "Pro move: connect billing alerts to Slack or your automation platform. [PAUSE] A Slack message in your main channel is harder to ignore than an email buried in your inbox.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 9,
+      "start_time": 83.7,
+      "end_time": 86.1,
+      "visual_cue": "Cost breakdown pie chart",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let's demystify where cloud money goes.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 10,
+      "start_time": 86.1,
+      "end_time": 103.5,
+      "visual_cue": "Compute costs",
+      "visual_type": "calculator",
+      "spoken_text": "**Compute:** Running servers. [PAUSE] EC2 instances, Cloud Run, Lambda when it exceeds free tier. The meter runs whenever something's on.\n\nCommon trap: Leaving test instances running. [PAUSE] That $0.10/hour EC2 instance is $73/month if you forget about it.",
+      "word_count": 36
+    },
+    {
+      "segment_id": 11,
+      "start_time": 103.5,
+      "end_time": 116.6,
+      "visual_cue": "Storage costs",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Storage:** S3 buckets, Cloud Storage, databases. [PAUSE] Storage is cheap - pennies per gigabyte. But it adds up if you're storing lots of media or never cleaning up old data.",
+      "word_count": 29
+    },
+    {
+      "segment_id": 12,
+      "start_time": 116.6,
+      "end_time": 132.9,
+      "visual_cue": "Data transfer costs",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Data Transfer:** Moving data out of the cloud. [PAUSE] This one surprises people. Uploading is usually free. Downloading costs money, especially at scale.\n\nIf you're serving lots of video or images, data transfer can be your biggest cost.",
+      "word_count": 37
+    },
+    {
+      "segment_id": 13,
+      "start_time": 132.9,
+      "end_time": 143.6,
+      "visual_cue": "API calls costs",
+      "visual_type": "text_overlay",
+      "spoken_text": "**API Calls:** AI model usage. [PAUSE] Every Claude API call, every Gemini request, every embedding generation. This is where AI businesses see real expenses.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 14,
+      "start_time": 143.6,
+      "end_time": 161.5,
+      "visual_cue": "Token calculator",
+      "visual_type": "calculator",
+      "spoken_text": "Quick math: [PAUSE]\n- Claude Sonnet: roughly $3 per million input tokens, $15 per million output\n- Average conversation: maybe 2,000 tokens\n- 1,000 daily users with 3 conversations each: around $10-20/day\n\nIt adds up, but it's predictable. Track your token usage.",
+      "word_count": 41
+    },
+    {
+      "segment_id": 15,
+      "start_time": 161.5,
+      "end_time": 163.9,
+      "visual_cue": "Optimization strategies list",
+      "visual_type": "text_overlay",
+      "spoken_text": "Here's how to keep costs reasonable.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 16,
+      "start_time": 163.9,
+      "end_time": 177.8,
+      "visual_cue": "Strategy 1 - Right-sizing",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Strategy 1: Right-size your resources.** [PAUSE]\n\nDon't use a large instance when small works. Don't provision 100GB storage when you need 10. Start small, scale up when metrics prove you need it.",
+      "word_count": 31
+    },
+    {
+      "segment_id": 17,
+      "start_time": 177.8,
+      "end_time": 192.8,
+      "visual_cue": "Strategy 2 - Reserved capacity",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Strategy 2: Reserve when predictable.** [PAUSE]\n\nIf you know you'll need a resource for a year, reserved instances save 30-60%. [PAUSE] AWS Reserved Instances, GCP Committed Use Discounts. Same compute, big savings.",
+      "word_count": 30
+    },
+    {
+      "segment_id": 18,
+      "start_time": 192.8,
+      "end_time": 212.7,
+      "visual_cue": "Strategy 3 - Cleanup unused",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Strategy 3: Clean up what you're not using.** [PAUSE]\n\nMonthly audit:\n- Delete old test environments\n- Remove unused S3 buckets and their contents\n- Terminate forgotten EC2 instances\n- Review and cancel unused domains\n\nAWS has a \"Cost Optimization\" section that flags underutilized resources. Use it.",
+      "word_count": 46
+    },
+    {
+      "segment_id": 19,
+      "start_time": 212.7,
+      "end_time": 223.4,
+      "visual_cue": "Strategy 4 - Caching",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Strategy 4: Cache aggressively.** [PAUSE]\n\nCloudFront caching reduces origin requests. Response caching in your app reduces API calls. Every cached response is money saved.",
+      "word_count": 23
+    },
+    {
+      "segment_id": 20,
+      "start_time": 223.4,
+      "end_time": 250.1,
+      "visual_cue": "Strategy 5 - Model selection",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Strategy 5: Choose the right AI model.** [PAUSE]\n\nDon't use Claude Opus for simple classification - Haiku handles that at a fraction of the cost. Match model capability to task complexity.\n\n| Task | Model | Relative Cost |\n|------|-------|---------------|\n| Simple classification | Haiku | $ |\n| General tasks | Sonnet | $$ |\n| Complex reasoning | Opus | $$$$ |",
+      "word_count": 63
+    },
+    {
+      "segment_id": 21,
+      "start_time": 250.1,
+      "end_time": 260.0,
+      "visual_cue": "Strategy 6 - Prompt optimization",
+      "visual_type": "screen_capture",
+      "spoken_text": "**Strategy 6: Optimize your prompts.** [PAUSE]\n\nShorter prompts = fewer tokens = lower cost. Don't pad prompts with unnecessary context. Be concise.",
+      "word_count": 21
+    },
+    {
+      "segment_id": 22,
+      "start_time": 260.0,
+      "end_time": 262.4,
+      "visual_cue": "Calendar with monthly review marked",
+      "visual_type": "text_overlay",
+      "spoken_text": "Build a monthly cost review habit.",
+      "word_count": 6
+    },
+    {
+      "segment_id": 23,
+      "start_time": 262.4,
+      "end_time": 278.8,
+      "visual_cue": "Review checklist",
+      "visual_type": "text_overlay",
+      "spoken_text": "First of each month, check:\n\n1. **Total spend vs budget:** Are you on track?\n2. **Cost by service:** What's driving expenses?\n3. **Unexpected line items:** Anything surprising?\n4. **Unused resources:** What can be deleted?\n5. **Optimization opportunities:** What can be downsized?",
+      "word_count": 41
+    },
+    {
+      "segment_id": 24,
+      "start_time": 278.8,
+      "end_time": 285.9,
+      "visual_cue": "AWS Cost Explorer",
+      "visual_type": "text_overlay",
+      "spoken_text": "AWS Cost Explorer visualizes spending over time. [PAUSE] Filter by service, see trends, spot anomalies.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 25,
+      "start_time": 285.9,
+      "end_time": 293.0,
+      "visual_cue": "Setting calendar reminder",
+      "visual_type": "text_overlay",
+      "spoken_text": "Set a recurring calendar reminder. [PAUSE] \"Cloud Cost Review - 15 minutes.\" Make it non-negotiable.",
+      "word_count": 14
+    },
+    {
+      "segment_id": 26,
+      "start_time": 293.0,
+      "end_time": 298.5,
+      "visual_cue": "Module 6 complete badge",
+      "visual_type": "animated_title",
+      "spoken_text": "That's a wrap on Module 6 and the Configure phase. [PAUSE]",
+      "word_count": 10
+    },
+    {
+      "segment_id": 27,
+      "start_time": 298.5,
+      "end_time": 313.7,
+      "visual_cue": "What you've accomplished",
+      "visual_type": "text_overlay",
+      "spoken_text": "In these two modules, you've:\n- Built real automation workflows in n8n and Zapier\n- Connected AI intelligence to your automations\n- Deployed applications to AWS and explored GCP\n- Set up cost controls to protect your business",
+      "word_count": 38
+    },
+    {
+      "segment_id": 28,
+      "start_time": 313.7,
+      "end_time": 320.4,
+      "visual_cue": "Configure phase complete visualization",
+      "visual_type": "illustration",
+      "spoken_text": "Your AI business now has operational infrastructure. [PAUSE] Automations running, apps deployed, costs monitored.",
+      "word_count": 13
+    },
+    {
+      "segment_id": 29,
+      "start_time": 320.4,
+      "end_time": 327.9,
+      "visual_cue": "What's next teaser",
+      "visual_type": "text_overlay",
+      "spoken_text": "Coming up: the Operate phase. [PAUSE] We'll cover monitoring, maintenance, scaling, and building sustainable AI operations.",
+      "word_count": 15
+    },
+    {
+      "segment_id": 30,
+      "start_time": 327.9,
+      "end_time": 338.7,
+      "visual_cue": "Final action items",
+      "visual_type": "text_overlay",
+      "spoken_text": "Before you go:\n- Set up billing alerts if you haven't\n- Do a quick audit of running resources\n- Delete anything you created just for testing",
+      "word_count": 27
+    },
+    {
+      "segment_id": 31,
+      "start_time": 338.7,
+      "end_time": 375.1,
+      "visual_cue": "End card with Module 7 preview",
+      "visual_type": "animated_title",
+      "spoken_text": "Great work. See you in the Operate phase.\n\n**Total Runtime:** 10 minutes\n**Tone:** Practical, cautionary but empowering\n**Key Visuals:**\n- Billing dashboard screen recordings\n- Cost breakdown charts\n- Optimization strategy icons\n- Calendar reminder mockup\n\n**B-Roll Suggestions:**\n- Money/dollar imagery\n- Cloud meter running\n- Cleanup/organization visuals\n\n**Cost Accuracy Note:**\n- AI model pricing changes frequently\n- Verify current Anthropic/Google pricing before recording\n- Use approximate language (\"roughly,\" \"around\") for flexibility\n\n**Viewer Action Items:**\n- Set up billing alerts (if not done)\n- Schedule monthly review\n- Audit current resources",
+      "word_count": 91
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "End card with Module 7 preview",
+      "segment_ids": [
+        31
+      ]
+    },
+    {
+      "type": "animated_title",
+      "description": "Module 6 complete badge",
+      "segment_ids": [
+        26
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Compute costs",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "calculator",
+      "description": "Token calculator",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Configure phase complete visualization",
+      "segment_ids": [
+        28
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Dollar signs with cloud icons, \"Cost Management\" title",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Prevention mindset graphic",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "AWS Billing dashboard",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Strategy 6 - Prompt optimization",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "API calls costs",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "AWS Budgets section",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "AWS Cost Explorer",
+      "segment_ids": [
+        24
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Alert notification setup",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Calendar with monthly review marked",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Cost breakdown pie chart",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Data transfer costs",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Final action items",
+      "segment_ids": [
+        30
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GCP budget setup",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Optimization strategies list",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Review checklist",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Setting calendar reminder",
+      "segment_ids": [
+        25
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Slack/webhook integration",
+      "segment_ids": [
+        8
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Storage costs",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Strategy 1 - Right-sizing",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Strategy 2 - Reserved capacity",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Strategy 3 - Cleanup unused",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Strategy 4 - Caching",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Strategy 5 - Model selection",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Tiered alert configuration",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What you've accomplished",
+      "segment_ids": [
+        27
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "What's next teaser",
+      "segment_ids": [
+        29
+      ]
+    }
+  ],
+  "metadata": {},
+  "parsed_at": "2026-01-06T22:53:56.003012"
+}

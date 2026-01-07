@@ -1,0 +1,32 @@
+{
+  "icons": {
+    "ai": "output\\slide-images\\icons\\ai.png",
+    "automation": "output\\slide-images\\icons\\automation.png",
+    "claude": "output\\slide-images\\icons\\claude.png",
+    "gmail": "output\\slide-images\\icons\\gmail.png",
+    "google_calendar": "output\\slide-images\\icons\\google_calendar.png",
+    "google_drive": "output\\slide-images\\icons\\google_drive.png",
+    "google_sheets": "output\\slide-images\\icons\\google_sheets.png",
+    "n8n": "output\\slide-images\\icons\\n8n.png",
+    "slack": "output\\slide-images\\icons\\slack.png",
+    "webhook": "output\\slide-images\\icons\\webhook.png"
+  },
+  "photos": {
+    "architecture_diagram": "output\\slide-images\\photos\\architecture_diagram.png",
+    "automation": "output\\slide-images\\photos\\automation.jpg",
+    "business": "output\\slide-images\\photos\\business.jpg",
+    "calendar": "output\\slide-images\\photos\\calendar.jpg",
+    "celebrate": "output\\slide-images\\photos\\celebrate.jpg",
+    "cloud": "output\\slide-images\\photos\\cloud.jpg",
+    "data": "output\\slide-images\\photos\\data.jpg",
+    "email": "output\\slide-images\\photos\\email.jpg",
+    "handshake": "output\\slide-images\\photos\\handshake.jpg",
+    "laptop_work": "output\\slide-images\\photos\\laptop_work.jpg",
+    "onboarding": "output\\slide-images\\photos\\onboarding.jpg",
+    "rocket": "output\\slide-images\\photos\\rocket.jpg",
+    "success": "output\\slide-images\\photos\\success.jpg",
+    "teamwork": "output\\slide-images\\photos\\teamwork.jpg",
+    "tech_abstract": "output\\slide-images\\photos\\tech_abstract.jpg",
+    "workflow": "output\\slide-images\\photos\\workflow.jpg"
+  }
+}

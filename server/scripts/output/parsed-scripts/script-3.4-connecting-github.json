@@ -1,0 +1,382 @@
+{
+  "script_id": "script-3.4-connecting-github",
+  "title": "Connecting GitHub",
+  "total_duration_seconds": 405.3,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start_time": 0.0,
+      "end_time": 17.5,
+      "visual_cue": "Lesson title with GitHub logo",
+      "visual_type": "animated_title",
+      "spoken_text": "If you're a developer, this lesson's for you. [PAUSE] We're connecting GitHub to Claude through Zapier MCP.\n\nWhen this is set up, Claude can create issues, manage pull requests, search repositories, and help with your Git workflow - all through conversation.",
+      "word_count": 40
+    },
+    {
+      "segment_id": 2,
+      "start_time": 17.5,
+      "end_time": 27.0,
+      "visual_cue": "Examples of GitHub actions - issue creation, PR management",
+      "visual_type": "text_overlay",
+      "spoken_text": "No more context-switching between your terminal and the GitHub website. [PAUSE] Just tell Claude what you need.\n\nLet's set it up.",
+      "word_count": 20
+    },
+    {
+      "segment_id": 3,
+      "start_time": 27.0,
+      "end_time": 61.1,
+      "visual_cue": "\"GitHub Auth Options\" with comparison",
+      "visual_type": "comparison_table",
+      "spoken_text": "Before we dive in, let's talk about authentication. [PAUSE] GitHub has a few ways to connect.\n\nThrough Zapier MCP, you'll connect using OAuth. [PAUSE] When you add GitHub actions in Zapier, it walks you through authorizing your GitHub account. This is the easiest approach and what we'll use today.\n\nThe alternative is creating a Personal Access Token, or PAT. [PAUSE] This gives you more granular control but requires more setup. Some dedicated GitHub MCP servers use PATs.",
+      "word_count": 74
+    },
+    {
+      "segment_id": 4,
+      "start_time": 61.1,
+      "end_time": 79.0,
+      "visual_cue": "Comparison table - Zapier OAuth vs PAT",
+      "visual_type": "comparison_table",
+      "spoken_text": "For most users, Zapier's OAuth is perfect. [PAUSE] It's quick to set up and Zapier handles the token management.\n\nIf you're working with enterprise GitHub or need specific permission scopes, you might need the PAT approach - but that's an advanced topic.",
+      "word_count": 41
+    },
+    {
+      "segment_id": 5,
+      "start_time": 79.0,
+      "end_time": 94.0,
+      "visual_cue": "Zapier interface, searching for GitHub",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's add GitHub capabilities. [PAUSE] Go to your Zapier MCP settings and click \"Add Actions.\"\n\nSearch for \"GitHub\" and you'll see a lot of options. [PAUSE] Here are the most useful ones:",
+      "word_count": 30
+    },
+    {
+      "segment_id": 6,
+      "start_time": 94.0,
+      "end_time": 162.9,
+      "visual_cue": "GitHub actions appearing one by one with descriptions",
+      "visual_type": "text_overlay",
+      "spoken_text": "### Essential Actions\n\n**Find Issue** - Search for issues in your repos. [PAUSE] \"Find all open bugs in the frontend repo.\"\n\n**Create Issue** - Create new issues. [PAUSE] Super useful when you're coding and spot something. Just tell Claude, keep coding.\n\n**Create Comment** - Add comments to issues or PRs. [PAUSE]\n\n**Find Pull Request** - Search for PRs by state, author, or keywords. [PAUSE]\n\n**Create Pull Request** - Open new PRs. [PAUSE] Claude can even write the description based on your commits.\n\n**Find Repository** - Search your repos. [PAUSE]\n\n**Find Branch** - List or find branches. [PAUSE]\n\n### Nice to Have\n\n**Create Branch** - Make new branches. [PAUSE] \"Create a feature branch called fix-login-bug.\"\n\n**Update Issue** - Modify existing issues. [PAUSE] Change labels, assignees, status.\n\n**Update Pull Request** - Modify PR details. [PAUSE]\n\n**Add Labels to Issue** - Organize with labels. [PAUSE]",
+      "word_count": 131
+    },
+    {
+      "segment_id": 7,
+      "start_time": 162.9,
+      "end_time": 181.5,
+      "visual_cue": "OAuth flow for GitHub",
+      "visual_type": "text_overlay",
+      "spoken_text": "When you add your first GitHub action, Zapier prompts you to connect. [PAUSE] Click \"Connect,\" and you'll be taken to GitHub's authorization page.\n\nReview the permissions Zapier's requesting. [PAUSE] It'll need access to your repositories, issues, and pull requests. Click \"Authorize.\"",
+      "word_count": 39
+    },
+    {
+      "segment_id": 8,
+      "start_time": 181.5,
+      "end_time": 186.2,
+      "visual_cue": "Successful connection message",
+      "visual_type": "text_overlay",
+      "spoken_text": "Once connected, all your GitHub actions are live. [PAUSE]",
+      "word_count": 8
+    },
+    {
+      "segment_id": 9,
+      "start_time": 186.2,
+      "end_time": 195.3,
+      "visual_cue": "Claude Code terminal",
+      "visual_type": "screen_capture",
+      "spoken_text": "Let's verify everything works. [PAUSE] Start Claude Code and try:\n\n```\nWhat GitHub tools do you have access to?\n```",
+      "word_count": 19
+    },
+    {
+      "segment_id": 10,
+      "start_time": 195.3,
+      "end_time": 206.9,
+      "visual_cue": "Claude listing GitHub-related tools",
+      "visual_type": "text_overlay",
+      "spoken_text": "You should see the GitHub actions you added - create_issue, find_pull_request, and so on.\n\n### Finding Issues\n\nLet's search for issues:\n\n```\nFind open issues in my [repo-name] repository\n```",
+      "word_count": 29
+    },
+    {
+      "segment_id": 11,
+      "start_time": 206.9,
+      "end_time": 230.0,
+      "visual_cue": "Claude calling github_find_issue and returning results",
+      "visual_type": "text_overlay",
+      "spoken_text": "Replace [repo-name] with an actual repository you have. [PAUSE] Claude searches and returns the issues with their titles, numbers, and status.\n\n### Creating an Issue\n\nNow let's create one:\n\n```\nCreate an issue in [repo-name] titled \"Update documentation for API endpoints\" with the body \"Need to document the new /users and /products endpoints added in v2.0\"\n```",
+      "word_count": 54
+    },
+    {
+      "segment_id": 12,
+      "start_time": 230.0,
+      "end_time": 248.7,
+      "visual_cue": "Claude calling github_create_issue",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude creates the issue and gives you the URL. [PAUSE] Click it - you'll see the issue in GitHub, created exactly as specified.\n\n### Pull Request Workflow\n\nHere's where it gets powerful:\n\n```\nFind any pull requests in [repo-name] that are waiting for review\n```",
+      "word_count": 43
+    },
+    {
+      "segment_id": 13,
+      "start_time": 248.7,
+      "end_time": 260.6,
+      "visual_cue": "Claude searching PRs with state filter",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude finds PRs that need attention. [PAUSE] You can then ask:\n\n```\nAdd a comment to PR #[number] saying \"Looks good, will review in detail tomorrow\"\n```",
+      "word_count": 26
+    },
+    {
+      "segment_id": 14,
+      "start_time": 260.6,
+      "end_time": 264.1,
+      "visual_cue": "Claude adding comment to PR",
+      "visual_type": "text_overlay",
+      "spoken_text": "Comment added. [PAUSE] No browser needed.",
+      "word_count": 5
+    },
+    {
+      "segment_id": 15,
+      "start_time": 264.1,
+      "end_time": 270.9,
+      "visual_cue": "\"Developer Workflows\" header",
+      "visual_type": "text_overlay",
+      "spoken_text": "Let me share some workflows that'll change how you work with GitHub.\n\n### Bug Discovery During Coding",
+      "word_count": 17
+    },
+    {
+      "segment_id": 16,
+      "start_time": 270.9,
+      "end_time": 291.2,
+      "visual_cue": "Scenario illustration",
+      "visual_type": "illustration",
+      "spoken_text": "You're deep in code, find a bug that's unrelated to what you're working on. [PAUSE] Old workflow: open browser, go to GitHub, create issue, lose focus.\n\nNew workflow:\n\n```\nCreate an issue: the login form doesn't validate email format properly. Label it as a bug, low priority.\n```",
+      "word_count": 47
+    },
+    {
+      "segment_id": 17,
+      "start_time": 291.2,
+      "end_time": 305.1,
+      "visual_cue": "Claude creating issue with labels",
+      "visual_type": "text_overlay",
+      "spoken_text": "Done. [PAUSE] Issue created, labeled, you never left your editor.\n\n### End of Day PR Check\n\n```\nShow me all my open pull requests across all repositories and their review status\n```",
+      "word_count": 31
+    },
+    {
+      "segment_id": 18,
+      "start_time": 305.1,
+      "end_time": 327.5,
+      "visual_cue": "Claude aggregating PR information",
+      "visual_type": "text_overlay",
+      "spoken_text": "Claude gives you a complete picture of your pending work.\n\n### Code Review Assistance\n\nYou're reviewing a PR and want to leave feedback:\n\n```\nAdd a comment to PR #42 in the frontend repo: \"The error handling looks good but we should add a test for the edge case when the user array is empty\"\n```",
+      "word_count": 56
+    },
+    {
+      "segment_id": 19,
+      "start_time": 327.5,
+      "end_time": 339.5,
+      "visual_cue": "Claude adding detailed comment",
+      "visual_type": "text_overlay",
+      "spoken_text": "Your code review comment is posted without breaking your flow.\n\n### Issue Triage\n\n```\nFind all issues labeled \"needs-triage\" in my project and list them with their creation date\n```",
+      "word_count": 30
+    },
+    {
+      "segment_id": 20,
+      "start_time": 339.5,
+      "end_time": 342.3,
+      "visual_cue": "Claude finding and organizing issues",
+      "visual_type": "text_overlay",
+      "spoken_text": "Perfect for sprint planning or weekly reviews.",
+      "word_count": 7
+    },
+    {
+      "segment_id": 21,
+      "start_time": 342.3,
+      "end_time": 352.6,
+      "visual_cue": "Security warning icon",
+      "visual_type": "text_overlay",
+      "spoken_text": "Quick note on security. [PAUSE] GitHub access is powerful. Claude can create issues, comments, and PRs on your behalf.\n\nA few best practices:",
+      "word_count": 22
+    },
+    {
+      "segment_id": 22,
+      "start_time": 352.6,
+      "end_time": 389.4,
+      "visual_cue": "Best practices list",
+      "visual_type": "text_overlay",
+      "spoken_text": "**Review before confirming.** [PAUSE] When Claude says it's about to create a PR or issue, read what it's going to post.\n\n**Start with read-only.** [PAUSE] If you're nervous, just add the \"Find\" actions first. No Create or Update. Get comfortable, then add more.\n\n**Check your Zapier logs.** [PAUSE] Zapier keeps a log of all actions taken. You can audit what Claude did.\n\n**Repository scope.** [PAUSE] When you authorized GitHub, you chose which repos Zapier can access. Be intentional about that choice.",
+      "word_count": 77
+    },
+    {
+      "segment_id": 23,
+      "start_time": 389.4,
+      "end_time": 405.3,
+      "visual_cue": "\"Next: Troubleshooting MCP Connections\" with arrow",
+      "visual_type": "text_overlay",
+      "spoken_text": "Alright, GitHub is connected. [PAUSE] You've now got Google services and GitHub accessible through Claude. In the next lesson, we'll cover what to do when things don't work - because troubleshooting MCP is a skill worth having.",
+      "word_count": 36
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "animated_title",
+      "description": "Lesson title with GitHub logo",
+      "segment_ids": [
+        1
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "\"GitHub Auth Options\" with comparison",
+      "segment_ids": [
+        3
+      ]
+    },
+    {
+      "type": "comparison_table",
+      "description": "Comparison table - Zapier OAuth vs PAT",
+      "segment_ids": [
+        4
+      ]
+    },
+    {
+      "type": "illustration",
+      "description": "Scenario illustration",
+      "segment_ids": [
+        16
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Claude Code terminal",
+      "segment_ids": [
+        9
+      ]
+    },
+    {
+      "type": "screen_capture",
+      "description": "Zapier interface, searching for GitHub",
+      "segment_ids": [
+        5
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Developer Workflows\" header",
+      "segment_ids": [
+        15
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "\"Next: Troubleshooting MCP Connections\" with arrow",
+      "segment_ids": [
+        23
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Best practices list",
+      "segment_ids": [
+        22
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude adding comment to PR",
+      "segment_ids": [
+        14
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude adding detailed comment",
+      "segment_ids": [
+        19
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude aggregating PR information",
+      "segment_ids": [
+        18
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling github_create_issue",
+      "segment_ids": [
+        12
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude calling github_find_issue and returning results",
+      "segment_ids": [
+        11
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude creating issue with labels",
+      "segment_ids": [
+        17
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude finding and organizing issues",
+      "segment_ids": [
+        20
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude listing GitHub-related tools",
+      "segment_ids": [
+        10
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Claude searching PRs with state filter",
+      "segment_ids": [
+        13
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Examples of GitHub actions - issue creation, PR management",
+      "segment_ids": [
+        2
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "GitHub actions appearing one by one with descriptions",
+      "segment_ids": [
+        6
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "OAuth flow for GitHub",
+      "segment_ids": [
+        7
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Security warning icon",
+      "segment_ids": [
+        21
+      ]
+    },
+    {
+      "type": "text_overlay",
+      "description": "Successful connection message",
+      "segment_ids": [
+        8
+      ]
+    }
+  ],
+  "metadata": {
+    "stated_duration": "15 minutes",
+    "lesson": "3.4 - Connecting GitHub via Zapier MCP"
+  },
+  "parsed_at": "2026-01-06T22:53:56.097741"
+}
